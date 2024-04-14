@@ -154,6 +154,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReiceiveRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReiceiveRoom.Designer.cs">
+      <DependentUpon>ReiceiveRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReiceiveRoom.resx">
+      <DependentUpon>ReiceiveRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
