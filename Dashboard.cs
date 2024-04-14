@@ -96,7 +96,9 @@ namespace Royal
 
         private void titleBookRoom_Click(object sender, EventArgs e)
         {
-
+            BookRoom book = new BookRoom();
+            book.Show();
+    
         }
 
         private void kryptonButton3_Click(object sender, EventArgs e)

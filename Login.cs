@@ -57,8 +57,8 @@ namespace Royal
         {
             var config = new FirebaseAuthConfig
             {
-                ApiKey = "AIzaSyBHZYh9tSMeSEYpZIRgdK7etYcQZUJj4vU",
-                AuthDomain = "fir-c569c.firebaseapp.com",
+                ApiKey = "AIzaSyCkQbVSzvPQfGzSZkvnRgBXFuKUOaVbLxQ",
+                AuthDomain = "royal-9807e.firebaseapp.com",
                 Providers = new Firebase.Auth.Providers.FirebaseAuthProvider[]
               {
                     new EmailProvider()

@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.titleBookRoom = new MetroFramework.Controls.MetroTile();
             this.panelRight = new System.Windows.Forms.Panel();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.panelRight.SuspendLayout();
@@ -148,7 +149,7 @@
             this.metroTile13.Location = new System.Drawing.Point(1076, 492);
             this.metroTile13.Margin = new System.Windows.Forms.Padding(4);
             this.metroTile13.Name = "metroTile13";
-            this.metroTile13.Size = new System.Drawing.Size(368, 166);
+            this.metroTile13.Size = new System.Drawing.Size(180, 166);
             this.metroTile13.TabIndex = 41;
             this.metroTile13.Text = "Quy Định";
             this.metroTile13.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile13.TileImage")));
@@ -285,7 +286,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(261, 37);
+            this.label2.Location = new System.Drawing.Point(270, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(297, 46);
@@ -316,6 +317,7 @@
             // panelRight
             // 
             this.panelRight.BackColor = System.Drawing.Color.White;
+            this.panelRight.Controls.Add(this.metroTile1);
             this.panelRight.Controls.Add(this.kryptonPanel1);
             this.panelRight.Controls.Add(this.metroTile17);
             this.panelRight.Controls.Add(this.metroTile16);
@@ -335,6 +337,25 @@
             this.panelRight.Size = new System.Drawing.Size(1464, 695);
             this.panelRight.TabIndex = 3;
             this.panelRight.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRight_Paint);
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.BackColor = System.Drawing.Color.SteelBlue;
+            this.metroTile1.ForeColor = System.Drawing.Color.White;
+            this.metroTile1.Location = new System.Drawing.Point(1264, 492);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(175, 166);
+            this.metroTile1.TabIndex = 48;
+            this.metroTile1.Text = "Trò chuyện";
+            this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
+            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.UseCustomBackColor = true;
+            this.metroTile1.UseCustomForeColor = true;
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.UseStyleColors = true;
+            this.metroTile1.UseTileImage = true;
             // 
             // Dashboard
             // 
@@ -371,5 +392,6 @@
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroTile titleBookRoom;
         private System.Windows.Forms.Panel panelRight;
+        private MetroFramework.Controls.MetroTile metroTile1;
     }
 }

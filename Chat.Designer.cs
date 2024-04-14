@@ -35,9 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,9 +63,9 @@
             this.label6.Location = new System.Drawing.Point(13, 35);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 28);
+            this.label6.Size = new System.Drawing.Size(165, 28);
             this.label6.TabIndex = 259;
-            this.label6.Text = "▶ Tên";
+            this.label6.Text = "▶ Mã nhân viên";
             // 
             // textBox1
             // 
@@ -119,21 +119,12 @@
             this.kryptonButton1.UseWaitCursor = true;
             this.kryptonButton1.Values.Text = "SEND";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(297, 26);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(644, 247);
-            this.textBox2.TabIndex = 273;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(25, 290);
+            this.label2.Location = new System.Drawing.Point(25, 281);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 31);
             this.label2.TabIndex = 272;
@@ -145,21 +136,29 @@
             this.comboBox1.Items.AddRange(new object[] {
             "NHÂN VIÊN",
             "QUẢN LÝ"});
-            this.comboBox1.Location = new System.Drawing.Point(31, 336);
+            this.comboBox1.Location = new System.Drawing.Point(31, 324);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(222, 24);
             this.comboBox1.TabIndex = 271;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(297, 32);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(649, 241);
+            this.richTextBox1.TabIndex = 275;
+            this.richTextBox1.Text = "";
             // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 386);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.kryptonButton1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Name = "Chat";
@@ -180,8 +179,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

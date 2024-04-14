@@ -16,5 +16,10 @@ namespace Royal
         {
             InitializeComponent();
         }
+
+        private void PrintBill_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

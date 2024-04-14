@@ -91,6 +91,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.kryptonBorderEdge2 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,12 +135,12 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Tên dịch vụ";
+            this.columnHeader2.Text = "Tên dịch vụ / vật phẩm";
             this.columnHeader2.Width = 330;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Đơn giá";
+            this.columnHeader3.Text = "Đơn vị";
             this.columnHeader3.Width = 100;
             // 
             // listViewUseService
@@ -151,32 +152,33 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
             this.listViewUseService.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.listViewUseService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.listViewUseService.FullRowSelect = true;
             this.listViewUseService.GridLines = true;
             this.listViewUseService.HideSelection = false;
-            this.listViewUseService.Location = new System.Drawing.Point(28, 643);
+            this.listViewUseService.Location = new System.Drawing.Point(18, 611);
             this.listViewUseService.Margin = new System.Windows.Forms.Padding(4);
             this.listViewUseService.Name = "listViewUseService";
-            this.listViewUseService.Size = new System.Drawing.Size(1019, 240);
+            this.listViewUseService.Size = new System.Drawing.Size(1000, 53);
             this.listViewUseService.TabIndex = 247;
             this.listViewUseService.UseCompatibleStateImageBehavior = false;
             this.listViewUseService.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Số lượng";
+            this.columnHeader4.Text = "Đơn giá";
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Thành tiền";
+            this.columnHeader5.Text = "Số lượng";
             this.columnHeader5.Width = 100;
             // 
             // kryptonBorderEdge3
             // 
-            this.kryptonBorderEdge3.Location = new System.Drawing.Point(28, 626);
+            this.kryptonBorderEdge3.Location = new System.Drawing.Point(18, 600);
             this.kryptonBorderEdge3.Name = "kryptonBorderEdge3";
             this.kryptonBorderEdge3.Size = new System.Drawing.Size(1000, 4);
             this.kryptonBorderEdge3.StateCommon.Color1 = System.Drawing.Color.SteelBlue;
@@ -188,7 +190,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label21.Location = new System.Drawing.Point(34, 494);
+            this.label21.Location = new System.Drawing.Point(24, 468);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(157, 28);
@@ -200,7 +202,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(506, 577);
+            this.label20.Location = new System.Drawing.Point(496, 551);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(96, 28);
@@ -212,7 +214,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label19.Location = new System.Drawing.Point(506, 536);
+            this.label19.Location = new System.Drawing.Point(496, 510);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(83, 28);
@@ -224,7 +226,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label18.Location = new System.Drawing.Point(504, 452);
+            this.label18.Location = new System.Drawing.Point(494, 426);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(85, 28);
@@ -236,7 +238,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(504, 494);
+            this.label17.Location = new System.Drawing.Point(494, 468);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(101, 28);
@@ -248,7 +250,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(504, 409);
+            this.label16.Location = new System.Drawing.Point(494, 383);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(115, 28);
@@ -260,7 +262,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(504, 364);
+            this.label15.Location = new System.Drawing.Point(494, 338);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(108, 28);
@@ -272,7 +274,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(34, 577);
+            this.label14.Location = new System.Drawing.Point(24, 551);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 28);
@@ -284,7 +286,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(34, 536);
+            this.label12.Location = new System.Drawing.Point(24, 510);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 28);
@@ -296,7 +298,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(34, 452);
+            this.label11.Location = new System.Drawing.Point(24, 426);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 28);
@@ -308,7 +310,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(34, 409);
+            this.label10.Location = new System.Drawing.Point(24, 383);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 28);
@@ -320,7 +322,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(34, 366);
+            this.label7.Location = new System.Drawing.Point(24, 340);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(150, 28);
@@ -329,7 +331,7 @@
             // 
             // kryptonDateTimePicker1
             // 
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(751, 245);
+            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(741, 219);
             this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
             this.kryptonDateTimePicker1.Size = new System.Drawing.Size(302, 35);
             this.kryptonDateTimePicker1.StateCommon.Back.Color1 = System.Drawing.Color.AliceBlue;
@@ -346,7 +348,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(564, 252);
+            this.label9.Location = new System.Drawing.Point(554, 226);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(132, 28);
@@ -358,7 +360,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(564, 302);
+            this.label8.Location = new System.Drawing.Point(554, 276);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(173, 28);
@@ -370,7 +372,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(28, 302);
+            this.label6.Location = new System.Drawing.Point(18, 276);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(156, 28);
@@ -382,7 +384,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(22, 249);
+            this.label5.Location = new System.Drawing.Point(12, 223);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(382, 31);
@@ -393,7 +395,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(216, 198);
+            this.label4.Location = new System.Drawing.Point(206, 172);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(384, 28);
@@ -404,7 +406,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(216, 164);
+            this.label3.Location = new System.Drawing.Point(206, 138);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(371, 23);
@@ -415,7 +417,7 @@
             // 
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(216, 127);
+            this.label13.Location = new System.Drawing.Point(206, 101);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(629, 21);
@@ -427,7 +429,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(213, 73);
+            this.label2.Location = new System.Drawing.Point(203, 47);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(289, 37);
@@ -436,7 +438,7 @@
             // 
             // kryptonBorderEdge1
             // 
-            this.kryptonBorderEdge1.Location = new System.Drawing.Point(28, 67);
+            this.kryptonBorderEdge1.Location = new System.Drawing.Point(18, 41);
             this.kryptonBorderEdge1.Name = "kryptonBorderEdge1";
             this.kryptonBorderEdge1.Size = new System.Drawing.Size(1018, 1);
             this.kryptonBorderEdge1.Text = "kryptonBorderEdge1";
@@ -445,7 +447,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.SteelBlue;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(28, 75);
+            this.pictureBox2.Location = new System.Drawing.Point(18, 49);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(164, 151);
@@ -458,7 +460,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(22, 25);
+            this.label1.Location = new System.Drawing.Point(12, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 35);
             this.label1.TabIndex = 224;
@@ -466,7 +468,7 @@
             // 
             // kryptonRichTextBox13
             // 
-            this.kryptonRichTextBox13.Location = new System.Drawing.Point(638, 577);
+            this.kryptonRichTextBox13.Location = new System.Drawing.Point(628, 551);
             this.kryptonRichTextBox13.Name = "kryptonRichTextBox13";
             this.kryptonRichTextBox13.ReadOnly = true;
             this.kryptonRichTextBox13.Size = new System.Drawing.Size(239, 28);
@@ -475,7 +477,7 @@
             // 
             // kryptonRichTextBox14
             // 
-            this.kryptonRichTextBox14.Location = new System.Drawing.Point(638, 536);
+            this.kryptonRichTextBox14.Location = new System.Drawing.Point(628, 510);
             this.kryptonRichTextBox14.Name = "kryptonRichTextBox14";
             this.kryptonRichTextBox14.ReadOnly = true;
             this.kryptonRichTextBox14.Size = new System.Drawing.Size(239, 28);
@@ -484,7 +486,7 @@
             // 
             // kryptonRichTextBox15
             // 
-            this.kryptonRichTextBox15.Location = new System.Drawing.Point(638, 494);
+            this.kryptonRichTextBox15.Location = new System.Drawing.Point(628, 468);
             this.kryptonRichTextBox15.Name = "kryptonRichTextBox15";
             this.kryptonRichTextBox15.ReadOnly = true;
             this.kryptonRichTextBox15.Size = new System.Drawing.Size(239, 28);
@@ -493,7 +495,7 @@
             // 
             // kryptonRichTextBox16
             // 
-            this.kryptonRichTextBox16.Location = new System.Drawing.Point(638, 452);
+            this.kryptonRichTextBox16.Location = new System.Drawing.Point(628, 426);
             this.kryptonRichTextBox16.Name = "kryptonRichTextBox16";
             this.kryptonRichTextBox16.ReadOnly = true;
             this.kryptonRichTextBox16.Size = new System.Drawing.Size(239, 28);
@@ -502,7 +504,7 @@
             // 
             // kryptonRichTextBox17
             // 
-            this.kryptonRichTextBox17.Location = new System.Drawing.Point(638, 409);
+            this.kryptonRichTextBox17.Location = new System.Drawing.Point(628, 383);
             this.kryptonRichTextBox17.Name = "kryptonRichTextBox17";
             this.kryptonRichTextBox17.ReadOnly = true;
             this.kryptonRichTextBox17.Size = new System.Drawing.Size(239, 28);
@@ -511,7 +513,7 @@
             // 
             // kryptonRichTextBox18
             // 
-            this.kryptonRichTextBox18.Location = new System.Drawing.Point(638, 367);
+            this.kryptonRichTextBox18.Location = new System.Drawing.Point(628, 341);
             this.kryptonRichTextBox18.Name = "kryptonRichTextBox18";
             this.kryptonRichTextBox18.ReadOnly = true;
             this.kryptonRichTextBox18.Size = new System.Drawing.Size(239, 28);
@@ -520,7 +522,7 @@
             // 
             // kryptonRichTextBox12
             // 
-            this.kryptonRichTextBox12.Location = new System.Drawing.Point(191, 577);
+            this.kryptonRichTextBox12.Location = new System.Drawing.Point(181, 551);
             this.kryptonRichTextBox12.Name = "kryptonRichTextBox12";
             this.kryptonRichTextBox12.ReadOnly = true;
             this.kryptonRichTextBox12.Size = new System.Drawing.Size(239, 28);
@@ -529,7 +531,7 @@
             // 
             // kryptonRichTextBox11
             // 
-            this.kryptonRichTextBox11.Location = new System.Drawing.Point(191, 536);
+            this.kryptonRichTextBox11.Location = new System.Drawing.Point(181, 510);
             this.kryptonRichTextBox11.Name = "kryptonRichTextBox11";
             this.kryptonRichTextBox11.ReadOnly = true;
             this.kryptonRichTextBox11.Size = new System.Drawing.Size(239, 28);
@@ -538,7 +540,7 @@
             // 
             // kryptonRichTextBox10
             // 
-            this.kryptonRichTextBox10.Location = new System.Drawing.Point(191, 494);
+            this.kryptonRichTextBox10.Location = new System.Drawing.Point(181, 468);
             this.kryptonRichTextBox10.Name = "kryptonRichTextBox10";
             this.kryptonRichTextBox10.ReadOnly = true;
             this.kryptonRichTextBox10.Size = new System.Drawing.Size(239, 28);
@@ -547,7 +549,7 @@
             // 
             // kryptonRichTextBox9
             // 
-            this.kryptonRichTextBox9.Location = new System.Drawing.Point(191, 452);
+            this.kryptonRichTextBox9.Location = new System.Drawing.Point(181, 426);
             this.kryptonRichTextBox9.Name = "kryptonRichTextBox9";
             this.kryptonRichTextBox9.ReadOnly = true;
             this.kryptonRichTextBox9.Size = new System.Drawing.Size(239, 28);
@@ -556,7 +558,7 @@
             // 
             // kryptonRichTextBox8
             // 
-            this.kryptonRichTextBox8.Location = new System.Drawing.Point(191, 409);
+            this.kryptonRichTextBox8.Location = new System.Drawing.Point(181, 383);
             this.kryptonRichTextBox8.Name = "kryptonRichTextBox8";
             this.kryptonRichTextBox8.ReadOnly = true;
             this.kryptonRichTextBox8.Size = new System.Drawing.Size(239, 28);
@@ -565,7 +567,7 @@
             // 
             // kryptonRichTextBox7
             // 
-            this.kryptonRichTextBox7.Location = new System.Drawing.Point(191, 367);
+            this.kryptonRichTextBox7.Location = new System.Drawing.Point(181, 341);
             this.kryptonRichTextBox7.Name = "kryptonRichTextBox7";
             this.kryptonRichTextBox7.ReadOnly = true;
             this.kryptonRichTextBox7.Size = new System.Drawing.Size(239, 28);
@@ -574,7 +576,7 @@
             // 
             // kryptonRichTextBox5
             // 
-            this.kryptonRichTextBox5.Location = new System.Drawing.Point(847, 940);
+            this.kryptonRichTextBox5.Location = new System.Drawing.Point(847, 720);
             this.kryptonRichTextBox5.Name = "kryptonRichTextBox5";
             this.kryptonRichTextBox5.ReadOnly = true;
             this.kryptonRichTextBox5.Size = new System.Drawing.Size(181, 28);
@@ -583,7 +585,7 @@
             // 
             // kryptonRichTextBox6
             // 
-            this.kryptonRichTextBox6.Location = new System.Drawing.Point(847, 901);
+            this.kryptonRichTextBox6.Location = new System.Drawing.Point(847, 681);
             this.kryptonRichTextBox6.Name = "kryptonRichTextBox6";
             this.kryptonRichTextBox6.ReadOnly = true;
             this.kryptonRichTextBox6.Size = new System.Drawing.Size(181, 28);
@@ -592,7 +594,7 @@
             // 
             // kryptonRichTextBox3
             // 
-            this.kryptonRichTextBox3.Location = new System.Drawing.Point(438, 940);
+            this.kryptonRichTextBox3.Location = new System.Drawing.Point(438, 720);
             this.kryptonRichTextBox3.Name = "kryptonRichTextBox3";
             this.kryptonRichTextBox3.ReadOnly = true;
             this.kryptonRichTextBox3.Size = new System.Drawing.Size(181, 28);
@@ -601,7 +603,7 @@
             // 
             // kryptonRichTextBox4
             // 
-            this.kryptonRichTextBox4.Location = new System.Drawing.Point(438, 901);
+            this.kryptonRichTextBox4.Location = new System.Drawing.Point(438, 681);
             this.kryptonRichTextBox4.Name = "kryptonRichTextBox4";
             this.kryptonRichTextBox4.ReadOnly = true;
             this.kryptonRichTextBox4.Size = new System.Drawing.Size(181, 28);
@@ -610,7 +612,7 @@
             // 
             // kryptonRichTextBox1
             // 
-            this.kryptonRichTextBox1.Location = new System.Drawing.Point(131, 940);
+            this.kryptonRichTextBox1.Location = new System.Drawing.Point(131, 720);
             this.kryptonRichTextBox1.Name = "kryptonRichTextBox1";
             this.kryptonRichTextBox1.ReadOnly = true;
             this.kryptonRichTextBox1.Size = new System.Drawing.Size(181, 28);
@@ -619,7 +621,7 @@
             // 
             // kryptonRichTextBox2
             // 
-            this.kryptonRichTextBox2.Location = new System.Drawing.Point(131, 901);
+            this.kryptonRichTextBox2.Location = new System.Drawing.Point(131, 681);
             this.kryptonRichTextBox2.Name = "kryptonRichTextBox2";
             this.kryptonRichTextBox2.ReadOnly = true;
             this.kryptonRichTextBox2.Size = new System.Drawing.Size(181, 28);
@@ -628,7 +630,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(744, 299);
+            this.textBox2.Location = new System.Drawing.Point(734, 273);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(302, 29);
@@ -636,7 +638,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(191, 299);
+            this.textBox1.Location = new System.Drawing.Point(181, 273);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(341, 31);
@@ -646,7 +648,7 @@
             // 
             this.kryptonButton6.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
             this.kryptonButton6.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
-            this.kryptonButton6.Location = new System.Drawing.Point(909, 142);
+            this.kryptonButton6.Location = new System.Drawing.Point(899, 116);
             this.kryptonButton6.Name = "kryptonButton6";
             this.kryptonButton6.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton6.Size = new System.Drawing.Size(137, 36);
@@ -659,7 +661,7 @@
             // 
             this.kryptonButton5.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
             this.kryptonButton5.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
-            this.kryptonButton5.Location = new System.Drawing.Point(909, 86);
+            this.kryptonButton5.Location = new System.Drawing.Point(899, 60);
             this.kryptonButton5.Name = "kryptonButton5";
             this.kryptonButton5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton5.Size = new System.Drawing.Size(137, 36);
@@ -673,7 +675,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label31.Location = new System.Drawing.Point(702, 940);
+            this.label31.Location = new System.Drawing.Point(702, 720);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(107, 28);
@@ -685,7 +687,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label33.Location = new System.Drawing.Point(702, 899);
+            this.label33.Location = new System.Drawing.Point(702, 679);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(120, 28);
@@ -697,7 +699,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label27.Location = new System.Drawing.Point(347, 940);
+            this.label27.Location = new System.Drawing.Point(347, 720);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(94, 28);
@@ -709,7 +711,7 @@
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label29.Location = new System.Drawing.Point(347, 899);
+            this.label29.Location = new System.Drawing.Point(347, 679);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(83, 28);
@@ -721,7 +723,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label23.Location = new System.Drawing.Point(9, 940);
+            this.label23.Location = new System.Drawing.Point(9, 720);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(99, 28);
@@ -733,7 +735,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label25.Location = new System.Drawing.Point(9, 899);
+            this.label25.Location = new System.Drawing.Point(9, 679);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(115, 28);
@@ -742,18 +744,23 @@
             // 
             // kryptonBorderEdge2
             // 
-            this.kryptonBorderEdge2.Location = new System.Drawing.Point(28, 346);
+            this.kryptonBorderEdge2.Location = new System.Drawing.Point(18, 320);
             this.kryptonBorderEdge2.Name = "kryptonBorderEdge2";
             this.kryptonBorderEdge2.Size = new System.Drawing.Size(1000, 4);
             this.kryptonBorderEdge2.StateCommon.Color1 = System.Drawing.Color.SteelBlue;
             this.kryptonBorderEdge2.StateCommon.Width = 4;
             this.kryptonBorderEdge2.Text = "kryptonBorderEdge2";
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Thành tiền";
+            this.columnHeader6.Width = 365;
+            // 
             // PrintBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 993);
+            this.ClientSize = new System.Drawing.Size(1052, 762);
             this.Controls.Add(this.listViewUseService);
             this.Controls.Add(this.kryptonBorderEdge3);
             this.Controls.Add(this.label21);
@@ -811,6 +818,7 @@
             this.Controls.Add(this.kryptonBorderEdge2);
             this.Name = "PrintBill";
             this.Text = "PrintBill";
+            this.Load += new System.EventHandler(this.PrintBill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -880,5 +888,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label25;
         private ComponentFactory.Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge2;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
