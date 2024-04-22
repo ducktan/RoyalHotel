@@ -54,5 +54,42 @@ namespace Royal
         {
             txtPassword.PasswordChar = '*';
         }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            ForgotPass forgot = new ForgotPass(); 
+            forgot.Show();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

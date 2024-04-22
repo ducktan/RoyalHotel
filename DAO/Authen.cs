@@ -74,6 +74,11 @@ namespace Royal.DAO
             }
         }
 
+        public void ForgotPass()
+        {
+
+        }
+
 
 
     }
