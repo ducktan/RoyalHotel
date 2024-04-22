@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Royal.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace Royal
 {
     public partial class Dashboard : Form
     {
+        private Authen authen;
         public Dashboard()
         {
+
             InitializeComponent();
+            authen = new Authen();
         }
 
         private void panelRight_Paint(object sender, PaintEventArgs e)
@@ -29,7 +33,8 @@ namespace Royal
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-
+            Profile profile = new Profile();
+            profile.Show();
         }
 
         private void kryptonPanel1_Paint(object sender, PaintEventArgs e)
@@ -39,54 +44,66 @@ namespace Royal
 
         private void Đ_Click(object sender, EventArgs e)
         {
-
+            authen.SignOut();
+            AboutUs about = new AboutUs();
+            about.Show();
+            Close();
         }
 
         private void metroTile17_Click(object sender, EventArgs e)
         {
-
+            ManageCustomer manageCustomer = new ManageCustomer();
+            manageCustomer.Show();
         }
 
         private void metroTile16_Click(object sender, EventArgs e)
         {
-
+            Bill bill = new Bill();
+            bill.Show();
+      
         }
 
         private void metroTile13_Click(object sender, EventArgs e)
         {
-
+            Parameter parameter = new Parameter();
+            parameter.Show();
         }
 
         private void title_Click(object sender, EventArgs e)
         {
-
+            Report report = new Report();
+            report.Show();
         }
 
         private void titleManageRoom_Click(object sender, EventArgs e)
         {
-
+            ManageRoom manageRoom = new ManageRoom();   
+            manageRoom.Show();
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-
+            Service service = new Service();
+            service.Show();
         }
 
         private void metroTile8_Click(object sender, EventArgs e)
         {
             ManageStaff manageStaff = new ManageStaff();
             manageStaff.Show();
-            Hide();
+           
         }
 
         private void titlePay_Click(object sender, EventArgs e)
         {
-
+            PrintBill printBill = new PrintBill();
+            printBill.Show();
         }
 
         private void titleRecieveRoom_Click(object sender, EventArgs e)
         {
-
+            ReiceiveRoom room = new ReiceiveRoom();
+            room.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -104,6 +121,12 @@ namespace Royal
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            Chat chat = new Chat();
+            chat.Show();
         }
     }
 }

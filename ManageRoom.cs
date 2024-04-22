@@ -16,5 +16,11 @@ namespace Royal
         {
             InitializeComponent();
         }
+
+        private void kryptonButton6_Click(object sender, EventArgs e)
+        {
+            RoomType room = new RoomType();
+            room.Show();
+        }
     }
 }

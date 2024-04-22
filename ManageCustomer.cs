@@ -36,5 +36,11 @@ namespace Royal
         {
 
         }
+
+        private void kryptonButton6_Click(object sender, EventArgs e)
+        {
+            CustomerType customer = new CustomerType();
+            customer.Show();
+        }
     }
 }
