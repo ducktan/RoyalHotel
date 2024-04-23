@@ -63,6 +63,10 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.kryptonDateTimePicker3 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -97,10 +101,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -197,6 +197,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox6.Controls.Add(this.textBox1);
             this.groupBox6.Controls.Add(this.kryptonDateTimePicker1);
             this.groupBox6.Controls.Add(this.kryptonDateTimePicker2);
@@ -205,9 +206,9 @@
             this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.label21);
-            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox6.Location = new System.Drawing.Point(6, 34);
+            this.groupBox6.Location = new System.Drawing.Point(4, 49);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(454, 177);
             this.groupBox6.TabIndex = 51;
@@ -273,9 +274,9 @@
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox3.Location = new System.Drawing.Point(6, 217);
+            this.groupBox3.Location = new System.Drawing.Point(8, 252);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(454, 106);
             this.groupBox3.TabIndex = 53;
@@ -284,7 +285,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(246, 51);
+            this.button1.Location = new System.Drawing.Point(246, 56);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 36);
             this.button1.TabIndex = 48;
@@ -294,7 +295,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(10, 53);
+            this.textBox2.Location = new System.Drawing.Point(10, 58);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(202, 34);
             this.textBox2.TabIndex = 135;
@@ -304,7 +305,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(5, 25);
+            this.label9.Location = new System.Drawing.Point(5, 30);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(195, 25);
             this.label9.TabIndex = 28;
@@ -317,9 +318,9 @@
             this.groupBox5.Controls.Add(this.button3);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox5.Location = new System.Drawing.Point(488, 364);
+            this.groupBox5.Location = new System.Drawing.Point(519, 364);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(279, 294);
             this.groupBox5.TabIndex = 52;
@@ -385,9 +386,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox1.Location = new System.Drawing.Point(488, 49);
+            this.groupBox1.Location = new System.Drawing.Point(519, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(279, 294);
             this.groupBox1.TabIndex = 47;
@@ -399,7 +400,7 @@
             this.textBox10.Location = new System.Drawing.Point(19, 234);
             this.textBox10.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(200, 29);
+            this.textBox10.Size = new System.Drawing.Size(200, 34);
             this.textBox10.TabIndex = 142;
             // 
             // textBox9
@@ -407,7 +408,7 @@
             this.textBox9.Location = new System.Drawing.Point(19, 180);
             this.textBox9.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(200, 29);
+            this.textBox9.Size = new System.Drawing.Size(200, 34);
             this.textBox9.TabIndex = 141;
             // 
             // textBox8
@@ -415,7 +416,7 @@
             this.textBox8.Location = new System.Drawing.Point(19, 117);
             this.textBox8.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 29);
+            this.textBox8.Size = new System.Drawing.Size(200, 34);
             this.textBox8.TabIndex = 140;
             // 
             // textBox7
@@ -423,7 +424,7 @@
             this.textBox7.Location = new System.Drawing.Point(19, 60);
             this.textBox7.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(200, 29);
+            this.textBox7.Size = new System.Drawing.Size(200, 34);
             this.textBox7.TabIndex = 139;
             // 
             // groupBox2
@@ -449,15 +450,53 @@
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox2.Location = new System.Drawing.Point(7, 328);
+            this.groupBox2.Location = new System.Drawing.Point(8, 364);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(453, 339);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khách hàng";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(247, 48);
+            this.textBox11.MaximumSize = new System.Drawing.Size(203, 29);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(203, 34);
+            this.textBox11.TabIndex = 144;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(14, 51);
+            this.textBox12.MaximumSize = new System.Drawing.Size(203, 29);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(200, 34);
+            this.textBox12.TabIndex = 143;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label7.Location = new System.Drawing.Point(248, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 25);
+            this.label7.TabIndex = 141;
+            this.label7.Text = "Email";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label22.Location = new System.Drawing.Point(15, 27);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(142, 25);
+            this.label22.TabIndex = 139;
+            this.label22.Text = "Mã khách hàng";
             // 
             // kryptonDateTimePicker3
             // 
@@ -471,7 +510,7 @@
             this.textBox6.Location = new System.Drawing.Point(237, 168);
             this.textBox6.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(203, 29);
+            this.textBox6.Size = new System.Drawing.Size(203, 34);
             this.textBox6.TabIndex = 138;
             // 
             // textBox5
@@ -479,7 +518,7 @@
             this.textBox5.Location = new System.Drawing.Point(11, 301);
             this.textBox5.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 29);
+            this.textBox5.Size = new System.Drawing.Size(200, 34);
             this.textBox5.TabIndex = 137;
             // 
             // textBox4
@@ -487,7 +526,7 @@
             this.textBox4.Location = new System.Drawing.Point(13, 168);
             this.textBox4.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 29);
+            this.textBox4.Size = new System.Drawing.Size(200, 34);
             this.textBox4.TabIndex = 136;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -496,7 +535,7 @@
             this.textBox3.Location = new System.Drawing.Point(13, 110);
             this.textBox3.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 29);
+            this.textBox3.Size = new System.Drawing.Size(200, 34);
             this.textBox3.TabIndex = 136;
             // 
             // cbNationality
@@ -663,7 +702,7 @@
             this.groupBox4.Controls.Add(this.bindingSurcharge);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox4.Location = new System.Drawing.Point(798, 69);
+            this.groupBox4.Location = new System.Drawing.Point(830, 49);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(675, 544);
             this.groupBox4.TabIndex = 273;
@@ -871,49 +910,11 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(40, 22);
             this.toolStripLabel1.Text = "Xuất";
             // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(247, 48);
-            this.textBox11.MaximumSize = new System.Drawing.Size(203, 29);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(203, 29);
-            this.textBox11.TabIndex = 144;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(14, 51);
-            this.textBox12.MaximumSize = new System.Drawing.Size(203, 29);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(200, 29);
-            this.textBox12.TabIndex = 143;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(248, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 25);
-            this.label7.TabIndex = 141;
-            this.label7.Text = "Email";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label22.Location = new System.Drawing.Point(15, 27);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(142, 25);
-            this.label22.TabIndex = 139;
-            this.label22.Text = "Mã khách hàng";
-            // 
             // BookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1526, 679);
+            this.ClientSize = new System.Drawing.Size(1526, 739);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);

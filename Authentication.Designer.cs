@@ -236,7 +236,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LOẠI NV";
             // 
-            // authentication
+            // Authentication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,7 +250,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "authentication";
+            this.Name = "Authentication";
             this.Text = "Phân quyền";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

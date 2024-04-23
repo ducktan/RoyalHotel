@@ -126,9 +126,9 @@
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
             this.label2.Location = new System.Drawing.Point(25, 281);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 31);
+            this.label2.Size = new System.Drawing.Size(102, 31);
             this.label2.TabIndex = 272;
-            this.label2.Text = "TƯ CÁCH";
+            this.label2.Text = "VAI TRÒ";
             // 
             // comboBox1
             // 
