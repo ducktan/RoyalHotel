@@ -11,6 +11,7 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using Firebase.Auth.Providers;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Royal.DAO
@@ -74,9 +75,17 @@ namespace Royal.DAO
             }
         }
 
-        public void ForgotPass()
+        public async Task ForgotPass(string email)
         {
-
+            try
+            {
+                await client.ResetEmailPasswordAsync(email);
+                MessageBox.Show("Reset password email sent successfully. Please check your email to complete the process.", "Password Reset", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (FirebaseAuthException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
