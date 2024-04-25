@@ -164,10 +164,8 @@ C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\FireSharp.dll
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Api.Gax.dll
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.dll
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.Auth.dll
-C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.Auth.PlatformServices.dll
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.Core.dll
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.dll
-C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.PlatformServices.dll
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\MetroFramework.Design.dll
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\MetroFramework.dll
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\MetroFramework.Fonts.dll
@@ -322,3 +320,8 @@ E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileInputs.cache
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.exe
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.CodeDom.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.CodeDom.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.SuggestedBindingRedirects.cache
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.exe.config
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Admin.resources
