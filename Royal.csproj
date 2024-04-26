@@ -172,8 +172,8 @@
     <Compile Include="CustomerType.Designer.cs">
       <DependentUpon>CustomerType.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAO\Admin.cs" />
     <Compile Include="DAO\Authen.cs" />
+    <Compile Include="DAO\CheckPass.cs" />
     <Compile Include="DAO\Report.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>

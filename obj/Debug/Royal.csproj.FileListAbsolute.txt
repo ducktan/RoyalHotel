@@ -246,10 +246,8 @@ E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\FireSharp.dll
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Api.Gax.dll
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.dll
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.Auth.dll
-E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.Auth.PlatformServices.dll
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.Core.dll
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.dll
-E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.PlatformServices.dll
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\MetroFramework.Design.dll
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\MetroFramework.dll
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\MetroFramework.Fonts.dll
@@ -325,3 +323,8 @@ C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.CodeDom.xml
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.SuggestedBindingRedirects.cache
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.exe.config
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Admin.resources
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.CodeDom.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.CodeDom.xml
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.SuggestedBindingRedirects.cache
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.exe.config
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Admin.resources

@@ -88,6 +88,26 @@ namespace Royal.DAO
             }
         }
 
+        public async Task<UserCredential> Signup(string email, string password)
+        {
+            try
+            {
+                
+                UserCredential credential = await client.CreateUserWithEmailAndPasswordAsync(email, password);
+                // Thực hiện việc đăng ký tài khoản người dùng mới
+
+                return credential;
+
+            }
+            catch (FirebaseAuthException ex)
+            {
+                MessageBox.Show(ex.Message, "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+
+        }
+
 
 
     }
