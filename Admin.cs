@@ -109,6 +109,10 @@ namespace Royal
             return Regex.IsMatch(email, pattern);
         }
 
-
+        private void Parameter_button_Click(object sender, EventArgs e)
+        {
+            Parameter p = new Parameter();
+            p.Show();
+        }
     }
 }

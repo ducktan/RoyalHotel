@@ -208,7 +208,6 @@ C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Net.Http.Primitive
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.App.config
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.AssemblyReference.cache
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.AboutUs.resources
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Authentication.resources
@@ -328,3 +327,7 @@ E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.CodeDom.xml
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.SuggestedBindingRedirects.cache
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.exe.config
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Admin.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.ValueTuple.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.ValueTuple.xml

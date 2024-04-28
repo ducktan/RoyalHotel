@@ -66,26 +66,26 @@
             this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.kryptonRichTextBox9 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.khachhang = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.kryptonRichTextBox7 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox8 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.date = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.total = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.kryptonRichTextBox5 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox6 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.nhanvien = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.discount = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.kryptonRichTextBox4 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox3 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.maphong = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.giaDon = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.kryptonRichTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.status = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mahoadon = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
@@ -458,26 +458,27 @@
             this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton3.TabIndex = 67;
             this.kryptonButton3.Values.Text = "Thêm";
+            this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox9);
+            this.groupBox2.Controls.Add(this.mahoadon);
+            this.groupBox2.Controls.Add(this.khachhang);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox7);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox8);
+            this.groupBox2.Controls.Add(this.date);
+            this.groupBox2.Controls.Add(this.total);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox5);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox6);
+            this.groupBox2.Controls.Add(this.nhanvien);
+            this.groupBox2.Controls.Add(this.discount);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox4);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox3);
+            this.groupBox2.Controls.Add(this.maphong);
+            this.groupBox2.Controls.Add(this.giaDon);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox1);
+            this.groupBox2.Controls.Add(this.status);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
@@ -487,15 +488,14 @@
             this.groupBox2.TabIndex = 126;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN HOÁ ĐƠN";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // kryptonRichTextBox9
+            // khachhang
             // 
-            this.kryptonRichTextBox9.Location = new System.Drawing.Point(234, 343);
-            this.kryptonRichTextBox9.Name = "kryptonRichTextBox9";
-            this.kryptonRichTextBox9.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox9.TabIndex = 67;
-            this.kryptonRichTextBox9.Text = "";
+            this.khachhang.Location = new System.Drawing.Point(234, 343);
+            this.khachhang.Name = "khachhang";
+            this.khachhang.Size = new System.Drawing.Size(206, 25);
+            this.khachhang.TabIndex = 67;
+            this.khachhang.Text = "";
             // 
             // label1
             // 
@@ -508,21 +508,21 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "Mã khách hàng";
             // 
-            // kryptonRichTextBox7
+            // date
             // 
-            this.kryptonRichTextBox7.Location = new System.Drawing.Point(12, 292);
-            this.kryptonRichTextBox7.Name = "kryptonRichTextBox7";
-            this.kryptonRichTextBox7.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox7.TabIndex = 65;
-            this.kryptonRichTextBox7.Text = "";
+            this.date.Location = new System.Drawing.Point(12, 292);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(206, 25);
+            this.date.TabIndex = 65;
+            this.date.Text = "";
             // 
-            // kryptonRichTextBox8
+            // total
             // 
-            this.kryptonRichTextBox8.Location = new System.Drawing.Point(234, 292);
-            this.kryptonRichTextBox8.Name = "kryptonRichTextBox8";
-            this.kryptonRichTextBox8.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox8.TabIndex = 64;
-            this.kryptonRichTextBox8.Text = "";
+            this.total.Location = new System.Drawing.Point(234, 292);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(206, 25);
+            this.total.TabIndex = 64;
+            this.total.Text = "";
             // 
             // label9
             // 
@@ -546,21 +546,21 @@
             this.label10.TabIndex = 62;
             this.label10.Text = "Ngày tạo:";
             // 
-            // kryptonRichTextBox5
+            // nhanvien
             // 
-            this.kryptonRichTextBox5.Location = new System.Drawing.Point(12, 214);
-            this.kryptonRichTextBox5.Name = "kryptonRichTextBox5";
-            this.kryptonRichTextBox5.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox5.TabIndex = 61;
-            this.kryptonRichTextBox5.Text = "";
+            this.nhanvien.Location = new System.Drawing.Point(12, 214);
+            this.nhanvien.Name = "nhanvien";
+            this.nhanvien.Size = new System.Drawing.Size(206, 25);
+            this.nhanvien.TabIndex = 61;
+            this.nhanvien.Text = "";
             // 
-            // kryptonRichTextBox6
+            // discount
             // 
-            this.kryptonRichTextBox6.Location = new System.Drawing.Point(234, 214);
-            this.kryptonRichTextBox6.Name = "kryptonRichTextBox6";
-            this.kryptonRichTextBox6.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox6.TabIndex = 60;
-            this.kryptonRichTextBox6.Text = "";
+            this.discount.Location = new System.Drawing.Point(234, 214);
+            this.discount.Name = "discount";
+            this.discount.Size = new System.Drawing.Size(206, 25);
+            this.discount.TabIndex = 60;
+            this.discount.Text = "";
             // 
             // label7
             // 
@@ -584,21 +584,21 @@
             this.label8.TabIndex = 58;
             this.label8.Text = "Nhân viên tạo:";
             // 
-            // kryptonRichTextBox4
+            // maphong
             // 
-            this.kryptonRichTextBox4.Location = new System.Drawing.Point(12, 136);
-            this.kryptonRichTextBox4.Name = "kryptonRichTextBox4";
-            this.kryptonRichTextBox4.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox4.TabIndex = 57;
-            this.kryptonRichTextBox4.Text = "";
+            this.maphong.Location = new System.Drawing.Point(12, 136);
+            this.maphong.Name = "maphong";
+            this.maphong.Size = new System.Drawing.Size(206, 25);
+            this.maphong.TabIndex = 57;
+            this.maphong.Text = "";
             // 
-            // kryptonRichTextBox3
+            // giaDon
             // 
-            this.kryptonRichTextBox3.Location = new System.Drawing.Point(234, 136);
-            this.kryptonRichTextBox3.Name = "kryptonRichTextBox3";
-            this.kryptonRichTextBox3.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox3.TabIndex = 56;
-            this.kryptonRichTextBox3.Text = "";
+            this.giaDon.Location = new System.Drawing.Point(234, 136);
+            this.giaDon.Name = "giaDon";
+            this.giaDon.Size = new System.Drawing.Size(206, 25);
+            this.giaDon.TabIndex = 56;
+            this.giaDon.Text = "";
             // 
             // label5
             // 
@@ -622,13 +622,13 @@
             this.label6.TabIndex = 53;
             this.label6.Text = "Mã phòng:";
             // 
-            // kryptonRichTextBox1
+            // status
             // 
-            this.kryptonRichTextBox1.Location = new System.Drawing.Point(234, 62);
-            this.kryptonRichTextBox1.Name = "kryptonRichTextBox1";
-            this.kryptonRichTextBox1.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox1.TabIndex = 52;
-            this.kryptonRichTextBox1.Text = "";
+            this.status.Location = new System.Drawing.Point(234, 62);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(206, 25);
+            this.status.TabIndex = 52;
+            this.status.Text = "";
             // 
             // label4
             // 
@@ -640,14 +640,6 @@
             this.label4.Size = new System.Drawing.Size(107, 28);
             this.label4.TabIndex = 51;
             this.label4.Text = "Trạng thái:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 62);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(201, 33);
-            this.comboBox2.TabIndex = 50;
             // 
             // label3
             // 
@@ -687,6 +679,14 @@
             this.groupBox1.TabIndex = 125;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản lý hóa đơn";
+            // 
+            // mahoadon
+            // 
+            this.mahoadon.Location = new System.Drawing.Point(10, 62);
+            this.mahoadon.Name = "mahoadon";
+            this.mahoadon.Size = new System.Drawing.Size(206, 25);
+            this.mahoadon.TabIndex = 68;
+            this.mahoadon.Text = "";
             // 
             // Bill
             // 
@@ -737,21 +737,20 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton4;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox7;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox8;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox date;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox total;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox5;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox6;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox nhanvien;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox discount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox4;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox3;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox maphong;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox giaDon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox status;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -764,9 +763,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Giamgia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox9;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox khachhang;
         private System.Windows.Forms.Label label1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton6;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox mahoadon;
     }
 }
