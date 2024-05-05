@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomer));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -63,21 +63,21 @@
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.kryptonRichTextBox7 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.Email = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.kryptonRichTextBox3 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.kryptonDateTimePicker2 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.kryptonRichTextBox6 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox5 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.QuocTich = new MetroFramework.Controls.MetroComboBox();
+            this.Ngsinh = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.sdt = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.diaChi = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.cccd = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.hoTen = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBoxCustomerType = new MetroFramework.Controls.MetroComboBox();
+            this.LoaiKH = new MetroFramework.Controls.MetroComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBoxSex = new MetroFramework.Controls.MetroComboBox();
+            this.GT = new MetroFramework.Controls.MetroComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -233,14 +233,14 @@
             this.dataGridStaff.AllowUserToResizeRows = false;
             this.dataGridStaff.BackgroundColor = System.Drawing.Color.White;
             this.dataGridStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridStaff.ColumnHeadersHeight = 40;
             this.dataGridStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -253,26 +253,26 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridStaff.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridStaff.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridStaff.GridColor = System.Drawing.Color.White;
             this.dataGridStaff.Location = new System.Drawing.Point(3, 73);
             this.dataGridStaff.Name = "dataGridStaff";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridStaff.RowHeadersVisible = false;
             this.dataGridStaff.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridStaff.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -390,6 +390,7 @@
             this.kryptonButton1.Size = new System.Drawing.Size(212, 40);
             this.kryptonButton1.TabIndex = 135;
             this.kryptonButton1.Values.Text = "Thêm khách hàng";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // kryptonButton3
             // 
@@ -411,21 +412,21 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox7);
+            this.groupBox2.Controls.Add(this.Email);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.kryptonRichTextBox3);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.metroComboBox1);
-            this.groupBox2.Controls.Add(this.kryptonDateTimePicker2);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox6);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox5);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox2);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox1);
+            this.groupBox2.Controls.Add(this.QuocTich);
+            this.groupBox2.Controls.Add(this.Ngsinh);
+            this.groupBox2.Controls.Add(this.sdt);
+            this.groupBox2.Controls.Add(this.diaChi);
+            this.groupBox2.Controls.Add(this.cccd);
+            this.groupBox2.Controls.Add(this.hoTen);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.comboBoxCustomerType);
+            this.groupBox2.Controls.Add(this.LoaiKH);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.comboBoxSex);
+            this.groupBox2.Controls.Add(this.GT);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label14);
@@ -443,14 +444,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khách hàng";
             // 
-            // kryptonRichTextBox7
+            // Email
             // 
-            this.kryptonRichTextBox7.Location = new System.Drawing.Point(279, 364);
-            this.kryptonRichTextBox7.Name = "kryptonRichTextBox7";
-            this.kryptonRichTextBox7.Size = new System.Drawing.Size(212, 37);
-            this.kryptonRichTextBox7.TabIndex = 136;
-            this.kryptonRichTextBox7.Text = "";
-            this.kryptonRichTextBox7.WordWrap = false;
+            this.Email.Location = new System.Drawing.Point(279, 364);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(212, 37);
+            this.Email.TabIndex = 136;
+            this.Email.Text = "";
+            this.Email.WordWrap = false;
             // 
             // label2
             // 
@@ -485,66 +486,71 @@
             this.label1.TabIndex = 133;
             this.label1.Text = "Mã khách hàng:";
             // 
-            // metroComboBox1
+            // QuocTich
             // 
-            this.metroComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.metroComboBox1.Location = new System.Drawing.Point(284, 298);
-            this.metroComboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(207, 30);
-            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroComboBox1.TabIndex = 132;
-            this.metroComboBox1.UseSelectable = true;
+            this.QuocTich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.QuocTich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuocTich.FormattingEnabled = true;
+            this.QuocTich.ItemHeight = 24;
+            this.QuocTich.Items.AddRange(new object[] {
+            "Việt Nam",
+            "Lào",
+            "Campuchia",
+            "Mỹ",
+            "Anh",
+            "Pháp",
+            "Canada"});
+            this.QuocTich.Location = new System.Drawing.Point(284, 298);
+            this.QuocTich.Margin = new System.Windows.Forms.Padding(4);
+            this.QuocTich.Name = "QuocTich";
+            this.QuocTich.Size = new System.Drawing.Size(207, 30);
+            this.QuocTich.Style = MetroFramework.MetroColorStyle.Green;
+            this.QuocTich.TabIndex = 132;
+            this.QuocTich.UseSelectable = true;
             // 
-            // kryptonDateTimePicker2
+            // Ngsinh
             // 
-            this.kryptonDateTimePicker2.Location = new System.Drawing.Point(282, 75);
-            this.kryptonDateTimePicker2.Name = "kryptonDateTimePicker2";
-            this.kryptonDateTimePicker2.Size = new System.Drawing.Size(207, 25);
-            this.kryptonDateTimePicker2.TabIndex = 131;
+            this.Ngsinh.Location = new System.Drawing.Point(282, 75);
+            this.Ngsinh.Name = "Ngsinh";
+            this.Ngsinh.Size = new System.Drawing.Size(207, 25);
+            this.Ngsinh.TabIndex = 131;
             // 
-            // kryptonRichTextBox6
+            // sdt
             // 
-            this.kryptonRichTextBox6.Location = new System.Drawing.Point(7, 364);
-            this.kryptonRichTextBox6.Name = "kryptonRichTextBox6";
-            this.kryptonRichTextBox6.Size = new System.Drawing.Size(212, 37);
-            this.kryptonRichTextBox6.TabIndex = 129;
-            this.kryptonRichTextBox6.Text = "";
-            this.kryptonRichTextBox6.WordWrap = false;
+            this.sdt.Location = new System.Drawing.Point(7, 364);
+            this.sdt.Name = "sdt";
+            this.sdt.Size = new System.Drawing.Size(212, 37);
+            this.sdt.TabIndex = 129;
+            this.sdt.Text = "";
+            this.sdt.WordWrap = false;
             // 
-            // kryptonRichTextBox5
+            // diaChi
             // 
-            this.kryptonRichTextBox5.Location = new System.Drawing.Point(284, 141);
-            this.kryptonRichTextBox5.Name = "kryptonRichTextBox5";
-            this.kryptonRichTextBox5.Size = new System.Drawing.Size(207, 37);
-            this.kryptonRichTextBox5.TabIndex = 128;
-            this.kryptonRichTextBox5.Text = "";
-            this.kryptonRichTextBox5.WordWrap = false;
+            this.diaChi.Location = new System.Drawing.Point(284, 141);
+            this.diaChi.Name = "diaChi";
+            this.diaChi.Size = new System.Drawing.Size(207, 37);
+            this.diaChi.TabIndex = 128;
+            this.diaChi.Text = "";
+            this.diaChi.WordWrap = false;
             // 
-            // kryptonRichTextBox2
+            // cccd
             // 
-            this.kryptonRichTextBox2.Location = new System.Drawing.Point(13, 227);
-            this.kryptonRichTextBox2.Name = "kryptonRichTextBox2";
-            this.kryptonRichTextBox2.Size = new System.Drawing.Size(212, 37);
-            this.kryptonRichTextBox2.TabIndex = 125;
-            this.kryptonRichTextBox2.Text = "";
-            this.kryptonRichTextBox2.WordWrap = false;
-            this.kryptonRichTextBox2.TextChanged += new System.EventHandler(this.kryptonRichTextBox2_TextChanged);
+            this.cccd.Location = new System.Drawing.Point(13, 227);
+            this.cccd.Name = "cccd";
+            this.cccd.Size = new System.Drawing.Size(212, 37);
+            this.cccd.TabIndex = 125;
+            this.cccd.Text = "";
+            this.cccd.WordWrap = false;
+            this.cccd.TextChanged += new System.EventHandler(this.kryptonRichTextBox2_TextChanged);
             // 
-            // kryptonRichTextBox1
+            // hoTen
             // 
-            this.kryptonRichTextBox1.Location = new System.Drawing.Point(13, 149);
-            this.kryptonRichTextBox1.Name = "kryptonRichTextBox1";
-            this.kryptonRichTextBox1.Size = new System.Drawing.Size(212, 37);
-            this.kryptonRichTextBox1.TabIndex = 124;
-            this.kryptonRichTextBox1.Text = "";
-            this.kryptonRichTextBox1.WordWrap = false;
+            this.hoTen.Location = new System.Drawing.Point(13, 149);
+            this.hoTen.Name = "hoTen";
+            this.hoTen.Size = new System.Drawing.Size(212, 37);
+            this.hoTen.TabIndex = 124;
+            this.hoTen.Text = "";
+            this.hoTen.WordWrap = false;
             // 
             // label6
             // 
@@ -558,19 +564,25 @@
             this.label6.TabIndex = 46;
             this.label6.Text = "Ngày sinh:";
             // 
-            // comboBoxCustomerType
+            // LoaiKH
             // 
-            this.comboBoxCustomerType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBoxCustomerType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxCustomerType.FormattingEnabled = true;
-            this.comboBoxCustomerType.ItemHeight = 24;
-            this.comboBoxCustomerType.Location = new System.Drawing.Point(10, 297);
-            this.comboBoxCustomerType.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxCustomerType.Name = "comboBoxCustomerType";
-            this.comboBoxCustomerType.Size = new System.Drawing.Size(212, 30);
-            this.comboBoxCustomerType.TabIndex = 2;
-            this.comboBoxCustomerType.UseSelectable = true;
-            this.comboBoxCustomerType.SelectedIndexChanged += new System.EventHandler(this.comboBoxCustomerType_SelectedIndexChanged);
+            this.LoaiKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.LoaiKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoaiKH.FormattingEnabled = true;
+            this.LoaiKH.ItemHeight = 24;
+            this.LoaiKH.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.LoaiKH.Location = new System.Drawing.Point(10, 297);
+            this.LoaiKH.Margin = new System.Windows.Forms.Padding(4);
+            this.LoaiKH.Name = "LoaiKH";
+            this.LoaiKH.Size = new System.Drawing.Size(212, 30);
+            this.LoaiKH.TabIndex = 2;
+            this.LoaiKH.UseSelectable = true;
+            this.LoaiKH.SelectedIndexChanged += new System.EventHandler(this.comboBoxCustomerType_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -596,22 +608,22 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Địa chỉ:";
             // 
-            // comboBoxSex
+            // GT
             // 
-            this.comboBoxSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBoxSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxSex.FormattingEnabled = true;
-            this.comboBoxSex.ItemHeight = 24;
-            this.comboBoxSex.Items.AddRange(new object[] {
+            this.GT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.GT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GT.FormattingEnabled = true;
+            this.GT.ItemHeight = 24;
+            this.GT.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBoxSex.Location = new System.Drawing.Point(284, 227);
-            this.comboBoxSex.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxSex.Name = "comboBoxSex";
-            this.comboBoxSex.Size = new System.Drawing.Size(207, 30);
-            this.comboBoxSex.Style = MetroFramework.MetroColorStyle.Green;
-            this.comboBoxSex.TabIndex = 5;
-            this.comboBoxSex.UseSelectable = true;
+            this.GT.Location = new System.Drawing.Point(284, 227);
+            this.GT.Margin = new System.Windows.Forms.Padding(4);
+            this.GT.Name = "GT";
+            this.GT.Size = new System.Drawing.Size(207, 30);
+            this.GT.Style = MetroFramework.MetroColorStyle.Green;
+            this.GT.TabIndex = 5;
+            this.GT.UseSelectable = true;
             // 
             // label12
             // 
@@ -769,17 +781,17 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker2;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox6;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox5;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox2;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox1;
+        private MetroFramework.Controls.MetroComboBox QuocTich;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker Ngsinh;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox sdt;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox diaChi;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox cccd;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox hoTen;
         private System.Windows.Forms.Label label6;
-        private MetroFramework.Controls.MetroComboBox comboBoxCustomerType;
+        private MetroFramework.Controls.MetroComboBox LoaiKH;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label11;
-        private MetroFramework.Controls.MetroComboBox comboBoxSex;
+        private MetroFramework.Controls.MetroComboBox GT;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -791,7 +803,7 @@
         private System.Windows.Forms.Label label9;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox3;
         private System.Windows.Forms.Label label1;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox7;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox Email;
         private System.Windows.Forms.Label label2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

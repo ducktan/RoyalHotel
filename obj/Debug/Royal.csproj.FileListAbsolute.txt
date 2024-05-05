@@ -301,8 +301,6 @@ C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Runtime.CompilerSe
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.ValueTuple.xml
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.AssemblyReference.cache
-C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.SuggestedBindingRedirects.cache
-C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.exe.config
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.AboutUs.resources
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Admin.resources
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Authentication.resources
@@ -330,3 +328,9 @@ C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileI
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.exe
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Firebase.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\LiteDB.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Reactive.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Firebase.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\LiteDB.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Reactive.xml
