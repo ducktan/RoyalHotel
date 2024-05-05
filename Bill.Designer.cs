@@ -35,16 +35,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bill));
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.dataGridStaff = new System.Windows.Forms.DataGridView();
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NVTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaytao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Giamgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridBill = new System.Windows.Forms.DataGridView();
             this.kryptonRichTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -66,27 +57,37 @@
             this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.kryptonRichTextBox9 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.status = new System.Windows.Forms.ComboBox();
+            this.date = new MetroFramework.Controls.MetroDateTime();
+            this.mahoadon = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.khachhang = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.kryptonRichTextBox7 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox8 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.total = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.kryptonRichTextBox5 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox6 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.nhanvien = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.discount = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.kryptonRichTextBox4 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox3 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.maphong = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.giaDon = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.kryptonRichTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NVTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaytao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Giamgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -123,12 +124,12 @@
             this.kryptonButton1.TabIndex = 46;
             this.kryptonButton1.Values.Text = "SEARCH";
             // 
-            // dataGridStaff
+            // dataGridBill
             // 
-            this.dataGridStaff.AllowUserToOrderColumns = true;
-            this.dataGridStaff.AllowUserToResizeRows = false;
-            this.dataGridStaff.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridBill.AllowUserToOrderColumns = true;
+            this.dataGridBill.AllowUserToResizeRows = false;
+            this.dataGridBill.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -136,17 +137,17 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridStaff.ColumnHeadersHeight = 40;
-            this.dataGridStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridBill.ColumnHeadersHeight = 40;
+            this.dataGridBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHD,
             this.TenPhong,
             this.TrangThai,
             this.TenKH,
             this.NVTao,
             this.Ngaytao,
-            this.DonGia,
+            this.Dongia,
             this.Giamgia,
             this.Thanhtien});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -156,11 +157,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridStaff.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridStaff.GridColor = System.Drawing.Color.White;
-            this.dataGridStaff.Location = new System.Drawing.Point(3, 73);
-            this.dataGridStaff.Name = "dataGridStaff";
+            this.dataGridBill.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridBill.GridColor = System.Drawing.Color.White;
+            this.dataGridBill.Location = new System.Drawing.Point(3, 73);
+            this.dataGridBill.Name = "dataGridBill";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -168,78 +169,15 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridStaff.RowHeadersVisible = false;
-            this.dataGridStaff.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridStaff.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridStaff.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridStaff.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridStaff.Size = new System.Drawing.Size(1010, 604);
-            this.dataGridStaff.TabIndex = 28;
-            // 
-            // MaHD
-            // 
-            this.MaHD.HeaderText = "Mã hoá đơn";
-            this.MaHD.MinimumWidth = 6;
-            this.MaHD.Name = "MaHD";
-            this.MaHD.Width = 125;
-            // 
-            // TenPhong
-            // 
-            this.TenPhong.HeaderText = "Mã phòng";
-            this.TenPhong.MinimumWidth = 6;
-            this.TenPhong.Name = "TenPhong";
-            this.TenPhong.Width = 125;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.HeaderText = "Trạng Thái";
-            this.TrangThai.MinimumWidth = 6;
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.Width = 125;
-            // 
-            // TenKH
-            // 
-            this.TenKH.HeaderText = "Tên khách hàng";
-            this.TenKH.MinimumWidth = 6;
-            this.TenKH.Name = "TenKH";
-            this.TenKH.Width = 125;
-            // 
-            // NVTao
-            // 
-            this.NVTao.HeaderText = "Nhân viên tạo";
-            this.NVTao.MinimumWidth = 6;
-            this.NVTao.Name = "NVTao";
-            this.NVTao.Width = 125;
-            // 
-            // Ngaytao
-            // 
-            this.Ngaytao.HeaderText = "Ngày tạo";
-            this.Ngaytao.MinimumWidth = 6;
-            this.Ngaytao.Name = "Ngaytao";
-            this.Ngaytao.Width = 125;
-            // 
-            // DonGia
-            // 
-            this.DonGia.HeaderText = "Đơn giá";
-            this.DonGia.MinimumWidth = 6;
-            this.DonGia.Name = "DonGia";
-            this.DonGia.Width = 125;
-            // 
-            // Giamgia
-            // 
-            this.Giamgia.HeaderText = "Giảm giá";
-            this.Giamgia.MinimumWidth = 6;
-            this.Giamgia.Name = "Giamgia";
-            this.Giamgia.Width = 125;
-            // 
-            // Thanhtien
-            // 
-            this.Thanhtien.HeaderText = "Thành tiền";
-            this.Thanhtien.MinimumWidth = 6;
-            this.Thanhtien.Name = "Thanhtien";
-            this.Thanhtien.Width = 125;
+            this.dataGridBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridBill.RowHeadersVisible = false;
+            this.dataGridBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridBill.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridBill.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridBill.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataGridBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridBill.Size = new System.Drawing.Size(1010, 604);
+            this.dataGridBill.TabIndex = 28;
             // 
             // kryptonRichTextBox2
             // 
@@ -369,7 +307,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridStaff);
+            this.groupBox4.Controls.Add(this.dataGridBill);
             this.groupBox4.Controls.Add(this.bindingStaff);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox4.ForeColor = System.Drawing.Color.SteelBlue;
@@ -378,11 +316,20 @@
             this.groupBox4.Size = new System.Drawing.Size(1016, 680);
             this.groupBox4.TabIndex = 128;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Danh Sách Nhân Viên";
+            this.groupBox4.Text = "Danh sách Hoá đơn";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "MAHD",
+            "ID_NV",
+            "ID_KH",
+            "NGLAP",
+            "TRANGTHAI",
+            "DONGIA",
+            "SLDICHVU"});
             this.comboBox1.Location = new System.Drawing.Point(10, 61);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 31);
@@ -430,6 +377,7 @@
             this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton5.TabIndex = 69;
             this.kryptonButton5.Values.Text = "Xóa";
+            this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
             // 
             // kryptonButton4
             // 
@@ -444,6 +392,7 @@
             this.kryptonButton4.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton4.TabIndex = 68;
             this.kryptonButton4.Values.Text = "Sửa";
+            this.kryptonButton4.Click += new System.EventHandler(this.kryptonButton4_Click);
             // 
             // kryptonButton3
             // 
@@ -458,26 +407,27 @@
             this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton3.TabIndex = 67;
             this.kryptonButton3.Values.Text = "Thêm";
+            this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox9);
+            this.groupBox2.Controls.Add(this.status);
+            this.groupBox2.Controls.Add(this.date);
+            this.groupBox2.Controls.Add(this.mahoadon);
+            this.groupBox2.Controls.Add(this.khachhang);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox7);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox8);
+            this.groupBox2.Controls.Add(this.total);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox5);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox6);
+            this.groupBox2.Controls.Add(this.nhanvien);
+            this.groupBox2.Controls.Add(this.discount);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox4);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox3);
+            this.groupBox2.Controls.Add(this.maphong);
+            this.groupBox2.Controls.Add(this.giaDon);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox1);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
@@ -487,15 +437,43 @@
             this.groupBox2.TabIndex = 126;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN HOÁ ĐƠN";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // kryptonRichTextBox9
+            // status
             // 
-            this.kryptonRichTextBox9.Location = new System.Drawing.Point(234, 343);
-            this.kryptonRichTextBox9.Name = "kryptonRichTextBox9";
-            this.kryptonRichTextBox9.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox9.TabIndex = 67;
-            this.kryptonRichTextBox9.Text = "";
+            this.status.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.FormattingEnabled = true;
+            this.status.IntegralHeight = false;
+            this.status.Items.AddRange(new object[] {
+            "Đã thanh toán",
+            "Chưa thanh toán"});
+            this.status.Location = new System.Drawing.Point(239, 62);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(201, 33);
+            this.status.TabIndex = 70;
+            // 
+            // date
+            // 
+            this.date.Location = new System.Drawing.Point(12, 286);
+            this.date.MinimumSize = new System.Drawing.Size(0, 30);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(204, 31);
+            this.date.TabIndex = 69;
+            // 
+            // mahoadon
+            // 
+            this.mahoadon.Location = new System.Drawing.Point(10, 62);
+            this.mahoadon.Name = "mahoadon";
+            this.mahoadon.Size = new System.Drawing.Size(206, 25);
+            this.mahoadon.TabIndex = 68;
+            this.mahoadon.Text = "";
+            // 
+            // khachhang
+            // 
+            this.khachhang.Location = new System.Drawing.Point(234, 343);
+            this.khachhang.Name = "khachhang";
+            this.khachhang.Size = new System.Drawing.Size(206, 25);
+            this.khachhang.TabIndex = 67;
+            this.khachhang.Text = "";
             // 
             // label1
             // 
@@ -508,21 +486,13 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "Mã khách hàng";
             // 
-            // kryptonRichTextBox7
+            // total
             // 
-            this.kryptonRichTextBox7.Location = new System.Drawing.Point(12, 292);
-            this.kryptonRichTextBox7.Name = "kryptonRichTextBox7";
-            this.kryptonRichTextBox7.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox7.TabIndex = 65;
-            this.kryptonRichTextBox7.Text = "";
-            // 
-            // kryptonRichTextBox8
-            // 
-            this.kryptonRichTextBox8.Location = new System.Drawing.Point(234, 292);
-            this.kryptonRichTextBox8.Name = "kryptonRichTextBox8";
-            this.kryptonRichTextBox8.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox8.TabIndex = 64;
-            this.kryptonRichTextBox8.Text = "";
+            this.total.Location = new System.Drawing.Point(234, 292);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(206, 25);
+            this.total.TabIndex = 64;
+            this.total.Text = "";
             // 
             // label9
             // 
@@ -546,21 +516,21 @@
             this.label10.TabIndex = 62;
             this.label10.Text = "Ngày tạo:";
             // 
-            // kryptonRichTextBox5
+            // nhanvien
             // 
-            this.kryptonRichTextBox5.Location = new System.Drawing.Point(12, 214);
-            this.kryptonRichTextBox5.Name = "kryptonRichTextBox5";
-            this.kryptonRichTextBox5.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox5.TabIndex = 61;
-            this.kryptonRichTextBox5.Text = "";
+            this.nhanvien.Location = new System.Drawing.Point(12, 214);
+            this.nhanvien.Name = "nhanvien";
+            this.nhanvien.Size = new System.Drawing.Size(206, 25);
+            this.nhanvien.TabIndex = 61;
+            this.nhanvien.Text = "";
             // 
-            // kryptonRichTextBox6
+            // discount
             // 
-            this.kryptonRichTextBox6.Location = new System.Drawing.Point(234, 214);
-            this.kryptonRichTextBox6.Name = "kryptonRichTextBox6";
-            this.kryptonRichTextBox6.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox6.TabIndex = 60;
-            this.kryptonRichTextBox6.Text = "";
+            this.discount.Location = new System.Drawing.Point(234, 214);
+            this.discount.Name = "discount";
+            this.discount.Size = new System.Drawing.Size(206, 25);
+            this.discount.TabIndex = 60;
+            this.discount.Text = "";
             // 
             // label7
             // 
@@ -584,21 +554,21 @@
             this.label8.TabIndex = 58;
             this.label8.Text = "Nhân viên tạo:";
             // 
-            // kryptonRichTextBox4
+            // maphong
             // 
-            this.kryptonRichTextBox4.Location = new System.Drawing.Point(12, 136);
-            this.kryptonRichTextBox4.Name = "kryptonRichTextBox4";
-            this.kryptonRichTextBox4.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox4.TabIndex = 57;
-            this.kryptonRichTextBox4.Text = "";
+            this.maphong.Location = new System.Drawing.Point(12, 136);
+            this.maphong.Name = "maphong";
+            this.maphong.Size = new System.Drawing.Size(206, 25);
+            this.maphong.TabIndex = 57;
+            this.maphong.Text = "";
             // 
-            // kryptonRichTextBox3
+            // giaDon
             // 
-            this.kryptonRichTextBox3.Location = new System.Drawing.Point(234, 136);
-            this.kryptonRichTextBox3.Name = "kryptonRichTextBox3";
-            this.kryptonRichTextBox3.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox3.TabIndex = 56;
-            this.kryptonRichTextBox3.Text = "";
+            this.giaDon.Location = new System.Drawing.Point(234, 136);
+            this.giaDon.Name = "giaDon";
+            this.giaDon.Size = new System.Drawing.Size(206, 25);
+            this.giaDon.TabIndex = 56;
+            this.giaDon.Text = "";
             // 
             // label5
             // 
@@ -622,14 +592,6 @@
             this.label6.TabIndex = 53;
             this.label6.Text = "Mã phòng:";
             // 
-            // kryptonRichTextBox1
-            // 
-            this.kryptonRichTextBox1.Location = new System.Drawing.Point(234, 62);
-            this.kryptonRichTextBox1.Name = "kryptonRichTextBox1";
-            this.kryptonRichTextBox1.Size = new System.Drawing.Size(206, 25);
-            this.kryptonRichTextBox1.TabIndex = 52;
-            this.kryptonRichTextBox1.Text = "";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -640,14 +602,6 @@
             this.label4.Size = new System.Drawing.Size(107, 28);
             this.label4.TabIndex = 51;
             this.label4.Text = "Trạng thái:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 62);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(201, 33);
-            this.comboBox2.TabIndex = 50;
             // 
             // label3
             // 
@@ -678,7 +632,6 @@
             this.groupBox1.Controls.Add(this.kryptonRichTextBox2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
             this.groupBox1.Location = new System.Drawing.Point(16, 12);
@@ -688,18 +641,92 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản lý hóa đơn";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(519, 702);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 34);
+            this.button1.TabIndex = 71;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // MaHD
+            // 
+            this.MaHD.HeaderText = "Mã hoá đơn";
+            this.MaHD.MinimumWidth = 6;
+            this.MaHD.Name = "MaHD";
+            this.MaHD.Width = 125;
+            // 
+            // TenPhong
+            // 
+            this.TenPhong.HeaderText = "Mã phòng";
+            this.TenPhong.MinimumWidth = 6;
+            this.TenPhong.Name = "TenPhong";
+            this.TenPhong.Width = 125;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.Width = 125;
+            // 
+            // TenKH
+            // 
+            this.TenKH.HeaderText = "Tên khách hàng";
+            this.TenKH.MinimumWidth = 6;
+            this.TenKH.Name = "TenKH";
+            this.TenKH.Width = 125;
+            // 
+            // NVTao
+            // 
+            this.NVTao.HeaderText = "Nhân viên tạo";
+            this.NVTao.MinimumWidth = 6;
+            this.NVTao.Name = "NVTao";
+            this.NVTao.Width = 125;
+            // 
+            // Ngaytao
+            // 
+            this.Ngaytao.HeaderText = "Ngày tạo";
+            this.Ngaytao.MinimumWidth = 6;
+            this.Ngaytao.Name = "Ngaytao";
+            this.Ngaytao.Width = 125;
+            // 
+            // Dongia
+            // 
+            this.Dongia.HeaderText = "Đơn giá";
+            this.Dongia.MinimumWidth = 6;
+            this.Dongia.Name = "Dongia";
+            this.Dongia.Width = 125;
+            // 
+            // Giamgia
+            // 
+            this.Giamgia.HeaderText = "Giảm giá";
+            this.Giamgia.MinimumWidth = 6;
+            this.Giamgia.Name = "Giamgia";
+            this.Giamgia.Width = 125;
+            // 
+            // Thanhtien
+            // 
+            this.Thanhtien.HeaderText = "Thành tiền";
+            this.Thanhtien.MinimumWidth = 6;
+            this.Thanhtien.Name = "Thanhtien";
+            this.Thanhtien.Width = 125;
+            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1558, 745);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Bill";
             this.Text = "Bill";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).EndInit();
             this.bindingStaff.ResumeLayout(false);
             this.bindingStaff.PerformLayout();
@@ -717,7 +744,7 @@
         #endregion
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
-        private System.Windows.Forms.DataGridView dataGridStaff;
+        private System.Windows.Forms.DataGridView dataGridBill;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox2;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -737,36 +764,37 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton4;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox7;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox8;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox total;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox5;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox6;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox nhanvien;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox discount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox4;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox3;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox maphong;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox giaDon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox khachhang;
+        private System.Windows.Forms.Label label1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton6;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox mahoadon;
+        private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroDateTime date;
+        private System.Windows.Forms.ComboBox status;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn NVTao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngaytao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Giamgia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox9;
-        private System.Windows.Forms.Label label1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton6;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
     }
 }

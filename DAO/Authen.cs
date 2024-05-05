@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
+
 namespace Royal.DAO
 {
     public class Authen
@@ -108,6 +109,7 @@ namespace Royal.DAO
 
         }
 
+        
 
 
     }
