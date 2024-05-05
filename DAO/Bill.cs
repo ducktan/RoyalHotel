@@ -28,11 +28,7 @@ namespace Royal.DAO
 
 
         // Set up Firebase configuration
-        public FirebaseConfig Config = new FirebaseConfig
-        {
-            AuthSecret = "oy0VAsm7fVZFIBAk5lmVXC7u1uDfxeNsI779WMhc",
-            BasePath = "https://royal-9807e-default-rtdb.firebaseio.com/"
-        };
+        public FirebConfig config = new FirebConfig();
 
         // Initialize Firebase client
         public IFirebaseClient Client { get; private set; } // Make client accessible only within the class
@@ -42,7 +38,7 @@ namespace Royal.DAO
         {   
             try
             {
-                Client = new FireSharp.FirebaseClient(Config);
+                Client = new FireSharp.FirebaseClient(config.Config);
                 
             }
             catch {

@@ -209,7 +209,6 @@ E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Net.Http.Primitives.xml
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Numerics.Vectors.xml
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.xml
-E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.App.config
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.AssemblyReference.cache
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.AboutUs.resources
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Authentication.resources
@@ -239,8 +238,6 @@ E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.exe
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.pdb
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.CodeDom.dll
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.CodeDom.xml
-E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.SuggestedBindingRedirects.cache
-E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.exe.config
 E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Admin.resources
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Royal.exe.config
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Royal.exe
@@ -334,3 +331,13 @@ C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Reactive.dll
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Firebase.xml
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\LiteDB.xml
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Reactive.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Firebase.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\LiteDB.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Reactive.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.ValueTuple.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Firebase.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\LiteDB.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Reactive.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.ValueTuple.xml
