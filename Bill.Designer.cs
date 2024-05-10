@@ -36,15 +36,6 @@
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dataGridBill = new System.Windows.Forms.DataGridView();
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NVTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaytao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Giamgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kryptonRichTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -87,6 +78,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NVTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaytao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Giamgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
@@ -123,6 +123,7 @@
             this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton1.TabIndex = 46;
             this.kryptonButton1.Values.Text = "SEARCH";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // dataGridBill
             // 
@@ -178,69 +179,6 @@
             this.dataGridBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridBill.Size = new System.Drawing.Size(1010, 604);
             this.dataGridBill.TabIndex = 28;
-            // 
-            // MaHD
-            // 
-            this.MaHD.HeaderText = "Mã hoá đơn";
-            this.MaHD.MinimumWidth = 6;
-            this.MaHD.Name = "MaHD";
-            this.MaHD.Width = 125;
-            // 
-            // TenPhong
-            // 
-            this.TenPhong.HeaderText = "Mã phòng";
-            this.TenPhong.MinimumWidth = 6;
-            this.TenPhong.Name = "TenPhong";
-            this.TenPhong.Width = 125;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.HeaderText = "Trạng Thái";
-            this.TrangThai.MinimumWidth = 6;
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.Width = 125;
-            // 
-            // TenKH
-            // 
-            this.TenKH.HeaderText = "Tên khách hàng";
-            this.TenKH.MinimumWidth = 6;
-            this.TenKH.Name = "TenKH";
-            this.TenKH.Width = 125;
-            // 
-            // NVTao
-            // 
-            this.NVTao.HeaderText = "Nhân viên tạo";
-            this.NVTao.MinimumWidth = 6;
-            this.NVTao.Name = "NVTao";
-            this.NVTao.Width = 125;
-            // 
-            // Ngaytao
-            // 
-            this.Ngaytao.HeaderText = "Ngày tạo";
-            this.Ngaytao.MinimumWidth = 6;
-            this.Ngaytao.Name = "Ngaytao";
-            this.Ngaytao.Width = 125;
-            // 
-            // Dongia
-            // 
-            this.Dongia.HeaderText = "Đơn giá";
-            this.Dongia.MinimumWidth = 6;
-            this.Dongia.Name = "Dongia";
-            this.Dongia.Width = 125;
-            // 
-            // Giamgia
-            // 
-            this.Giamgia.HeaderText = "Giảm giá";
-            this.Giamgia.MinimumWidth = 6;
-            this.Giamgia.Name = "Giamgia";
-            this.Giamgia.Width = 125;
-            // 
-            // Thanhtien
-            // 
-            this.Thanhtien.HeaderText = "Thành tiền";
-            this.Thanhtien.MinimumWidth = 6;
-            this.Thanhtien.Name = "Thanhtien";
-            this.Thanhtien.Width = 125;
             // 
             // kryptonRichTextBox2
             // 
@@ -716,6 +654,69 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // MaHD
+            // 
+            this.MaHD.HeaderText = "Mã hoá đơn";
+            this.MaHD.MinimumWidth = 6;
+            this.MaHD.Name = "MaHD";
+            this.MaHD.Width = 125;
+            // 
+            // TenPhong
+            // 
+            this.TenPhong.HeaderText = "Mã phòng";
+            this.TenPhong.MinimumWidth = 6;
+            this.TenPhong.Name = "TenPhong";
+            this.TenPhong.Width = 125;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.Width = 125;
+            // 
+            // TenKH
+            // 
+            this.TenKH.HeaderText = "Mã khách hàng";
+            this.TenKH.MinimumWidth = 6;
+            this.TenKH.Name = "TenKH";
+            this.TenKH.Width = 125;
+            // 
+            // NVTao
+            // 
+            this.NVTao.HeaderText = "Nhân viên tạo";
+            this.NVTao.MinimumWidth = 6;
+            this.NVTao.Name = "NVTao";
+            this.NVTao.Width = 125;
+            // 
+            // Ngaytao
+            // 
+            this.Ngaytao.HeaderText = "Ngày tạo";
+            this.Ngaytao.MinimumWidth = 6;
+            this.Ngaytao.Name = "Ngaytao";
+            this.Ngaytao.Width = 125;
+            // 
+            // Dongia
+            // 
+            this.Dongia.HeaderText = "Đơn giá";
+            this.Dongia.MinimumWidth = 6;
+            this.Dongia.Name = "Dongia";
+            this.Dongia.Width = 125;
+            // 
+            // Giamgia
+            // 
+            this.Giamgia.HeaderText = "Giảm giá";
+            this.Giamgia.MinimumWidth = 6;
+            this.Giamgia.Name = "Giamgia";
+            this.Giamgia.Width = 125;
+            // 
+            // Thanhtien
+            // 
+            this.Thanhtien.HeaderText = "Thành tiền";
+            this.Thanhtien.MinimumWidth = 6;
+            this.Thanhtien.Name = "Thanhtien";
+            this.Thanhtien.Width = 125;
+            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -788,6 +789,7 @@
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroDateTime date;
         private System.Windows.Forms.ComboBox status;
+        private System.Windows.Forms.ComboBox maKHBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
@@ -797,6 +799,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Giamgia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
-        private System.Windows.Forms.ComboBox maKHBox;
     }
 }

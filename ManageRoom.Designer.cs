@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageRoom));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.kryptonRichTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.txtEmail = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtRoomName = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.txtRoomID = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,52 +50,52 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridStaff = new System.Windows.Forms.DataGridView();
+            this.dataGridRoom = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBoxCustomerType = new MetroFramework.Controls.MetroComboBox();
+            this.cboRoomType = new MetroFramework.Controls.MetroComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.cboStatusRoom = new MetroFramework.Controls.MetroComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnAddRoom = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnUpdateRoom = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonRichTextBox4 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnManageTypeRoom = new System.Windows.Forms.GroupBox();
             this.kryptonButton6 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnDeleteRoom = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnDisplay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRoom)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.btnManageTypeRoom.SuspendLayout();
             this.SuspendLayout();
             // 
-            // kryptonRichTextBox1
+            // txtRoomName
             // 
-            this.kryptonRichTextBox1.Location = new System.Drawing.Point(15, 184);
-            this.kryptonRichTextBox1.Name = "kryptonRichTextBox1";
-            this.kryptonRichTextBox1.Size = new System.Drawing.Size(212, 37);
-            this.kryptonRichTextBox1.TabIndex = 124;
-            this.kryptonRichTextBox1.Text = "";
-            this.kryptonRichTextBox1.WordWrap = false;
+            this.txtRoomName.Location = new System.Drawing.Point(15, 184);
+            this.txtRoomName.Name = "txtRoomName";
+            this.txtRoomName.Size = new System.Drawing.Size(212, 37);
+            this.txtRoomName.TabIndex = 124;
+            this.txtRoomName.Text = "";
+            this.txtRoomName.WordWrap = false;
             // 
-            // txtEmail
+            // txtRoomID
             // 
-            this.txtEmail.Location = new System.Drawing.Point(19, 84);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(212, 37);
-            this.txtEmail.TabIndex = 123;
-            this.txtEmail.Text = "";
-            this.txtEmail.WordWrap = false;
+            this.txtRoomID.Location = new System.Drawing.Point(19, 84);
+            this.txtRoomID.Name = "txtRoomID";
+            this.txtRoomID.Size = new System.Drawing.Size(212, 37);
+            this.txtRoomID.TabIndex = 123;
+            this.txtRoomID.Text = "";
+            this.txtRoomID.WordWrap = false;
             // 
             // label3
             // 
@@ -176,7 +176,7 @@
             this.bindingStaff.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bindingStaff.PositionItem = this.bindingNavigatorPositionItem;
             this.bindingStaff.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.bindingStaff.Size = new System.Drawing.Size(659, 43);
+            this.bindingStaff.Size = new System.Drawing.Size(653, 43);
             this.bindingStaff.TabIndex = 29;
             this.bindingStaff.Text = "bindingNavigator1";
             // 
@@ -242,65 +242,66 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridStaff);
+            this.groupBox4.Controls.Add(this.btnDisplay);
+            this.groupBox4.Controls.Add(this.dataGridRoom);
             this.groupBox4.Controls.Add(this.bindingStaff);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox4.ForeColor = System.Drawing.Color.SteelBlue;
             this.groupBox4.Location = new System.Drawing.Point(513, 24);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(665, 632);
+            this.groupBox4.Size = new System.Drawing.Size(659, 598);
             this.groupBox4.TabIndex = 130;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh Sách Phòng";
             // 
-            // dataGridStaff
+            // dataGridRoom
             // 
-            this.dataGridStaff.AllowUserToResizeRows = false;
-            this.dataGridStaff.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridStaff.ColumnHeadersHeight = 40;
-            this.dataGridStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridRoom.AllowUserToResizeRows = false;
+            this.dataGridRoom.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridRoom.ColumnHeadersHeight = 40;
+            this.dataGridRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column6});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridStaff.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridStaff.GridColor = System.Drawing.Color.White;
-            this.dataGridStaff.Location = new System.Drawing.Point(3, 73);
-            this.dataGridStaff.Name = "dataGridStaff";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridStaff.RowHeadersVisible = false;
-            this.dataGridStaff.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridStaff.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridStaff.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridStaff.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridStaff.Size = new System.Drawing.Size(659, 556);
-            this.dataGridStaff.TabIndex = 28;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridRoom.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridRoom.GridColor = System.Drawing.Color.White;
+            this.dataGridRoom.Location = new System.Drawing.Point(3, 73);
+            this.dataGridRoom.Name = "dataGridRoom";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridRoom.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridRoom.RowHeadersVisible = false;
+            this.dataGridRoom.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridRoom.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridRoom.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridRoom.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataGridRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridRoom.Size = new System.Drawing.Size(653, 522);
+            this.dataGridRoom.TabIndex = 28;
             // 
             // Column1
             // 
@@ -330,18 +331,23 @@
             this.Column6.Name = "Column6";
             this.Column6.Width = 150;
             // 
-            // comboBoxCustomerType
+            // cboRoomType
             // 
-            this.comboBoxCustomerType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBoxCustomerType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxCustomerType.FormattingEnabled = true;
-            this.comboBoxCustomerType.ItemHeight = 24;
-            this.comboBoxCustomerType.Location = new System.Drawing.Point(278, 90);
-            this.comboBoxCustomerType.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxCustomerType.Name = "comboBoxCustomerType";
-            this.comboBoxCustomerType.Size = new System.Drawing.Size(212, 30);
-            this.comboBoxCustomerType.TabIndex = 2;
-            this.comboBoxCustomerType.UseSelectable = true;
+            this.cboRoomType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboRoomType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboRoomType.FormattingEnabled = true;
+            this.cboRoomType.ItemHeight = 24;
+            this.cboRoomType.Items.AddRange(new object[] {
+            "Standard",
+            "Superior",
+            "Deluxe",
+            "Suite"});
+            this.cboRoomType.Location = new System.Drawing.Point(278, 90);
+            this.cboRoomType.Margin = new System.Windows.Forms.Padding(4);
+            this.cboRoomType.Name = "cboRoomType";
+            this.cboRoomType.Size = new System.Drawing.Size(212, 30);
+            this.cboRoomType.TabIndex = 2;
+            this.cboRoomType.UseSelectable = true;
             // 
             // label20
             // 
@@ -357,12 +363,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.metroComboBox1);
-            this.groupBox2.Controls.Add(this.kryptonRichTextBox1);
-            this.groupBox2.Controls.Add(this.txtEmail);
+            this.groupBox2.Controls.Add(this.cboStatusRoom);
+            this.groupBox2.Controls.Add(this.txtRoomName);
+            this.groupBox2.Controls.Add(this.txtRoomID);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.comboBoxCustomerType);
+            this.groupBox2.Controls.Add(this.cboRoomType);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -377,18 +383,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phòng";
             // 
-            // metroComboBox1
+            // cboStatusRoom
             // 
-            this.metroComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Location = new System.Drawing.Point(278, 186);
-            this.metroComboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(212, 30);
-            this.metroComboBox1.TabIndex = 129;
-            this.metroComboBox1.UseSelectable = true;
+            this.cboStatusRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboStatusRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboStatusRoom.FormattingEnabled = true;
+            this.cboStatusRoom.ItemHeight = 24;
+            this.cboStatusRoom.Items.AddRange(new object[] {
+            "Còn phòng",
+            "Hết phòng"});
+            this.cboStatusRoom.Location = new System.Drawing.Point(278, 186);
+            this.cboStatusRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.cboStatusRoom.Name = "cboStatusRoom";
+            this.cboStatusRoom.Size = new System.Drawing.Size(212, 30);
+            this.cboStatusRoom.TabIndex = 129;
+            this.cboStatusRoom.UseSelectable = true;
             // 
             // label16
             // 
@@ -402,32 +411,24 @@
             this.label16.TabIndex = 22;
             this.label16.Text = "Tên phòng";
             // 
-            // kryptonButton1
+            // btnAddRoom
             // 
-            this.kryptonButton1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton1.Location = new System.Drawing.Point(16, 34);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(212, 40);
-            this.kryptonButton1.TabIndex = 135;
-            this.kryptonButton1.Values.Text = "Thêm phòng";
+            this.btnAddRoom.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnAddRoom.Location = new System.Drawing.Point(7, 51);
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.Size = new System.Drawing.Size(212, 40);
+            this.btnAddRoom.TabIndex = 135;
+            this.btnAddRoom.Values.Text = "Thêm phòng";
+            this.btnAddRoom.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
-            // kryptonButton4
+            // btnUpdateRoom
             // 
-            this.kryptonButton4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.kryptonButton4.Location = new System.Drawing.Point(282, 94);
-            this.kryptonButton4.Name = "kryptonButton4";
-            this.kryptonButton4.Size = new System.Drawing.Size(207, 40);
-            this.kryptonButton4.TabIndex = 47;
-            this.kryptonButton4.Values.Text = "Hiển thị phòng";
-            // 
-            // kryptonButton3
-            // 
-            this.kryptonButton3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton3.Location = new System.Drawing.Point(16, 94);
-            this.kryptonButton3.Name = "kryptonButton3";
-            this.kryptonButton3.Size = new System.Drawing.Size(212, 40);
-            this.kryptonButton3.TabIndex = 46;
-            this.kryptonButton3.Values.Text = "Sửa phòng";
+            this.btnUpdateRoom.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnUpdateRoom.Location = new System.Drawing.Point(7, 111);
+            this.btnUpdateRoom.Name = "btnUpdateRoom";
+            this.btnUpdateRoom.Size = new System.Drawing.Size(212, 40);
+            this.btnUpdateRoom.TabIndex = 46;
+            this.btnUpdateRoom.Values.Text = "Sửa phòng";
             // 
             // groupBox3
             // 
@@ -475,52 +476,62 @@
             this.label9.TabIndex = 28;
             this.label9.Text = "Mã/ Tên Phòng";
             // 
-            // groupBox1
+            // btnManageTypeRoom
             // 
-            this.groupBox1.Controls.Add(this.kryptonButton6);
-            this.groupBox1.Controls.Add(this.kryptonButton1);
-            this.groupBox1.Controls.Add(this.kryptonButton4);
-            this.groupBox1.Controls.Add(this.kryptonButton3);
-            this.groupBox1.Controls.Add(this.kryptonButton2);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox1.Location = new System.Drawing.Point(13, 432);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(499, 224);
-            this.groupBox1.TabIndex = 128;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chức năng";
+            this.btnManageTypeRoom.Controls.Add(this.kryptonButton6);
+            this.btnManageTypeRoom.Controls.Add(this.btnAddRoom);
+            this.btnManageTypeRoom.Controls.Add(this.btnUpdateRoom);
+            this.btnManageTypeRoom.Controls.Add(this.btnDeleteRoom);
+            this.btnManageTypeRoom.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnManageTypeRoom.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnManageTypeRoom.Location = new System.Drawing.Point(13, 432);
+            this.btnManageTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnManageTypeRoom.Name = "btnManageTypeRoom";
+            this.btnManageTypeRoom.Padding = new System.Windows.Forms.Padding(4);
+            this.btnManageTypeRoom.Size = new System.Drawing.Size(493, 176);
+            this.btnManageTypeRoom.TabIndex = 128;
+            this.btnManageTypeRoom.TabStop = false;
+            this.btnManageTypeRoom.Text = "Chức năng";
             // 
             // kryptonButton6
             // 
             this.kryptonButton6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton6.Location = new System.Drawing.Point(137, 150);
+            this.kryptonButton6.Location = new System.Drawing.Point(273, 111);
             this.kryptonButton6.Name = "kryptonButton6";
-            this.kryptonButton6.Size = new System.Drawing.Size(212, 40);
+            this.kryptonButton6.Size = new System.Drawing.Size(207, 40);
             this.kryptonButton6.TabIndex = 136;
             this.kryptonButton6.Values.Text = "Quản lý loại phòng";
             this.kryptonButton6.Click += new System.EventHandler(this.kryptonButton6_Click);
             // 
-            // kryptonButton2
+            // btnDeleteRoom
             // 
-            this.kryptonButton2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton2.Location = new System.Drawing.Point(282, 34);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(207, 40);
-            this.kryptonButton2.TabIndex = 45;
-            this.kryptonButton2.Values.Text = "Xóa phòng";
+            this.btnDeleteRoom.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnDeleteRoom.Location = new System.Drawing.Point(273, 51);
+            this.btnDeleteRoom.Name = "btnDeleteRoom";
+            this.btnDeleteRoom.Size = new System.Drawing.Size(207, 40);
+            this.btnDeleteRoom.TabIndex = 45;
+            this.btnDeleteRoom.Values.Text = "Xóa phòng";
+            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
+            // 
+            // btnDisplay
+            // 
+            this.btnDisplay.Location = new System.Drawing.Point(443, 33);
+            this.btnDisplay.Name = "btnDisplay";
+            this.btnDisplay.Size = new System.Drawing.Size(113, 34);
+            this.btnDisplay.TabIndex = 72;
+            this.btnDisplay.Text = "Hiển thị";
+            this.btnDisplay.UseVisualStyleBackColor = true;
+            this.btnDisplay.Click += new System.EventHandler(this.button1_Click);
             // 
             // ManageRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 672);
+            this.ClientSize = new System.Drawing.Size(1201, 643);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnManageTypeRoom);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManageRoom";
             this.Text = "room";
@@ -529,19 +540,19 @@
             this.bindingStaff.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRoom)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.btnManageTypeRoom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtEmail;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtRoomName;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtRoomID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
         private System.Windows.Forms.Label label1;
@@ -557,25 +568,25 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridStaff;
-        private MetroFramework.Controls.MetroComboBox comboBoxCustomerType;
+        private System.Windows.Forms.DataGridView dataGridRoom;
+        private MetroFramework.Controls.MetroComboBox cboRoomType;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label16;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton4;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAddRoom;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnUpdateRoom;
         private System.Windows.Forms.GroupBox groupBox3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private System.Windows.Forms.GroupBox btnManageTypeRoom;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnDeleteRoom;
+        private MetroFramework.Controls.MetroComboBox cboStatusRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton6;
+        private System.Windows.Forms.Button btnDisplay;
     }
 }

@@ -202,11 +202,6 @@ namespace Royal.DAO
                 MessageBox.Show("Please select a bill to update.");
             }
         }
-
-
-
-
-
     }
 
 

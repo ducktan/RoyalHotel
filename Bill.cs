@@ -22,9 +22,9 @@ namespace Royal
         {
             InitializeComponent();
             // Khởi tạo FirebaseClient với chuỗi kết nối đến Firebase Realtime Database
-            string firebaseConnectionString = "https://royal-9807e-default-rtdb.firebaseio.com/";
-            firebaseClient = new Firebase.Database.FirebaseClient(firebaseConnectionString);
-
+            firebaseClient = FirebaseManage.GetFirebaseClient();
+            BillDAO billDAO = new BillDAO();
+            billDAO.LoadBill(dataGridBill);
             LoadMaKHFromDatabase();
         }
 
@@ -38,30 +38,42 @@ namespace Royal
             .OnceAsync<CustomerDAO>();
 
         // Xóa các mục hiện có trong ComboBox
-        maKHBox.Items.Clear();
+                maKHBox.Items.Clear();
 
-        // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
-        foreach (var customer in customerList)
-        {
-            maKHBox.Items.Add(customer.Object.MAKH);
-        }
-        }
+                // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
+                foreach (var customer in customerList)
+                {
+                    // Combine MAKH and TENKH for display
+                    string customerDisplayText = customer.Object.MAKH;
+                    maKHBox.Items.Add(customerDisplayText);
+                }
+            }
          catch (Exception ex)
         {
             // Xử lý ngoại lệ nếu có
             MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
         }
-}
+    }
 
 
-        private void kryptonButton3_Click(object sender, EventArgs e)
+
+
+        private async void kryptonButton3_Click(object sender, EventArgs e)
         {
-            // Tạo số ngẫu nhiên từ 0 đến 999999
-            Random random = new Random();
-            int randomNumber = random.Next(0, 999999);
+            // Get the current row count for the "Bill" table
+            int currentRowCount = await firebaseClient
+                .Child("Bill")
+                .OnceAsync<object>()
+                .ContinueWith(task => task.Result.Count);
 
-            // Tạo mã hóa đơn
-            string maHoaDon = "HD" + randomNumber.ToString("D6");
+            // Increment by 1 to get the new sequential number
+            int newNumber = currentRowCount + 1;
+
+            // Format the number with leading zeros (001, 002, ...)
+            string formattedNumber = newNumber.ToString("D3"); // Adjust "D3" for desired number of digits
+
+            // Create the MAHD with your preferred prefix (e.g., "HD")
+            string maHoaDon = $"HD{formattedNumber}";
 
             // Create a new Bill object with form control values
             BillDAO newBill = new BillDAO()
@@ -96,6 +108,11 @@ namespace Royal
         {
             BillDAO billDAO = new BillDAO();
             billDAO.UpdateBill(dataGridBill);
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

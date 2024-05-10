@@ -195,8 +195,12 @@
     <Compile Include="DAO\Bill.cs" />
     <Compile Include="DAO\CheckPass.cs" />
     <Compile Include="DAO\Customer.cs" />
+    <Compile Include="DAO\FirebaseCounter.cs" />
+    <Compile Include="DAO\FirebaseManage.cs" />
     <Compile Include="DAO\FirebConfig.cs" />
     <Compile Include="DAO\Report.cs" />
+    <Compile Include="DAO\Room.cs" />
+    <Compile Include="DAO\RoomType.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>

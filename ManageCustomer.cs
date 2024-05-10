@@ -72,5 +72,10 @@ namespace Royal
 
             newCus.AddCustomer(newCus);
         }
+
+        private void kryptonButton5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
