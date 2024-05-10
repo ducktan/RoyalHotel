@@ -82,5 +82,95 @@ namespace Royal
             room.DeleteRoom(dataGridRoom);
         }
 
+        private async void kryptonButton5_Click(object sender, EventArgs e)
+        {
+            // Get the search criteria from the UI controls
+            string type = cboTypeSearch.Text;
+            string searchText = txtSearch.Text.Trim(); // Assuming txtSearch is a textbox for search text
+
+            // Validate search criteria
+            if (string.IsNullOrEmpty(searchText))
+            {
+                MessageBox.Show("Please enter the search text.");
+                return;
+            }
+
+            // Call the appropriate search function based on the selected type
+            Royal.DAO.Room room = new Royal.DAO.Room(); // Assuming you have an instance
+
+            // Call the appropriate search function based on the selected type
+            List<Royal.DAO.Room> searchResults = new List<Royal.DAO.Room>(); // Initialize empty list
+
+//            Mã phòng
+//Loại phòng
+//Tên phòng
+//Trạng thái
+
+            try
+            {
+                if (type == "Mã phòng") // Search by room type ID (MALPH)
+                {
+
+                    Royal.DAO.Room searchResult = await room.SearchRoomById(searchText);
+                    searchResults.Add(searchResult);
+                }
+                else
+                if (type == "Loại phòng") // Search by room type name (TENLPH)
+                {
+                    searchResults = await room.SearchRoomByType(searchText);
+                }
+                else if (type == "Tên phòng") // Search by number of occupants (SLNG)
+                {
+
+                    searchResults = await room.SearchRoomByName(searchText);
+                }
+                else if (type == "Trạng thái") // Search by price (GIA)
+                {
+                    searchResults = await room.SearchRoomByStatus(searchText);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid search type selected.");
+                    return;
+                }
+
+
+
+        // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+        List<string[]> uiResults = searchResults.Select(rooms => new string[] { rooms.MAPH, rooms.TenPhong, rooms.LoaiPhong, rooms.TrangThai }).ToList();
+
+                // Update UI elements on the UI thread
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        dataGridRoom.Rows.Clear();
+                        foreach (string[] rowData in uiResults)
+                        {
+                            dataGridRoom.Rows.Add(rowData);
+                        }
+                    }));
+                }
+                else
+                {
+                    dataGridRoom.Rows.Clear();
+                    foreach (string[] rowData in uiResults)
+                    {
+                        dataGridRoom.Rows.Add(rowData);
+                    }
+                }
+
+                // Handle no search results (optional)
+                if (searchResults.Count == 0)
+                {
+                    string searchCriteria = $"Search by: {type}";
+                    MessageBox.Show($"No room types found with {searchCriteria}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching room types: {ex.Message}");
+            }
+        }
     }
 }

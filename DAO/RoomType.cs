@@ -2,15 +2,18 @@
 using FireSharp.Response;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Google.Apis.Requests.BatchRequest;
 
 namespace Royal.DAO
 {
     public class RoomType
     {
+        private Firebase.Database.FirebaseClient firebaseClient;
         public string MALPH { get; set; }
         public string TENLPH { get; set; }
         public int SLNG { get; set; }
@@ -24,7 +27,10 @@ namespace Royal.DAO
         {
             try
             {
+
                 Client = new FireSharp.FirebaseClient(config.Config);
+                firebaseClient = FirebaseManage.GetFirebaseClient();
+
 
             }
             catch
@@ -153,75 +159,132 @@ namespace Royal.DAO
                 MessageBox.Show("Please select a RoomType to update.");
             }
         }
-        public async Task<List<RoomType>> SearchRoomType(string searchBy, string value = "")
+        public async Task<RoomType> SearchRoomTypeById(string id)
         {
-            // Create an empty list to store search results
-            List<RoomType> searchResults = new List<RoomType>();
-
-            // Construct the base Firebase query path
-            string queryPath = "RoomType/";
-
-            // Validate search option
-            if (string.IsNullOrEmpty(searchBy) || !(searchBy == "MALPH" || searchBy == "TENLPH" || searchBy == "SLNG" || searchBy == "GIA"))
-            {
-                throw new ArgumentException("Invalid search option. Supported options: MALPH, TENLPH, SLNG, GIA");
-            }
-
-            // Build the query based on provided parameters
-            bool hasQuery = true;
-
-            if (searchBy == "MALPH")
-            {
-                queryPath += $"{value}";
-            }
-            else if (searchBy == "TENLPH")
-            {
-                queryPath += $"?orderByChild=TENLPH&equalTo={value}";
-            }
-            else if (searchBy == "SLNG")
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("SLNG search requires a value");
-                }
-                queryPath += $"?orderByChild=SLNG&equalTo={value}";
-            }
-            else if (searchBy == "GIA")
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("GIA search requires a value");
-                }
-                int gia;
-                if (!int.TryParse(value, out gia))
-                {
-                    throw new ArgumentException("Invalid value for GIA search. Please provide a valid integer.");
-                }
-                queryPath += $"?orderByChild=GIA&startAt={gia}";
-            }
+            string queryPath = $"RoomType/{id}";
 
             try
             {
-                // Execute the Firebase query
                 FirebaseResponse response = await Client.GetAsync(queryPath);
-
-                // Get the search results
-                Dictionary<string, RoomType> rooms = response.ResultAs<Dictionary<string, RoomType>>();
-
-                // Add each RoomType to the search results list
-                foreach (var room in rooms)
-                {
-                    searchResults.Add(room.Value);
-                }
-
-                return searchResults;
+                return response.ResultAs<RoomType>();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error searching room types: {ex.Message}");
-                return searchResults;
+                MessageBox.Show($"Error searching room by ID: {ex.Message}");
+                return null; // Return null on error
             }
         }
+
+        public async Task<List<RoomType>> SearchRoomTypeByName(string name)
+        {
+            try
+            {
+                var typeRoomList = await firebaseClient
+            .Child("RoomType")
+            .OnceAsync<Royal.DAO.RoomType>();
+                // Initialize an empty list to store matching rooms
+                List<RoomType> matchingRooms = new List<RoomType>();
+                foreach (var roomType in typeRoomList)
+                {
+                    // Extract room information
+                    RoomType room = roomType.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.TENLPH == name)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<RoomType>(); // Return empty list on error
+            }
+       
+        }
+
+        public async Task<List<RoomType>> SearchRoomTypeByCapacity(int capacity)
+        {
+            try
+            {
+                // Retrieve all room data from "RoomType" node
+                var typeRoomList = await firebaseClient
+                    .Child("RoomType")
+                    .OnceAsync<Royal.DAO.RoomType>();
+
+                // Initialize an empty list to store matching rooms
+                List<RoomType> matchingRooms = new List<RoomType>();
+
+                // Iterate through retrieved room data
+                foreach (var roomType in typeRoomList)
+                {
+                    // Extract room information
+                    RoomType room = roomType.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.SLNG == capacity)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<RoomType>(); // Return empty list on error
+            }
+        }
+
+
+
+        public async Task<List<RoomType>> SearchRoomTypeByPrice(int minPrice)
+        {
+            try
+            {
+                // Retrieve all room data from "RoomType" node
+                var typeRoomList = await firebaseClient
+                    .Child("RoomType")
+                    .OnceAsync<Royal.DAO.RoomType>();
+
+                // Initialize an empty list to store matching rooms
+                List<RoomType> matchingRooms = new List<RoomType>();
+
+                // Iterate through retrieved room data
+                foreach (var roomType in typeRoomList)
+                {
+                    // Extract room information
+                    RoomType room = roomType.Object;
+
+                    // Check if room price falls within the specified range
+                    if (room.GIA >= minPrice)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by price: {ex.Message}");
+                return new List<RoomType>(); // Return empty list on error
+            }
+        }
+
 
     }
 }

@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "E:\\LTMMMMMMMMMM\\RoyalHotel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|e:\\ltmmmmmmmmmm\\royalhotel\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|e:\\ltmmmmmmmmmm\\royalhotel\\manageroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:manageroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\manageroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:manageroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\dao\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:dao\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\dao\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:dao\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|e:\\ltmmmmmmmmmm\\royalhotel\\printbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:printbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|e:\\ltmmmmmmmmmm\\royalhotel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\dao\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:dao\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|e:\\ltmmmmmmmmmm\\royalhotel\\dao\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:dao\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\printbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:printbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|solutionrelative:bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE52F5E7-2266-4B7F-A9EC-DBC6ADCD147D}|Royal.csproj|E:\\LTMMMMMMMMMM\\RoyalHotel\\dao\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,7 +66,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\LTMMMMMMMMMM\\RoyalHotel\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T18:08:52.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManageRoom.cs",
+              "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\ManageRoom.cs",
+              "RelativeDocumentMoniker": "ManageRoom.cs",
+              "ToolTip": "E:\\LTMMMMMMMMMM\\RoyalHotel\\ManageRoom.cs",
+              "RelativeToolTip": "ManageRoom.cs",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAWwIYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T18:04:10.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManageRoom.cs [Design]",
+              "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\ManageRoom.cs",
+              "RelativeDocumentMoniker": "ManageRoom.cs",
+              "ToolTip": "E:\\LTMMMMMMMMMM\\RoyalHotel\\ManageRoom.cs [Design]",
+              "RelativeToolTip": "ManageRoom.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T16:54:13.727Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "PrintBill.cs [Design]",
               "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\PrintBill.cs",
               "RelativeDocumentMoniker": "PrintBill.cs",
@@ -70,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "RoomType.cs [Design]",
               "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\RoomType.cs",
               "RelativeDocumentMoniker": "RoomType.cs",
@@ -82,26 +128,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Report.cs",
-              "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\DAO\\Report.cs",
-              "RelativeDocumentMoniker": "DAO\\Report.cs",
-              "ToolTip": "E:\\LTMMMMMMMMMM\\RoyalHotel\\DAO\\Report.cs",
-              "RelativeToolTip": "DAO\\Report.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T01:19:55.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "RoomType.cs",
               "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\RoomType.cs",
               "RelativeDocumentMoniker": "RoomType.cs",
               "ToolTip": "E:\\LTMMMMMMMMMM\\RoyalHotel\\RoomType.cs",
               "RelativeToolTip": "RoomType.cs",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAqwIAAAAAwAAAA",
+              "ViewState": "AQIAAIYAAAAAAAAAAAAAAKEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T16:16:59.987Z",
               "EditorCaption": ""
@@ -109,44 +142,30 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RoomType.cs",
-              "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\DAO\\RoomType.cs",
-              "RelativeDocumentMoniker": "DAO\\RoomType.cs",
-              "ToolTip": "E:\\LTMMMMMMMMMM\\RoyalHotel\\DAO\\RoomType.cs",
-              "RelativeToolTip": "DAO\\RoomType.cs",
-              "ViewState": "AQIAAIcAAAAAAAAAAAAIwJsAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T15:53:03.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Room.cs",
               "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\DAO\\Room.cs",
               "RelativeDocumentMoniker": "DAO\\Room.cs",
               "ToolTip": "E:\\LTMMMMMMMMMM\\RoyalHotel\\DAO\\Room.cs",
               "RelativeToolTip": "DAO\\Room.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAwwDoAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T16:15:12.898Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Bill.cs [Design]",
               "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\Bill.cs",
               "RelativeDocumentMoniker": "Bill.cs",
               "ToolTip": "E:\\LTMMMMMMMMMM\\RoyalHotel\\Bill.cs [Design]",
               "RelativeToolTip": "Bill.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T17:37:21.421Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-26T17:37:21.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Bill.cs",
               "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\Bill.cs",
               "RelativeDocumentMoniker": "Bill.cs",
@@ -154,12 +173,11 @@
               "RelativeToolTip": "Bill.cs",
               "ViewState": "AQIAAGEAAAAAAAAAAAAtwHIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T16:16:04.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T16:16:04.02Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Bill.cs",
               "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\DAO\\Bill.cs",
               "RelativeDocumentMoniker": "DAO\\Bill.cs",
@@ -168,6 +186,40 @@
               "ViewState": "AQIAAGwAAAAAAAAAAAAIwJAAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T16:08:53.752Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "d13e05fa-36c5-458f-9bac-2f6975dfe5d8",
+        "Display": 0,
+        "X": 946,
+        "Y": 156,
+        "Width": 1242,
+        "Height": 741,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RoomType.cs",
+              "DocumentMoniker": "E:\\LTMMMMMMMMMM\\RoyalHotel\\DAO\\RoomType.cs",
+              "RelativeDocumentMoniker": "DAO\\RoomType.cs",
+              "ToolTip": "E:\\LTMMMMMMMMMM\\RoyalHotel\\DAO\\RoomType.cs",
+              "RelativeToolTip": "DAO\\RoomType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T15:53:03.271Z",
+              "EditorCaption": ""
             }
           ]
         }

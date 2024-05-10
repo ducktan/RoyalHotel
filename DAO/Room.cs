@@ -11,7 +11,7 @@ namespace Royal.DAO
 {
     public class Room
     {
-
+        private Firebase.Database.FirebaseClient firebaseClient;
         public string MAPH { get; set; }
         public string LoaiPhong { get; set; }
         public string TenPhong { get; set; }
@@ -30,6 +30,7 @@ namespace Royal.DAO
             try
             {
                 Client = new FireSharp.FirebaseClient(config.Config);
+                firebaseClient = FirebaseManage.GetFirebaseClient();
 
             }
             catch
@@ -156,6 +157,135 @@ namespace Royal.DAO
                 MessageBox.Show("Please select a Room to update.");
             }
         }
+
+
+        public async Task<Room> SearchRoomById(string id)
+        {
+            string queryPath = $"Room/{id}";
+
+            try
+            {
+                FirebaseResponse response = await Client.GetAsync(queryPath);
+                return response.ResultAs<Room>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching room by ID: {ex.Message}");
+                return null; // Return null on error
+            }
+        }
+
+        public async Task<List<Room>> SearchRoomByName(string name)
+        {
+            try
+            {
+                var typeRoomList = await firebaseClient
+            .Child("Room")
+            .OnceAsync<Royal.DAO.Room>();
+                // Initialize an empty list to store matching rooms
+                List<Room> matchingRooms = new List<Room>();
+                foreach (var Room in typeRoomList)
+                {
+                    // Extract room information
+                    Room room = Room.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.TenPhong == name)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<Room>(); // Return empty list on error
+            }
+
+        }
+
+        public async Task<List<Room>> SearchRoomByType(string type)
+        {
+            try
+            {
+                // Retrieve all room data from "Room" node
+                var typeRoomList = await firebaseClient
+                    .Child("Room")
+                    .OnceAsync<Royal.DAO.Room>();
+
+                // Initialize an empty list to store matching rooms
+                List<Room> matchingRooms = new List<Room>();
+
+                // Iterate through retrieved room data
+                foreach (var Room in typeRoomList)
+                {
+                    // Extract room information
+                    Room room = Room.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.LoaiPhong == type)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<Room>(); // Return empty list on error
+            }
+        }
+
+
+
+        public async Task<List<Room>> SearchRoomByStatus(string status)
+        {
+            try
+            {
+                // Retrieve all room data from "Room" node
+                var typeRoomList = await firebaseClient
+                    .Child("Room")
+                    .OnceAsync<Royal.DAO.Room>();
+
+                // Initialize an empty list to store matching rooms
+                List<Room> matchingRooms = new List<Room>();
+
+                // Iterate through retrieved room data
+                foreach (var Room in typeRoomList)
+                {
+                    // Extract room information
+                    Room room = Room.Object;
+
+                    // Check if room price falls within the specified range
+                    if (room.TrangThai == status)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by price: {ex.Message}");
+                return new List<Room>(); // Return empty list on error
+            }
+        }
+
+
 
     }
 }

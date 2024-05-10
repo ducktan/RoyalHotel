@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomType));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtPrice = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
@@ -43,6 +43,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cboTypeSearch = new MetroFramework.Controls.MetroComboBox();
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtSearch = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@
             this.btnAddRoomType = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnDisplayRoomType = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnUpdateRoomType = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.cboTypeSearch = new MetroFramework.Controls.MetroComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRoomType)).BeginInit();
@@ -212,6 +212,24 @@
             this.groupBox3.Text = "Quản lý loại phòng";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // cboTypeSearch
+            // 
+            this.cboTypeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboTypeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTypeSearch.FormattingEnabled = true;
+            this.cboTypeSearch.ItemHeight = 24;
+            this.cboTypeSearch.Items.AddRange(new object[] {
+            "Mã loại phòng",
+            "Tên loại phòng",
+            "Số lượng người",
+            "Giá"});
+            this.cboTypeSearch.Location = new System.Drawing.Point(254, 62);
+            this.cboTypeSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTypeSearch.Name = "cboTypeSearch";
+            this.cboTypeSearch.Size = new System.Drawing.Size(192, 30);
+            this.cboTypeSearch.TabIndex = 134;
+            this.cboTypeSearch.UseSelectable = true;
+            // 
             // kryptonButton5
             // 
             this.kryptonButton5.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -239,23 +257,23 @@
             this.label9.Location = new System.Drawing.Point(28, 62);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 25);
+            this.label9.Size = new System.Drawing.Size(162, 25);
             this.label9.TabIndex = 28;
-            this.label9.Text = "Thuộc tính";
+            this.label9.Text = "Tìm kiếm theo loại:";
             // 
             // dataGridRoomType
             // 
             this.dataGridRoomType.AllowUserToResizeRows = false;
             this.dataGridRoomType.BackgroundColor = System.Drawing.Color.White;
             this.dataGridRoomType.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridRoomType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridRoomType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridRoomType.ColumnHeadersHeight = 40;
             this.dataGridRoomType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridRoomType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -263,26 +281,26 @@
             this.Column2,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridRoomType.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridRoomType.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridRoomType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridRoomType.GridColor = System.Drawing.Color.White;
             this.dataGridRoomType.Location = new System.Drawing.Point(3, 73);
             this.dataGridRoomType.Name = "dataGridRoomType";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridRoomType.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridRoomType.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridRoomType.RowHeadersVisible = false;
             this.dataGridRoomType.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridRoomType.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -508,24 +526,6 @@
             this.btnUpdateRoomType.TabIndex = 45;
             this.btnUpdateRoomType.Values.Text = "Cập nhật loại phòng";
             this.btnUpdateRoomType.Click += new System.EventHandler(this.btnUpdateRoomType_Click);
-            // 
-            // cboTypeSearch
-            // 
-            this.cboTypeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboTypeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTypeSearch.FormattingEnabled = true;
-            this.cboTypeSearch.ItemHeight = 24;
-            this.cboTypeSearch.Items.AddRange(new object[] {
-            "Mã loại phòng",
-            "Tên loại phòng",
-            "Số lượng người",
-            "Giá"});
-            this.cboTypeSearch.Location = new System.Drawing.Point(254, 62);
-            this.cboTypeSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.cboTypeSearch.Name = "cboTypeSearch";
-            this.cboTypeSearch.Size = new System.Drawing.Size(192, 30);
-            this.cboTypeSearch.TabIndex = 134;
-            this.cboTypeSearch.UseSelectable = true;
             // 
             // RoomType
             // 

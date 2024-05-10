@@ -12,6 +12,7 @@ using FireSharp;
 using Firebase.Database;
 using Firebase.Database.Query;
 using Royal.DAO;
+using System.Text.RegularExpressions;
 
 
 namespace Royal
@@ -65,8 +66,7 @@ namespace Royal
         {
             // Get the search criteria from the UI controls
             string type = cboTypeSearch.Text;
-            string searchText = txtSearch.Text; // Assuming txtSearch is a textbox for search text
-            Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
+            string searchText = txtSearch.Text.Trim(); // Assuming txtSearch is a textbox for search text
 
             // Validate search criteria
             if (string.IsNullOrEmpty(searchText))
@@ -75,53 +75,57 @@ namespace Royal
                 return;
             }
 
-            // Determine the search option based on the selected type
-            string searchOption;
-            switch (type)
+            // Call the appropriate search function based on the selected type
+            Royal.DAO.RoomType roomType = new Royal.DAO.RoomType(); // Assuming you have an instance
+
+            // Call the appropriate search function based on the selected type
+            List<Royal.DAO.RoomType> searchResults = new List<Royal.DAO.RoomType>(); // Initialize empty list
+
+           
+            try
             {
-                case "Mã loại phòng": // Search by room type ID (MALPH)
-                    searchOption = "MALPH";
-                    break;
-                case "Tên loại phòng": // Search by room type name (TENLPH)
-                    searchOption = "TENLPH";
-                    break;
-                case "Số lượng người": // Search by number of occupants (SLNG)
-                    searchOption = "SLNG";
-                    // Validate search text for integer value (optional)
-                    if (!int.TryParse(searchText, out int slngValue))
+                if (type == "Mã loại phòng") // Search by room type ID (MALPH)
+                {
+
+                    Royal.DAO.RoomType searchResult = await roomType.SearchRoomTypeById(searchText);
+                    searchResults.Add(searchResult);
+                }
+                else
+                if (type == "Tên loại phòng") // Search by room type name (TENLPH)
+                {
+                    searchResults = await roomType.SearchRoomTypeByName(searchText);
+                }
+                else if (type == "Số lượng người") // Search by number of occupants (SLNG)
+                {
+                    int slngValue;
+                    if (!int.TryParse(searchText, out slngValue))
                     {
                         MessageBox.Show("Invalid value for number of occupants. Please enter an integer.");
                         return;
                     }
-                    searchText = slngValue.ToString();  // Convert to string for search
-                    break;
-                case "Giá": // Search by price (GIA)
-                    searchOption = "GIA";
-                    // Validate search text for integer value (optional)
-                    if (!int.TryParse(searchText, out int giaValue))
+                    searchResults = await roomType.SearchRoomTypeByCapacity(slngValue);
+                }
+                else if (type == "Giá") // Search by price (GIA)
+                {
+
+                    string priceText = searchText; // Remove leading/trailing whitespace
+
+                    int priceValue;
+                    if (!int.TryParse(priceText, out priceValue))
                     {
                         MessageBox.Show("Invalid value for price. Please enter an integer.");
                         return;
                     }
-                    searchText = giaValue.ToString();  // Convert to string for search
-                    break;
-                default:
+                    searchResults = await roomType.SearchRoomTypeByPrice(priceValue);
+                }
+                else
+                {
                     MessageBox.Show("Invalid search type selected.");
                     return;
-            }
-            // Call the search function with the appropriate option and value
-            try
-            {
-
-
-                List<Royal.DAO.RoomType> searchResults = await roomType.SearchRoomType(searchOption, searchText);
+                }
 
                 // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
-                List<string[]> uiResults = new List<string[]>();
-                foreach (Royal.DAO.RoomType foundRoom in searchResults)
-                {
-                    uiResults.Add(new string[] { foundRoom.MALPH, foundRoom.TENLPH, foundRoom.SLNG.ToString(), foundRoom.GIA.ToString() });
-                }
+                List<string[]> uiResults = searchResults.Select(room => new string[] { room.MALPH, room.TENLPH, room.SLNG.ToString(), room.GIA.ToString() }).ToList();
 
                 // Update UI elements on the UI thread
                 if (this.InvokeRequired)
@@ -144,6 +148,7 @@ namespace Royal
                     }
                 }
 
+                // Handle no search results (optional)
                 if (searchResults.Count == 0)
                 {
                     string searchCriteria = $"Search by: {type}";
