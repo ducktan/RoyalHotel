@@ -110,28 +110,15 @@ namespace Royal.DAO
                
             }
 
-        public async void DeleteBill(DataGridView v)
-        {
-            if (v.SelectedRows.Count > 0) // Check if any row is selected
-            {
-                // Get the selected row
-                DataGridViewRow selectedRow = v.SelectedRows[0];
-
-                if (selectedRow != null)
-                {
-                    // Extract the bill ID from the selected row (assuming it's in column 0)
-                    string billId = (string)selectedRow.Cells[0].Value;
-
+        public async void DeleteBill(string billId)
+        {         
                     // Confirmation prompt (optional)
                     if (MessageBox.Show("Are you sure you want to delete this bill?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         try
                         {
                             // Delete the bill from Firebase
-                            await Client.DeleteAsync($"Bill/{billId}");
-
-                            // Remove the row from the DataGridView
-                            v.Rows.Remove(selectedRow);
+                            await Client.DeleteAsync($"Bill/{billId}");                           
 
                             MessageBox.Show("Bill deleted successfully!");
                         }
@@ -140,40 +127,31 @@ namespace Royal.DAO
                             MessageBox.Show($"Error deleting bill: {ex.Message}");
                         }
                     }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please select a bill to delete.");
-            }
+                
+            
+           
         }
 
-        public async void UpdateBill(DataGridView v)
-        {
-            if (v.SelectedRows.Count > 0) // Check if any row is selected
-            {
-                // Get the selected row
-                DataGridViewRow selectedRow = v.SelectedRows[0];
 
-                if (selectedRow != null)
-                {
-                    // Extract the bill ID from the selected row (assuming it's in column 0)
-                    string billId = (string)selectedRow.Cells[0].Value;
+        public async void UpdateBill(string billID, string maphong, string trangthai, string idkh, string idnv, string nglap, int dongia, int giamgia, int tongtien)
+        {
+            
+                
 
                     // Get the updated bill information from the selected row
                     BillDAO updatedBill = new BillDAO
                     {
-                        MAHD = (string)selectedRow.Cells[0].Value, // Assuming bill ID remains unchanged
-                        MAPHONG = (string)selectedRow.Cells[1].Value,
-                        TRANGTHAI = (string)selectedRow.Cells[2].Value,
-                        ID_KH = (string)selectedRow.Cells[3].Value,
-                        ID_NV = (string)selectedRow.Cells[4].Value,
+                        MAHD = billID, // Assuming bill ID remains unchanged
+                        MAPHONG = maphong,
+                        TRANGTHAI = trangthai,
+                        ID_KH = idkh,
+                        ID_NV = idnv,
 
-                        NGLAP = (string)selectedRow.Cells[5].Value, // Remove extra space
+                        NGLAP = nglap, // Remove extra space
 
-                        DONGIA = (int)selectedRow.Cells[6].Value,
-                        DISCOUNT = (int)selectedRow.Cells[7].Value,
-                        THANHTIEN = (int)selectedRow.Cells[8].Value,
+                        DONGIA = dongia,
+                        DISCOUNT = giamgia,
+                        THANHTIEN = tongtien,
                     };
 
 
@@ -183,7 +161,7 @@ namespace Royal.DAO
                         try
                         {
                             // Update the bill in Firebase
-                            await Client.SetAsync($"Bill/{billId}", updatedBill);
+                            await Client.SetAsync($"Bill/{billID}", updatedBill);
 
                             // Refresh the DataGridView (optional)
                             // v.Refresh(); // You might want to refresh only the updated row
@@ -195,14 +173,31 @@ namespace Royal.DAO
                             MessageBox.Show($"Error updating bill: {ex.Message}");
                         }
                     }
-                }
+                
             }
-            else
+
+
+
+        public async Task<BillDAO> SearchBillTypeById(string id)
+        {
+            string queryPath = $"Bill/{id}";
+
+            try
             {
-                MessageBox.Show("Please select a bill to update.");
+                FirebaseResponse response = await Client.GetAsync(queryPath);
+                return response.ResultAs<BillDAO>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching bill by ID: {ex.Message}");
+                return null; // Return null on error
             }
         }
+
+
+
     }
+    
 
 
 
