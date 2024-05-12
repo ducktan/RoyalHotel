@@ -12,6 +12,9 @@ using Firebase.Database;
 using Firebase.Database.Query;
 using Royal.DAO;
 using System.Globalization;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace Royal
 {
@@ -174,13 +177,33 @@ namespace Royal
 
             try
             {
-                if (type == "MAHD") // Search by room type ID (MALPH)
+                if (type == "Mã hoá đơn") // Search by room type ID (MALPH)
                 {
 
                     Royal.DAO.BillDAO searchResult = await billFun.SearchBillTypeById(searchText1);
                     searchResults.Add(searchResult);
-                }                
-               
+                }  
+                else if (type == "Mã nhân viên") // Search by room type ID (MALPH)
+                {
+
+                    searchResults = await billFun.SearchBillByIDNV(searchText1);
+                }
+                else if (type == "Mã khách hàng") // Search by room type ID (MALPH)
+                {
+
+                    searchResults = await billFun.SearchBillByIDKH(searchText1);
+                }
+                else if (type == "Ngày lập HĐ") // Search by room type ID (MALPH)
+                {
+
+                    searchResults = await billFun.SearchBillByDate(searchText1);
+                }
+                else if (type == "Trạng thái HĐ") // Search by room type ID (MALPH)
+                {
+
+                    searchResults = await billFun.SearchBillByState(searchText1);
+                }
+
                 else
                 {
                     MessageBox.Show("Invalid search type selected.");
@@ -243,6 +266,58 @@ namespace Royal
         private void discount_TextChanged_1(object sender, EventArgs e)
         {
             CalculateTotal();
+        }
+
+        private void dataGridBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Tạo một đối tượng Document mới
+                Document document = new Document();
+
+                // Hiển thị hộp thoại SaveFileDialog để người dùng chọn vị trí và tên file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Save PDF File";
+                saveFileDialog.ShowDialog();
+
+                // Kiểm tra xem người dùng đã chọn vị trí và tên file chưa
+                if (!string.IsNullOrEmpty(saveFileDialog.FileName))
+                {
+                    // Tạo một đối tượng PdfWriter để ghi dữ liệu vào file PDF
+                    PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(saveFileDialog.FileName, FileMode.Create));
+
+                    // Mở tài liệu để bắt đầu viết dữ liệu
+                    document.Open();
+
+                   
+
+
+                    // Tạo các đoạn văn bản và thêm vào tài liệu
+                    Paragraph header = new Paragraph("ROYAL HOTEL - ALL INFORMATION ABOUT BILL");
+                    
+                    Paragraph content = new Paragraph(string.Format("1. Number of bill: {0}", dataGridBill.RowCount));
+                  
+                    document.Add(header);
+                    document.Add(content);
+
+                    // Đóng tài liệu
+                    document.Close();
+
+                    // Hiển thị thông báo thành công
+                    MessageBox.Show("PDF file exported successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý các ngoại lệ (ghi log, ném các ngoại lệ cụ thể, v.v.)
+                MessageBox.Show($"Error exporting PDF file: {ex.Message}");
+            }
         }
     }
 }

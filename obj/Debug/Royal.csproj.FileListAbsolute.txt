@@ -342,3 +342,6 @@ E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Ab
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Reactive.xml
 E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.ValueTuple.xml
 C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\itextsharp.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\itextsharp.xml

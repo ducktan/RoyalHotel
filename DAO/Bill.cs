@@ -9,12 +9,15 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using System.Windows.Forms;
 using FireSharp;
+using Firebase.Database;
+using System.Globalization;
 
 
 namespace Royal.DAO
 {
     public class BillDAO
     {
+        private Firebase.Database.FirebaseClient firebaseClient;
         public string MAHD { get; set; }
         public string MAPHONG { get; set; }
         public string ID_NV { get; set; }
@@ -27,19 +30,17 @@ namespace Royal.DAO
         public int DONGIA { get; set; }
 
 
-        // Set up Firebase configuration
         public FirebConfig config = new FirebConfig();
-
-        // Initialize Firebase client
         public IFirebaseClient Client { get; private set; } // Make client accessible only within the class
 
-        
+
         public BillDAO()
         {   
             try
             {
                 Client = new FireSharp.FirebaseClient(config.Config);
-                
+                firebaseClient = FirebaseManage.GetFirebaseClient();
+
             }
             catch {
                 MessageBox.Show("Connection fail!");
@@ -193,6 +194,148 @@ namespace Royal.DAO
                 return null; // Return null on error
             }
         }
+
+        public async Task<List<BillDAO>> SearchBillByIDNV(string idnv)
+        {
+            try
+            {
+                var billList = await firebaseClient
+            .Child("Bill")
+            .OnceAsync<Royal.DAO.BillDAO>();
+                // Initialize an empty list to store matching rooms
+                List<BillDAO> matchingBill = new List<BillDAO>();
+                foreach (var bill in billList)
+                {
+                    // Extract room information
+                    BillDAO billA = bill.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (billA.ID_NV == idnv)
+                    {
+                        // Add matching room to the list
+                        matchingBill.Add(billA);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingBill;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                MessageBox.Show($"Error searching bill by id staff: {ex.Message}");
+                return new List<BillDAO>(); // Return empty list on error
+            }
+
+        }
+
+        public async Task<List<BillDAO>> SearchBillByIDKH(string idkh)
+        {
+            try
+            {
+                var billList = await firebaseClient
+            .Child("Bill")
+            .OnceAsync<Royal.DAO.BillDAO>();
+                // Initialize an empty list to store matching rooms
+                List<BillDAO> matchingBill = new List<BillDAO>();
+                foreach (var bill in billList)
+                {
+                    // Extract room information
+                    BillDAO billA = bill.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (billA.ID_KH == idkh)
+                    {
+                        // Add matching room to the list
+                        matchingBill.Add(billA);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingBill;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                MessageBox.Show($"Error searching bill by id customer: {ex.Message}");
+                return new List<BillDAO>(); // Return empty list on error
+            }
+
+        }
+
+        public async Task<List<BillDAO>> SearchBillByDate(string date)
+        {
+            try
+            {
+                var billList = await firebaseClient
+                    .Child("Bill")
+                    .OnceAsync<Royal.DAO.BillDAO>();
+
+                // Initialize an empty list to store matching bills
+                List<BillDAO> matchingBill = new List<BillDAO>();
+
+                foreach (var bill in billList)
+                {
+                    // Extract bill information
+                    BillDAO billA = bill.Object;
+
+                    // Convert the stored date format to match the input date format
+                    DateTime storedDate = DateTime.ParseExact(billA.NGLAP, "dddd, MMMM d, yyyy", CultureInfo.InvariantCulture);
+                    string storedDateString = storedDate.ToString("dd/MM/yyyy");
+
+                    // Check if the converted date matches the search criteria
+                    if (storedDateString == date)
+                    {
+                        // Add matching bill to the list
+                        matchingBill.Add(billA);
+                    }
+                }
+
+                // Return the list of matching bills
+                return matchingBill;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                MessageBox.Show($"Error searching bill by date: {ex.Message}");
+                return new List<BillDAO>(); // Return empty list on error
+            }
+        }
+
+        public async Task<List<BillDAO>> SearchBillByState(string state)
+        {
+            try
+            {
+                var billList = await firebaseClient
+            .Child("Bill")
+            .OnceAsync<Royal.DAO.BillDAO>();
+                // Initialize an empty list to store matching rooms
+                List<BillDAO> matchingBill = new List<BillDAO>();
+                foreach (var bill in billList)
+                {
+                    // Extract room information
+                    BillDAO billA = bill.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (billA.TRANGTHAI == state)
+                    {
+                        // Add matching room to the list
+                        matchingBill.Add(billA);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingBill;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                MessageBox.Show($"Error searching bill by state: {ex.Message}");
+                return new List<BillDAO>(); // Return empty list on error
+            }
+
+        }
+
 
 
 
