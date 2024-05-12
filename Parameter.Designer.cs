@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parameter));
             this.label1 = new System.Windows.Forms.Label();
             this.kryptonBorderEdge1 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
@@ -40,10 +40,12 @@
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.value = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.content = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -64,11 +66,9 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.maP = new System.Windows.Forms.TextBox();
+            this.tenP = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -155,13 +155,13 @@
             this.label2.TabIndex = 263;
             this.label2.Text = "▶ Giá trị";
             // 
-            // textBox2
+            // value
             // 
-            this.textBox2.Location = new System.Drawing.Point(18, 118);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 31);
-            this.textBox2.TabIndex = 264;
+            this.value.Location = new System.Drawing.Point(18, 118);
+            this.value.Multiline = true;
+            this.value.Name = "value";
+            this.value.Size = new System.Drawing.Size(179, 31);
+            this.value.TabIndex = 264;
             // 
             // label4
             // 
@@ -175,26 +175,16 @@
             this.label4.TabIndex = 267;
             this.label4.Text = "▶ Mã";
             // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Location = new System.Drawing.Point(15, 61);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(181, 30);
-            this.metroComboBox1.TabIndex = 268;
-            this.metroComboBox1.UseSelectable = true;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tenP);
+            this.groupBox2.Controls.Add(this.maP);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.metroComboBox2);
+            this.groupBox2.Controls.Add(this.content);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.metroComboBox1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.value);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
             this.groupBox2.Location = new System.Drawing.Point(18, 257);
@@ -203,6 +193,38 @@
             this.groupBox2.TabIndex = 269;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin quy định";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(204, 97);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 28);
+            this.label3.TabIndex = 271;
+            this.label3.Text = "▶ Miêu tả";
+            // 
+            // content
+            // 
+            this.content.Location = new System.Drawing.Point(209, 119);
+            this.content.Multiline = true;
+            this.content.Name = "content";
+            this.content.Size = new System.Drawing.Size(179, 31);
+            this.content.TabIndex = 272;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(203, 30);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 28);
+            this.label5.TabIndex = 269;
+            this.label5.Text = "▶ Tên";
             // 
             // kryptonButton1
             // 
@@ -216,6 +238,7 @@
             this.kryptonButton1.TabIndex = 270;
             this.kryptonButton1.UseWaitCursor = true;
             this.kryptonButton1.Values.Text = "Thêm";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // kryptonButton2
             // 
@@ -250,41 +273,41 @@
             this.dataGridViewParameter.AllowUserToResizeRows = false;
             this.dataGridViewParameter.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewParameter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParameter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParameter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewParameter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewParameter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
             this.colValue,
             this.colDescribe,
             this.Column1});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewParameter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewParameter.GridColor = System.Drawing.Color.White;
             this.dataGridViewParameter.Location = new System.Drawing.Point(3, 55);
             this.dataGridViewParameter.Name = "dataGridViewParameter";
             this.dataGridViewParameter.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParameter.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParameter.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewParameter.RowHeadersVisible = false;
             this.dataGridViewParameter.RowHeadersWidth = 51;
             this.dataGridViewParameter.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -455,48 +478,6 @@
             this.kryptonButton3.UseWaitCursor = true;
             this.kryptonButton3.Values.Text = "Sửa";
             // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 24;
-            this.metroComboBox2.Location = new System.Drawing.Point(205, 61);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(181, 30);
-            this.metroComboBox2.TabIndex = 270;
-            this.metroComboBox2.UseSelectable = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(203, 30);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 28);
-            this.label5.TabIndex = 269;
-            this.label5.Text = "▶ Tên";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(204, 97);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 28);
-            this.label3.TabIndex = 271;
-            this.label3.Text = "▶ Miêu tả";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(209, 119);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 31);
-            this.textBox3.TabIndex = 272;
-            // 
             // kryptonButton4
             // 
             this.kryptonButton4.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
@@ -509,6 +490,22 @@
             this.kryptonButton4.TabIndex = 275;
             this.kryptonButton4.UseWaitCursor = true;
             this.kryptonButton4.Values.Text = "Danh sách";
+            // 
+            // maP
+            // 
+            this.maP.Location = new System.Drawing.Point(18, 63);
+            this.maP.Multiline = true;
+            this.maP.Name = "maP";
+            this.maP.Size = new System.Drawing.Size(179, 31);
+            this.maP.TabIndex = 273;
+            // 
+            // tenP
+            // 
+            this.tenP.Location = new System.Drawing.Point(209, 63);
+            this.tenP.Multiline = true;
+            this.tenP.Name = "tenP";
+            this.tenP.Size = new System.Drawing.Size(179, 31);
+            this.tenP.TabIndex = 274;
             // 
             // Parameter
             // 
@@ -550,9 +547,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox value;
         private System.Windows.Forms.Label label4;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
@@ -574,10 +570,11 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private System.Windows.Forms.TextBox content;
         private System.Windows.Forms.Label label5;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton4;
+        private System.Windows.Forms.TextBox maP;
+        private System.Windows.Forms.TextBox tenP;
     }
 }
