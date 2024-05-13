@@ -238,12 +238,12 @@ namespace Royal
                 if (searchResults.Count == 0)
                 {
                     string searchCriteria = $"Search by: {type}";
-                    MessageBox.Show($"No room types found with {searchCriteria}");
+                    MessageBox.Show($"No bill found with {searchCriteria}");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error searching room types: {ex.Message}");
+                MessageBox.Show($"Error searching bill: {ex.Message}");
             }
         }
 

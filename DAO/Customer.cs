@@ -73,7 +73,115 @@ namespace Royal.DAO
             MessageBox.Show("Add Customer");
         }
 
+        public async void LoadCustomer(DataGridView v)
+        {
 
+            // Fetch data from Firebase
+            FirebaseResponse response = await Client.GetAsync("Customer/");
+
+            // Check for successful response
+            // Check for successful response
+            if (response != null && !string.IsNullOrEmpty(response.Body))
+            {
+                // Cast response as Dictionary<string, Bill> (assuming 'Bill' class exists)
+                Dictionary<string, CustomerDAO> getBill = response.ResultAs<Dictionary<string, CustomerDAO>>();
+
+                // Clear the DataGridView before loading new data (optional)
+                v.Rows.Clear();
+                if (getBill != null)
+                {
+                    foreach (var item in getBill)
+                    {
+                        CustomerDAO bill = item.Value; // Access the Bill object
+
+                        // Add a new row to the DataGridView
+                        v.Rows.Add(
+                           bill.MAKH,
+                           bill.HOTEN,
+                           bill.CCCD,
+                           bill.NGSINH,
+                           bill.DIACHI,
+                           bill.ID_LOAIKH,
+                           bill.GIOITINH,
+                           bill.SDT, 
+                           bill.QUOCTICH, 
+                           bill.EMAIL
+                        );
+                    }
+                }
+                    
+            }
+
+            
+
+
+
+
+        }
+
+        public async void DeleteCus(string cusId)
+        {
+            // Confirmation prompt (optional)
+            if (MessageBox.Show("Are you sure you want to delete this customer?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    // Delete the bill from Firebase
+                    await Client.DeleteAsync($"Customer/{cusId}");
+
+                    MessageBox.Show("Customer deleted successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting customer: {ex.Message}");
+                }
+            }
+
+
+
+        }
+
+        public async void UpdateCustomer(string cusID, string hoten, string cccd, string ngsinh, string diachi, string loaikh, string gender, string sdt, string qt, string email)
+        {
+
+
+
+            // Get the updated bill information from the selected row
+            CustomerDAO updatedCustomer = new CustomerDAO
+            {
+                MAKH = cusID,
+                HOTEN = hoten,
+                CCCD = cccd,
+                NGSINH = ngsinh,
+                DIACHI = diachi,
+                ID_LOAIKH = loaikh,
+                GIOITINH = gender,
+                SDT = sdt,
+                QUOCTICH = qt,
+                EMAIL = email
+            };
+
+
+            // Confirmation prompt (modified)
+            if (MessageBox.Show("Are you sure you want to update this customer?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    // Update the bill in Firebase
+                    await Client.SetAsync($"Customer/{cusID}", updatedCustomer);
+
+                    // Refresh the DataGridView (optional)
+                    // v.Refresh(); // You might want to refresh only the updated row
+
+                    MessageBox.Show("Customer information updated successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating customer: {ex.Message}");
+                }
+            }
+
+        }
 
 
 

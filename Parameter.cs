@@ -15,6 +15,7 @@ using System.Globalization;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Royal
 {
@@ -26,24 +27,150 @@ namespace Royal
             InitializeComponent();
             // Khởi tạo FirebaseClient với chuỗi kết nối đến Firebase Realtime Database
             firebaseClient = FirebaseManage.GetFirebaseClient();
+            ParameterDAO demo = new ParameterDAO();
+            demo.LoadPara(dataGridViewParameter);
+            dataGridViewParameter.CellClick += dataGridBill_CellClick;
         }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
+        private async void kryptonButton1_Click(object sender, EventArgs e)
         {
+            // Get the current row count for the "Parameters" table
+            int currentRowCount = await firebaseClient
+                .Child("Parameters")
+                .OnceAsync<object>()
+                .ContinueWith(task => task.Result.Count);
+
+            // Increment by 1 to get the new sequential number
+            int newNumber = currentRowCount + 1;
+
+            // Format the number with leading zeros (001, 002, ...)
+            string formattedNumber = newNumber.ToString("D3"); // Adjust "D3" for desired number of digits
+
+            // Create the ID with the prefix "NQ"
+            string id = $"NQ{formattedNumber}";
+
             ParameterDAO p1 = new ParameterDAO()
             {
-                pID = maP.Text,
+                pID = id,
                 pName = tenP.Text,
                 pContent = content.Text,
                 pValue = Int32.Parse(value.Text)
             };
 
             // Thực hiện các thao tác với đối tượng p1 (ví dụ: lưu vào Firebase Realtime Database)
-            // firebaseClient.Child("parameters").PostAsync(p1);
+            // firebaseClient.Child("Parameters").PostAsync(p1);
 
             p1.AddPara(p1);
         }
 
+        private void dataGridViewParameter_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void dataGridBill_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
+            {
+                DataGridViewRow selectedRow = dataGridViewParameter.Rows[e.RowIndex];
+
+                // Kiểm tra nếu hàng không rỗng
+                if (!selectedRow.IsNewRow)
+                {
+                    maP.Text = (string)selectedRow.Cells[0].Value;
+                    tenP.Text = (string)(selectedRow.Cells[1].Value);
+                    value.Text = selectedRow.Cells[2].Value.ToString();
+                    content.Text = (string)(selectedRow.Cells[3].Value);
+
+
+
+                }
+            }
+        }
+
+        private void kryptonButton4_Click(object sender, EventArgs e)
+        {
+            ParameterDAO p = new ParameterDAO(); 
+            p.LoadPara(dataGridViewParameter);
+        }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            string pIDD = maP.Text;
+            ParameterDAO p2 = new ParameterDAO();
+            p2.DeletePara(pIDD);
+        }
+
+        private void kryptonButton3_Click(object sender, EventArgs e)
+        {
+            string pIDD = maP.Text; 
+            string tenPP = tenP.Text;
+            int valueP = Int32.Parse(value.Text);
+            string motaP = content.Text;
+
+            ParameterDAO p = new ParameterDAO();
+            p.UpdateParameter(pIDD, tenPP, valueP, motaP);
+        }
+
+        private async void kryptonButton5_Click(object sender, EventArgs e)
+        {
+            // Get the search criteria from the UI controls
+            string searchText1 = searchText.Text.Trim(); // Assuming txtSearch is a textbox for search text
+
+            if (string.IsNullOrEmpty(searchText1))
+            {
+                MessageBox.Show("Please enter the search text.");
+                return;
+            }
+            // Call the appropriate search function based on the selected type
+            Royal.DAO.ParameterDAO billFun = new Royal.DAO.ParameterDAO(); // Assuming you have an instance
+
+            // Call the appropriate search function based on the selected type
+            List<Royal.DAO.ParameterDAO> searchResults = new List<Royal.DAO.ParameterDAO>(); // Initialize empty list
+
+
+            try
+            {                
+
+                Royal.DAO.ParameterDAO searchResult = await billFun.SearchParaTypeById(searchText1);
+                searchResults.Add(searchResult);
+               
+
+                // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+                List<string[]> uiResults = searchResults.Select(bill => new string[] { bill.pID, bill.pName, bill.pValue.ToString(), bill.pContent }).ToList();
+
+                // Update UI elements on the UI thread
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        dataGridViewParameter.Rows.Clear();
+                        foreach (string[] rowData in uiResults)
+                        {
+                            dataGridViewParameter.Rows.Add(rowData);
+                        }
+                    }));
+                }
+                else
+                {
+                    dataGridViewParameter.Rows.Clear();
+                    foreach (string[] rowData in uiResults)
+                    {
+                        dataGridViewParameter.Rows.Add(rowData);
+                    }
+                }
+
+                // Handle no search results (optional)
+                if (searchResults.Count == 0)
+                {
+                    
+                    MessageBox.Show($"No parameter found");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching parameter: {ex.Message}");
+            }
+        }
     }
 }

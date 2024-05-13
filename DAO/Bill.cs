@@ -80,15 +80,18 @@ namespace Royal.DAO
                 // Fetch data from Firebase
                 FirebaseResponse response = await Client.GetAsync("Bill/");
 
-                // Check for successful response
-               
-                
-                    // Cast response as Dictionary<string, Bill> (assuming 'Bill' class exists)
-                    Dictionary<string, BillDAO> getBill = response.ResultAs<Dictionary<string, BillDAO>>();
+            // Check for successful response
 
-                    // Clear the DataGridView before loading new data (optional)
-                    v.Rows.Clear();
+            if (response != null && !string.IsNullOrEmpty(response.Body))
+            {
+                // Cast response as Dictionary<string, Bill> (assuming 'Bill' class exists)
+                Dictionary<string, BillDAO> getBill = response.ResultAs<Dictionary<string, BillDAO>>();
 
+                // Clear the DataGridView before loading new data (optional)
+                v.Rows.Clear();
+
+                if (getBill != null)
+                {
                     foreach (var item in getBill)
                     {
                         BillDAO bill = item.Value; // Access the Bill object
@@ -107,6 +110,10 @@ namespace Royal.DAO
 
                         );
                     }
+                }
+                    
+            }
+                
                 
                
             }
