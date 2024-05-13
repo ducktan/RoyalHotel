@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Royal.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Royal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManageCustomer());
+            Application.Run(new ManageStaff());
 
         }
     }
