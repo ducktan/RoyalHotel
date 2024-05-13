@@ -9,12 +9,14 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using System.Windows.Forms;
 using FireSharp;
+using Firebase.Database;
 
 
 namespace Royal.DAO
 {
     public class CustomerDAO
     {
+        private Firebase.Database.FirebaseClient firebaseClient;
         public string MAKH { get; set; }
         public string HOTEN { get; set; }
         public string GIOITINH { get; set; }
@@ -39,6 +41,7 @@ namespace Royal.DAO
             try
             {
                 Client = new FireSharp.FirebaseClient(config.Config);
+                firebaseClient = FirebaseManage.GetFirebaseClient();
 
             }
             catch
@@ -179,6 +182,40 @@ namespace Royal.DAO
                 {
                     MessageBox.Show($"Error updating customer: {ex.Message}");
                 }
+            }
+
+        }
+
+        public async Task<List<CustomerDAO>> SearchCusByCCCD(string state)
+        {
+            try
+            {
+                var billList = await firebaseClient
+                .Child("Customer")
+                .OnceAsync<Royal.DAO.CustomerDAO>();
+                // Initialize an empty list to store matching rooms
+                List<CustomerDAO> matchingBill = new List<CustomerDAO>();
+                foreach (var bill in billList)
+                {
+                    // Extract room information
+                    CustomerDAO billA = bill.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (billA.CCCD == state)
+                    {
+                        // Add matching room to the list
+                        matchingBill.Add(billA);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingBill;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                MessageBox.Show($"Error searching {ex.Message}");
+                return new List<CustomerDAO>(); // Return empty list on error
             }
 
         }

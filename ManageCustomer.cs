@@ -90,9 +90,65 @@ namespace Royal
             newCustomer.AddCustomer(newCustomer);
         }
 
-        private void kryptonButton5_Click(object sender, EventArgs e)
+        private async void kryptonButton5_Click(object sender, EventArgs e)
         {
+            string searchText1 = kryptonRichTextBox4.Text.Trim();
+            // Get the search criteria from the UI controls
+            
 
+            if (string.IsNullOrEmpty(searchText1))
+            {
+                MessageBox.Show("Please enter the search text.");
+                return;
+            }
+            // Call the appropriate search function based on the selected type
+            Royal.DAO.CustomerDAO billFun = new Royal.DAO.CustomerDAO(); // Assuming you have an instance
+
+            // Call the appropriate search function based on the selected type
+            List<Royal.DAO.CustomerDAO> searchResults = new List<Royal.DAO.CustomerDAO>(); // Initialize empty list
+
+
+            try
+            {
+
+                searchResults = await billFun.SearchCusByCCCD(searchText1);
+                
+
+                // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+                List<string[]> uiResults = searchResults.Select(bill => new string[] { bill.MAKH, bill.HOTEN, bill.CCCD, bill.NGSINH, bill.DIACHI, bill.ID_LOAIKH, bill.GIOITINH, bill.SDT, bill.QUOCTICH, bill.EMAIL }).ToList();
+
+                // Update UI elements on the UI thread
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        dataGridStaff.Rows.Clear();
+                        foreach (string[] rowData in uiResults)
+                        {
+                            dataGridStaff.Rows.Add(rowData);
+                        }
+                    }));
+                }
+                else
+                {
+                    dataGridStaff.Rows.Clear();
+                    foreach (string[] rowData in uiResults)
+                    {
+                        dataGridStaff.Rows.Add(rowData);
+                    }
+                }
+
+                // Handle no search results (optional)
+                if (searchResults.Count == 0)
+                {
+
+                    MessageBox.Show($"No customer found");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching customer: {ex.Message}");
+            }
         }
 
         private void kryptonButton3_Click(object sender, EventArgs e)
