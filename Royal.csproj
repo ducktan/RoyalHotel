@@ -209,6 +209,7 @@
     <Compile Include="DAO\Report.cs" />
     <Compile Include="DAO\Room.cs" />
     <Compile Include="DAO\RoomType.cs" />
+    <Compile Include="DAO\Service.cs" />
     <Compile Include="DAO\Staff.cs" />
     <Compile Include="DAO\StaffType.cs" />
     <Compile Include="Dashboard.cs">
