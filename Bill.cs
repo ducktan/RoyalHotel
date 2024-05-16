@@ -31,10 +31,11 @@ namespace Royal
             billDAO.LoadBill(dataGridBill);
             dataGridBill.CellClick += dataGridBill_CellClick;
             LoadMaKHFromDatabase();
+            LoadMaNVFromDatabase();
         }
 
         private async void LoadMaKHFromDatabase()
-{
+        {
         try
         {
         // Truy vấn Firebase Realtime Database để lấy danh sách khách hàng
@@ -58,11 +59,38 @@ namespace Royal
             // Xử lý ngoại lệ nếu có
             MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
         }
-    }
+        }
+
+        private async void LoadMaNVFromDatabase()
+        {
+            try
+            {
+                // Truy vấn Firebase Realtime Database để lấy danh sách khách hàng
+                var customerList = await firebaseClient
+                    .Child("Staff")
+                    .OnceAsync<StaffDAO>();
+
+                // Xóa các mục hiện có trong ComboBox
+                nhanvien.Items.Clear();
+
+                // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
+                foreach (var customer in customerList)
+                {
+                    // Combine MAKH and TENKH for display
+                    string customerDisplayText = customer.Object.StaffID;
+                    nhanvien.Items.Add(customerDisplayText);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
+        }
 
 
 
-        
+
         private async void kryptonButton3_Click(object sender, EventArgs e)
         {
             // Get the current row count for the "Bill" table
@@ -318,6 +346,11 @@ namespace Royal
                 // Xử lý các ngoại lệ (ghi log, ném các ngoại lệ cụ thể, v.v.)
                 MessageBox.Show($"Error exporting PDF file: {ex.Message}");
             }
+        }
+
+        private void maKHBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -205,10 +205,12 @@
     <Compile Include="DAO\FirebaseManage.cs" />
     <Compile Include="DAO\FirebConfig.cs" />
     <Compile Include="DAO\Parameter.cs" />
+    <Compile Include="DAO\Permission.cs" />
     <Compile Include="DAO\Report.cs" />
     <Compile Include="DAO\Room.cs" />
     <Compile Include="DAO\RoomType.cs" />
     <Compile Include="DAO\Staff.cs" />
+    <Compile Include="DAO\StaffType.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>

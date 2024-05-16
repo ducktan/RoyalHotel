@@ -25,7 +25,7 @@ namespace Royal.DAO
         public string staffDateIn { get; set; }
         public string staffType { get; set; }   
 
-        public string staffSalary { get; set; } 
+        
  
 
         public FirebConfig config = new FirebConfig();
