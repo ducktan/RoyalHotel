@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageStaff));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -41,8 +41,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateIn = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.dateBirth = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.comboBoxSex = new System.Windows.Forms.ComboBox();
             this.soDT = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.address = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.mail = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
@@ -55,7 +54,6 @@
             this.loaiNV = new MetroFramework.Controls.MetroComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBoxSex = new MetroFramework.Controls.MetroComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -64,7 +62,7 @@
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonRichTextBox4 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.searchText = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.kryptonButton6 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -72,12 +70,6 @@
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridStaff = new System.Windows.Forms.DataGridView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.bindingStaff = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cccd = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +80,14 @@
             this.add = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nvl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.bindingStaff = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.dateBirth = new MetroFramework.Controls.MetroDateTime();
+            this.dateIn = new MetroFramework.Controls.MetroDateTime();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -166,6 +166,7 @@
             // 
             this.groupBox2.Controls.Add(this.dateIn);
             this.groupBox2.Controls.Add(this.dateBirth);
+            this.groupBox2.Controls.Add(this.comboBoxSex);
             this.groupBox2.Controls.Add(this.soDT);
             this.groupBox2.Controls.Add(this.address);
             this.groupBox2.Controls.Add(this.mail);
@@ -178,7 +179,6 @@
             this.groupBox2.Controls.Add(this.loaiNV);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.comboBoxSex);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label14);
@@ -196,19 +196,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nhân viên";
             // 
-            // dateIn
+            // comboBoxSex
             // 
-            this.dateIn.Location = new System.Drawing.Point(284, 350);
-            this.dateIn.Name = "dateIn";
-            this.dateIn.Size = new System.Drawing.Size(205, 25);
-            this.dateIn.TabIndex = 132;
-            // 
-            // dateBirth
-            // 
-            this.dateBirth.Location = new System.Drawing.Point(282, 150);
-            this.dateBirth.Name = "dateBirth";
-            this.dateBirth.Size = new System.Drawing.Size(207, 25);
-            this.dateBirth.TabIndex = 131;
+            this.comboBoxSex.FormattingEnabled = true;
+            this.comboBoxSex.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.comboBoxSex.Location = new System.Drawing.Point(282, 271);
+            this.comboBoxSex.Name = "comboBoxSex";
+            this.comboBoxSex.Size = new System.Drawing.Size(207, 36);
+            this.comboBoxSex.TabIndex = 133;
             // 
             // soDT
             // 
@@ -342,23 +339,6 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Địa chỉ:";
             // 
-            // comboBoxSex
-            // 
-            this.comboBoxSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBoxSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxSex.FormattingEnabled = true;
-            this.comboBoxSex.ItemHeight = 24;
-            this.comboBoxSex.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.comboBoxSex.Location = new System.Drawing.Point(282, 271);
-            this.comboBoxSex.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxSex.Name = "comboBoxSex";
-            this.comboBoxSex.Size = new System.Drawing.Size(207, 30);
-            this.comboBoxSex.Style = MetroFramework.MetroColorStyle.Green;
-            this.comboBoxSex.TabIndex = 5;
-            this.comboBoxSex.UseSelectable = true;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -432,7 +412,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.kryptonButton5);
-            this.groupBox3.Controls.Add(this.kryptonRichTextBox4);
+            this.groupBox3.Controls.Add(this.searchText);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
@@ -453,15 +433,16 @@
             this.kryptonButton5.Size = new System.Drawing.Size(159, 40);
             this.kryptonButton5.TabIndex = 134;
             this.kryptonButton5.Values.Text = "Tìm nhân viên";
+            this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
             // 
-            // kryptonRichTextBox4
+            // searchText
             // 
-            this.kryptonRichTextBox4.Location = new System.Drawing.Point(7, 59);
-            this.kryptonRichTextBox4.Name = "kryptonRichTextBox4";
-            this.kryptonRichTextBox4.Size = new System.Drawing.Size(269, 37);
-            this.kryptonRichTextBox4.TabIndex = 133;
-            this.kryptonRichTextBox4.Text = "";
-            this.kryptonRichTextBox4.WordWrap = false;
+            this.searchText.Location = new System.Drawing.Point(7, 59);
+            this.searchText.Name = "searchText";
+            this.searchText.Size = new System.Drawing.Size(269, 37);
+            this.searchText.TabIndex = 133;
+            this.searchText.Text = "";
+            this.searchText.WordWrap = false;
             // 
             // label9
             // 
@@ -527,14 +508,14 @@
             this.dataGridStaff.AllowUserToResizeRows = false;
             this.dataGridStaff.BackgroundColor = System.Drawing.Color.White;
             this.dataGridStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridStaff.ColumnHeadersHeight = 40;
             this.dataGridStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -548,26 +529,26 @@
             this.add,
             this.gt,
             this.nvl});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridStaff.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridStaff.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridStaff.GridColor = System.Drawing.Color.White;
             this.dataGridStaff.Location = new System.Drawing.Point(3, 73);
             this.dataGridStaff.Name = "dataGridStaff";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridStaff.RowHeadersVisible = false;
             this.dataGridStaff.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridStaff.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -576,6 +557,76 @@
             this.dataGridStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridStaff.Size = new System.Drawing.Size(1159, 585);
             this.dataGridStaff.TabIndex = 28;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 125;
+            // 
+            // hoten
+            // 
+            this.hoten.HeaderText = "Họ và tên";
+            this.hoten.MinimumWidth = 6;
+            this.hoten.Name = "hoten";
+            this.hoten.Width = 125;
+            // 
+            // cccd
+            // 
+            this.cccd.HeaderText = "CCCD";
+            this.cccd.MinimumWidth = 6;
+            this.cccd.Name = "cccd";
+            this.cccd.Width = 125;
+            // 
+            // type
+            // 
+            this.type.HeaderText = "Loại NV";
+            this.type.MinimumWidth = 6;
+            this.type.Name = "type";
+            this.type.Width = 125;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Số điện thoại";
+            this.phone.MinimumWidth = 6;
+            this.phone.Name = "phone";
+            this.phone.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 125;
+            // 
+            // ngsinh
+            // 
+            this.ngsinh.HeaderText = "Ngày sinh";
+            this.ngsinh.MinimumWidth = 6;
+            this.ngsinh.Name = "ngsinh";
+            this.ngsinh.Width = 125;
+            // 
+            // add
+            // 
+            this.add.HeaderText = "Địa chỉ";
+            this.add.MinimumWidth = 6;
+            this.add.Name = "add";
+            this.add.Width = 125;
+            // 
+            // gt
+            // 
+            this.gt.HeaderText = "Giới tính";
+            this.gt.MinimumWidth = 6;
+            this.gt.Name = "gt";
+            this.gt.Width = 125;
+            // 
+            // nvl
+            // 
+            this.nvl.HeaderText = "Ngày vào làm";
+            this.nvl.MinimumWidth = 6;
+            this.nvl.Name = "nvl";
+            this.nvl.Width = 125;
             // 
             // groupBox4
             // 
@@ -654,75 +705,21 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 43);
             // 
-            // id
+            // dateBirth
             // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
+            this.dateBirth.Location = new System.Drawing.Point(282, 141);
+            this.dateBirth.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateBirth.Name = "dateBirth";
+            this.dateBirth.Size = new System.Drawing.Size(207, 34);
+            this.dateBirth.TabIndex = 134;
             // 
-            // hoten
+            // dateIn
             // 
-            this.hoten.HeaderText = "Họ và tên";
-            this.hoten.MinimumWidth = 6;
-            this.hoten.Name = "hoten";
-            this.hoten.Width = 125;
-            // 
-            // cccd
-            // 
-            this.cccd.HeaderText = "CCCD";
-            this.cccd.MinimumWidth = 6;
-            this.cccd.Name = "cccd";
-            this.cccd.Width = 125;
-            // 
-            // type
-            // 
-            this.type.HeaderText = "Loại NV";
-            this.type.MinimumWidth = 6;
-            this.type.Name = "type";
-            this.type.Width = 125;
-            // 
-            // phone
-            // 
-            this.phone.HeaderText = "Số điện thoại";
-            this.phone.MinimumWidth = 6;
-            this.phone.Name = "phone";
-            this.phone.Width = 125;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.Width = 125;
-            // 
-            // ngsinh
-            // 
-            this.ngsinh.HeaderText = "Ngày sinh";
-            this.ngsinh.MinimumWidth = 6;
-            this.ngsinh.Name = "ngsinh";
-            this.ngsinh.Width = 125;
-            // 
-            // add
-            // 
-            this.add.HeaderText = "Địa chỉ";
-            this.add.MinimumWidth = 6;
-            this.add.Name = "add";
-            this.add.Width = 125;
-            // 
-            // gt
-            // 
-            this.gt.HeaderText = "Giới tính";
-            this.gt.MinimumWidth = 6;
-            this.gt.Name = "gt";
-            this.gt.Width = 125;
-            // 
-            // nvl
-            // 
-            this.nvl.HeaderText = "Ngày vào làm";
-            this.nvl.MinimumWidth = 6;
-            this.nvl.Name = "nvl";
-            this.nvl.Width = 125;
+            this.dateIn.Location = new System.Drawing.Point(282, 341);
+            this.dateIn.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateIn.Name = "dateIn";
+            this.dateIn.Size = new System.Drawing.Size(207, 34);
+            this.dateIn.TabIndex = 135;
             // 
             // ManageStaff
             // 
@@ -760,8 +757,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateIn;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dateBirth;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox soDT;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox address;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox mail;
@@ -774,7 +769,6 @@
         private MetroFramework.Controls.MetroComboBox loaiNV;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label11;
-        private MetroFramework.Controls.MetroComboBox comboBoxSex;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -783,7 +777,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
         private System.Windows.Forms.GroupBox groupBox3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox4;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox searchText;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
@@ -807,5 +801,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn add;
         private System.Windows.Forms.DataGridViewTextBoxColumn gt;
         private System.Windows.Forms.DataGridViewTextBoxColumn nvl;
+        private System.Windows.Forms.ComboBox comboBoxSex;
+        private MetroFramework.Controls.MetroDateTime dateIn;
+        private MetroFramework.Controls.MetroDateTime dateBirth;
     }
 }

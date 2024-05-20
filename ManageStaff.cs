@@ -29,24 +29,36 @@ namespace Royal
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
             // Get the current row count for the "Bill" table
-            int currentRowCount = await firebaseClient
+            var bills = await firebaseClient
                 .Child("Staff")
-                .OnceAsync<object>()
-                .ContinueWith(task => task.Result.Count);
+                .OnceAsync<object>();
 
             // Increment by 1 to get the new sequential number
-            int newNumber = currentRowCount + 1;
+            int newNumber = bills.Count + 1;
+            string maHoaDon;
+            bool isUnique;
 
-            // Format the number with leading zeros (001, 002, ...)
-            string formattedNumber = newNumber.ToString("D3"); // Adjust "D3" for desired number of digits
+            do
+            {
+                // Format the number with leading zeros (001, 002, ...)
+                string formattedNumber = newNumber.ToString("D3");
 
-            // Create the MAHD with your preferred prefix (e.g., "HD")
-            string manv = $"NV{formattedNumber}";
+                // Create the MAHD with your preferred prefix (e.g., "HD")
+                maHoaDon = $"NV{formattedNumber}";
+
+                // Check if the ID is unique
+                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
+
+                if (!isUnique)
+                {
+                    newNumber++;
+                }
+            } while (!isUnique);
 
             // Create a new Bill object with form control values
             StaffDAO newStaff = new StaffDAO()
             {
-               StaffID = manv,
+               StaffID = maHoaDon,
                staffName = name.Text,
                staffCCCD = idcc.Text, 
                staffType = loaiNV.Text, 
@@ -71,14 +83,7 @@ namespace Royal
                 if (!selectedRow.IsNewRow)
                 {
 
-                    string dateBỉthString = (string)selectedRow.Cells[6].Value;
-                    DateTime datebirth, dateInA;
-
-                    // Sử dụng phương thức ParseExact để chuyển đổi chuỗi thành đối tượng DateTime
-                    datebirth = DateTime.ParseExact(dateBỉthString, "dddd, MMMM d, yyyy", CultureInfo.InvariantCulture);
-
-                    string dateInstring = (string)selectedRow.Cells[9].Value;
-                    dateInA = DateTime.ParseExact(dateInstring, "dddd, MMMM d, yyyy", CultureInfo.InvariantCulture);
+                  
 
 
 
@@ -89,10 +94,10 @@ namespace Royal
                     loaiNV.Text = (string)selectedRow.Cells[3].Value;
                     soDT.Text = (string)selectedRow.Cells[4].Value;
                     mail.Text = (string)selectedRow.Cells[5].Value;
-                    dateBirth.Value = datebirth;
+                    dateBirth.Text = (string)selectedRow.Cells[6].Value;
                     address.Text = (string)selectedRow.Cells[7].Value;
                     comboBoxSex.Text = (string)selectedRow.Cells[8].Value;
-                    dateIn.Value = dateInA;
+                    dateIn.Text = (string)selectedRow.Cells[9].Value;
 
                 }
             }
@@ -115,6 +120,63 @@ namespace Royal
         {
             StaffDAO a =new StaffDAO(); 
             a.UpdateStaff(manv.Text, name.Text, idcc.Text, loaiNV.Text, soDT.Text, mail.Text, dateBirth.Value.ToString(), address.Text, comboBoxSex.Text, dateIn.Value.ToString());
+        }
+
+        private async void kryptonButton5_Click(object sender, EventArgs e)
+        {
+            // Get the search criteria from the UI controls
+            string searchText1 = searchText.Text.Trim(); // Assuming txtSearch is a textbox for search text
+
+            if (string.IsNullOrEmpty(searchText1))
+            {
+                MessageBox.Show("Please enter the search text.");
+                return;
+            }
+            // Call the appropriate search function based on the selected type
+            Royal.DAO.StaffDAO billFun = new Royal.DAO.StaffDAO(); // Assuming you have an instance
+
+            // Call the appropriate search function based on the selected type
+            List<Royal.DAO.StaffDAO> searchResults = new List<Royal.DAO.StaffDAO>(); // Initialize empty list
+
+
+            try
+            {
+                searchResults = await billFun.SearchStaffbyIDStaff(searchText1);
+
+                // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+                List<string[]> uiResults = searchResults.Select(bill => new string[] { bill.StaffID, bill.staffName, bill.staffCCCD, bill.staffType, bill.staffPhone, bill.staffEmail, bill.staffBirth, bill.staffAdd, bill.staffGender, bill.staffDateIn }).ToList();
+
+                // Update UI elements on the UI thread
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        dataGridStaff.Rows.Clear();
+                        foreach (string[] rowData in uiResults)
+                        {
+                            dataGridStaff.Rows.Add(rowData);
+                        }
+                    }));
+                }
+                else
+                {
+                    dataGridStaff.Rows.Clear();
+                    foreach (string[] rowData in uiResults)
+                    {
+                        dataGridStaff.Rows.Add(rowData);
+                    }
+                }
+
+                // Handle no search results (optional)
+                if (searchResults.Count == 0)
+                {
+                    MessageBox.Show("No staff");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching staff: {ex.Message}");
+            }
         }
     }
 }

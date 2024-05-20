@@ -32,6 +32,7 @@ namespace Royal
             dataGridBill.CellClick += dataGridBill_CellClick;
             LoadMaKHFromDatabase();
             LoadMaNVFromDatabase();
+            LoadMaPhongFromDatabase();
         }
 
         private async void LoadMaKHFromDatabase()
@@ -49,8 +50,7 @@ namespace Royal
                 // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
                 foreach (var customer in customerList)
                 {
-                    // Combine MAKH and TENKH for display
-                    string customerDisplayText = customer.Object.MAKH;
+                    string customerDisplayText = $"{customer.Object.MAKH} - {customer.Object.HOTEN}";
                     maKHBox.Items.Add(customerDisplayText);
                 }
             }
@@ -77,8 +77,34 @@ namespace Royal
                 foreach (var customer in customerList)
                 {
                     // Combine MAKH and TENKH for display
-                    string customerDisplayText = customer.Object.StaffID;
+                    string customerDisplayText = $"{customer.Object.StaffID} - {customer.Object.staffName}";
                     nhanvien.Items.Add(customerDisplayText);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
+        }
+        private async void LoadMaPhongFromDatabase()
+        {
+            try
+            {
+                // Truy vấn Firebase Realtime Database để lấy danh sách khách hàng
+                var customerList = await firebaseClient
+                    .Child("Room")
+                    .OnceAsync<Room>();
+
+                // Xóa các mục hiện có trong ComboBox
+                phong.Items.Clear();
+
+                // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
+                foreach (var customer in customerList)
+                {
+                    // Combine MAKH and TENKH for display
+                    string customerDisplayText = customer.Object.MAPH;
+                    phong.Items.Add(customerDisplayText);
                 }
             }
             catch (Exception ex)
@@ -90,32 +116,54 @@ namespace Royal
 
 
 
-
         private async void kryptonButton3_Click(object sender, EventArgs e)
         {
             // Get the current row count for the "Bill" table
-            int currentRowCount = await firebaseClient
+            var bills = await firebaseClient
                 .Child("Bill")
-                .OnceAsync<object>()
-                .ContinueWith(task => task.Result.Count);
+                .OnceAsync<object>();
 
             // Increment by 1 to get the new sequential number
-            int newNumber = currentRowCount + 1;
+            int newNumber = bills.Count + 1;
+            string maHoaDon;
+            bool isUnique;
 
-            // Format the number with leading zeros (001, 002, ...)
-            string formattedNumber = newNumber.ToString("D3"); // Adjust "D3" for desired number of digits
+            do
+            {
+                // Format the number with leading zeros (001, 002, ...)
+                string formattedNumber = newNumber.ToString("D3");
 
-            // Create the MAHD with your preferred prefix (e.g., "HD")
-            string maHoaDon = $"HD{formattedNumber}";
+                // Create the MAHD with your preferred prefix (e.g., "HD")
+                maHoaDon = $"HD{formattedNumber}";
+
+                // Check if the ID is unique
+                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
+
+                if (!isUnique)
+                {
+                    newNumber++;
+                }
+            } while (!isUnique);
+
+
+            // Get the ID_NV from the combobox
+            string nhanVienText = nhanvien.Text;
+            string[] nhanVienParts = nhanVienText.Split('-');
+            string id_nv = nhanVienParts[0];
+
+            // Get the ID_KH from the combobox
+            string khachHangText = maKHBox.Text;
+            string[] khachHangParts = khachHangText.Split('-');
+            string id_kh = khachHangParts[0];
 
             // Create a new Bill object with form control values
             BillDAO newBill = new BillDAO()
             {
                 MAHD = maHoaDon,
-                ID_NV = nhanvien.Text,
-                MAPHONG = maphong.Text,
+                ID_NV = id_nv,
+                MAPHONG = phong.Text,
                 NGLAP = date.Text,
-                ID_KH = maKHBox.Text, // Sử dụng mã KH từ ComboBox
+                ID_KH = id_kh,
                 THANHTIEN = Int32.Parse(total.Text),
                 DISCOUNT = Int32.Parse(discount.Text),
                 TRANGTHAI = status.Text,
@@ -142,7 +190,7 @@ namespace Royal
                 {
                     // Trích xuất dữ liệu từ hàng được chọn và hiển thị lên form
                     mahoadon.Text = (string)selectedRow.Cells[0].Value;
-                    maphong.Text = (string)selectedRow.Cells[1].Value;
+                    phong.Text = (string)selectedRow.Cells[1].Value;
                     nhanvien.Text = (string)selectedRow.Cells[4].Value;
                     date.Text = (string)selectedRow.Cells[5].Value;
                     status.Text = (string)selectedRow.Cells[2].Value;
@@ -163,7 +211,7 @@ namespace Royal
 
                 // Đặt các giá trị thành rỗng
                 mahoadon.Text = "";
-                maphong.Text = "";
+                phong.Text = "";
                 nhanvien.Text = "";
                 date.Text = "";
                 status.Text = "";
@@ -182,7 +230,7 @@ namespace Royal
             int discountValue = int.Parse(discount.Text);
             int totalValue = int.Parse(total.Text);
 
-            billDAO.UpdateBill(mahoadon.Text, maphong.Text, status.Text, maKHBox.Text, nhanvien.Text, date.Text, giaDonValue, discountValue, totalValue);
+            billDAO.UpdateBill(mahoadon.Text, phong.Text, status.Text, maKHBox.Text, nhanvien.Text, date.Text, giaDonValue, discountValue, totalValue);
         }
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
@@ -281,8 +329,14 @@ namespace Royal
         {
             if (int.TryParse(giaDon.Text, out int giaDonValue) && int.TryParse(discount.Text, out int discountValue))
             {
-                double tongTien = giaDonValue * (1 - discountValue / 100.0);
+                int thanhtien = giaDonValue;
+                int discountAmount = (giaDonValue * discountValue) / 100;
+                int tongTien = thanhtien - discountAmount;
                 total.Text = tongTien.ToString();
+            }
+            else
+            {
+                total.Text = ""; // Nếu không thể parse, đặt total.Text thành chuỗi rỗng
             }
         }
 

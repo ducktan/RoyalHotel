@@ -66,6 +66,7 @@
             this.updateBut = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.addBut = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.nhanvien = new System.Windows.Forms.ComboBox();
             this.maKHBox = new System.Windows.Forms.ComboBox();
             this.status = new System.Windows.Forms.ComboBox();
             this.date = new MetroFramework.Controls.MetroDateTime();
@@ -77,7 +78,6 @@
             this.discount = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.maphong = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.giaDon = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -86,7 +86,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.nhanvien = new System.Windows.Forms.ComboBox();
+            this.phong = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
@@ -484,6 +484,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.phong);
             this.groupBox2.Controls.Add(this.nhanvien);
             this.groupBox2.Controls.Add(this.maKHBox);
             this.groupBox2.Controls.Add(this.status);
@@ -496,7 +497,6 @@
             this.groupBox2.Controls.Add(this.discount);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.maphong);
             this.groupBox2.Controls.Add(this.giaDon);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
@@ -510,6 +510,16 @@
             this.groupBox2.TabIndex = 126;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN HOÁ ĐƠN";
+            // 
+            // nhanvien
+            // 
+            this.nhanvien.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nhanvien.FormattingEnabled = true;
+            this.nhanvien.IntegralHeight = false;
+            this.nhanvien.Location = new System.Drawing.Point(10, 214);
+            this.nhanvien.Name = "nhanvien";
+            this.nhanvien.Size = new System.Drawing.Size(208, 33);
+            this.nhanvien.TabIndex = 72;
             // 
             // maKHBox
             // 
@@ -625,14 +635,6 @@
             this.label8.TabIndex = 58;
             this.label8.Text = "Nhân viên tạo:";
             // 
-            // maphong
-            // 
-            this.maphong.Location = new System.Drawing.Point(12, 136);
-            this.maphong.Name = "maphong";
-            this.maphong.Size = new System.Drawing.Size(206, 25);
-            this.maphong.TabIndex = 57;
-            this.maphong.Text = "";
-            // 
             // giaDon
             // 
             this.giaDon.Location = new System.Drawing.Point(234, 136);
@@ -723,15 +725,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // nhanvien
+            // phong
             // 
-            this.nhanvien.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nhanvien.FormattingEnabled = true;
-            this.nhanvien.IntegralHeight = false;
-            this.nhanvien.Location = new System.Drawing.Point(10, 214);
-            this.nhanvien.Name = "nhanvien";
-            this.nhanvien.Size = new System.Drawing.Size(208, 33);
-            this.nhanvien.TabIndex = 72;
+            this.phong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phong.FormattingEnabled = true;
+            this.phong.IntegralHeight = false;
+            this.phong.Location = new System.Drawing.Point(10, 130);
+            this.phong.Name = "phong";
+            this.phong.Size = new System.Drawing.Size(208, 33);
+            this.phong.TabIndex = 73;
             // 
             // Bill
             // 
@@ -789,7 +791,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox discount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox maphong;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox giaDon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -815,5 +816,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Giamgia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
         private System.Windows.Forms.ComboBox nhanvien;
+        private System.Windows.Forms.ComboBox phong;
     }
 }

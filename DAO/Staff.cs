@@ -173,6 +173,40 @@ namespace Royal.DAO
 
         }
 
+        public async Task<List<StaffDAO>> SearchStaffbyIDStaff(string idnv)
+        {
+            try
+            {
+                var billList = await firebaseClient
+            .Child("Staff")
+            .OnceAsync<Royal.DAO.StaffDAO>();
+                // Initialize an empty list to store matching rooms
+                List<StaffDAO> matchingBill = new List<StaffDAO>();
+                foreach (var bill in billList)
+                {
+                    // Extract room information
+                    StaffDAO billA = bill.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (billA.StaffID == idnv)
+                    {
+                        // Add matching room to the list
+                        matchingBill.Add(billA);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingBill;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                MessageBox.Show($"Error searching staff by id staff: {ex.Message}");
+                return new List<StaffDAO>(); // Return empty list on error
+            }
+
+        }
+
 
 
 
