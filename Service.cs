@@ -27,46 +27,7 @@ namespace Royal
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void kryptonButton2_Click(object sender, EventArgs e)
-        {
-            // Get the current row count for the "Customer" table
-            int currentRowCount = await firebaseClient
-                .Child("Service")
-                .OnceAsync<object>()
-                .ContinueWith(task => task.Result.Count);
-
-            // Increment by 1 to get the new sequential number
-            int newNumber = currentRowCount + 1;
-
-            // Format the number with leading zeros (00001, 00002, ...)
-            string formattedNumber = newNumber.ToString("D3"); // Adjust "D5" for desired number of digits
-
-            // Create the customer ID with the prefix "KH"
-            string serviceID = $"DV{formattedNumber}";
-            
-
-            // Create a new CustomerDAO object with form control values
-            ServiceDAO service = new ServiceDAO()
-            {
-                seID = serviceID,
-                seName = tenDVbox.Text,
-                sePrice = Int32.Parse(giaDVBox.Text), 
-                seDetail = motaBox.Text
-            };
-
-            // Call the AddCustomer method to store the customer object in the Firebase database
-            service.AddService(service);
-        }
+   
 
         private void dataGridBill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -86,7 +47,77 @@ namespace Royal
             }
         }
 
-        private async void kryptonButton1_Click(object sender, EventArgs e)
+        
+
+     
+
+        private void kryptonButton5_Click_1(object sender, EventArgs e)
+        {
+            ServiceDAO s = new ServiceDAO();
+            s.LoadService(dataGridViewService);
+        }
+
+        private void kryptonButton4_Click_1(object sender, EventArgs e)
+        {
+            string id = maDVBox.Text.Trim();
+            string name = tenDVbox.Text;
+            int pri = Int32.Parse(giaDVBox.Text);
+            string de = motaBox.Text;
+
+            ServiceDAO s = new ServiceDAO();
+            s.UpdateService(id, name, pri, de);
+        }
+
+        private async void kryptonButton2_Click_1(object sender, EventArgs e)
+        {
+            // Get the current row count for the "Bill" table
+            var bills = await firebaseClient
+                .Child("Service")
+                .OnceAsync<object>();
+
+            // Increment by 1 to get the new sequential number
+            int newNumber = bills.Count + 1;
+            string maHoaDon;
+            bool isUnique;
+
+            do
+            {
+                // Format the number with leading zeros (001, 002, ...)
+                string formattedNumber = newNumber.ToString("D3");
+
+                // Create the MAHD with your preferred prefix (e.g., "HD")
+                maHoaDon = $"HD{formattedNumber}";
+
+                // Check if the ID is unique
+                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
+
+                if (!isUnique)
+                {
+                    newNumber++;
+                }
+            } while (!isUnique);
+
+            // Create a new CustomerDAO object with form control values
+            ServiceDAO service = new ServiceDAO()
+            {
+                seID = maHoaDon,
+                seName = tenDVbox.Text,
+                sePrice = Int32.Parse(giaDVBox.Text),
+                seDetail = motaBox.Text
+            };
+
+            // Call the AddCustomer method to store the customer object in the Firebase database
+            service.AddService(service);
+        }
+
+        private void kryptonButton3_Click_1(object sender, EventArgs e)
+        {
+            string id = maDVBox.Text;
+            ServiceDAO s = new ServiceDAO();
+            s.DeleteSeervice(id);
+        }
+
+        private async void kryptonButton1_Click_1(object sender, EventArgs e)
         {
             string searchText1 = search.Text.Trim();
             // Get the search criteria from the UI controls
@@ -145,30 +176,6 @@ namespace Royal
             {
                 MessageBox.Show($"Error searching service: {ex.Message}");
             }
-        }
-
-        private void kryptonButton3_Click(object sender, EventArgs e)
-        {
-            string id = maDVBox.Text;
-            ServiceDAO s = new ServiceDAO();
-            s.DeleteSeervice(id);
-        }
-
-        private void kryptonButton4_Click(object sender, EventArgs e)
-        {
-            string id = maDVBox.Text.Trim();
-            string name = tenDVbox.Text; 
-            int pri = Int32.Parse(giaDVBox.Text);
-            string de = motaBox.Text;
-
-            ServiceDAO s = new ServiceDAO(); 
-            s.UpdateService(id, name, pri, de);
-        }
-
-        private void kryptonButton5_Click(object sender, EventArgs e)
-        {
-            ServiceDAO s = new ServiceDAO();
-            s.LoadService(dataGridViewService);
         }
     }
 }

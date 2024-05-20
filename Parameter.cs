@@ -34,24 +34,36 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Parameters" table
-            int currentRowCount = await firebaseClient
+            // Get the current row count for the "Bill" table
+            var bills = await firebaseClient
                 .Child("Parameters")
-                .OnceAsync<object>()
-                .ContinueWith(task => task.Result.Count);
+                .OnceAsync<object>();
 
             // Increment by 1 to get the new sequential number
-            int newNumber = currentRowCount + 1;
+            int newNumber = bills.Count + 1;
+            string maHoaDon;
+            bool isUnique;
 
-            // Format the number with leading zeros (001, 002, ...)
-            string formattedNumber = newNumber.ToString("D3"); // Adjust "D3" for desired number of digits
+            do
+            {
+                // Format the number with leading zeros (001, 002, ...)
+                string formattedNumber = newNumber.ToString("D3");
 
-            // Create the ID with the prefix "NQ"
-            string id = $"NQ{formattedNumber}";
+                // Create the MAHD with your preferred prefix (e.g., "HD")
+                maHoaDon = $"NQ{formattedNumber}";
+
+                // Check if the ID is unique
+                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
+
+                if (!isUnique)
+                {
+                    newNumber++;
+                }
+            } while (!isUnique);
 
             ParameterDAO p1 = new ParameterDAO()
             {
-                pID = id,
+                pID = maHoaDon,
                 pName = tenP.Text,
                 pContent = content.Text,
                 pValue = Int32.Parse(value.Text)

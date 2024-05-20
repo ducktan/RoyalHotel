@@ -54,33 +54,44 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Customer" table
-            int currentRowCount = await firebaseClient
+            // Get the current row count for the "Bill" table
+            var bills = await firebaseClient
                 .Child("Customer")
-                .OnceAsync<object>()
-                .ContinueWith(task => task.Result.Count);
+                .OnceAsync<object>();
 
             // Increment by 1 to get the new sequential number
-            int newNumber = currentRowCount + 1;
+            int newNumber = bills.Count + 1;
+            string maHoaDon;
+            bool isUnique;
 
-            // Format the number with leading zeros (00001, 00002, ...)
-            string formattedNumber = newNumber.ToString("D5"); // Adjust "D5" for desired number of digits
+            do
+            {
+                // Format the number with leading zeros (001, 002, ...)
+                string formattedNumber = newNumber.ToString("D3");
 
-            // Create the customer ID with the prefix "KH"
-            string customerID = $"KH{formattedNumber}";
-            string ngSinh = Ngsinh.Value.ToString("yyyy-MM-dd"); // Adjust the format as per your requirements
+                // Create the MAHD with your preferred prefix (e.g., "HD")
+                maHoaDon = $"KH{formattedNumber}";
+
+                // Check if the ID is unique
+                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
+
+                if (!isUnique)
+                {
+                    newNumber++;
+                }
+            } while (!isUnique);
 
             // Create a new CustomerDAO object with form control values
             CustomerDAO newCustomer = new CustomerDAO()
             {
-                MAKH = customerID,
+                MAKH = maHoaDon,
                 HOTEN = hoTen.Text,
                 CCCD = cccd.Text,
                 ID_LOAIKH = LoaiKH.Text,
                 SDT = sdt.Text,
                 GIOITINH = GT.Text,
                
-                NGSINH = ngSinh,
+                NGSINH = Ngsinh.Text,
                 DIACHI = diaChi.Text,
                 QUOCTICH = QuocTich.Text,
                 EMAIL = Email.Text

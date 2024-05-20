@@ -179,6 +179,12 @@
     <Compile Include="Bill.Designer.cs">
       <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
+    <Compile Include="BillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillDetail.Designer.cs">
+      <DependentUpon>BillDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,7 @@
     <Compile Include="DAO\Bill.cs" />
     <Compile Include="DAO\CheckPass.cs" />
     <Compile Include="DAO\Customer.cs" />
+    <Compile Include="DAO\CustomerType.cs" />
     <Compile Include="DAO\FirebaseCounter.cs" />
     <Compile Include="DAO\FirebaseManage.cs" />
     <Compile Include="DAO\FirebConfig.cs" />
@@ -309,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillDetail.resx">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookRoom.resx">
       <DependentUpon>BookRoom.cs</DependentUpon>

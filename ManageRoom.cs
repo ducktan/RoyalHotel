@@ -57,11 +57,37 @@ namespace Royal
             room.Show();
         }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
+        private async void kryptonButton1_Click(object sender, EventArgs e)
         {
+            // Get the current row count for the "Bill" table
+            var bills = await firebaseClient
+                .Child("Room")
+                .OnceAsync<object>();
+
+            // Increment by 1 to get the new sequential number
+            int newNumber = bills.Count + 1;
+            string maHoaDon;
+            bool isUnique;
+
+            do
+            {
+                // Format the number with leading zeros (001, 002, ...)
+                string formattedNumber = newNumber.ToString("D3");
+
+                // Create the MAHD with your preferred prefix (e.g., "HD")
+                maHoaDon = $"PH{formattedNumber}";
+
+                // Check if the ID is unique
+                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
+
+                if (!isUnique)
+                {
+                    newNumber++;
+                }
+            } while (!isUnique);
             Royal.DAO.Room room = new Royal.DAO.Room()
             {
-                MAPH = txtRoomID.Text,
+                MAPH = maHoaDon,
                 TenPhong = txtRoomName.Text,
                 LoaiPhong = cboRoomType.Text,
                 TrangThai = cboStatusRoom.Text
