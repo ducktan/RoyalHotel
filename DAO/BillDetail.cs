@@ -18,6 +18,7 @@ namespace Royal.DAO
     public class BillDetailDAO
     {
         private Firebase.Database.FirebaseClient firebaseClient;
+        public string MACTHD {  get; set; }
         public string MAHD { get; set; }
         public string MADV { get; set; }
         public int SLG_DV { get; set; } 
@@ -52,6 +53,7 @@ namespace Royal.DAO
             // Tạo một đối tượng chứa các thuộc tính không bao gồm cấu hình
             var billData = new
             {
+                bill.MACTHD,
                 bill.MAHD, 
                 bill.MADV, 
                 bill.SLG_DV, 
@@ -59,11 +61,11 @@ namespace Royal.DAO
             };
 
             // Set data to Firebase RTDB
-            FirebaseResponse response = await Client.SetAsync("BillDetail/" + bill.MAHD + bill.MADV, billData);
+            FirebaseResponse response = await Client.SetAsync("BillDetail/" + bill.MACTHD, billData);
             MessageBox.Show("Add a bill detail");
         }
 
-        public async void LoadBillDetail(DataGridView v, string dongia, string makh)
+        public async void LoadBillDetail(DataGridView v)
         {
 
             // Fetch data from Firebase
@@ -87,11 +89,10 @@ namespace Royal.DAO
 
                         // Add a new row to the DataGridView
                         v.Rows.Add(
+                            bill.MACTHD,
                             bill.MAHD,
                             bill.MADV,
                             bill.SLG_DV,
-                            dongia,
-                            makh,
                             bill.THANHTIEN
                         );
                     }
@@ -100,7 +101,7 @@ namespace Royal.DAO
             }
         }
 
-        public async void DeleteBillDetail(string mahd, string madv)
+        public async void DeleteBillDetail(string id)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this bill detail?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -108,7 +109,7 @@ namespace Royal.DAO
                 try
                 {
                     // Delete the bill from Firebase
-                    await Client.DeleteAsync($"BillDetail/{mahd+madv}");
+                    await Client.DeleteAsync($"BillDetail/{id}");
 
                     MessageBox.Show("Bill detail deleted successfully!");
                 }
@@ -122,7 +123,7 @@ namespace Royal.DAO
 
         }
 
-        public async void UpdateBill(string mahd, string madv, int sl, int thanhtien)
+        public async void UpdateBill(string id, string mahd, string madv, int sl, int thanhtien)
         {
 
 
@@ -130,6 +131,7 @@ namespace Royal.DAO
             // Get the updated bill information from the selected row
             BillDetailDAO updatedBill = new BillDetailDAO
             {
+                MACTHD = id,
                 MAHD = mahd, 
                 MADV = madv,
                 SLG_DV = sl,
@@ -143,7 +145,7 @@ namespace Royal.DAO
                 try
                 {
                     // Update the bill in Firebase
-                    await Client.SetAsync($"BillDetail/{MAHD+MADV}", updatedBill);
+                    await Client.SetAsync($"BillDetail/{id}", updatedBill);
 
                     // Refresh the DataGridView (optional)
                     // v.Refresh(); // You might want to refresh only the updated row
@@ -154,6 +156,73 @@ namespace Royal.DAO
                 {
                     MessageBox.Show($"Error updating bill detail: {ex.Message}");
                 }
+            }
+
+        }
+
+        public async Task<List<BillDetailDAO>> SearchBillDetailByMaHD(string mahd)
+        {
+            try
+            {
+                var billList = await firebaseClient
+            .Child("BillDetail")
+            .OnceAsync<Royal.DAO.BillDetailDAO>();
+                // Initialize an empty list to store matching rooms
+                List<BillDetailDAO> matchingBill = new List<BillDetailDAO>();
+                foreach (var bill in billList)
+                {
+                    // Extract room information
+                    BillDetailDAO billA = bill.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (billA.MAHD == mahd)
+                    {
+                        // Add matching room to the list
+                        matchingBill.Add(billA);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingBill;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                MessageBox.Show($"Error searching bill detail by id bill: {ex.Message}");
+                return new List<BillDetailDAO>(); // Return empty list on error
+            }
+
+        }
+        public async Task<List<BillDetailDAO>> SearchBillDetailByMaDV(string mahd)
+        {
+            try
+            {
+                var billList = await firebaseClient
+            .Child("BillDetail")
+            .OnceAsync<Royal.DAO.BillDetailDAO>();
+                // Initialize an empty list to store matching rooms
+                List<BillDetailDAO> matchingBill = new List<BillDetailDAO>();
+                foreach (var bill in billList)
+                {
+                    // Extract room information
+                    BillDetailDAO billA = bill.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (billA.MADV == mahd)
+                    {
+                        // Add matching room to the list
+                        matchingBill.Add(billA);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingBill;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                MessageBox.Show($"Error searching bill detail by id service: {ex.Message}");
+                return new List<BillDetailDAO>(); // Return empty list on error
             }
 
         }
