@@ -164,6 +164,7 @@ namespace Royal
         {
             try
             {
+                
                 // Lấy mã hóa đơn đã chọn
                 string selectedMaHD = maHDBox.SelectedItem.ToString();
 
