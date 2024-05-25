@@ -26,35 +26,40 @@ namespace Royal
             // Khởi tạo FirebaseClient với chuỗi kết nối đến Firebase Realtime Database
             firebaseClient = FirebaseManage.GetFirebaseClient();
             LoadMaHDFromDatabase();
+           
+
+
         }
 
-        public async void LoadCTHDFromBill()
+
+
+        private async void LoadCTHDFromBill(string billID)
         {
             try
             {
-                // Lấy dữ liệu chi tiết hóa đơn từ Firebase Realtime Database
-                var orderDetailsSnapshot = await firebaseClient
-                    .Child("BillDetail")
-                    .OrderByKey()
-                    .EqualTo(maHDBox.Text)
-                    .OnceAsync<BillDetailDAO>();
-
+                // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
+                List<BillDetailDAO> billDetails = await new BillDetailDAO().SearchBillDetailByMaHD(billID);
+                dataGridViewDV.Rows.Clear();
                 // Kiểm tra xem có dữ liệu hay không
-                if (orderDetailsSnapshot.Any())
+                if (billDetails.Count > 0)
                 {
                     // Xóa dữ liệu hiện có trong DataGridView (tùy chọn)
-                    dataGridViewDV.Rows.Clear();
+                    
 
                     // Thêm dữ liệu chi tiết hóa đơn vào DataGridView
-                    foreach (var item in orderDetailsSnapshot)
+                    foreach (var item in billDetails)
                     {
-                        BillDetailDAO orderDetail = item.Object;
+                        ServiceDAO s = new ServiceDAO();
+                        List<ServiceDAO> serviceList = await s.SearchSeTypeById(item.MADV);
+
+                        // Lấy đối tượng ServiceDAO đầu tiên trong danh sách
+                        ServiceDAO newItem = serviceList.FirstOrDefault();
 
                         dataGridViewDV.Rows.Add(
-                         
-                            orderDetail.MACTHD, 
-                            orderDetail.MADV, 
-                            orderDetail.SLG_DV
+                            item.MACTHD,
+                            newItem?.seName ?? "N/A",
+                            newItem?.sePrice ?? 0,
+                            item.SLG_DV
                         );
                     }
                 }
@@ -70,7 +75,7 @@ namespace Royal
                 MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
             }
         }
-       
+
         public async void LoadMaHDFromDatabase()
         {
             try
@@ -102,7 +107,7 @@ namespace Royal
         {
             try
             {
-                MessageBox.Show(makh);
+               
 
 
                 CustomerDAO result = new CustomerDAO();
@@ -114,7 +119,7 @@ namespace Royal
                 cmnd.Text = customer.CCCD;
                 soDT.Text = customer.SDT;
                 
-                MessageBox.Show(customer.ID_LOAIKH.ToString().Trim());
+              
                 DAO.CustomerType customerType = new DAO.CustomerType();
                 DAO.CustomerType result1 = await customerType.SearchRoomById("LKH01");
                 //MessageBox.Show(result1.ToString());
@@ -154,11 +159,12 @@ namespace Royal
                     nvLap.Text = maNV1;
 
                     ngLap.Text = billSnapshot.First().Object.NGLAP.ToString();
-                    makh.Text = billSnapshot.First().Object.ID_KH.ToString().Trim();
+                    maKhachhang = billSnapshot.First().Object.ID_KH.ToString().Trim();
                     maPhong= billSnapshot.First().Object.MAPHONG.ToString();
                 }
                
-                LoadInfoFromMaKH(makh.Text);
+                LoadInfoFromMaKH(maKhachhang);
+                LoadCTHDFromBill(maHDBox.Text);
             }
             catch (Exception ex)
             {
@@ -170,6 +176,13 @@ namespace Royal
         private void kryptonButton5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void kryptonButton6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+           
         }
     }
 }

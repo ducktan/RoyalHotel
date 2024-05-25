@@ -92,8 +92,6 @@ namespace Royal
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenKH = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.makh = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDV)).BeginInit();
             this.SuspendLayout();
@@ -136,7 +134,8 @@ namespace Royal
             this.kryptonBorderEdge3.Location = new System.Drawing.Point(18, 600);
             this.kryptonBorderEdge3.Name = "kryptonBorderEdge3";
             this.kryptonBorderEdge3.Size = new System.Drawing.Size(1000, 4);
-            this.kryptonBorderEdge3.StateCommon.Color1 = System.Drawing.Color.SteelBlue;
+            this.kryptonBorderEdge3.StateCommon.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonBorderEdge3.StateCommon.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonBorderEdge3.StateCommon.Width = 4;
             this.kryptonBorderEdge3.Text = "kryptonBorderEdge3";
             // 
@@ -313,7 +312,7 @@ namespace Royal
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(18, 248);
+            this.label6.Location = new System.Drawing.Point(18, 276);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(156, 28);
@@ -324,8 +323,8 @@ namespace Royal
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(23, 217);
+            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label5.Location = new System.Drawing.Point(23, 226);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(382, 31);
@@ -369,7 +368,7 @@ namespace Royal
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label2.Location = new System.Drawing.Point(203, 47);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -400,7 +399,7 @@ namespace Royal
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(12, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 35);
@@ -578,9 +577,20 @@ namespace Royal
             this.kryptonButton6.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton6.Size = new System.Drawing.Size(137, 36);
             this.kryptonButton6.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton6.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton6.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton6.StateNormal.Border.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton6.StateNormal.Border.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton6.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton6.StateNormal.Border.Width = 2;
+            this.kryptonButton6.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton6.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton6.TabIndex = 257;
             this.kryptonButton6.UseWaitCursor = true;
             this.kryptonButton6.Values.Text = "EXIT";
+            this.kryptonButton6.Click += new System.EventHandler(this.kryptonButton6_Click);
             // 
             // kryptonButton5
             // 
@@ -588,9 +598,20 @@ namespace Royal
             this.kryptonButton5.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
             this.kryptonButton5.Location = new System.Drawing.Point(899, 60);
             this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton5.Size = new System.Drawing.Size(137, 36);
+            this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton5.StateNormal.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateNormal.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton5.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton5.StatePressed.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StatePressed.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton5.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButton5.TabIndex = 256;
             this.kryptonButton5.UseWaitCursor = true;
             this.kryptonButton5.Values.Text = "PRINT";
@@ -673,14 +694,15 @@ namespace Royal
             this.kryptonBorderEdge2.Location = new System.Drawing.Point(18, 320);
             this.kryptonBorderEdge2.Name = "kryptonBorderEdge2";
             this.kryptonBorderEdge2.Size = new System.Drawing.Size(1000, 4);
-            this.kryptonBorderEdge2.StateCommon.Color1 = System.Drawing.Color.SteelBlue;
+            this.kryptonBorderEdge2.StateCommon.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonBorderEdge2.StateCommon.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonBorderEdge2.StateCommon.Width = 4;
             this.kryptonBorderEdge2.Text = "kryptonBorderEdge2";
             // 
             // maHDBox
             // 
             this.maHDBox.FormattingEnabled = true;
-            this.maHDBox.Location = new System.Drawing.Point(181, 252);
+            this.maHDBox.Location = new System.Drawing.Point(181, 280);
             this.maHDBox.Name = "maHDBox";
             this.maHDBox.Size = new System.Drawing.Size(239, 24);
             this.maHDBox.TabIndex = 279;
@@ -748,33 +770,12 @@ namespace Royal
             this.tenKH.TabIndex = 266;
             this.tenKH.Text = "";
             // 
-            // makh
-            // 
-            this.makh.Location = new System.Drawing.Point(180, 285);
-            this.makh.Multiline = true;
-            this.makh.Name = "makh";
-            this.makh.Size = new System.Drawing.Size(240, 29);
-            this.makh.TabIndex = 286;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label22.Location = new System.Drawing.Point(20, 285);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(71, 28);
-            this.label22.TabIndex = 285;
-            this.label22.Text = "Ma kh";
-            // 
             // PrintBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1477, 721);
-            this.Controls.Add(this.makh);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.dataGridViewDV);
             this.Controls.Add(this.ngLap);
             this.Controls.Add(this.maHDBox);
@@ -901,7 +902,5 @@ namespace Royal
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tenKH;
-        private System.Windows.Forms.TextBox makh;
-        private System.Windows.Forms.Label label22;
     }
 }
