@@ -29,7 +29,11 @@ namespace Royal
             firebaseClient = FirebaseManage.GetFirebaseClient();
             ParameterDAO demo = new ParameterDAO();
             demo.LoadPara(dataGridViewParameter);
+            demo.LoadPara(dataGridView1);
             dataGridViewParameter.CellClick += dataGridBill_CellClick;
+            dataGridView1.CellClick += dataGridBill_CellClick1;
+
+            LoadMaNVFromDatabase();
         }
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
@@ -93,6 +97,22 @@ namespace Royal
                     tenP.Text = (string)(selectedRow.Cells[1].Value);
                     value.Text = selectedRow.Cells[2].Value.ToString();
                     content.Text = (string)(selectedRow.Cells[3].Value);
+
+
+
+                }
+            }
+        }
+        private void dataGridBill_CellClick1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
+            {
+                DataGridViewRow selectedRow = dataGridViewParameter.Rows[e.RowIndex];
+
+                // Kiểm tra nếu hàng không rỗng
+                if (!selectedRow.IsNewRow)
+                {
+                    Va.Text = selectedRow.Cells[2].Value.ToString();
 
 
 
@@ -183,6 +203,115 @@ namespace Royal
             {
                 MessageBox.Show($"Error searching parameter: {ex.Message}");
             }
+        }
+        public async void LoadMaNVFromDatabase()
+        {
+            try
+            {
+                // Truy vấn Firebase Realtime Database để lấy danh sách khách hàng
+                var customerList = await firebaseClient
+                    .Child("Staff")
+                    .OnceAsync<StaffDAO>();
+
+                // Xóa các mục hiện có trong ComboBox
+                maNV.Items.Clear();
+
+                // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
+                foreach (var customer in customerList)
+                {
+                    string customerDisplayText = $"{customer.Object.StaffID}";
+                    maNV.Items.Add(customerDisplayText);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
+        }
+        private async void addBut_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
+                List<StaffDAO> billDetails = await new StaffDAO().SearchStaffbyIDStaff(maNV.Text);
+
+
+                // Kiểm tra xem có dữ liệu hay không
+                if (billDetails.Count > 0)
+                {
+                    // Thêm dữ liệu chi tiết hóa đơn vào DataGridView
+                    foreach (var item in billDetails)
+                    {
+                        int value = Int32.Parse(Va.Text);
+                        item.staffSalary += value;
+                        if (value < 0)
+                        {
+                            item.countVP++; 
+                           
+                        }
+                        item.UpdateSalary(item.StaffID, item.staffSalary, item.countVP);
+
+                    }
+                }
+                else
+                {
+                    // Nếu không tìm thấy dữ liệu, hiển thị thông báo
+                    MessageBox.Show("Không tìm thấy dữ liệu nhân viên.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
+        }
+        public async void LoadInfoStaffFromID()
+        {
+            try
+            {
+                // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
+                List<StaffDAO> billDetails = await new StaffDAO().SearchStaffbyIDStaff(maNV.Text);
+            
+
+                // Kiểm tra xem có dữ liệu hay không
+                if (billDetails.Count > 0)
+                {
+                    // Thêm dữ liệu chi tiết hóa đơn vào DataGridView
+                    foreach (var item in billDetails)
+                    {
+                        Luong.Text = item.staffSalary.ToString() ?? "0";
+                        SoLanVP.Text = item.countVP.ToString() ?? "0";
+                        tenNV.Text = item.staffName.ToString();
+                    }
+                }
+                else
+                {
+                    // Nếu không tìm thấy dữ liệu, hiển thị thông báo
+                    MessageBox.Show("Không tìm thấy dữ liệu nhân viên.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
+        }
+        private void maNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadInfoStaffFromID();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ManageStaff s = new ManageStaff();
+            s.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadInfoStaffFromID();
+            MessageBox.Show("Refresh successfully!");
         }
     }
 }

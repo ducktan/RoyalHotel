@@ -23,7 +23,10 @@ namespace Royal.DAO
         public string staffEmail { get; set; }
         public string staffPhone { get; set; }
         public string staffDateIn { get; set; }
-        public string staffType { get; set; }   
+        public string staffType { get; set; }  
+        
+        public int staffSalary { get; set; }    
+        public int countVP { get; set; }    
 
         
  
@@ -38,6 +41,8 @@ namespace Royal.DAO
 
                 Client = new FireSharp.FirebaseClient(config.Config);
                 firebaseClient = FirebaseManage.GetFirebaseClient();
+                staffSalary = 0;
+                countVP = 0;
 
 
             }
@@ -61,7 +66,9 @@ namespace Royal.DAO
                 staff.staffBirth, 
                 staff.staffAdd, 
                 staff.staffGender, 
-                staff.staffDateIn
+                staff.staffDateIn, 
+                staff.staffSalary, 
+                staff.countVP
             };
             FirebaseResponse response = await Client.SetAsync("Staff/" + staff.StaffID, staffData);
             MessageBox.Show("Add staff success");
@@ -170,6 +177,40 @@ namespace Royal.DAO
                     MessageBox.Show($"Error updating staff: {ex.Message}");
                 }
             }
+
+        }
+
+        public async void UpdateSalary(string sID, int salary, int vp)
+        {
+
+
+
+            // Get the updated bill information from the selected row
+            StaffDAO s = new StaffDAO()
+            {
+                StaffID = sID, 
+                staffSalary = salary,
+                countVP = vp
+
+            };
+
+
+          
+                try
+                {
+                    // Update the bill in Firebase
+                    await Client.SetAsync($"Staff/{sID}", s);
+
+                    // Refresh the DataGridView (optional)
+                    // v.Refresh(); // You might want to refresh only the updated row
+
+                    MessageBox.Show("Chấm công thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating staff salary: {ex.Message}");
+                }
+           
 
         }
 
