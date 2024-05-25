@@ -97,39 +97,34 @@ namespace Royal
             }
         }
 
-        public async void LoadInfoFromMaKH()
+
+        public async void LoadInfoFromMaKH(string makh)
         {
             try
             {
-                MessageBox.Show(maKhachhang);
-                // Lấy thông tin khách hàng từ Firebase Realtime Database dựa trên mã khách hàng (maKH)
-                var customerSnapshot = await firebaseClient
-                    .Child("Customer/")
-                    .OrderByKey()
-                    .EqualTo(maKhachhang)
-                    .OnceAsync<CustomerDAO>();
-
-                // Kiểm tra xem có dữ liệu hay không
-                if (customerSnapshot.Any())
-                {
-                    // Lấy thông tin khách hàng từ bản ghi
-                    CustomerDAO customer = customerSnapshot.First().Object;
-
-                    // Hiển thị thông tin khách hàng
-                    tenKH.Text = customer.HOTEN;
-                    diaChi.Text = customer.DIACHI;
-                    cmnd.Text = customer.CCCD;
-                    soDT.Text = customer.SDT;
-                    CustomerType = customer.ID_LOAIKH.ToString();
-                    quocTich.Text = customer.QUOCTICH; 
+                MessageBox.Show(makh);
 
 
-                }
-                else
-                {
-                    // Nếu không tìm thấy dữ liệu, hiển thị thông báo
-                    MessageBox.Show("Không tìm thấy thông tin khách hàng.");
-                }
+                CustomerDAO result = new CustomerDAO();
+                CustomerDAO customer = await result.SearchRoomById(makh);
+
+
+                tenKH.Text = customer.HOTEN;
+                diaChi.Text = customer.DIACHI;
+                cmnd.Text = customer.CCCD;
+                soDT.Text = customer.SDT;
+                
+                MessageBox.Show(customer.ID_LOAIKH.ToString().Trim());
+                DAO.CustomerType customerType = new DAO.CustomerType();
+                DAO.CustomerType result1 = await customerType.SearchRoomById("LKH01");
+                //MessageBox.Show(result1.ToString());
+
+
+                //LoaiKH.Text = result1.TEN_LKH;
+                LoaiKH.Text = result1.TEN_LOAIKH;
+                //MessageBox.Show(result1.TEN_LKH);
+                quocTich.Text = customer.QUOCTICH;
+
             }
             catch (Exception ex)
             {
@@ -159,16 +154,22 @@ namespace Royal
                     nvLap.Text = maNV1;
 
                     ngLap.Text = billSnapshot.First().Object.NGLAP.ToString();
-                    maKhachhang = billSnapshot.First().Object.ID_KH;
+                    makh.Text = billSnapshot.First().Object.ID_KH.ToString().Trim();
                     maPhong= billSnapshot.First().Object.MAPHONG.ToString();
                 }
-                LoadInfoFromMaKH();
+               
+                LoadInfoFromMaKH(makh.Text);
             }
             catch (Exception ex)
             {
                 // Xử lý ngoại lệ nếu có
                 MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
             }
+        }
+
+        private void kryptonButton5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

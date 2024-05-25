@@ -3,37 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using FireSharp.Config;
+using System.Windows.Forms;
 using FireSharp.Interfaces;
 using FireSharp.Response;
-using System.Windows.Forms;
-using FireSharp;
-using Firebase.Database;
-using System.Globalization;
-
 
 namespace Royal.DAO
 {
-    public class CustomerTypeDAO
+    public class CustomerType
     {
         private Firebase.Database.FirebaseClient firebaseClient;
-        public string ID_LKH {  get; set; }
-        public string TEN_LKH { get; set; }
+        public string ID_LOAIKH { get; set; }
+        public string TEN_LOAIKH { get; set; }
         public int DISCOUNT { get; set; }
 
-
-
         public FirebConfig config = new FirebConfig();
-        public IFirebaseClient Client { get; private set; } // Make client accessible only within the class
+        public IFirebaseClient Client { get; private set; }
 
-
-        public CustomerTypeDAO()
+        public CustomerType()
         {
             try
             {
+
                 Client = new FireSharp.FirebaseClient(config.Config);
                 firebaseClient = FirebaseManage.GetFirebaseClient();
+
 
             }
             catch
@@ -41,165 +34,198 @@ namespace Royal.DAO
                 MessageBox.Show("Connection fail!");
             }
             // Initialize client upon object creation
-
-
         }
-        public async void AddCustomerType(CustomerTypeDAO cusType)
+
+        public async void AddCustomerType(CustomerType CustomerType)
         {
-
-
-            // Tạo một đối tượng chứa các thuộc tính không bao gồm cấu hình
-            var cusTypeData = new
+            var CustomerData = new
             {
-                cusType.ID_LKH, 
-                cusType.TEN_LKH, 
-                cusType.DISCOUNT
+                CustomerType.ID_LOAIKH,
+                CustomerType.TEN_LOAIKH,
+                CustomerType.DISCOUNT
             };
+            FirebaseResponse response = await Client.SetAsync("CustomerType/" + CustomerType.ID_LOAIKH, CustomerData);
+            MessageBox.Show("Add customer type successfully");
 
-            // Set data to Firebase RTDB
-            FirebaseResponse response = await Client.SetAsync("CustomerType/" + cusType.ID_LKH, cusTypeData);
-            MessageBox.Show("Add customer type");
         }
 
         public async void LoadCustomerType(DataGridView v)
         {
 
-            // Fetch data from Firebase
             FirebaseResponse response = await Client.GetAsync("CustomerType/");
-
-            // Check for successful response
-
-            if (response != null && !string.IsNullOrEmpty(response.Body))
+            Dictionary<string, Royal.DAO.CustomerType> getCustomer = response.ResultAs<Dictionary<string, Royal.DAO.CustomerType>>();
+            v.Rows.Clear();
+            foreach (var r in getCustomer)
             {
-                // Cast response as Dictionary<string, Bill> (assuming 'Bill' class exists)
-                Dictionary<string, CustomerTypeDAO> getBill = response.ResultAs<Dictionary<string, CustomerTypeDAO>>();
+                Royal.DAO.CustomerType Customer = r.Value;
+                v.Rows.Add(
+                    Customer.ID_LOAIKH,
+                    Customer.TEN_LOAIKH,
+                    Customer.DISCOUNT
 
-                // Clear the DataGridView before loading new data (optional)
-                v.Rows.Clear();
-
-                if (getBill != null)
-                {
-                    foreach (var item in getBill)
-                    {
-                        CustomerTypeDAO bill = item.Value; // Access the Bill object
-
-                        // Add a new row to the DataGridView
-                        v.Rows.Add(
-                            bill.ID_LKH, 
-                            bill.TEN_LKH, 
-                            bill.DISCOUNT
-
-                        );
-                    }
-                }
-
+                );
             }
-
-
-
         }
 
-        public async void DeleteCustomerType(string id)
+
+        public async void DeleteCustomerType(string stID)
         {
             // Confirmation prompt (optional)
-            if (MessageBox.Show("Are you sure you want to delete this customer type?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete this CustomerType?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
                     // Delete the bill from Firebase
-                    await Client.DeleteAsync($"CustomerType/{id}");
+                    await Client.DeleteAsync($"CustomerType/{stID}");
 
-                    MessageBox.Show("Customer Type deleted successfully!");
+                    MessageBox.Show("CustomerType deleted successfully!");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error deleting customer type: {ex.Message}");
+                    MessageBox.Show($"Error deleting service: {ex.Message}");
                 }
             }
-
-
-
         }
 
-        public async void UpdateCustomerType(string id, string ten, int dis)
+
+        public async void UpdateCustomerType(string id, string name, int num)
         {
-
-
-
-            // Get the updated bill information from the selected row
-            CustomerTypeDAO updatedBill = new CustomerTypeDAO
+            // Get the updated Customer information from the selected row
+            CustomerType updatedCustomerType = new CustomerType
             {
-               ID_LKH = id,
-               TEN_LKH = ten,
-               DISCOUNT = dis
+                ID_LOAIKH = id, // Assuming Customer ID remains unchanged
+                TEN_LOAIKH = name,
+                DISCOUNT = num
+
             };
 
 
             // Confirmation prompt (modified)
-            if (MessageBox.Show("Are you sure you want to update this bill?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to update this CustomerType?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
-                    // Update the bill in Firebase
-                    await Client.SetAsync($"CustomerType/{id}", updatedBill);
+                    // Update the Customer in Firebase
+                    await Client.SetAsync($"CustomerType/{id}", updatedCustomerType);
 
                     // Refresh the DataGridView (optional)
                     // v.Refresh(); // You might want to refresh only the updated row
 
-                    MessageBox.Show("Customer type's information updated successfully!");
+                    MessageBox.Show("Customer information updated successfully!");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error updating customer type: {ex.Message}");
+                    MessageBox.Show($"Error updating Customer: {ex.Message}");
                 }
             }
 
+
+
         }
 
-        public async Task<List<CustomerTypeDAO>> SearchCSTypeByID(string idnv)
+        public async Task<CustomerType> SearchCustomerTypeById(string id)
+        {
+            string queryPath = $"CustomerType/{id}";
+
+            try
+            {
+                FirebaseResponse response = await Client.GetAsync(queryPath);
+                return response.ResultAs<CustomerType>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching Customer by ID: {ex.Message}");
+                return null; // Return null on error
+            }
+        }
+
+        public async Task<List<CustomerType>> SearchCustomerTypeByName(string name)
         {
             try
             {
-                var billList = await firebaseClient
+                var typeCustomerList = await firebaseClient
             .Child("CustomerType")
-            .OnceAsync<Royal.DAO.CustomerTypeDAO>();
-                // Initialize an empty list to store matching rooms
-                List<CustomerTypeDAO> matchingBill = new List<CustomerTypeDAO>();
-                foreach (var bill in billList)
+            .OnceAsync<Royal.DAO.CustomerType>();
+                // Initialize an empty list to store matching Customers
+                List<CustomerType> matchingCustomers = new List<CustomerType>();
+                foreach (var CustomerType in typeCustomerList)
                 {
-                    // Extract room information
-                    CustomerTypeDAO billA = bill.Object;
+                    // Extract Customer information
+                    CustomerType Customer = CustomerType.Object;
 
-                    // Check if room capacity matches the search criteria
-                    if (billA.ID_LKH == idnv)
+                    // Check if Customer capacity matches the search criteria
+                    if (Customer.TEN_LOAIKH == name)
                     {
-                        // Add matching room to the list
-                        matchingBill.Add(billA);
+                        // Add matching Customer to the list
+                        matchingCustomers.Add(Customer);
                     }
                 }
 
-                // Return the list of matching rooms
-                return matchingBill;
+                // Return the list of matching Customers
+                return matchingCustomers;
             }
             catch (Exception ex)
             {
                 // Handle exceptions (logging, throwing specific exceptions, etc.)
-                MessageBox.Show($"Error searching customer type by id: {ex.Message}");
-                return new List<CustomerTypeDAO>(); // Return empty list on error
+                Console.WriteLine($"Error searching Customer by capacity: {ex.Message}");
+                return new List<CustomerType>(); // Return empty list on error
             }
 
         }
 
+        public async Task<List<CustomerType>> SearchCustomerTypeByCapacity(int capacity)
+        {
+            try
+            {
+                // Retrieve all Customer data from "CustomerType" node
+                var typeCustomerList = await firebaseClient
+                    .Child("CustomerType")
+                    .OnceAsync<Royal.DAO.CustomerType>();
 
+                // Initialize an empty list to store matching Customers
+                List<CustomerType> matchingCustomers = new List<CustomerType>();
 
+                // Iterate through retrieved Customer data
+                foreach (var CustomerType in typeCustomerList)
+                {
+                    // Extract Customer information
+                    CustomerType Customer = CustomerType.Object;
 
+                    // Check if Customer capacity matches the search criteria
+                    if (Customer.DISCOUNT == capacity)
+                    {
+                        // Add matching Customer to the list
+                        matchingCustomers.Add(Customer);
+                    }
+                }
+
+                // Return the list of matching Customers
+                return matchingCustomers;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching Customer by capacity: {ex.Message}");
+                return new List<CustomerType>(); // Return empty list on error
+            }
+        }
+
+        public async Task<CustomerType> SearchRoomById(string id)
+        {
+            string queryPath = $"CustomerType/{id}";
+
+            try
+            {
+                FirebaseResponse response = await Client.GetAsync(queryPath);
+                return response.ResultAs<CustomerType>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching room by ID: {ex.Message}");
+                return null; // Return null on error
+            }
+        }
 
 
     }
-
-
-
-
-
 }
-

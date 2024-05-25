@@ -59,41 +59,39 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Bill" table
-            var bills = await firebaseClient
-                .Child("Room")
-                .OnceAsync<object>();
-
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
+            try
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
+                var roomList = await firebaseClient
+                    .Child("Room")
+                    .OnceAsync<Royal.DAO.Room>();
 
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"PH{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                // Tìm mã phòng lớn nhất hiện có
+                int maxRoomNumber = 0;
+                foreach (var roomData in roomList)
                 {
-                    newNumber++;
+                    int roomNumber = int.Parse(roomData.Object.MAPH.Substring(2));
+                    if (roomNumber > maxRoomNumber)
+                    {
+                        maxRoomNumber = roomNumber;
+                    }
                 }
-            } while (!isUnique);
-            Royal.DAO.Room room = new Royal.DAO.Room()
-            {
-                MAPH = maHoaDon,
-                TenPhong = txtRoomName.Text,
-                LoaiPhong = cboRoomType.Text,
-                TrangThai = cboStatusRoom.Text
-            };
 
-            room.AddRoom(room);
+                string newRoomNumber = "PH" + (maxRoomNumber + 1).ToString("D3");
+                Royal.DAO.Room room = new Royal.DAO.Room()
+                {
+                    MAPH = newRoomNumber,
+                    TenPhong = txtRoomName.Text,
+                    LoaiPhong = cboRoomType.Text,
+                    TrangThai = cboStatusRoom.Text
+                };
+
+                room.AddRoom(room);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)

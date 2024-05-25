@@ -68,7 +68,6 @@ namespace Royal
             this.LoaiKH = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.soDT = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.cmnd = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.tenKH = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.thanhTien = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.tienDV = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.giamGia = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
@@ -92,6 +91,9 @@ namespace Royal
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenKH = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.makh = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDV)).BeginInit();
             this.SuspendLayout();
@@ -143,7 +145,7 @@ namespace Royal
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label21.Location = new System.Drawing.Point(24, 468);
+            this.label21.Location = new System.Drawing.Point(17, 468);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(157, 28);
@@ -311,7 +313,7 @@ namespace Royal
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(18, 276);
+            this.label6.Location = new System.Drawing.Point(18, 248);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(156, 28);
@@ -323,7 +325,7 @@ namespace Royal
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(12, 223);
+            this.label5.Location = new System.Drawing.Point(23, 217);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(382, 31);
@@ -479,7 +481,7 @@ namespace Royal
             // 
             // LoaiKH
             // 
-            this.LoaiKH.Location = new System.Drawing.Point(181, 468);
+            this.LoaiKH.Location = new System.Drawing.Point(180, 468);
             this.LoaiKH.Name = "LoaiKH";
             this.LoaiKH.ReadOnly = true;
             this.LoaiKH.Size = new System.Drawing.Size(239, 28);
@@ -503,15 +505,6 @@ namespace Royal
             this.cmnd.Size = new System.Drawing.Size(239, 28);
             this.cmnd.TabIndex = 267;
             this.cmnd.Text = "";
-            // 
-            // tenKH
-            // 
-            this.tenKH.Location = new System.Drawing.Point(181, 341);
-            this.tenKH.Name = "tenKH";
-            this.tenKH.ReadOnly = true;
-            this.tenKH.Size = new System.Drawing.Size(239, 28);
-            this.tenKH.TabIndex = 266;
-            this.tenKH.Text = "";
             // 
             // thanhTien
             // 
@@ -601,6 +594,7 @@ namespace Royal
             this.kryptonButton5.TabIndex = 256;
             this.kryptonButton5.UseWaitCursor = true;
             this.kryptonButton5.Values.Text = "PRINT";
+            this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
             // 
             // label31
             // 
@@ -686,7 +680,7 @@ namespace Royal
             // maHDBox
             // 
             this.maHDBox.FormattingEnabled = true;
-            this.maHDBox.Location = new System.Drawing.Point(181, 280);
+            this.maHDBox.Location = new System.Drawing.Point(181, 252);
             this.maHDBox.Name = "maHDBox";
             this.maHDBox.Size = new System.Drawing.Size(239, 24);
             this.maHDBox.TabIndex = 279;
@@ -745,11 +739,42 @@ namespace Royal
             this.Column4.Name = "Column4";
             this.Column4.Width = 125;
             // 
+            // tenKH
+            // 
+            this.tenKH.Location = new System.Drawing.Point(181, 341);
+            this.tenKH.Name = "tenKH";
+            this.tenKH.ReadOnly = true;
+            this.tenKH.Size = new System.Drawing.Size(239, 28);
+            this.tenKH.TabIndex = 266;
+            this.tenKH.Text = "";
+            // 
+            // makh
+            // 
+            this.makh.Location = new System.Drawing.Point(180, 285);
+            this.makh.Multiline = true;
+            this.makh.Name = "makh";
+            this.makh.Size = new System.Drawing.Size(240, 29);
+            this.makh.TabIndex = 286;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label22.Location = new System.Drawing.Point(20, 285);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(71, 28);
+            this.label22.TabIndex = 285;
+            this.label22.Text = "Ma kh";
+            // 
             // PrintBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1477, 721);
+            this.Controls.Add(this.makh);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.dataGridViewDV);
             this.Controls.Add(this.ngLap);
             this.Controls.Add(this.maHDBox);
@@ -852,7 +877,6 @@ namespace Royal
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox LoaiKH;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox soDT;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox cmnd;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tenKH;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox thanhTien;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tienDV;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox giamGia;
@@ -876,5 +900,8 @@ namespace Royal
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tenKH;
+        private System.Windows.Forms.TextBox makh;
+        private System.Windows.Forms.Label label22;
     }
 }

@@ -37,42 +37,35 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Bill" table
-            var bills = await firebaseClient
-                .Child("RoomType")
-                .OnceAsync<object>();
-
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
+            try
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
+                var roomTypes = await firebaseClient
+    .Child("RoomType")
+    .OnceAsync<object>();
+                // Tìm số lớn nhất trong các mã hiện có
+                int maxNumber = roomTypes.Select(b => int.Parse((b.Object as dynamic).MALPH.Substring(3))).DefaultIfEmpty(0).Max();
 
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"LPH{formattedNumber}";
+                // Tạo mã mới
+                string newMaHoaDon = $"LPH{(maxNumber + 1).ToString("D3")}";
 
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                Royal.DAO.RoomType roomType = new Royal.DAO.RoomType()
                 {
-                    newNumber++;
-                }
-            } while (!isUnique);
-            Royal.DAO.RoomType roomType = new Royal.DAO.RoomType()
+                    MALPH = newMaHoaDon,
+                    TENLPH = txtRoomTypeName.Text,
+                    SLNG = Int32.Parse(cboPeopleNum.Text),
+                    GIA = Int32.Parse(txtPrice.Text)
+
+                };
+
+                roomType.AddRoomType(roomType);
+                roomType.LoadRoomType(dataGridRoomType);
+            }
+
+            catch (Exception ex)
             {
-                MALPH = maHoaDon,
-                TENLPH = txtRoomTypeName.Text,
-                SLNG = Int32.Parse(cboPeopleNum.Text),
-                GIA = Int32.Parse(txtPrice.Text)
+                MessageBox.Show(ex.Message);
+            }
 
-            };
-
-            roomType.AddRoomType(roomType);
         }
 
         private void btnUpdateRoomType_Click(object sender, EventArgs e)

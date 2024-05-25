@@ -220,6 +220,23 @@ namespace Royal.DAO
 
         }
 
+        public async Task<CustomerDAO> SearchRoomById(string id)
+        {
+            string queryPath = $"Customer/{id}";
+
+            try
+            {
+                FirebaseResponse response = await Client.GetAsync(queryPath);
+                return response.ResultAs<CustomerDAO>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching room by ID: {ex.Message}");
+                return null; // Return null on error
+            }
+        }
+
+
 
 
 
