@@ -196,5 +196,10 @@ namespace Royal
             CustomerDAO cus = new CustomerDAO();
             cus.DeleteCus(idkh);
         }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

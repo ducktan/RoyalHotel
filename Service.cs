@@ -170,5 +170,10 @@ namespace Royal
             ServiceDAO s = new ServiceDAO();
             s.LoadService(dataGridViewService);
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

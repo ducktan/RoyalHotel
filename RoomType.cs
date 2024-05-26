@@ -20,6 +20,12 @@ namespace Royal
     public partial class RoomType : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
+
+        public string MALPH { get;  set; }
+        public string TENLPH { get;  set; }
+        public object SLNG { get; set; }
+        public object GIA { get; set; }
+
         public RoomType()
         {
             InitializeComponent();

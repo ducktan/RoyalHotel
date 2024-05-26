@@ -16,5 +16,15 @@ namespace Royal
         {
             InitializeComponent();
         }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
