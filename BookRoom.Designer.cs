@@ -65,6 +65,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -86,14 +87,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridViewParameter = new System.Windows.Forms.DataGridView();
-            this.MaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SONGUOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIENCOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSurcharge = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -105,7 +98,14 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.MaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SONGUOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIENCOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -552,6 +552,15 @@
             this.groupBox2.Text = "Thông tin khách hàng";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(23, 373);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.MaximumSize = new System.Drawing.Size(302, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(298, 50);
+            this.textBox1.TabIndex = 145;
+            // 
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(370, 75);
@@ -825,8 +834,8 @@
             this.dataGridViewParameter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDP,
             this.CCCD,
-            this.TimeDP,
             this.MAPHONG,
+            this.TimeDP,
             this.NgayDP,
             this.NgayTra,
             this.SONGUOI,
@@ -862,70 +871,6 @@
             this.dataGridViewParameter.Size = new System.Drawing.Size(1004, 758);
             this.dataGridViewParameter.TabIndex = 28;
             this.dataGridViewParameter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewParameter_CellContentClick);
-            // 
-            // MaDP
-            // 
-            this.MaDP.HeaderText = "Mã đặt";
-            this.MaDP.MinimumWidth = 6;
-            this.MaDP.Name = "MaDP";
-            this.MaDP.ReadOnly = true;
-            this.MaDP.Width = 125;
-            // 
-            // CCCD
-            // 
-            this.CCCD.HeaderText = "CCCD";
-            this.CCCD.MinimumWidth = 6;
-            this.CCCD.Name = "CCCD";
-            this.CCCD.ReadOnly = true;
-            this.CCCD.Width = 150;
-            // 
-            // TimeDP
-            // 
-            this.TimeDP.HeaderText = "Loại Phòng";
-            this.TimeDP.MinimumWidth = 6;
-            this.TimeDP.Name = "TimeDP";
-            this.TimeDP.ReadOnly = true;
-            this.TimeDP.Width = 125;
-            // 
-            // MAPHONG
-            // 
-            this.MAPHONG.HeaderText = "Mã Phòng";
-            this.MAPHONG.MinimumWidth = 10;
-            this.MAPHONG.Name = "MAPHONG";
-            this.MAPHONG.ReadOnly = true;
-            this.MAPHONG.Width = 200;
-            // 
-            // NgayDP
-            // 
-            this.NgayDP.HeaderText = "Ngày Đặt";
-            this.NgayDP.MinimumWidth = 6;
-            this.NgayDP.Name = "NgayDP";
-            this.NgayDP.ReadOnly = true;
-            this.NgayDP.Width = 125;
-            // 
-            // NgayTra
-            // 
-            this.NgayTra.HeaderText = "Ngày trả";
-            this.NgayTra.MinimumWidth = 6;
-            this.NgayTra.Name = "NgayTra";
-            this.NgayTra.ReadOnly = true;
-            this.NgayTra.Width = 125;
-            // 
-            // SONGUOI
-            // 
-            this.SONGUOI.HeaderText = "Số Người";
-            this.SONGUOI.MinimumWidth = 10;
-            this.SONGUOI.Name = "SONGUOI";
-            this.SONGUOI.ReadOnly = true;
-            this.SONGUOI.Width = 200;
-            // 
-            // TIENCOC
-            // 
-            this.TIENCOC.HeaderText = "Tiền Cọc";
-            this.TIENCOC.MinimumWidth = 10;
-            this.TIENCOC.Name = "TIENCOC";
-            this.TIENCOC.ReadOnly = true;
-            this.TIENCOC.Width = 200;
             // 
             // bindingSurcharge
             // 
@@ -1037,20 +982,75 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(40, 22);
             this.toolStripLabel1.Text = "Xuất";
             // 
-            // textBox1
+            // MaDP
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 373);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.MaximumSize = new System.Drawing.Size(302, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 29);
-            this.textBox1.TabIndex = 145;
+            this.MaDP.HeaderText = "Mã đặt";
+            this.MaDP.MinimumWidth = 6;
+            this.MaDP.Name = "MaDP";
+            this.MaDP.ReadOnly = true;
+            this.MaDP.Width = 125;
+            // 
+            // CCCD
+            // 
+            this.CCCD.HeaderText = "CCCD";
+            this.CCCD.MinimumWidth = 6;
+            this.CCCD.Name = "CCCD";
+            this.CCCD.ReadOnly = true;
+            this.CCCD.Width = 150;
+            // 
+            // MAPHONG
+            // 
+            this.MAPHONG.HeaderText = "Mã Phòng";
+            this.MAPHONG.MinimumWidth = 10;
+            this.MAPHONG.Name = "MAPHONG";
+            this.MAPHONG.ReadOnly = true;
+            this.MAPHONG.Width = 200;
+            // 
+            // TimeDP
+            // 
+            this.TimeDP.HeaderText = "Loại Phòng";
+            this.TimeDP.MinimumWidth = 6;
+            this.TimeDP.Name = "TimeDP";
+            this.TimeDP.ReadOnly = true;
+            this.TimeDP.Width = 125;
+            // 
+            // NgayDP
+            // 
+            this.NgayDP.HeaderText = "Ngày Đặt";
+            this.NgayDP.MinimumWidth = 6;
+            this.NgayDP.Name = "NgayDP";
+            this.NgayDP.ReadOnly = true;
+            this.NgayDP.Width = 125;
+            // 
+            // NgayTra
+            // 
+            this.NgayTra.HeaderText = "Ngày trả";
+            this.NgayTra.MinimumWidth = 6;
+            this.NgayTra.Name = "NgayTra";
+            this.NgayTra.ReadOnly = true;
+            this.NgayTra.Width = 125;
+            // 
+            // SONGUOI
+            // 
+            this.SONGUOI.HeaderText = "Số Người";
+            this.SONGUOI.MinimumWidth = 10;
+            this.SONGUOI.Name = "SONGUOI";
+            this.SONGUOI.ReadOnly = true;
+            this.SONGUOI.Width = 200;
+            // 
+            // TIENCOC
+            // 
+            this.TIENCOC.HeaderText = "Tiền Cọc";
+            this.TIENCOC.MinimumWidth = 10;
+            this.TIENCOC.Name = "TIENCOC";
+            this.TIENCOC.ReadOnly = true;
+            this.TIENCOC.Width = 200;
             // 
             // BookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2289, 1155);
+            this.ClientSize = new System.Drawing.Size(2429, 1155);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);
@@ -1148,14 +1148,14 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDP;
         private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeDP;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAPHONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeDP;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDP;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn SONGUOI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIENCOC;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

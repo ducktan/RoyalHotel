@@ -27,11 +27,11 @@ namespace Royal.DAO
         public string ID_DATPHONG { get; set; }
         public string ID_LOAIPHONG { get; set; }
 
-        public string TIENCOC { get; set; }
+        public int TIENCOC { get; set; }
         public string MAPHONG { get; set; }
 
 
-        public string SONGUOI { get; set; }
+        public int SONGUOI { get; set; }
         public string NGAYDAT { get; set; }
         public string NGAYTRA { get; set; }
 
@@ -207,24 +207,7 @@ namespace Royal.DAO
         }
 
 
-        // Function to check if two date ranges overlap
-
-        public async void DeleteBookingRoom(int bookingRoomId)
-        {
-            if (MessageBox.Show("Are you sure you want to delete this booking room?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    await Client.DeleteAsync($"ReservedRoom/{bookingRoomId}");
-                    MessageBox.Show("Booking room deleted successfully!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error deleting booking room: {ex.Message}");
-                }
-            }
-        }
-
+        // Function to check if two date ranges overla
         public async void UpdateBookingRoom(string bookingRoomId, string cccd, string loaiPhong, string ngayDat, string ngayTra, string reservedRoom)
         {
             bookingroomDAO updatedBookingRoom = new bookingroomDAO

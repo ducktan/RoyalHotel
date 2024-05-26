@@ -33,7 +33,8 @@ namespace Royal
         
         private void dataGridBill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                // Check if a valid row index is clicked
+            try
+            {
                 if (e.RowIndex >= 0)
                 {
                     // Get the selected row
@@ -47,15 +48,22 @@ namespace Royal
                         ten.HeaderText = selectedRow.Cells["HoTen"].Value?.ToString() ?? string.Empty;
                         CCCD.HeaderText = selectedRow.Cells["CCCD_KH"].Value?.ToString() ?? string.Empty;
                         MaPhong.HeaderText = selectedRow.Cells["MAPHONG"].Value?.ToString() ?? string.Empty;
+                        TrangThai.HeaderText = selectedRow.Cells["TRANGTHAI"].Value?.ToString() ?? string.Empty;
                         NgayNhan.HeaderText = selectedRow.Cells["NGAYNHAN"].Value?.ToString() ?? string.Empty;
                         NgayTra.HeaderText = selectedRow.Cells["NGAYTRA"].Value?.ToString() ?? string.Empty;
-                        TrangThai.HeaderText = selectedRow.Cells["TRANGTHAI"].Value?.ToString() ?? string.Empty;
-                       
                         SoNguoi.HeaderText = selectedRow.Cells["SONGUOI"].Value?.ToString() ?? string.Empty;
                         TienCoc.HeaderText = selectedRow.Cells["TIENCOC"].Value?.ToString() ?? string.Empty;
                     }
                 }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errors: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            // Check if a valid row index is clicked
+
+        }
             
 
         private async void kryptonButton5_Click(object sender, EventArgs e)
@@ -75,9 +83,9 @@ namespace Royal
                     kryptonRichTextBox1.Text = result.CCCD_KH;
                     kryptonRichTextBox3.Text = result.HoTen;
                     kryptonRichTextBox2.Text = result.MAPHONG;
-                    kryptonRichTextBox5.Text = result.SONGUOI;
+                    kryptonRichTextBox5.Text = result.SONGUOI.ToString();
                     comboBoxCustomerType.Text = result.TRANGTHAI;
-                    kryptonRichTextBox6.Text = result.TIENCOC;
+                    kryptonRichTextBox6.Text = result.TIENCOC.ToString();
                     // You may need to parse the dates as needed
                     if (DateTime.TryParse(result.NGAYNHAN, out DateTime ngayNhan))
                     {
@@ -112,13 +120,13 @@ namespace Royal
                 string cccdKh = kryptonRichTextBox1.Text.Trim();
                 string hoTen = kryptonRichTextBox3.Text.Trim();
                 string maPhong = kryptonRichTextBox2.Text.Trim();
-                string soNguoi = kryptonRichTextBox5.Text.Trim();
+                int soNguoi = Int32.Parse(kryptonRichTextBox5.Text.Trim());
                 string trangThai = comboBoxCustomerType.Text.Trim();
-                string tienCoc = kryptonRichTextBox6.Text.Trim();
+                int tienCoc = Int32.Parse(kryptonRichTextBox6.Text.Trim());
                 string ngayNhan = kryptonDateTimePicker2.Value.ToString("yyyy-MM-dd");
                 string ngayTra = kryptonDateTimePicker1.Value.ToString("yyyy-MM-dd");
 
-                if (trangThai == "Đã nhận phòng")
+                if (trangThai == "Đã Nhận Phòng")
                 {
                     // Tạo đối tượng receiveroomDAO với thông tin mới
                     receiveroomDAO updatedReceiveRoom = new receiveroomDAO
@@ -161,9 +169,9 @@ namespace Royal
                 string cccdKh = kryptonRichTextBox1.Text.Trim();
                 string hoTen = kryptonRichTextBox3.Text.Trim();
                 string maPhong = kryptonRichTextBox2.Text.Trim();
-                string soNguoi = kryptonRichTextBox5.Text.Trim();
+                int soNguoi = Int32.Parse(kryptonRichTextBox5.Text.Trim());
                 string trangThai = comboBoxCustomerType.Text.Trim();
-                string tienCoc = kryptonRichTextBox6.Text.Trim();
+                int tienCoc = Int32.Parse(kryptonRichTextBox6.Text.Trim());
                 string ngayNhan = kryptonDateTimePicker2.Value.ToString("yyyy-MM-dd");
                 string ngayTra = kryptonDateTimePicker1.Value.ToString("yyyy-MM-dd");
 

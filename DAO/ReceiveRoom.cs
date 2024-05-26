@@ -21,11 +21,11 @@ namespace Royal.DAO
         public string ID_LOAIPHONG { get; set; }
         public string MAPHONG { get; set; }
         public string TRANGTHAI { get; set; }
-        public string SONGUOI { get; set; }
+        public int SONGUOI { get; set; }
         public string NGAYNHAN { get; set; }
         public string NGAYTRA { get; set; }
         public string HoTen { get; set; }
-        public string TIENCOC { get; set; }
+        public int TIENCOC { get; set; }
 
         // Set up Firebase configuration
         public FirebConfig config = new FirebConfig();
@@ -58,6 +58,7 @@ namespace Royal.DAO
                 receiveRoom.TRANGTHAI,
                 receiveRoom.NGAYNHAN,
                 receiveRoom.NGAYTRA,
+               
                 receiveRoom.SONGUOI,
                 receiveRoom.TIENCOC
             };

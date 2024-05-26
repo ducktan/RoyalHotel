@@ -32,12 +32,12 @@ namespace Royal
             firebaseClient = FirebaseManage.GetFirebaseClient();
             bookingroomDAO newBook = new bookingroomDAO();
             newBook.LoadBookingRooms(dataGridViewParameter);
-          
+
             dataGridViewParameter.CellClick += dataGridBill_CellClick;
             LoadMaLPFromDatabase();
             // Set the MinDate properties to prevent selecting past dates
-            kryptonDateTimePicker2.MinDate = DateTime.Today; 
-            kryptonDateTimePicker1.MinDate = DateTime.Today;
+            kryptonDateTimePicker2.MinDate = DateTime.Today;
+            kryptonDateTimePicker1.MinDate = DateTime.Today.AddDays(1);
 
             // Set event handlers for date validation and difference calculation
             kryptonDateTimePicker2.ValueChanged += kryptonDateTimePicker2_ValueChanged;
@@ -244,7 +244,7 @@ namespace Royal
  .OrderByDescending(num => num)
  .FirstOrDefault();
 
-     
+
 
                 int newNumber = latestNumber + 1;
                 string newID_DATPHONG = $"IDDP{newNumber}";
@@ -289,8 +289,8 @@ namespace Royal
                         ID_LOAIPHONG = selectedRoomType, // Use the selectedRoomType variable
                         NGAYDAT = ngayDat.ToString("yyyy-MM-dd"),
                         NGAYTRA = ngayTra.ToString("yyyy-MM-dd"),
-                        SONGUOI = numberOfGuests.ToString(), // Use the numberOfGuests variable
-                        TIENCOC = deposit.ToString()
+                        SONGUOI = numberOfGuests, // Use the numberOfGuests variable
+                        TIENCOC = deposit
                     };
 
                     // Call the AddBookingRoom method to store the booking room object in the Firebase database
@@ -299,6 +299,12 @@ namespace Royal
                     // Refresh the DataGridView with the latest data
                     bookingroom.LoadBookingRooms(dataGridViewParameter);
                     ClearInputFields();
+                    if (checkBox1.Checked)
+                    {
+                        ReiceiveRoom reiceive = new ReiceiveRoom();
+                        reiceive.Show();
+                    }
+
                 }
             }
             catch (Exception ex)
