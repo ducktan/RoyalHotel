@@ -20,7 +20,7 @@ namespace Royal.DAO
     {
         private Firebase.Database.FirebaseClient firebaseClient;
 
-        public FirebConfig config = new FirebConfig();
+        private readonly FirebConfig config = new FirebConfig();
         public IFirebaseClient Client { get; private set; } // Make client accessible only within the class
         public Permission()
         {

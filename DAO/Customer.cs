@@ -30,7 +30,7 @@ namespace Royal.DAO
 
 
         // Set up Firebase configuration
-        public FirebConfig config = new FirebConfig();
+        private readonly FirebConfig config = new FirebConfig();
 
         // Initialize Firebase client
         public IFirebaseClient Client { get; private set; } // Make client accessible only within the class

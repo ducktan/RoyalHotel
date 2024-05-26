@@ -16,7 +16,7 @@ namespace Royal.DAO
         public string TEN_LOAIKH { get; set; }
         public int DISCOUNT { get; set; }
 
-        public FirebConfig config = new FirebConfig();
+        private readonly FirebConfig config = new FirebConfig();
         public IFirebaseClient Client { get; private set; }
 
         public CustomerType()

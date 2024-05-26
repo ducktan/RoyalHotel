@@ -17,7 +17,7 @@ namespace Royal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerType());
+            Application.Run(new Bill());
 
         }
     }
