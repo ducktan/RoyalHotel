@@ -248,6 +248,79 @@ namespace Royal.DAO
 
         }
 
+        public async Task<List<StaffDAO>> SearchRoomByType(string type)
+        {
+            try
+            {
+                // Retrieve all room data from "Room" node
+                var typeRoomList = await firebaseClient
+                    .Child("Staff")
+                    .OnceAsync<Royal.DAO.StaffDAO>();
+
+                // Initialize an empty list to store matching rooms
+                List<StaffDAO> matchingRooms = new List<StaffDAO>();
+
+                // Iterate through retrieved room data
+                foreach (var Room in typeRoomList)
+                {
+                    // Extract room information
+                    StaffDAO room = Room.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.staffType == type)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<StaffDAO>(); // Return empty list on error
+            }
+        }
+
+        public async Task<List<StaffDAO>> SearchStaffByGender(string type)
+        {
+            try
+            {
+                // Retrieve all room data from "Room" node
+                var typeRoomList = await firebaseClient
+                    .Child("Staff")
+                    .OnceAsync<Royal.DAO.StaffDAO>();
+
+                // Initialize an empty list to store matching rooms
+                List<StaffDAO> matchingRooms = new List<StaffDAO>();
+
+                // Iterate through retrieved room data
+                foreach (var Room in typeRoomList)
+                {
+                    // Extract room information
+                    StaffDAO room = Room.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.staffGender == type)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<StaffDAO>(); // Return empty list on error
+            }
+        }
 
 
 

@@ -496,6 +496,7 @@
             this.btnDeleteRoomType.Size = new System.Drawing.Size(181, 40);
             this.btnDeleteRoomType.TabIndex = 136;
             this.btnDeleteRoomType.Values.Text = "Xóa loại phòng";
+            this.btnDeleteRoomType.Click += new System.EventHandler(this.btnDeleteRoomType_Click_1);
             // 
             // btnAddRoomType
             // 

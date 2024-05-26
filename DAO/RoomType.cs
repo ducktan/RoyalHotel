@@ -23,7 +23,7 @@ namespace Royal.DAO
         public FirebConfig config = new FirebConfig();
         public IFirebaseClient Client { get; private set; } // Make client accessible only within the class
 
-        public RoomType() 
+        public RoomType()
         {
             try
             {
@@ -51,6 +51,7 @@ namespace Royal.DAO
             };
             FirebaseResponse response = await Client.SetAsync("RoomType/" + roomType.MALPH, roomData);
             MessageBox.Show("Add room success");
+
         }
 
         public async void LoadRoomType(DataGridView v)
@@ -73,91 +74,59 @@ namespace Royal.DAO
 
 
 
-        public async void DeleteRoomType(DataGridView v)
+        public async void DeleteRoomType(string stID)
         {
-            if (v.SelectedRows.Count > 0) // Check if any row is selected
+            // Confirmation prompt (optional)
+            if (MessageBox.Show("Are you sure you want to delete this RoomType?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                // Get the selected row
-                DataGridViewRow selectedRow = v.SelectedRows[0];
-
-                if (selectedRow != null)
+                try
                 {
-                    // Extract the Room ID from the selected row (assuming it's in column 0)
-                    string roomTypeId = (string)selectedRow.Cells[0].Value;
+                    // Delete the bill from Firebase
+                    await Client.DeleteAsync($"RoomType/{stID}");
 
-                    // Confirmation prompt (optional)
-                    if (MessageBox.Show("Are you sure you want to delete this room type?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            // Delete the Room from Firebase
-                            await Client.DeleteAsync($"RoomType/{roomTypeId}");
-
-                            // Remove the row from the DataGridView
-                            v.Rows.Remove(selectedRow);
-
-                            MessageBox.Show("Room type deleted successfully!");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error deleting room type: {ex.Message}");
-                        }
-                    }
+                    MessageBox.Show("RoomType deleted successfully!");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please select a room type to delete.");
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting service: {ex.Message}");
+                }
             }
         }
 
 
-        public async void UpdateRoomType(DataGridView v)
+        public async void UpdateRoomType(string id, string name, int num, int price)
         {
-            if (v.SelectedRows.Count > 0) // Check if any row is selected
+            // Get the updated Room information from the selected row
+            RoomType updatedRoomType = new RoomType
             {
-                // Get the selected row
-                DataGridViewRow selectedRow = v.SelectedRows[0];
+                MALPH = id, // Assuming Room ID remains unchanged
+                TENLPH = name,
+                SLNG = num,
+                GIA = price
+            };
 
-                if (selectedRow != null)
+
+            // Confirmation prompt (modified)
+            if (MessageBox.Show("Are you sure you want to update this RoomType?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
                 {
-                    // Extract the Room ID from the selected row (assuming it's in column 0)
-                    string roomTypeId = (string)selectedRow.Cells[0].Value;
+                    // Update the Room in Firebase
+                    await Client.SetAsync($"RoomType/{id}", updatedRoomType);
 
-                    // Get the updated Room information from the selected row
-                    RoomType updatedRoomType = new RoomType
-                    {
-                        MALPH = (string)selectedRow.Cells[0].Value, // Assuming Room ID remains unchanged
-                        TENLPH = (string)selectedRow.Cells[1].Value,
-                        SLNG = (int)selectedRow.Cells[2].Value,
-                        GIA = (int)selectedRow.Cells[3].Value
-                    };
+                    // Refresh the DataGridView (optional)
+                    // v.Refresh(); // You might want to refresh only the updated row
 
-
-                    // Confirmation prompt (modified)
-                    if (MessageBox.Show("Are you sure you want to update this RoomType?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            // Update the Room in Firebase
-                            await Client.SetAsync($"RoomType/{roomTypeId}", updatedRoomType);
-
-                            // Refresh the DataGridView (optional)
-                            // v.Refresh(); // You might want to refresh only the updated row
-
-                            MessageBox.Show("Room information updated successfully!");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error updating Room: {ex.Message}");
-                        }
-                    }
+                    MessageBox.Show("Room information updated successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating Room: {ex.Message}");
                 }
             }
-            else
-            {
-                MessageBox.Show("Please select a RoomType to update.");
-            }
+
+
+
         }
         public async Task<RoomType> SearchRoomTypeById(string id)
         {
@@ -206,7 +175,7 @@ namespace Royal.DAO
                 Console.WriteLine($"Error searching room by capacity: {ex.Message}");
                 return new List<RoomType>(); // Return empty list on error
             }
-       
+
         }
 
         public async Task<List<RoomType>> SearchRoomTypeByCapacity(int capacity)

@@ -57,7 +57,7 @@ namespace Royal.DAO
         {
 
             FirebaseResponse response = await Client.GetAsync("Room/");
-            Dictionary<string, Room > getRoom = response.ResultAs<Dictionary<string, Room>>();
+            Dictionary<string, Room> getRoom = response.ResultAs<Dictionary<string, Room>>();
             v.Rows.Clear();
             foreach (var r in getRoom)
             {
@@ -72,36 +72,18 @@ namespace Royal.DAO
         }
 
 
-        public async void DeleteRoom(DataGridView v)
+        public async void DeleteRoom(string id)
         {
-            if (v.SelectedRows.Count > 0) // Check if any row is selected
+            if (MessageBox.Show("Are you sure you want to delete this Room?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes) // Check if any row is selected
             {
-                // Get the selected row
-                DataGridViewRow selectedRow = v.SelectedRows[0];
-
-                if (selectedRow != null)
+                try
                 {
-                    // Extract the Room ID from the selected row (assuming it's in column 0)
-                    string roomId = (string)selectedRow.Cells[0].Value;
-
-                    // Confirmation prompt (optional)
-                    if (MessageBox.Show("Are you sure you want to delete this room?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            // Delete the Room from Firebase
-                            await Client.DeleteAsync($"Room/{roomId}");
-
-                            // Remove the row from the DataGridView
-                            v.Rows.Remove(selectedRow);
-
-                            MessageBox.Show("Room deleted successfully!");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error deleting room: {ex.Message}");
-                        }
-                    }
+                    await Client.DeleteAsync($"Room/{id}");
+                    MessageBox.Show("Room deleted successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting room: {ex.Message}");
                 }
             }
             else
@@ -110,46 +92,27 @@ namespace Royal.DAO
             }
         }
 
-        public async void UpdateRoom(DataGridView v)
+        public async void UpdateRoom(string sId, string sName, string LoaiPhong, string TrangThai)
         {
-            if (v.SelectedRows.Count > 0) // Check if any row is selected
+            Room room = new Room()
             {
-                // Get the selected row
-                DataGridViewRow selectedRow = v.SelectedRows[0];
+                MAPH = sId,
+                TenPhong = sName,
+                LoaiPhong = LoaiPhong,
+                TrangThai = TrangThai
+            };
 
-                if (selectedRow != null)
+            if (MessageBox.Show("Are you sure you want to update this service?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                try
                 {
-                    // Extract the Room ID from the selected row (assuming it's in column 0)
-                    string roomId = (string)selectedRow.Cells[0].Value;
-
-                    // Get the updated Room information from the selected row
-                    Room updatedRoom = new Room
-                    {
-                        MAPH = (string)selectedRow.Cells[0].Value, // Assuming Room ID remains unchanged
-                        TenPhong = (string)selectedRow.Cells[1].Value,
-                        LoaiPhong = (string)selectedRow.Cells[2].Value,
-                        TrangThai = (string)selectedRow.Cells[3].Value
-                    };
-
-
-                    // Confirmation prompt (modified)
-                    if (MessageBox.Show("Are you sure you want to update this Room?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            // Update the Room in Firebase
-                            await Client.SetAsync($"Room/{roomId}", updatedRoom);
-
-                            // Refresh the DataGridView (optional)
-                            // v.Refresh(); // You might want to refresh only the updated row
-
-                            MessageBox.Show("Room information updated successfully!");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error updating Room: {ex.Message}");
-                        }
-                    }
+                    await Client.SetAsync($"Room/{sId}", room);
+                    MessageBox.Show("Room's information updated successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating Room: {ex.Message}");
                 }
             }
             else

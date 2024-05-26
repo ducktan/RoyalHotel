@@ -27,11 +27,13 @@ namespace Royal
             // Assuming dataGridRoomType is a DataGridView control on your form
             Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
             roomType.LoadRoomType(dataGridRoomType);
+            dataGridRoomType.CellClick += dataGridRoomType_CellClick;
         }
 
 
-        private void RoomType_Load(object sender, EventArgs e)
+        private async void RoomType_Load(object sender, EventArgs e)
         {
+
 
         }
 
@@ -40,17 +42,24 @@ namespace Royal
             try
             {
                 var roomTypes = await firebaseClient
-    .Child("RoomType")
-    .OnceAsync<object>();
-                // Tìm số lớn nhất trong các mã hiện có
-                int maxNumber = roomTypes.Select(b => int.Parse((b.Object as dynamic).MALPH.Substring(3))).DefaultIfEmpty(0).Max();
+                .Child("RoomType")
+                 .OnceAsync<DAO.RoomType>();
+                // Tìm mã phòng lớn nhất hiện có
+                int maxRoomNumber = 0;
+                foreach (var roomData in roomTypes)
+                {
+                    int roomNumber = int.Parse(roomData.Object.MALPH.Substring(3));
+                    if (roomNumber > maxRoomNumber)
+                    {
+                        maxRoomNumber = roomNumber;
+                    }
+                }
 
-                // Tạo mã mới
-                string newMaHoaDon = $"LPH{(maxNumber + 1).ToString("D3")}";
+                string newRoomNumber = "LPH" + (maxRoomNumber + 1).ToString("D3");
 
                 Royal.DAO.RoomType roomType = new Royal.DAO.RoomType()
                 {
-                    MALPH = newMaHoaDon,
+                    MALPH = newRoomNumber,
                     TENLPH = txtRoomTypeName.Text,
                     SLNG = Int32.Parse(cboPeopleNum.Text),
                     GIA = Int32.Parse(txtPrice.Text)
@@ -66,12 +75,30 @@ namespace Royal
                 MessageBox.Show(ex.Message);
             }
 
+
         }
 
         private void btnUpdateRoomType_Click(object sender, EventArgs e)
         {
-            Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
-            
+            try
+            {
+                string id = txtRoomTypeId.Text;
+                string name = txtRoomTypeName.Text;
+                int num = Int32.Parse(cboPeopleNum.Text);
+                int price = Int32.Parse(txtPrice.Text);
+
+
+                Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
+                roomType.UpdateRoomType(id, name, num, price);
+                roomType.LoadRoomType(dataGridRoomType);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
         }
 
         private void btnDisplayRoomType_Click(object sender, EventArgs e)
@@ -100,7 +127,7 @@ namespace Royal
             // Call the appropriate search function based on the selected type
             List<Royal.DAO.RoomType> searchResults = new List<Royal.DAO.RoomType>(); // Initialize empty list
 
-           
+
             try
             {
                 if (type == "Mã loại phòng") // Search by room type ID (MALPH)
@@ -180,9 +207,43 @@ namespace Royal
             }
         }
 
+        private void dataGridRoomType_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
+            {
+                DataGridViewRow selectedRow = dataGridRoomType.Rows[e.RowIndex];
 
+                // Kiểm tra nếu hàng không rỗng
+                if (!selectedRow.IsNewRow)
+                {
+                    txtRoomTypeId.Text = (string)selectedRow.Cells[0].Value;
+                    txtRoomTypeName.Text = (string)selectedRow.Cells[1].Value;
+                    txtPrice.Text = selectedRow.Cells[3].Value.ToString();
+                    cboPeopleNum.Text = selectedRow.Cells[2].Value.ToString();
+
+                }
+            }
+        }
         private void groupBox3_Enter(object sender, EventArgs e)
         {
+
+        }
+
+
+
+        private void btnDeleteRoomType_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = txtRoomTypeId.Text;
+                Royal.DAO.RoomType roomType = new Royal.DAO.RoomType(); // Assuming you have an instance
+                roomType.DeleteRoomType(id);
+                roomType.LoadRoomType(dataGridRoomType);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

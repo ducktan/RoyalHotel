@@ -17,15 +17,19 @@ using Royal.DAO;
 namespace Royal
 {
     public partial class ManageRoom : Form
-    { 
-       private Firebase.Database.FirebaseClient firebaseClient;
-    
+    {
+        private Firebase.Database.FirebaseClient firebaseClient;
+
         public ManageRoom()
         {
             InitializeComponent();
 
             firebaseClient = FirebaseManage.GetFirebaseClient();
             LoadRoomTypeNameFromDB();
+            Royal.DAO.Room room = new Royal.DAO.Room();
+            room.LoadRoom(dataGridRoom);
+            dataGridRoom.CellClick += dataGridRoom_CellClick;
+
         }
 
 
@@ -40,7 +44,7 @@ namespace Royal
 
                 foreach (var roomType in typeRoomList)
                 {
-                    cboRoomType .Items.Add(roomType.Object.TENLPH);
+                    cboRoomType.Items.Add(roomType.Object.MALPH);
                 }
             }
             catch (Exception ex)
@@ -77,6 +81,8 @@ namespace Royal
                 }
 
                 string newRoomNumber = "PH" + (maxRoomNumber + 1).ToString("D3");
+
+
                 Royal.DAO.Room room = new Royal.DAO.Room()
                 {
                     MAPH = newRoomNumber,
@@ -102,8 +108,18 @@ namespace Royal
 
         private void btnDeleteRoom_Click(object sender, EventArgs e)
         {
-            Royal.DAO.Room room = new Royal.DAO.Room();
-            room.DeleteRoom(dataGridRoom);
+            try
+            {
+                string id = txtRoomID.Text;
+                Royal.DAO.Room room = new Royal.DAO.Room();
+                room.DeleteRoom(id);
+                room.LoadRoom(dataGridRoom);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private async void kryptonButton5_Click(object sender, EventArgs e)
@@ -125,10 +141,6 @@ namespace Royal
             // Call the appropriate search function based on the selected type
             List<Royal.DAO.Room> searchResults = new List<Royal.DAO.Room>(); // Initialize empty list
 
-//            Mã phòng
-//Loại phòng
-//Tên phòng
-//Trạng thái
 
             try
             {
@@ -160,8 +172,8 @@ namespace Royal
 
 
 
-        // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
-        List<string[]> uiResults = searchResults.Select(rooms => new string[] { rooms.MAPH, rooms.TenPhong, rooms.LoaiPhong, rooms.TrangThai }).ToList();
+                // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+                List<string[]> uiResults = searchResults.Select(rooms => new string[] { rooms.MAPH, rooms.TenPhong, rooms.LoaiPhong, rooms.TrangThai }).ToList();
 
                 // Update UI elements on the UI thread
                 if (this.InvokeRequired)
@@ -194,6 +206,44 @@ namespace Royal
             catch (Exception ex)
             {
                 MessageBox.Show($"Error searching room types: {ex.Message}");
+            }
+        }
+
+        private void btnUpdateRoom_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = txtRoomID.Text;
+                string name = txtRoomName.Text;
+                string loaiphong = cboRoomType.Text;
+                string trangthai = cboStatusRoom.Text;
+
+                Royal.DAO.Room room = new Royal.DAO.Room();
+                room.UpdateRoom(id, name, loaiphong, trangthai);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching room types: {ex.Message}");
+            }
+
+
+        }
+
+        private void dataGridRoom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
+            {
+                DataGridViewRow selectedRow = dataGridRoom.Rows[e.RowIndex];
+
+                // Kiểm tra nếu hàng không rỗng
+                if (!selectedRow.IsNewRow)
+                {
+                    txtRoomID.Text = (string)selectedRow.Cells[0].Value;
+                    txtRoomName.Text = (string)selectedRow.Cells[1].Value;
+                    cboRoomType.Text = (string)selectedRow.Cells[2].Value;
+                    cboStatusRoom.Text = (string)selectedRow.Cells[3].Value;
+
+                }
             }
         }
     }

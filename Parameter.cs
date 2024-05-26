@@ -38,45 +38,43 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Bill" table
-            var bills = await firebaseClient
-                .Child("Parameters")
-                .OnceAsync<object>();
 
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
+            try
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
+                // Get the current row count for the "Bill" table
+                var bills = await firebaseClient
+                    .Child("Parameters")
+                    .OnceAsync<Royal.DAO.ParameterDAO>();
 
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"NQ{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                // Tìm mã phòng lớn nhất hiện có
+                int maxRoomNumber = 0;
+                foreach (var roomData in bills)
                 {
-                    newNumber++;
+                    int roomNumber = int.Parse(roomData.Object.pID.Substring(2));
+                    if (roomNumber > maxRoomNumber)
+                    {
+                        maxRoomNumber = roomNumber;
+                    }
                 }
-            } while (!isUnique);
 
-            ParameterDAO p1 = new ParameterDAO()
+                string newRoomNumber = "NQ" + (maxRoomNumber + 1).ToString("D3");
+                ParameterDAO p1 = new ParameterDAO()
+                {
+                    pID = newRoomNumber,
+                    pName = tenP.Text,
+                    pContent = content.Text,
+                    pValue = Int32.Parse(value.Text)
+                };
+
+                // Thực hiện các thao tác với đối tượng p1 (ví dụ: lưu vào Firebase Realtime Database)
+                // firebaseClient.Child("Parameters").PostAsync(p1);
+
+                p1.AddPara(p1);
+            }
+            catch (Exception ex)
             {
-                pID = maHoaDon,
-                pName = tenP.Text,
-                pContent = content.Text,
-                pValue = Int32.Parse(value.Text)
-            };
-
-            // Thực hiện các thao tác với đối tượng p1 (ví dụ: lưu vào Firebase Realtime Database)
-            // firebaseClient.Child("Parameters").PostAsync(p1);
-
-            p1.AddPara(p1);
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dataGridViewParameter_CellContentClick(object sender, DataGridViewCellEventArgs e)

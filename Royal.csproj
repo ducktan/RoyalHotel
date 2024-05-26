@@ -220,6 +220,7 @@
     <Compile Include="DAO\Service.cs" />
     <Compile Include="DAO\Staff.cs" />
     <Compile Include="DAO\StaffType.cs" />
+    <Compile Include="DAO\User.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>

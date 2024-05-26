@@ -237,7 +237,82 @@ namespace Royal.DAO
         }
 
 
+        public async Task<List<CustomerDAO>> SearchRoomByType(string type)
+        {
+            try
+            {
+                // Retrieve all room data from "Room" node
+                var typeRoomList = await firebaseClient
+                    .Child("Customer")
+                    .OnceAsync<Royal.DAO.CustomerDAO>();
 
+                // Initialize an empty list to store matching rooms
+                List<CustomerDAO> matchingRooms = new List<CustomerDAO>();
+
+                // Iterate through retrieved room data
+                foreach (var Room in typeRoomList)
+                {
+                    // Extract room information
+                    CustomerDAO room = Room.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.ID_LOAIKH == type)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<CustomerDAO>(); // Return empty list on error
+            }
+        }
+
+
+
+
+        public async Task<List<CustomerDAO>> SearchCustomerByGender(string type)
+        {
+            try
+            {
+                // Retrieve all room data from "Room" node
+                var typeRoomList = await firebaseClient
+                    .Child("Customer")
+                    .OnceAsync<Royal.DAO.CustomerDAO>();
+
+                // Initialize an empty list to store matching rooms
+                List<CustomerDAO> matchingRooms = new List<CustomerDAO>();
+
+                // Iterate through retrieved room data
+                foreach (var Room in typeRoomList)
+                {
+                    // Extract room information
+                    CustomerDAO room = Room.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.GIOITINH == type)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<CustomerDAO>(); // Return empty list on error
+            }
+        }
 
 
     }

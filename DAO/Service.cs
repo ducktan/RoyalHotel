@@ -180,6 +180,44 @@ namespace Royal.DAO
         }
 
 
+        public async Task<List<ServiceDAO>> SearchRoomTypeByPrice(int minPrice)
+        {
+            try
+            {
+                // Retrieve all room data from "RoomType" node
+                var typeRoomList = await firebaseClient
+                    .Child("Service")
+                    .OnceAsync<Royal.DAO.ServiceDAO>();
+
+                // Initialize an empty list to store matching rooms
+                List<ServiceDAO> matchingRooms = new List<ServiceDAO>();
+
+                // Iterate through retrieved room data
+                foreach (var roomType in typeRoomList)
+                {
+                    // Extract room information
+                    ServiceDAO room = roomType.Object;
+
+                    // Check if room price falls within the specified range
+                    if (room.sePrice >= minPrice)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by price: {ex.Message}");
+                return new List<ServiceDAO>(); // Return empty list on error
+            }
+        }
+
+
 
 
 

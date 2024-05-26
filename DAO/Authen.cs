@@ -40,6 +40,9 @@ namespace Royal.DAO
             try
             {
                 var result = await client.SignInWithEmailAndPasswordAsync(email, password);
+                User.Email = email;
+                Permission permission = new Permission();
+                User.Role = await permission.GetUserRoleByEmail(email);
                 return result;
             }
             catch (FirebaseAuthException ex)
@@ -48,6 +51,10 @@ namespace Royal.DAO
                 return null;
             }
         }
+
+
+
+
 
         public async Task<bool> CheckUserExists(string email)
         {
@@ -93,7 +100,7 @@ namespace Royal.DAO
         {
             try
             {
-                
+
                 UserCredential credential = await client.CreateUserWithEmailAndPasswordAsync(email, password);
                 // Thực hiện việc đăng ký tài khoản người dùng mới
 
@@ -109,7 +116,7 @@ namespace Royal.DAO
 
         }
 
-        
+
 
 
     }

@@ -26,6 +26,9 @@ namespace Royal
             InitializeComponent();
             firebaseClient = FirebaseManage.GetFirebaseClient();
             // Assuming dataGridCustomerType is a DataGridView control on your form
+            DAO.CustomerType customerType = new DAO.CustomerType();
+            customerType.LoadCustomerType(dataGridCusType);
+            dataGridCusType.CellClick += dataGridRoom_CellClick;
         }
 
 
@@ -41,7 +44,23 @@ namespace Royal
             CustomerType.LoadCustomerType(dataGridCusType);
         }
 
+        private void dataGridRoom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
+            {
+                DataGridViewRow selectedRow = dataGridCusType.Rows[e.RowIndex];
 
+                // Kiểm tra nếu hàng không rỗng
+                if (!selectedRow.IsNewRow)
+                {
+                    txtCusTypeId.Text = (string)selectedRow.Cells[0].Value;
+                    cboCusTypeName.Text = (string)selectedRow.Cells[1].Value;
+                    cboDiscount.Text = cboDiscount.Text = selectedRow.Cells[2].Value.ToString();
+                    ;
+
+                }
+            }
+        }
 
         private void kryptonButton4_Click_1(object sender, EventArgs e)
         {
@@ -80,30 +99,24 @@ namespace Royal
             {
                 var CustomerTypes = await firebaseClient
     .Child("CustomerType")
-    .OnceAsync<object>();
-                int newNumber = CustomerTypes.Count + 1;
-                string maHoaDon;
-                bool isUnique;
-                do
+    .OnceAsync<DAO.CustomerType>();
+
+                int maxRoomNumber = 0;
+                foreach (var roomData in CustomerTypes)
                 {
-                    // Format the number with leading zeros (001, 002, ...)
-                    string formattedNumber = newNumber.ToString("D3");
-
-                    // Create the MAHD with your preferred prefix (e.g., "HD")
-                    maHoaDon = $"LKH{formattedNumber}";
-
-                    // Check if the ID is unique
-                    isUnique = !CustomerTypes.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                    if (!isUnique)
+                    int roomNumber = int.Parse(roomData.Object.ID_LOAIKH.Substring(3));
+                    if (roomNumber > maxRoomNumber)
                     {
-                        newNumber++;
+                        maxRoomNumber = roomNumber;
                     }
-                } while (!isUnique);
+                }
+
+                string newRoomNumber = "LKH" + (maxRoomNumber + 1).ToString("D3");
+
 
                 Royal.DAO.CustomerType CustomerType = new Royal.DAO.CustomerType()
                 {
-                    ID_LOAIKH = maHoaDon,
+                    ID_LOAIKH = newRoomNumber,
                     TEN_LOAIKH = txtCusTypeId.Text,
                     DISCOUNT = Int32.Parse(cboCusTypeName.Text)
 
@@ -117,6 +130,11 @@ namespace Royal
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
