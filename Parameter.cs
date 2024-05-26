@@ -227,50 +227,14 @@ namespace Royal
                 MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
             }
         }
-        private async void addBut_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
-                List<StaffDAO> billDetails = await new StaffDAO().SearchStaffbyIDStaff(maNV.Text);
 
-
-                // Kiểm tra xem có dữ liệu hay không
-                if (billDetails.Count > 0)
-                {
-                    // Thêm dữ liệu chi tiết hóa đơn vào DataGridView
-                    foreach (var item in billDetails)
-                    {
-                        int value = Int32.Parse(Va.Text);
-                        item.staffSalary += value;
-                        if (value < 0)
-                        {
-                            item.countVP++; 
-                           
-                        }
-                        item.UpdateSalary(item.StaffID, item.staffSalary, item.countVP);
-
-                    }
-                }
-                else
-                {
-                    // Nếu không tìm thấy dữ liệu, hiển thị thông báo
-                    MessageBox.Show("Không tìm thấy dữ liệu nhân viên.");
-                }
-            }
-            catch (Exception ex)
-            {
-                // Xử lý ngoại lệ nếu có
-                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
-            }
-        }
         public async void LoadInfoStaffFromID()
         {
             try
             {
                 // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
                 List<StaffDAO> billDetails = await new StaffDAO().SearchStaffbyIDStaff(maNV.Text);
-            
+
 
                 // Kiểm tra xem có dữ liệu hay không
                 if (billDetails.Count > 0)
@@ -278,8 +242,8 @@ namespace Royal
                     // Thêm dữ liệu chi tiết hóa đơn vào DataGridView
                     foreach (var item in billDetails)
                     {
-                        Luong.Text = item.staffSalary.ToString() ?? "0";
-                        SoLanVP.Text = item.countVP.ToString() ?? "0";
+                        Luong.Text = item.luongNV?.staffSalary.ToString() ?? "0";
+                        SoLanVP.Text = item.luongNV?.countVP.ToString() ?? "0";
                         tenNV.Text = item.staffName.ToString();
                     }
                 }
@@ -308,8 +272,68 @@ namespace Royal
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LoadInfoStaffFromID();
+
+            LoadMaNVFromDatabase();
+            ParameterDAO p = new ParameterDAO();
+            p.LoadPara(dataGridView1);
             MessageBox.Show("Refresh successfully!");
+        }
+
+        private async void addBut_Click(object sender, EventArgs e)
+        {
+            int workday, countvp, salary;
+
+            try
+            {
+                // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
+                List<StaffDAO> billDetails = await new StaffDAO().SearchStaffbyIDStaff(maNV.Text);
+              
+
+                // Kiểm tra xem có dữ liệu hay không
+                int value;
+                if (int.TryParse(Va.Text, out value))
+                {
+                    foreach (StaffDAO item in billDetails)
+                    {
+                       workday = item.luongNV.workingDay;
+                       MessageBox.Show(workday.ToString());
+                       countvp = item.luongNV.countVP;
+                       salary = item.luongNV.staffSalary;
+                        // Kiểm tra nếu item.luongNV là null thì khởi tạo
+                        if (item.luongNV == null)
+                        {
+                            
+                            item.luongNV = new Salary();
+                            await item.luongNV.InitSalary(item.StaffID);
+                        }
+                        if (value == 1)
+                        {
+                            workday++; 
+                            if (workday > 2)
+                            {
+                                salary = 10000;
+                                MessageBox.Show("Đủ lương rồi nè!");
+                            }
+                        }
+                        else
+                        {
+                            salary += value;
+                            if (value < 0)
+                            {
+                                countvp++;
+                            }
+                        }                       
+                        
+                        await item.luongNV.UpdateSalary(item.StaffID, salary,countvp, workday);
+                    
+                    }
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật dữ liệu: " + ex.Message);
+            }
         }
     }
 }

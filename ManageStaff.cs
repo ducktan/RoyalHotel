@@ -29,15 +29,16 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            var roomList = await firebaseClient
+            // Get the current row count for the "Bill" table
+            var bills = await firebaseClient
                 .Child("Staff")
-                .OnceAsync<Royal.DAO.StaffDAO>();
+                .OnceAsync<DAO.StaffDAO>();
 
             // Tìm mã phòng lớn nhất hiện có
             int maxRoomNumber = 0;
-            foreach (var roomData in roomList)
+            foreach (var roomData in bills)
             {
-                int roomNumber = int.Parse(roomData.Object.StaffID.Substring(2));
+                int roomNumber = int.Parse(roomData.Object.StaffID.Substring(3));
                 if (roomNumber > maxRoomNumber)
                 {
                     maxRoomNumber = roomNumber;
@@ -63,7 +64,7 @@ namespace Royal
                 staffDateIn = dateIn.Text
             };
 
-            newStaff.AddStaff(newStaff);
+            await newStaff.AddStaff(newStaff);
             newStaff.LoadStaff(dataGridStaff);
         }
 
@@ -121,19 +122,20 @@ namespace Royal
             a.LoadStaff(dataGridStaff);
         }
 
-        private void kryptonButton2_Click(object sender, EventArgs e)
+        private async void kryptonButton2_Click(object sender, EventArgs e)
         {
             string id = manv.Text;
             StaffDAO a = new StaffDAO();
-            a.DeleteStaff(id);
+            await a.DeleteStaff(id);
 
             a.LoadStaff(dataGridStaff);
         }
 
-        private void kryptonButton3_Click(object sender, EventArgs e)
+        private async void kryptonButton3_Click(object sender, EventArgs e)
         {
             StaffDAO a = new StaffDAO();
-            a.UpdateStaff(manv.Text, name.Text, idcc.Text, loaiNV.Text, soDT.Text, mail.Text, dateBirth.Value.ToString(), address.Text, comboBoxSex.Text, dateIn.Value.ToString());
+            await a.UpdateStaff(manv.Text, name.Text, idcc.Text, loaiNV.Text, soDT.Text, mail.Text, dateBirth.Value.ToString(), address.Text, comboBoxSex.Text, dateIn.Value.ToString());
+            a.LoadStaff(dataGridStaff);
         }
 
 
@@ -215,5 +217,10 @@ namespace Royal
             }
         }
 
+        private void kryptonButton6_Click(object sender, EventArgs e)
+        {
+            ManageStaffType s = new ManageStaffType();
+            s.Show();
+        }
     }
 }
