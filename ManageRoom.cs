@@ -231,6 +231,24 @@ namespace Royal
 
         private void btnUpdateRoom_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                string id = txtRoomID.Text;
+                string name = txtRoomName.Text;
+                string loaiphong = cboRoomType.Text;
+                string trangthai = cboStatusRoom.Text;
+
+                Royal.DAO.Room room = new Royal.DAO.Room();
+                room.UpdateRoom(id, name, loaiphong, trangthai);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching room types: {ex.Message}");
+            }
+        }
+
+        private void btnUpdateRoom_Click_1(object sender, EventArgs e)
+        {
             try { 
                 string id = txtRoomID.Text;
                 string name = txtRoomName.Text;

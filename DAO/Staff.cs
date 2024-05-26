@@ -24,25 +24,27 @@ namespace Royal.DAO
         public string staffPhone { get; set; }
         public string staffDateIn { get; set; }
         public string staffType { get; set; }  
-        
-        public int staffSalary { get; set; }    
-        public int countVP { get; set; }    
+        public Salary luongNV { get; set; }
 
-        
- 
+
+
+
+
 
         private readonly FirebConfig config = new FirebConfig();
         public IFirebaseClient Client { get; private set; } // Make client accessible only within the class
-
-        public StaffDAO()
+        
+       public StaffDAO()
         {
             try
             {
 
                 Client = new FireSharp.FirebaseClient(config.Config);
                 firebaseClient = FirebaseManage.GetFirebaseClient();
-                staffSalary = 0;
-                countVP = 0;
+                luongNV = new Salary();
+                
+
+
 
 
             }
@@ -53,7 +55,7 @@ namespace Royal.DAO
             // Initialize client upon object creation
         }
 
-        public async void AddStaff(StaffDAO staff)
+        public async Task AddStaff(StaffDAO staff)
         {
             var staffData = new
             {
@@ -66,10 +68,15 @@ namespace Royal.DAO
                 staff.staffBirth, 
                 staff.staffAdd, 
                 staff.staffGender, 
-                staff.staffDateIn, 
-                staff.staffSalary, 
-                staff.countVP
-            };
+                staff.staffDateIn,
+              
+
+        };
+
+           
+            staff.luongNV = new Salary(); // Khởi tạo một đối tượng Salary mới          
+            await staff.luongNV.InitSalary(staff.StaffID);
+
             FirebaseResponse response = await Client.SetAsync("Staff/" + staff.StaffID, staffData);
             MessageBox.Show("Add staff success");
         }
@@ -115,7 +122,7 @@ namespace Royal.DAO
 
         }
 
-        public async void DeleteStaff(string staffId)
+        public async Task DeleteStaff(string staffId)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this staff?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -137,7 +144,7 @@ namespace Royal.DAO
 
         }
 
-        public async void UpdateStaff(string sID, string sName, string sCCCD, string sType, string sPhone, string sEmail, string  sNgsinh, string sAdd, string sGender, string sDatein)
+        public async Task UpdateStaff(string sID, string sName, string sCCCD, string sType, string sPhone, string sEmail, string  sNgsinh, string sAdd, string sGender, string sDatein)
         {
 
 
@@ -180,39 +187,7 @@ namespace Royal.DAO
 
         }
 
-        public async void UpdateSalary(string sID, int salary, int vp)
-        {
-
-
-
-            // Get the updated bill information from the selected row
-            StaffDAO s = new StaffDAO()
-            {
-                StaffID = sID, 
-                staffSalary = salary,
-                countVP = vp
-
-            };
-
-
-          
-                try
-                {
-                    // Update the bill in Firebase
-                    await Client.SetAsync($"Staff/{sID}", s);
-
-                    // Refresh the DataGridView (optional)
-                    // v.Refresh(); // You might want to refresh only the updated row
-
-                    MessageBox.Show("Chấm công thành công!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error updating staff salary: {ex.Message}");
-                }
-           
-
-        }
+       
 
         public async Task<List<StaffDAO>> SearchStaffbyIDStaff(string idnv)
         {
@@ -317,7 +292,7 @@ namespace Royal.DAO
             catch (Exception ex)
             {
                 // Handle exceptions (logging, throwing specific exceptions, etc.)
-                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                Console.WriteLine($"Error searching staff by gender: {ex.Message}");
                 return new List<StaffDAO>(); // Return empty list on error
             }
         }
