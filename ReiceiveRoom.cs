@@ -162,7 +162,7 @@ namespace Royal
                         NGAYNHAN = ngayNhan,
                         NGAYTRA = ngayTra
                     };
-
+                    await receiveroomDAO.AddReceiveRoom(updatedReceiveRoom);
                     // Gọi phương thức cập nhật
                     await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
                     receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);
@@ -213,7 +213,7 @@ namespace Royal
                         NGAYNHAN = ngayNhan,
                         NGAYTRA = ngayTra
                     };
-
+                    await receiveroomDAO.AddReceiveRoom(updatedReceiveRoom);
                     // Gọi phương thức cập nhật
                     await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
                     receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);

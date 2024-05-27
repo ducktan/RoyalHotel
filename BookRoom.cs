@@ -238,16 +238,19 @@ namespace Royal
                     .Child("ReservedRoom")
                     .OnceAsync<bookingroomDAO>();
 
-                // Extract the latest ID_DATPHONG and increment it for the new booking
-                int latestNumber = currentRooms
- .Select(r => int.TryParse(r.Object.ID_DATPHONG.Replace("IDDP", ""), out int number) ? number : -1) // Extract numeric part and parse to int
- .OrderByDescending(num => num)
- .FirstOrDefault();
 
 
 
-                int newNumber = latestNumber + 1;
-                string newID_DATPHONG = $"IDDP{newNumber}";
+                int maxRoomNumber = 0;
+                foreach (var roomData in currentRooms)
+                {
+                    int roomNumber = int.Parse(roomData.Object.ID_DATPHONG.Substring(4));
+                    if (roomNumber > maxRoomNumber)
+                    {
+                        maxRoomNumber = roomNumber;
+                    }
+                }
+                string newID_DATPHONG = "IDDP" + (maxRoomNumber + 1).ToString("D3");
 
                 // Get the form values
                 string selectedRoomType = cbRoomType.SelectedItem != null ? cbRoomType.SelectedItem.ToString() : "";
@@ -370,6 +373,7 @@ namespace Royal
                 {
                     MessageBox.Show("Room type details not found", "Error");
                 }
+                LoadRoomIDs();
             }
             catch (Exception ex)
             {
@@ -382,7 +386,7 @@ namespace Royal
             // Ensure the check-out date is after or the same as the check-in date
             if (kryptonDateTimePicker2.Value > kryptonDateTimePicker1.Value)
             {
-                kryptonDateTimePicker1.Value = kryptonDateTimePicker2.Value;
+                kryptonDateTimePicker1.Value = kryptonDateTimePicker2.Value.AddDays(1);
             }
             kryptonDateTimePicker1.MinDate = kryptonDateTimePicker2.Value;
 
@@ -395,7 +399,7 @@ namespace Royal
             // Ensure the check-out date is not before the check-in date
             if (kryptonDateTimePicker1.Value < kryptonDateTimePicker2.Value)
             {
-                kryptonDateTimePicker1.Value = kryptonDateTimePicker2.Value;
+                kryptonDateTimePicker1.Value = kryptonDateTimePicker2.Value.AddDays(1);
             }
 
             // Update date difference
@@ -428,6 +432,16 @@ namespace Royal
         private void button3_Click(object sender, EventArgs e)
         {
             ClearInputFields();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
