@@ -27,15 +27,35 @@ namespace Royal
             firebaseClient = FirebaseManage.GetFirebaseClient();
             // Assuming dataGridCustomerType is a DataGridView control on your form
             DAO.CustomerType customerType = new DAO.CustomerType();
+       
             customerType.LoadCustomerType(dataGridCusType);
-            dataGridCusType.CellClick += dataGridRoom_CellClick;
+            dataGridCusType.CellClick += dataGridCustomer_CellClick;
         }
 
 
-        private void kryptonButton5_Click_1(object sender, EventArgs e)
+
+
+        private async void LoadCustomerDiscountFromDB()
         {
+            try
+            {
+                var typeCustomerList = await firebaseClient
+                    .Child("CustomerType")
+                    .OnceAsync<Royal.DAO.CustomerType>();
+                cboDiscount.Items.Clear();
+
+                foreach (var CustomerType in typeCustomerList)
+                {
+                    cboDiscount.Items.Add(CustomerType.Object.DISCOUNT.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
 
         }
+
 
         private void kryptonButton3_Click_1(object sender, EventArgs e)
         {
@@ -44,7 +64,7 @@ namespace Royal
             CustomerType.LoadCustomerType(dataGridCusType);
         }
 
-        private void dataGridRoom_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
             {
@@ -54,7 +74,7 @@ namespace Royal
                 if (!selectedRow.IsNewRow)
                 {
                     txtCusTypeId.Text = (string)selectedRow.Cells[0].Value;
-                    cboCusTypeName.Text = (string)selectedRow.Cells[1].Value;
+                    txtName.Text = (string)selectedRow.Cells[1].Value;
                     cboDiscount.Text = cboDiscount.Text = selectedRow.Cells[2].Value.ToString();
                     ;
 
@@ -62,13 +82,13 @@ namespace Royal
             }
         }
 
-        private void kryptonButton4_Click_1(object sender, EventArgs e)
+        private async void kryptonButton4_Click_1(object sender, EventArgs e)
         {
             try
             {
                 string id = txtCusTypeId.Text;
                 Royal.DAO.CustomerType CustomerType = new Royal.DAO.CustomerType(); // Assuming you have an instance
-                CustomerType.DeleteCustomerType(id);
+               await CustomerType.DeleteCustomerType(id);
                 CustomerType.LoadCustomerType(dataGridCusType);
             }
             catch (Exception ex)
@@ -87,7 +107,7 @@ namespace Royal
                 if (!selectedRow.IsNewRow)
                 {
                     txtCusTypeId.Text = (string)selectedRow.Cells[0].Value;
-                    cboCusTypeName.Text = (string)selectedRow.Cells[1].Value;
+                    txtName.Text = (string)selectedRow.Cells[1].Value;
                     cboDiscount.Text = selectedRow.Cells[3].Value.ToString();
                 }
             }
@@ -95,46 +115,54 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            try
-            {
+   
                 var CustomerTypes = await firebaseClient
     .Child("CustomerType")
     .OnceAsync<DAO.CustomerType>();
 
-                int maxRoomNumber = 0;
-                foreach (var roomData in CustomerTypes)
+                int maxCustomerNumber = 0;
+                foreach (var CustomerData in CustomerTypes)
                 {
-                    int roomNumber = int.Parse(roomData.Object.ID_LOAIKH.Substring(3));
-                    if (roomNumber > maxRoomNumber)
+                    int CustomerNumber = int.Parse(CustomerData.Object.ID_LOAIKH.Substring(3));
+                    if (CustomerNumber > maxCustomerNumber)
                     {
-                        maxRoomNumber = roomNumber;
+                        maxCustomerNumber = CustomerNumber;
                     }
                 }
 
-                string newRoomNumber = "LKH" + (maxRoomNumber + 1).ToString("D3");
+                string newCustomerNumber = "LKH" + (maxCustomerNumber + 1).ToString("D2");
 
 
                 Royal.DAO.CustomerType CustomerType = new Royal.DAO.CustomerType()
                 {
-                    ID_LOAIKH = newRoomNumber,
-                    TEN_LOAIKH = txtCusTypeId.Text,
-                    DISCOUNT = Int32.Parse(cboCusTypeName.Text)
+                    ID_LOAIKH = newCustomerNumber,
+                    TEN_LOAIKH = txtName.Text,
+                    DISCOUNT = Int32.Parse(cboDiscount.Text)
 
                 };
 
-                CustomerType.AddCustomerType(CustomerType);
+                await CustomerType.AddCustomerType(CustomerType);
                 CustomerType.LoadCustomerType(dataGridCusType);
-            }
 
+        }
+
+
+
+        private async void kryptonButton2_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = txtCusTypeId.Text;
+                string name = txtName.Text;
+                int discount = Int32.Parse(cboDiscount.Text);
+                DAO.CustomerType a = new DAO.CustomerType();
+                await a.UpdateCustomerType(id, name, discount);
+                a.LoadCustomerType(dataGridCusType);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

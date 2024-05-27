@@ -113,45 +113,37 @@ namespace Royal
         }
         private async void addBut_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Bill" table
-            var bills = await firebaseClient
-                .Child("BillDetail")
-                .OnceAsync<object>();
 
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
 
-            do
+            var roomTypes = await firebaseClient
+                    .Child("BillDetail")
+                    .OnceAsync<BillDetailDAO>();
+            // Tìm mã phòng lớn nhất hiện có
+            int maxRoomNumber = 0;
+            foreach (var roomData in roomTypes)
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
-
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"CTHD{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                int roomNumber = int.Parse(roomData.Object.MAHD.Substring(4));
+                if (roomNumber > maxRoomNumber)
                 {
-                    newNumber++;
+                    maxRoomNumber = roomNumber;
                 }
-            } while (!isUnique);
+            }
+
+            string newRoomNumber = "CTHD" + (maxRoomNumber + 1).ToString("D3");
 
 
             // Create a new Bill object with form control values
             BillDetailDAO newBill = new BillDetailDAO()
             {
-                MACTHD = maHoaDon,
+                MACTHD = newRoomNumber,
                 MAHD = maHDBox.Text,
                 MADV = maDV.Text,
                 SLG_DV = Int32.Parse(SLG_DV.Text),
                 THANHTIEN = Int32.Parse(thanhtien.Text)
             };
 
-            newBill.AddBDetail(newBill);
+            await newBill.AddBDetail(newBill);
+            newBill.LoadBillDetail(dataGridViewBillDetail);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -256,13 +248,14 @@ namespace Royal
             CalculateTotalAmount();
         }
 
-        private void delBut_Click(object sender, EventArgs e)
+        private async void delBut_Click(object sender, EventArgs e)
         {
             BillDetailDAO a = new BillDetailDAO();
-            a.DeleteBillDetail(cthd.Text);
+            await a.DeleteBillDetail(cthd.Text);
+            a.LoadBillDetail(dataGridViewBillDetail);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
             string id = cthd.Text;
             string mahd = maHDBox.Text;
@@ -271,7 +264,8 @@ namespace Royal
             int thanhtien1 = Int32.Parse(thanhtien.Text);
 
             BillDetailDAO a = new BillDetailDAO(); 
-            a.UpdateBill(id, mahd, madv, sl, thanhtien1 );
+            await a.UpdateBill(id, mahd, madv, sl, thanhtien1 );
+            a.LoadBillDetail(dataGridViewBillDetail);
         }
 
         private async void button8_Click(object sender, EventArgs e)

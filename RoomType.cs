@@ -66,7 +66,7 @@ namespace Royal
 
                 };
 
-                roomType.AddRoomType(roomType);
+                await roomType.AddRoomType(roomType);
                 roomType.LoadRoomType(dataGridRoomType);
             }
 
@@ -245,6 +245,48 @@ namespace Royal
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to export to Excel(yes) or PDF(no)?", "Export", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, 0, "Yes = Excel, No = PDF");
+
+            if (result == DialogResult.Yes || result == DialogResult.No)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                        saveFileDialog.DefaultExt = "xlsx";
+                        saveFileDialog.AddExtension = true;
+                        break;
+
+                    case DialogResult.No:
+                        saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+                        saveFileDialog.DefaultExt = "pdf";
+                        saveFileDialog.AddExtension = true;
+                        break;
+
+                    default:
+                        return;
+                }
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    switch (result)
+                    {
+                        case DialogResult.Yes:
+                            ExportToExcel.Export(dataGridRoomType, saveFileDialog.FileName);
+                            break;
+
+                        case DialogResult.No:
+                            ExportToPdf.Export(dataGridRoomType, saveFileDialog.FileName);
+                            break;
+                    }
+                }
+            }
         }
     }
 }

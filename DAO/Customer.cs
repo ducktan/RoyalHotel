@@ -52,7 +52,7 @@ namespace Royal.DAO
 
 
         }
-        public async void AddCustomer(CustomerDAO customer)
+        public async Task AddCustomer(CustomerDAO customer)
         {
 
 
@@ -122,7 +122,7 @@ namespace Royal.DAO
 
         }
 
-        public async void DeleteCus(string cusId)
+        public async Task DeleteCus(string cusId)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this customer?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -144,7 +144,7 @@ namespace Royal.DAO
 
         }
 
-        public async void UpdateCustomer(string cusID, string hoten, string cccd, string ngsinh, string diachi, string loaikh, string gender, string sdt, string qt, string email)
+        public async Task UpdateCustomer(string cusID, string hoten, string cccd, string ngsinh, string diachi, string loaikh, string gender, string sdt, string qt, string email)
         {
 
 

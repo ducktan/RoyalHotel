@@ -46,7 +46,7 @@ namespace Royal.DAO
 
 
         }
-        public async void AddBDetail(BillDetailDAO bill)
+        public async Task AddBDetail(BillDetailDAO bill)
         {
 
 
@@ -101,7 +101,7 @@ namespace Royal.DAO
             }
         }
 
-        public async void DeleteBillDetail(string id)
+        public async Task DeleteBillDetail(string id)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this bill detail?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -123,7 +123,7 @@ namespace Royal.DAO
 
         }
 
-        public async void UpdateBill(string id, string mahd, string madv, int sl, int thanhtien)
+        public async Task UpdateBill(string id, string mahd, string madv, int sl, int thanhtien)
         {
 
 

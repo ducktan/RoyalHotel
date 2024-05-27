@@ -61,7 +61,7 @@ namespace Royal.DAO
             }
         }
 
-        public async void DeleteRoom(string id)
+        public async Task DeleteRoom(string id)
         {
             if (MessageBox.Show("Are you sure you want to delete this Room?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes) // Check if any row is selected
             {
@@ -81,7 +81,7 @@ namespace Royal.DAO
             }
         }
 
-        public async void UpdateRoom(string sId, string sName, string LoaiPhong, string TrangThai)
+        public async Task UpdateRoom(string sId, string sName, string LoaiPhong, string TrangThai)
         {
             var room = new Room()
             {
@@ -109,7 +109,7 @@ namespace Royal.DAO
             }
         }
 
-        public async void AddRoom(Room room)
+        public async Task AddRoom(Room room)
         {
             try
             {

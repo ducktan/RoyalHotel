@@ -40,7 +40,6 @@
             this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cboCusTypeName = new MetroFramework.Controls.MetroComboBox();
             this.cboDiscount = new MetroFramework.Controls.MetroComboBox();
             this.txtCusTypeId = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtName = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCusType)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -162,7 +162,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cboCusTypeName);
+            this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Controls.Add(this.cboDiscount);
             this.groupBox2.Controls.Add(this.txtCusTypeId);
             this.groupBox2.Controls.Add(this.label1);
@@ -180,25 +180,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin loại khách hàng";
             // 
-            // cboCusTypeName
-            // 
-            this.cboCusTypeName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboCusTypeName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboCusTypeName.FormattingEnabled = true;
-            this.cboCusTypeName.ItemHeight = 24;
-            this.cboCusTypeName.Location = new System.Drawing.Point(237, 90);
-            this.cboCusTypeName.Margin = new System.Windows.Forms.Padding(4);
-            this.cboCusTypeName.Name = "cboCusTypeName";
-            this.cboCusTypeName.Size = new System.Drawing.Size(177, 30);
-            this.cboCusTypeName.TabIndex = 134;
-            this.cboCusTypeName.UseSelectable = true;
-            // 
             // cboDiscount
             // 
             this.cboDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDiscount.FormattingEnabled = true;
             this.cboDiscount.ItemHeight = 24;
+            this.cboDiscount.Items.AddRange(new object[] {
+            "20",
+            "10",
+            "5",
+            "3",
+            "1",
+            "0"});
             this.cboDiscount.Location = new System.Drawing.Point(236, 139);
             this.cboDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.cboDiscount.Name = "cboDiscount";
@@ -269,6 +263,7 @@
             this.kryptonButton2.Size = new System.Drawing.Size(178, 40);
             this.kryptonButton2.TabIndex = 45;
             this.kryptonButton2.Values.Text = "Cập nhật";
+            this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click_1);
             // 
             // groupBox1
             // 
@@ -419,6 +414,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh Sách Loại Phòng";
             // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(236, 84);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(178, 36);
+            this.txtName.TabIndex = 130;
+            this.txtName.Text = "";
+            this.txtName.WordWrap = false;
+            // 
             // CustomerType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -451,7 +455,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton4;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroComboBox cboCusTypeName;
         private MetroFramework.Controls.MetroComboBox cboDiscount;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtCusTypeId;
         private System.Windows.Forms.Label label1;
@@ -473,5 +476,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
         private System.Windows.Forms.GroupBox groupBox4;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtName;
     }
 }

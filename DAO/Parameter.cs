@@ -45,7 +45,7 @@ namespace Royal.DAO
             // Initialize client upon object creation
         }
 
-        public async void AddPara(ParameterDAO p)
+        public async Task AddPara(ParameterDAO p)
         {
 
 
@@ -98,7 +98,7 @@ namespace Royal.DAO
             
         }
 
-        public async void DeletePara(string paraId)
+        public async Task DeletePara(string paraId)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this parameter?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -120,7 +120,7 @@ namespace Royal.DAO
 
         }
 
-        public async void UpdateParameter(string paraID, string tenPara, int value, string mota)
+        public async Task UpdateParameter(string paraID, string tenPara, int value, string mota)
         {
 
 

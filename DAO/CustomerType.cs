@@ -36,7 +36,7 @@ namespace Royal.DAO
             // Initialize client upon object creation
         }
 
-        public async void AddCustomerType(CustomerType CustomerType)
+        public async Task AddCustomerType(CustomerType CustomerType)
         {
             var CustomerData = new
             {
@@ -68,7 +68,7 @@ namespace Royal.DAO
         }
 
 
-        public async void DeleteCustomerType(string stID)
+        public async Task DeleteCustomerType(string stID)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this CustomerType?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -88,7 +88,7 @@ namespace Royal.DAO
         }
 
 
-        public async void UpdateCustomerType(string id, string name, int num)
+        public async Task UpdateCustomerType(string id, string name, int num)
         {
             // Get the updated Customer information from the selected row
             CustomerType updatedCustomerType = new CustomerType

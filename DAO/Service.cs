@@ -42,7 +42,7 @@ namespace Royal.DAO
             // Initialize client upon object creation
         }
 
-        public async void AddService(ServiceDAO s)
+        public async Task AddService(ServiceDAO s)
         {
             var stData = new
             {
@@ -91,7 +91,7 @@ namespace Royal.DAO
 
         }
 
-        public async void DeleteSeervice(string stID)
+        public async Task DeleteSeervice(string stID)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this service?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -111,7 +111,7 @@ namespace Royal.DAO
         }
 
 
-        public async void UpdateService(string sID, string sName, int num, string de)
+        public async Task UpdateService(string sID, string sName, int num, string de)
         {
             // Get the updated bill information from the selected row
             ServiceDAO s = new ServiceDAO()

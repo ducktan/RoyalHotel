@@ -40,7 +40,7 @@ namespace Royal.DAO
             // Initialize client upon object creation
         }
 
-        public async void AddRoomType(RoomType roomType)
+        public async Task AddRoomType(RoomType roomType)
         {
             var roomData = new
             {
@@ -74,7 +74,7 @@ namespace Royal.DAO
 
 
 
-        public async void DeleteRoomType(string stID)
+        public async Task DeleteRoomType(string stID)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this RoomType?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -94,7 +94,7 @@ namespace Royal.DAO
         }
 
 
-        public async void UpdateRoomType(string id, string name, int num, int price)
+        public async Task UpdateRoomType(string id, string name, int num, int price)
         {
             // Get the updated Room information from the selected row
             RoomType updatedRoomType = new RoomType
