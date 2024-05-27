@@ -64,6 +64,7 @@
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Ngsinh = new MetroFramework.Controls.MetroDateTime();
             this.Email = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.makh = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
@@ -86,8 +87,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonRichTextBox4 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.cboTypeSearch = new MetroFramework.Controls.MetroComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.Ngsinh = new MetroFramework.Controls.MetroDateTime();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -456,6 +457,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khách hàng";
             // 
+            // Ngsinh
+            // 
+            this.Ngsinh.Location = new System.Drawing.Point(286, 74);
+            this.Ngsinh.MinimumSize = new System.Drawing.Size(0, 30);
+            this.Ngsinh.Name = "Ngsinh";
+            this.Ngsinh.Size = new System.Drawing.Size(203, 34);
+            this.Ngsinh.TabIndex = 137;
+            // 
             // Email
             // 
             this.Email.Location = new System.Drawing.Point(279, 364);
@@ -693,16 +702,17 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cboTypeSearch);
+            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.kryptonButton5);
             this.groupBox3.Controls.Add(this.kryptonRichTextBox4);
-            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox3.Location = new System.Drawing.Point(10, 9);
+            this.groupBox3.Location = new System.Drawing.Point(10, -5);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(499, 116);
+            this.groupBox3.Size = new System.Drawing.Size(499, 130);
             this.groupBox3.TabIndex = 138;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm kiếm khách hàng";
@@ -710,41 +720,51 @@
             // kryptonButton5
             // 
             this.kryptonButton5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton5.Location = new System.Drawing.Point(299, 56);
+            this.kryptonButton5.Location = new System.Drawing.Point(280, 75);
             this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.Size = new System.Drawing.Size(159, 40);
+            this.kryptonButton5.Size = new System.Drawing.Size(209, 40);
             this.kryptonButton5.TabIndex = 134;
             this.kryptonButton5.Values.Text = "Tìm kiếm";
             this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
             // 
             // kryptonRichTextBox4
             // 
-            this.kryptonRichTextBox4.Location = new System.Drawing.Point(7, 59);
+            this.kryptonRichTextBox4.Location = new System.Drawing.Point(14, 78);
             this.kryptonRichTextBox4.Name = "kryptonRichTextBox4";
-            this.kryptonRichTextBox4.Size = new System.Drawing.Size(269, 37);
+            this.kryptonRichTextBox4.Size = new System.Drawing.Size(214, 37);
             this.kryptonRichTextBox4.TabIndex = 133;
             this.kryptonRichTextBox4.Text = "";
             this.kryptonRichTextBox4.WordWrap = false;
+            // 
+            // cboTypeSearch
+            // 
+            this.cboTypeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboTypeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTypeSearch.FormattingEnabled = true;
+            this.cboTypeSearch.ItemHeight = 24;
+            this.cboTypeSearch.Items.AddRange(new object[] {
+            "CCCD",
+            "Mã khách hàng",
+            "Giới tính",
+            "Loại khách hàng"});
+            this.cboTypeSearch.Location = new System.Drawing.Point(280, 31);
+            this.cboTypeSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTypeSearch.Name = "cboTypeSearch";
+            this.cboTypeSearch.Size = new System.Drawing.Size(211, 30);
+            this.cboTypeSearch.TabIndex = 136;
+            this.cboTypeSearch.UseSelectable = true;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(7, 31);
+            this.label9.Location = new System.Drawing.Point(29, 31);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(184, 25);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Thẻ căn cước/ CMND:";
-            // 
-            // Ngsinh
-            // 
-            this.Ngsinh.Location = new System.Drawing.Point(286, 74);
-            this.Ngsinh.MinimumSize = new System.Drawing.Size(0, 30);
-            this.Ngsinh.Name = "Ngsinh";
-            this.Ngsinh.Size = new System.Drawing.Size(203, 34);
-            this.Ngsinh.TabIndex = 137;
+            this.label9.Size = new System.Drawing.Size(162, 25);
+            this.label9.TabIndex = 135;
+            this.label9.Text = "Tìm kiếm theo loại:";
             // 
             // ManageCustomer
             // 
@@ -812,8 +832,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox4;
-        private System.Windows.Forms.Label label9;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox makh;
         private System.Windows.Forms.Label label1;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox Email;
@@ -830,5 +848,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn m;
         private MetroFramework.Controls.MetroDateTime Ngsinh;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox4;
+        private MetroFramework.Controls.MetroComboBox cboTypeSearch;
+        private System.Windows.Forms.Label label9;
     }
 }

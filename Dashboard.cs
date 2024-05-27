@@ -14,11 +14,14 @@ namespace Royal
     public partial class Dashboard : Form
     {
         private Authen authen;
+        private Permission permission;
         public Dashboard()
         {
 
             InitializeComponent();
             authen = new Authen();
+            permission = new Permission();
+
         }
 
         private void panelRight_Paint(object sender, PaintEventArgs e)
@@ -52,15 +55,32 @@ namespace Royal
 
         private void metroTile17_Click(object sender, EventArgs e)
         {
-            ManageCustomer manageCustomer = new ManageCustomer();
-            manageCustomer.Show();
+
+            if (permission.HasAccess(User.Role, "Lễ tân"))
+            {
+                ManageCustomer manageCustomer = new ManageCustomer();
+                manageCustomer.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
         }
 
         private void metroTile16_Click(object sender, EventArgs e)
         {
-            Bill bill = new Bill();
-            bill.Show();
-      
+
+            if (permission.HasAccess(User.Role, "Lễ tân") || permission.HasAccess(User.Role, "Kế toán"))
+            {
+                Bill bill = new Bill();
+                bill.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
         }
 
         private void metroTile13_Click(object sender, EventArgs e)
@@ -71,39 +91,95 @@ namespace Royal
 
         private void title_Click(object sender, EventArgs e)
         {
-            Report report = new Report();
-            report.Show();
+
+            if (permission.HasAccess(User.Role, "Kế toán"))
+            {
+                Report report = new Report();
+                report.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
         }
 
         private void titleManageRoom_Click(object sender, EventArgs e)
         {
-            ManageRoom manageRoom = new ManageRoom();   
-            manageRoom.Show();
+
+
+            if (permission.HasAccess(User.Role, "Lễ tân"))
+            {
+                ManageRoom manageRoom = new ManageRoom();
+                manageRoom.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            Service service = new Service();
-            service.Show();
+
+            if (permission.HasAccess(User.Role, ""))
+            {
+                Service service = new Service();
+                service.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
         }
 
         private void metroTile8_Click(object sender, EventArgs e)
         {
-            ManageStaff manageStaff = new ManageStaff();
-            manageStaff.Show();
-           
+            if (permission.HasAccess(User.Role, ""))
+            {
+                ManageStaff manageStaff = new ManageStaff();
+                manageStaff.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
         }
 
         private void titlePay_Click(object sender, EventArgs e)
         {
-            PrintBill printBill = new PrintBill();
-            printBill.Show();
+
+
+
+            if (permission.HasAccess(User.Role, "Lễ tân") || permission.HasAccess(User.Role, "Kế toán"))
+            {
+                PrintBill printBill = new PrintBill();
+                printBill.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
         }
 
         private void titleRecieveRoom_Click(object sender, EventArgs e)
         {
-            ReiceiveRoom room = new ReiceiveRoom();
-            room.Show();
+
+            if (permission.HasAccess(User.Role, "Lễ tân"))
+            {
+                ReiceiveRoom room = new ReiceiveRoom();
+                room.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -113,9 +189,18 @@ namespace Royal
 
         private void titleBookRoom_Click(object sender, EventArgs e)
         {
-            BookRoom book = new BookRoom();
-            book.Show();
-    
+
+
+            if (permission.HasAccess(User.Role, "Lễ tân"))
+            {
+                BookRoom book = new BookRoom();
+                book.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
         }
 
         private void kryptonButton3_Click(object sender, EventArgs e)
@@ -127,6 +212,28 @@ namespace Royal
         {
             Chat chat = new Chat();
             chat.Show();
+        }
+
+        private void kryptonButton4_Click(object sender, EventArgs e)
+        {
+            Authentication authentication = new Authentication();
+            authentication.Show();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            if (User.Role == "Giám đốc")
+            {
+                btnAdmin.Visible = true;
+            }
+            else
+            btnAdmin.Visible = false;
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
         }
     }
 }

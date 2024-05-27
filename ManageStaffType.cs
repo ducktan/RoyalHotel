@@ -35,40 +35,34 @@ namespace Royal
             // Get the current row count for the "Bill" table
             var bills = await firebaseClient
                 .Child("StaffType")
-                .OnceAsync<object>();
+                .OnceAsync<DAO.StaffType>();
 
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
+            // Tìm mã phòng lớn nhất hiện có
+            int maxRoomNumber = 0;
+            foreach (var roomData in bills)
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
-
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"LNV{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                int roomNumber = int.Parse(roomData.Object.stID.Substring(3));
+                if (roomNumber > maxRoomNumber)
                 {
-                    newNumber++;
+                    maxRoomNumber = roomNumber;
                 }
-            } while (!isUnique);
+            }
+
+            string newRoomNumber ="LNV" + (maxRoomNumber + 1).ToString("D3");
+
+
 
 
             StaffType newst = new StaffType()
             {
-                stID = maHoaDon, 
+                stID = newRoomNumber, 
                 stName = nameBox.Text,
                 number = Int32.Parse(numBox.Text.Trim()),
                 stSalary = Int32.Parse(salaryBox.Text.Trim()) 
             };
 
-            newst.AddStaffType(newst);
+          await newst.AddStaffType(newst);
+            newst.LoadStaffType(dataGridStaffType);
         }
 
         private void dataGridBill_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -97,14 +91,15 @@ namespace Royal
             st.LoadStaffType(dataGridStaffType);
         }
 
-        private void kryptonButton2_Click(object sender, EventArgs e)
+        private async void kryptonButton2_Click(object sender, EventArgs e)
         {
             string id = maLNVBox.Text;
             StaffType a = new StaffType(); 
-            a.DeleteStaffType(id);
+            await a.DeleteStaffType(id);
+            a.LoadStaffType(dataGridStaffType);
         }
 
-        private void kryptonButton3_Click(object sender, EventArgs e)
+        private async void kryptonButton3_Click(object sender, EventArgs e)
         {
             string id = maLNVBox.Text.ToUpper();
             string name = nameBox.Text; 
@@ -112,7 +107,8 @@ namespace Royal
             int salary = Int32.Parse(salaryBox.Text);
 
             StaffType a = new StaffType(); 
-            a.UpdateStaffType(id, name, num, salary);   
+            await a.UpdateStaffType(id, name, num, salary);   
+            a.LoadStaffType(dataGridStaffType);
         }
 
         private async void kryptonButton5_Click(object sender, EventArgs e)

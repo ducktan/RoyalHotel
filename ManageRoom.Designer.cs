@@ -64,13 +64,13 @@
             this.btnAddRoom = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnUpdateRoom = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cboTypeSearch = new MetroFramework.Controls.MetroComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtSearch = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.btnManageTypeRoom = new System.Windows.Forms.GroupBox();
             this.kryptonButton6 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnDeleteRoom = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.cboTypeSearch = new MetroFramework.Controls.MetroComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -402,7 +402,8 @@
             this.cboStatusRoom.ItemHeight = 24;
             this.cboStatusRoom.Items.AddRange(new object[] {
             "Còn phòng",
-            "Hết phòng"});
+            "Đã đặt",
+            "Đang sửa chữa"});
             this.cboStatusRoom.Location = new System.Drawing.Point(267, 186);
             this.cboStatusRoom.Margin = new System.Windows.Forms.Padding(4);
             this.cboStatusRoom.Name = "cboStatusRoom";
@@ -440,6 +441,7 @@
             this.btnUpdateRoom.Size = new System.Drawing.Size(212, 40);
             this.btnUpdateRoom.TabIndex = 46;
             this.btnUpdateRoom.Values.Text = "Sửa phòng";
+            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
             // 
             // groupBox3
             // 
@@ -457,6 +459,36 @@
             this.groupBox3.TabIndex = 129;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Quản lý phòng";
+            // 
+            // cboTypeSearch
+            // 
+            this.cboTypeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboTypeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTypeSearch.FormattingEnabled = true;
+            this.cboTypeSearch.ItemHeight = 24;
+            this.cboTypeSearch.Items.AddRange(new object[] {
+            "Mã phòng",
+            "Loại phòng",
+            "Tên phòng",
+            "Trạng thái"});
+            this.cboTypeSearch.Location = new System.Drawing.Point(261, 39);
+            this.cboTypeSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTypeSearch.Name = "cboTypeSearch";
+            this.cboTypeSearch.Size = new System.Drawing.Size(218, 30);
+            this.cboTypeSearch.TabIndex = 136;
+            this.cboTypeSearch.UseSelectable = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.Location = new System.Drawing.Point(10, 39);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 25);
+            this.label2.TabIndex = 135;
+            this.label2.Text = "Tìm kiếm theo loại:";
             // 
             // kryptonButton5
             // 
@@ -513,36 +545,6 @@
             this.btnDeleteRoom.TabIndex = 45;
             this.btnDeleteRoom.Values.Text = "Xóa phòng";
             this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
-            // 
-            // cboTypeSearch
-            // 
-            this.cboTypeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboTypeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTypeSearch.FormattingEnabled = true;
-            this.cboTypeSearch.ItemHeight = 24;
-            this.cboTypeSearch.Items.AddRange(new object[] {
-            "Mã phòng",
-            "Loại phòng",
-            "Tên phòng",
-            "Trạng thái"});
-            this.cboTypeSearch.Location = new System.Drawing.Point(261, 39);
-            this.cboTypeSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.cboTypeSearch.Name = "cboTypeSearch";
-            this.cboTypeSearch.Size = new System.Drawing.Size(218, 30);
-            this.cboTypeSearch.TabIndex = 136;
-            this.cboTypeSearch.UseSelectable = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(10, 39);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 25);
-            this.label2.TabIndex = 135;
-            this.label2.Text = "Tìm kiếm theo loại:";
             // 
             // ManageRoom
             // 

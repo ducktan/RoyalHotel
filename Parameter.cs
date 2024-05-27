@@ -29,50 +29,52 @@ namespace Royal
             firebaseClient = FirebaseManage.GetFirebaseClient();
             ParameterDAO demo = new ParameterDAO();
             demo.LoadPara(dataGridViewParameter);
+            demo.LoadPara(dataGridView1);
             dataGridViewParameter.CellClick += dataGridBill_CellClick;
+            dataGridView1.CellClick += dataGridBill_CellClick1;
+
+            LoadMaNVFromDatabase();
         }
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Bill" table
-            var bills = await firebaseClient
-                .Child("Parameters")
-                .OnceAsync<object>();
 
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
+            try
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
+                // Get the current row count for the "Bill" table
+                var bills = await firebaseClient
+                    .Child("Parameters")
+                    .OnceAsync<Royal.DAO.ParameterDAO>();
 
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"NQ{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                // Tìm mã phòng lớn nhất hiện có
+                int maxRoomNumber = 0;
+                foreach (var roomData in bills)
                 {
-                    newNumber++;
+                    int roomNumber = int.Parse(roomData.Object.pID.Substring(2));
+                    if (roomNumber > maxRoomNumber)
+                    {
+                        maxRoomNumber = roomNumber;
+                    }
                 }
-            } while (!isUnique);
 
-            ParameterDAO p1 = new ParameterDAO()
+                string newRoomNumber = "NQ" + (maxRoomNumber + 1).ToString("D3");
+                ParameterDAO p1 = new ParameterDAO()
+                {
+                    pID = newRoomNumber,
+                    pName = tenP.Text,
+                    pContent = content.Text,
+                    pValue = Int32.Parse(value.Text)
+                };
+
+                // Thực hiện các thao tác với đối tượng p1 (ví dụ: lưu vào Firebase Realtime Database)
+                // firebaseClient.Child("Parameters").PostAsync(p1);
+
+                p1.AddPara(p1);
+            }
+            catch (Exception ex)
             {
-                pID = maHoaDon,
-                pName = tenP.Text,
-                pContent = content.Text,
-                pValue = Int32.Parse(value.Text)
-            };
-
-            // Thực hiện các thao tác với đối tượng p1 (ví dụ: lưu vào Firebase Realtime Database)
-            // firebaseClient.Child("Parameters").PostAsync(p1);
-
-            p1.AddPara(p1);
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dataGridViewParameter_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -93,6 +95,22 @@ namespace Royal
                     tenP.Text = (string)(selectedRow.Cells[1].Value);
                     value.Text = selectedRow.Cells[2].Value.ToString();
                     content.Text = (string)(selectedRow.Cells[3].Value);
+
+
+
+                }
+            }
+        }
+        private void dataGridBill_CellClick1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
+            {
+                DataGridViewRow selectedRow = dataGridViewParameter.Rows[e.RowIndex];
+
+                // Kiểm tra nếu hàng không rỗng
+                if (!selectedRow.IsNewRow)
+                {
+                    Va.Text = selectedRow.Cells[2].Value.ToString();
 
 
 
@@ -182,6 +200,138 @@ namespace Royal
             catch (Exception ex)
             {
                 MessageBox.Show($"Error searching parameter: {ex.Message}");
+            }
+        }
+        public async void LoadMaNVFromDatabase()
+        {
+            try
+            {
+                // Truy vấn Firebase Realtime Database để lấy danh sách khách hàng
+                var customerList = await firebaseClient
+                    .Child("Staff")
+                    .OnceAsync<StaffDAO>();
+
+                // Xóa các mục hiện có trong ComboBox
+                maNV.Items.Clear();
+
+                // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
+                foreach (var customer in customerList)
+                {
+                    string customerDisplayText = $"{customer.Object.StaffID}";
+                    maNV.Items.Add(customerDisplayText);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
+        }
+
+        public async void LoadInfoStaffFromID()
+        {
+            try
+            {
+                // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
+                StaffDAO billDetails = await new StaffDAO().SearchStaffbyID(maNV.Text);
+
+
+                // Kiểm tra xem có dữ liệu hay không
+                if (billDetails != null)
+                {
+                  
+                        Luong.Text = billDetails.luongNV?.staffSalary.ToString() ?? "0";
+                        SoLanVP.Text = billDetails.luongNV?.countVP.ToString() ?? "0";
+                        tenNV.Text = billDetails.staffName.ToString();
+                    ngdilam.Text = billDetails.luongNV?.workingDay.ToString() ?? "0";
+                    
+                }
+                else
+                {
+                    // Nếu không tìm thấy dữ liệu, hiển thị thông báo
+                    MessageBox.Show("Không tìm thấy dữ liệu nhân viên.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
+        }
+        private void maNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadInfoStaffFromID();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ManageStaff s = new ManageStaff();
+            s.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            LoadMaNVFromDatabase();
+            ParameterDAO p = new ParameterDAO();
+            p.LoadPara(dataGridView1);
+            ngdilam.Clear();
+            maNV.Text = ""; 
+            SoLanVP.Clear();
+            Luong.Clear();
+            tenNV.Clear();  
+            MessageBox.Show("Refresh successfully!");
+        }
+
+        private StaffDAO currentStaff;
+        private async void addBut_Click(object sender, EventArgs e)
+        {
+            string maLNV;
+            try
+            {
+                // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
+                currentStaff = await new StaffDAO().SearchStaffbyID(maNV.Text);
+                maLNV = currentStaff.staffType.ToString();
+
+                StaffType a = await new StaffType().SearchSTypeById(maLNV);
+
+                // Kiểm tra xem có dữ liệu hay không
+                int value;
+                if (int.TryParse(Va.Text, out value))
+                {
+                    // Kiểm tra nếu currentStaff.luongNV là null thì khởi tạo
+                    if (currentStaff.luongNV == null)
+                    {
+                        currentStaff.luongNV = new Salary();
+                        await currentStaff.luongNV.InitSalary(currentStaff.StaffID);
+                    }
+
+                    if (value == 1)
+                    {
+                        currentStaff.luongNV.workingDay++;
+                        if (currentStaff.luongNV.workingDay > 26)
+                        {
+                            currentStaff.luongNV.staffSalary += a.stSalary;
+                            MessageBox.Show("Đủ lương rồi nè!");
+                        }
+                    }
+                    else
+                    {
+                        currentStaff.luongNV.staffSalary += value;
+                        if (value < 0)
+                        {
+                            currentStaff.luongNV.countVP++;
+                        }
+                    }
+
+                    // Cập nhật dữ liệu
+                    await currentStaff.luongNV.UpdateSalary(currentStaff.StaffID, currentStaff.luongNV.staffSalary, currentStaff.luongNV.countVP, currentStaff.luongNV.workingDay);
+                }
+                LoadInfoStaffFromID();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật dữ liệu: " + ex.Message);
             }
         }
     }

@@ -31,41 +31,40 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.kryptonTextBox3 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtEmail = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtRole = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.kryptonDateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.dtCome = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.dtBirth = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtAdress = new System.Windows.Forms.TextBox();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
             this.cbSex = new MetroFramework.Controls.MetroComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtConfirm = new System.Windows.Forms.TextBox();
+            this.txtNewPass = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -83,12 +82,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.kryptonTextBox3);
-            this.groupBox1.Controls.Add(this.kryptonTextBox2);
+            this.groupBox1.Controls.Add(this.txtName);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.kryptonTextBox1);
+            this.groupBox1.Controls.Add(this.txtRole);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
@@ -100,33 +98,25 @@
             this.groupBox1.Text = "Thông tin tài khoản";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button1
+            // txtName
             // 
-            this.button1.Location = new System.Drawing.Point(38, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 38);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Lưu thay đổi";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtName.Location = new System.Drawing.Point(38, 213);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(271, 27);
+            this.txtName.TabIndex = 5;
             // 
-            // kryptonTextBox3
+            // txtEmail
             // 
-            this.kryptonTextBox3.Location = new System.Drawing.Point(38, 208);
-            this.kryptonTextBox3.Name = "kryptonTextBox3";
-            this.kryptonTextBox3.Size = new System.Drawing.Size(271, 27);
-            this.kryptonTextBox3.TabIndex = 5;
-            // 
-            // kryptonTextBox2
-            // 
-            this.kryptonTextBox2.Location = new System.Drawing.Point(38, 134);
-            this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(271, 27);
-            this.kryptonTextBox2.TabIndex = 4;
+            this.txtEmail.Location = new System.Drawing.Point(38, 134);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(271, 27);
+            this.txtEmail.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 180);
+            this.label4.Location = new System.Drawing.Point(33, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 28);
             this.label4.TabIndex = 3;
@@ -137,16 +127,17 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(33, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 28);
+            this.label3.Size = new System.Drawing.Size(59, 28);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Tên đăng nhập";
+            this.label3.Text = "Email";
             // 
-            // kryptonTextBox1
+            // txtRole
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(38, 63);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(271, 27);
-            this.kryptonTextBox1.TabIndex = 1;
+            this.txtRole.Location = new System.Drawing.Point(38, 63);
+            this.txtRole.Name = "txtRole";
+            this.txtRole.ReadOnly = true;
+            this.txtRole.Size = new System.Drawing.Size(271, 27);
+            this.txtRole.TabIndex = 1;
             // 
             // label1
             // 
@@ -183,12 +174,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.kryptonDateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtCome);
+            this.groupBox2.Controls.Add(this.dtBirth);
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtPhone);
+            this.groupBox2.Controls.Add(this.txtAdress);
+            this.groupBox2.Controls.Add(this.txtCCCD);
             this.groupBox2.Controls.Add(this.cbSex);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label7);
@@ -208,15 +199,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin cơ bản";
             // 
-            // kryptonDateTimePicker1
+            // dtCome
             // 
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(354, 141);
-            this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
-            this.kryptonDateTimePicker1.Size = new System.Drawing.Size(270, 33);
-            this.kryptonDateTimePicker1.StateCommon.Back.Color1 = System.Drawing.Color.SteelBlue;
-            this.kryptonDateTimePicker1.StateCommon.Content.Color1 = System.Drawing.Color.White;
-            this.kryptonDateTimePicker1.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonDateTimePicker1.TabIndex = 82;
+            this.dtCome.Location = new System.Drawing.Point(661, 141);
+            this.dtCome.Name = "dtCome";
+            this.dtCome.Size = new System.Drawing.Size(270, 33);
+            this.dtCome.StateCommon.Back.Color1 = System.Drawing.Color.SteelBlue;
+            this.dtCome.StateCommon.Content.Color1 = System.Drawing.Color.White;
+            this.dtCome.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCome.TabIndex = 83;
+            // 
+            // dtBirth
+            // 
+            this.dtBirth.Location = new System.Drawing.Point(354, 141);
+            this.dtBirth.Name = "dtBirth";
+            this.dtBirth.Size = new System.Drawing.Size(270, 33);
+            this.dtBirth.StateCommon.Back.Color1 = System.Drawing.Color.SteelBlue;
+            this.dtBirth.StateCommon.Content.Color1 = System.Drawing.Color.White;
+            this.dtBirth.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtBirth.TabIndex = 82;
             // 
             // button2
             // 
@@ -224,37 +225,30 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(244, 38);
             this.button2.TabIndex = 81;
-            this.button2.Text = " Lưu Thay Đổi";
+            this.button2.Text = "Cập nhật";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox5
+            // txtPhone
             // 
-            this.textBox5.Location = new System.Drawing.Point(661, 138);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(271, 34);
-            this.textBox5.TabIndex = 80;
+            this.txtPhone.Location = new System.Drawing.Point(354, 66);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(271, 34);
+            this.txtPhone.TabIndex = 78;
             // 
-            // textBox3
+            // txtAdress
             // 
-            this.textBox3.Location = new System.Drawing.Point(354, 66);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(271, 34);
-            this.textBox3.TabIndex = 78;
+            this.txtAdress.Location = new System.Drawing.Point(42, 138);
+            this.txtAdress.Name = "txtAdress";
+            this.txtAdress.Size = new System.Drawing.Size(271, 34);
+            this.txtAdress.TabIndex = 77;
             // 
-            // textBox2
+            // txtCCCD
             // 
-            this.textBox2.Location = new System.Drawing.Point(42, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(271, 34);
-            this.textBox2.TabIndex = 77;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(42, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 34);
-            this.textBox1.TabIndex = 76;
+            this.txtCCCD.Location = new System.Drawing.Point(42, 66);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(271, 34);
+            this.txtCCCD.TabIndex = 76;
             // 
             // cbSex
             // 
@@ -325,23 +319,12 @@
             this.label8.TabIndex = 55;
             this.label8.Text = "Địa chỉ:";
             // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button3.Location = new System.Drawing.Point(367, 632);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(244, 38);
-            this.button3.TabIndex = 82;
-            this.button3.Text = "Đóng";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.textBox8);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.txtConfirm);
+            this.groupBox3.Controls.Add(this.txtNewPass);
+            this.groupBox3.Controls.Add(this.txtPass);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label17);
@@ -355,7 +338,7 @@
             this.groupBox3.Size = new System.Drawing.Size(336, 307);
             this.groupBox3.TabIndex = 82;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Bảo mật";
+            this.groupBox3.Text = "Đổi mật khẩu";
             // 
             // button4
             // 
@@ -365,27 +348,28 @@
             this.button4.TabIndex = 82;
             this.button4.Text = " Lưu Thay Đổi";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox8
+            // txtConfirm
             // 
-            this.textBox8.Location = new System.Drawing.Point(36, 210);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(271, 34);
-            this.textBox8.TabIndex = 83;
+            this.txtConfirm.Location = new System.Drawing.Point(36, 210);
+            this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.Size = new System.Drawing.Size(271, 34);
+            this.txtConfirm.TabIndex = 83;
             // 
-            // textBox7
+            // txtNewPass
             // 
-            this.textBox7.Location = new System.Drawing.Point(36, 139);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(271, 34);
-            this.textBox7.TabIndex = 82;
+            this.txtNewPass.Location = new System.Drawing.Point(36, 139);
+            this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.Size = new System.Drawing.Size(271, 34);
+            this.txtNewPass.TabIndex = 82;
             // 
-            // textBox6
+            // txtPass
             // 
-            this.textBox6.Location = new System.Drawing.Point(36, 66);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(271, 34);
-            this.textBox6.TabIndex = 79;
+            this.txtPass.Location = new System.Drawing.Point(36, 66);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(271, 34);
+            this.txtPass.TabIndex = 79;
             // 
             // label14
             // 
@@ -419,33 +403,43 @@
             this.label17.Location = new System.Drawing.Point(31, 38);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(95, 25);
+            this.label17.Size = new System.Drawing.Size(213, 25);
             this.label17.TabIndex = 63;
-            this.label17.Text = "Mật khẩu:";
+            this.label17.Text = "Nhập mật khẩu hiện tại:";
             // 
-            // pictureBox2
+            // pictureBoxProfile
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(22, 51);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(171, 158);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 83;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxProfile.Image")));
+            this.pictureBoxProfile.Location = new System.Drawing.Point(22, 51);
+            this.pictureBoxProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxProfile.Name = "pictureBoxProfile";
+            this.pictureBoxProfile.Size = new System.Drawing.Size(171, 158);
+            this.pictureBoxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxProfile.TabIndex = 83;
+            this.pictureBoxProfile.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(28, 222);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(165, 36);
+            this.button3.TabIndex = 84;
+            this.button3.Text = "Update";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 682);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.pictureBoxProfile);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Profile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile";
@@ -456,7 +450,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,35 +460,34 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private System.Windows.Forms.Button button1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRole;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtEmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCCCD;
         private MetroFramework.Controls.MetroComboBox cbSex;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtConfirm;
+        private System.Windows.Forms.TextBox txtNewPass;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtBirth;
+        private System.Windows.Forms.PictureBox pictureBoxProfile;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtCome;
+        private System.Windows.Forms.Button button3;
     }
 }

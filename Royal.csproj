@@ -89,6 +89,10 @@
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.1\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
@@ -205,9 +209,12 @@
     </Compile>
     <Compile Include="DAO\Authen.cs" />
     <Compile Include="DAO\Bill.cs" />
+    <Compile Include="DAO\BillDetail.cs" />
     <Compile Include="DAO\CheckPass.cs" />
     <Compile Include="DAO\Customer.cs" />
     <Compile Include="DAO\CustomerType.cs" />
+    <Compile Include="DAO\ExportToExcel.cs" />
+    <Compile Include="DAO\ExportToPdf.cs" />
     <Compile Include="DAO\FirebaseCounter.cs" />
     <Compile Include="DAO\FirebaseManage.cs" />
     <Compile Include="DAO\FirebConfig.cs" />
@@ -216,9 +223,11 @@
     <Compile Include="DAO\Report.cs" />
     <Compile Include="DAO\Room.cs" />
     <Compile Include="DAO\RoomType.cs" />
+    <Compile Include="DAO\Salary.cs" />
     <Compile Include="DAO\Service.cs" />
     <Compile Include="DAO\Staff.cs" />
     <Compile Include="DAO\StaffType.cs" />
+    <Compile Include="DAO\User.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +389,9 @@
     <EmbeddedResource Include="Service.resx">
       <DependentUpon>Service.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="ENV\arial.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -118,33 +118,21 @@ namespace Royal
 
         private async void kryptonButton3_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Bill" table
-            var bills = await firebaseClient
-                .Child("Bill")
-                .OnceAsync<object>();
-
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
+            var roomTypes = await firebaseClient
+                                .Child("Bill")
+                                .OnceAsync<BillDAO>();
+            // Tìm mã phòng lớn nhất hiện có
+            int maxRoomNumber = 0;
+            foreach (var roomData in roomTypes)
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
-
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"HD{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                int roomNumber = int.Parse(roomData.Object.MAHD.Substring(2));
+                if (roomNumber > maxRoomNumber)
                 {
-                    newNumber++;
+                    maxRoomNumber = roomNumber;
                 }
-            } while (!isUnique);
+            }
 
+            string newRoomNumber = "HD" + (maxRoomNumber + 1).ToString("D3");
 
             // Get the ID_NV from the combobox
             string nhanVienText = nhanvien.Text;
@@ -159,7 +147,7 @@ namespace Royal
             // Create a new Bill object with form control values
             BillDAO newBill = new BillDAO()
             {
-                MAHD = maHoaDon,
+                MAHD = newRoomNumber,
                 ID_NV = id_nv,
                 MAPHONG = phong.Text,
                 NGLAP = date.Text,
@@ -170,7 +158,8 @@ namespace Royal
                 DONGIA = Int32.Parse(giaDon.Text),
             };
 
-            newBill.AddBill(newBill);
+           await newBill.AddBill(newBill);
+            newBill.LoadBill(dataGridBill);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -201,12 +190,14 @@ namespace Royal
                 }
             }
         }
-        private void kryptonButton5_Click(object sender, EventArgs e)
+        private async void kryptonButton5_Click(object sender, EventArgs e)
         {
                 BillDAO billDAO = new BillDAO();
             
                 string billID = mahoadon.Text;
-                billDAO.DeleteBill(billID);
+                await billDAO.DeleteBill(billID);
+                billDAO.LoadBill(dataGridBill);
+                
               
 
                 // Đặt các giá trị thành rỗng
@@ -223,14 +214,15 @@ namespace Royal
             
         }
 
-        private void kryptonButton4_Click(object sender, EventArgs e)
+        private async void kryptonButton4_Click(object sender, EventArgs e)
         {
             BillDAO billDAO = new BillDAO();
             int giaDonValue = int.Parse(giaDon.Text);
             int discountValue = int.Parse(discount.Text);
             int totalValue = int.Parse(total.Text);
 
-            billDAO.UpdateBill(mahoadon.Text, phong.Text, status.Text, maKHBox.Text, nhanvien.Text, date.Text, giaDonValue, discountValue, totalValue);
+            await billDAO.UpdateBill(mahoadon.Text, phong.Text, status.Text, maKHBox.Text, nhanvien.Text, date.Text, giaDonValue, discountValue, totalValue);
+            billDAO.LoadBill(dataGridBill );
         }
 
         private async void kryptonButton1_Click(object sender, EventArgs e)

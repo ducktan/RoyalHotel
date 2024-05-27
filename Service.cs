@@ -70,44 +70,45 @@ namespace Royal
 
         private async void kryptonButton2_Click_1(object sender, EventArgs e)
         {
-            // Get the current row count for the "Bill" table
-            var bills = await firebaseClient
+            try
+            {
+                var bills = await firebaseClient
                 .Child("Service")
-                .OnceAsync<object>();
+                .OnceAsync<Royal.DAO.ServiceDAO>();
 
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
-            {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
-
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"HD{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                // Increment by 1 to get the new sequential number
+                // Tìm mã phòng lớn nhất hiện có
+                int maxRoomNumber = 0;
+                foreach (var roomData in bills)
                 {
-                    newNumber++;
+                    int roomNumber = int.Parse(roomData.Object.seID.Substring(2));
+                    if (roomNumber > maxRoomNumber)
+                    {
+                        maxRoomNumber = roomNumber;
+                    }
                 }
-            } while (!isUnique);
 
-            // Create a new CustomerDAO object with form control values
-            ServiceDAO service = new ServiceDAO()
+                string newRoomNumber = "DV" + (maxRoomNumber + 1).ToString("D3");
+
+
+                // Create a new CustomerDAO object with form control values
+                ServiceDAO service = new ServiceDAO()
+                {
+                    seID = newRoomNumber,
+                    seName = tenDVbox.Text,
+                    sePrice = Int32.Parse(giaDVBox.Text),
+                    seDetail = motaBox.Text
+                };
+
+                // Call the AddCustomer method to store the customer object in the Firebase database
+                service.AddService(service);
+            }
+            catch (Exception ex)
             {
-                seID = maHoaDon,
-                seName = tenDVbox.Text,
-                sePrice = Int32.Parse(giaDVBox.Text),
-                seDetail = motaBox.Text
-            };
+                MessageBox.Show(ex.Message);
+            }
+            // Get the current row count for the "Bill" table
 
-            // Call the AddCustomer method to store the customer object in the Firebase database
-            service.AddService(service);
         }
 
         private void kryptonButton3_Click_1(object sender, EventArgs e)
@@ -120,6 +121,7 @@ namespace Royal
         private async void kryptonButton1_Click_1(object sender, EventArgs e)
         {
             string searchText1 = search.Text.Trim();
+            int price = Int32.Parse(searchText1);
             // Get the search criteria from the UI controls
 
 
@@ -138,7 +140,7 @@ namespace Royal
             try
             {
 
-                searchResults = await billFun.SearchSeTypeById(searchText1);
+                searchResults = await billFun.SearchRoomTypeByPrice(price);
 
 
                 // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)

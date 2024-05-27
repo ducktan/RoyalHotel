@@ -24,6 +24,7 @@ namespace Royal
             StaffDAO staff = new StaffDAO();
             staff.LoadStaff(dataGridStaff);
             dataGridStaff.CellClick += dataGridBill_CellClick;
+            LoadRoomTypeNameFromDB();
         }
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
@@ -31,46 +32,40 @@ namespace Royal
             // Get the current row count for the "Bill" table
             var bills = await firebaseClient
                 .Child("Staff")
-                .OnceAsync<object>();
+                .OnceAsync<DAO.StaffDAO>();
 
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
+            // Tìm mã phòng lớn nhất hiện có
+            int maxRoomNumber = 0;
+            foreach (var roomData in bills)
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
-
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"NV{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                int roomNumber = int.Parse(roomData.Object.StaffID.Substring(3));
+                if (roomNumber > maxRoomNumber)
                 {
-                    newNumber++;
+                    maxRoomNumber = roomNumber;
                 }
-            } while (!isUnique);
+            }
+
+            string newRoomNumber = "NV" + (maxRoomNumber + 1).ToString("D3");
+
+
 
             // Create a new Bill object with form control values
             StaffDAO newStaff = new StaffDAO()
             {
-               StaffID = maHoaDon,
-               staffName = name.Text,
-               staffCCCD = idcc.Text, 
-               staffType = loaiNV.Text, 
-               staffPhone = soDT.Text,
-               staffEmail = mail.Text, 
-               staffBirth = dateBirth.Text,
-               staffAdd = address.Text,
-               staffGender = comboBoxSex.Text,
-               staffDateIn = dateIn.Text
+                StaffID = newRoomNumber,
+                staffName = name.Text,
+                staffCCCD = idcc.Text,
+                staffType = loaiNV.Text,
+                staffPhone = soDT.Text,
+                staffEmail = mail.Text,
+                staffBirth = dateBirth.Text,
+                staffAdd = address.Text,
+                staffGender = comboBoxSex.Text,
+                staffDateIn = dateIn.Text
             };
 
-            newStaff.AddStaff(newStaff);
+            await newStaff.AddStaff(newStaff);
+            newStaff.LoadStaff(dataGridStaff);
         }
 
         private void dataGridBill_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -82,11 +77,6 @@ namespace Royal
                 // Kiểm tra nếu hàng không rỗng
                 if (!selectedRow.IsNewRow)
                 {
-
-                  
-
-
-
                     // Trích xuất dữ liệu từ hàng được chọn và hiển thị lên form
                     manv.Text = (string)selectedRow.Cells[0].Value;
                     name.Text = (string)selectedRow.Cells[1].Value;
@@ -103,28 +93,57 @@ namespace Royal
             }
         }
 
+        private async void LoadRoomTypeNameFromDB()
+        {
+            try
+            {
+                var typeRoomList = await firebaseClient
+                    .Child("StaffType")
+                    .OnceAsync<Royal.DAO.StaffType>();
+                loaiNV.Items.Clear();
+
+                foreach (var roomType in typeRoomList)
+                {
+                    loaiNV.Items.Add(roomType.Object.stID);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
+
+        }
+
+
+
         private void kryptonButton4_Click(object sender, EventArgs e)
         {
             StaffDAO a = new StaffDAO();
             a.LoadStaff(dataGridStaff);
         }
 
-        private void kryptonButton2_Click(object sender, EventArgs e)
+        private async void kryptonButton2_Click(object sender, EventArgs e)
         {
             string id = manv.Text;
-            StaffDAO a = new StaffDAO(); 
-            a.DeleteStaff(id);
+            StaffDAO a = new StaffDAO();
+            await a.DeleteStaff(id);
+
+            a.LoadStaff(dataGridStaff);
         }
 
-        private void kryptonButton3_Click(object sender, EventArgs e)
+        private async void kryptonButton3_Click(object sender, EventArgs e)
         {
-            StaffDAO a =new StaffDAO(); 
-            a.UpdateStaff(manv.Text, name.Text, idcc.Text, loaiNV.Text, soDT.Text, mail.Text, dateBirth.Value.ToString(), address.Text, comboBoxSex.Text, dateIn.Value.ToString());
+            StaffDAO a = new StaffDAO();
+            await a.UpdateStaff(manv.Text, name.Text, idcc.Text, loaiNV.Text, soDT.Text, mail.Text, dateBirth.Value.ToString(), address.Text, comboBoxSex.Text, dateIn.Value.ToString());
+            a.LoadStaff(dataGridStaff);
         }
+
+
 
         private async void kryptonButton5_Click(object sender, EventArgs e)
         {
             // Get the search criteria from the UI controls
+            string type = cboTypeSearch.Text;
             string searchText1 = searchText.Text.Trim(); // Assuming txtSearch is a textbox for search text
 
             if (string.IsNullOrEmpty(searchText1))
@@ -141,9 +160,28 @@ namespace Royal
 
             try
             {
-                searchResults = await billFun.SearchStaffbyIDStaff(searchText1);
+                if(type=="Mã nhân viên")
+                {
+                    Royal.DAO.StaffDAO searchResult = await billFun.SearchStaffbyID(searchText1);
+                    searchResults.Add(searchResult);
+                                       
 
-                // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+                }
+                else if(type =="Loại nhân viên"){
+                    searchResults = await billFun.SearchRoomByType(searchText1);
+                }
+                else if(type =="Giới tính")
+                {
+                    searchResults = await billFun.SearchStaffByGender(searchText1);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid search type selected.");
+                    return;
+                }
+
+
+
                 List<string[]> uiResults = searchResults.Select(bill => new string[] { bill.StaffID, bill.staffName, bill.staffCCCD, bill.staffType, bill.staffPhone, bill.staffEmail, bill.staffBirth, bill.staffAdd, bill.staffGender, bill.staffDateIn }).ToList();
 
                 // Update UI elements on the UI thread
@@ -177,6 +215,12 @@ namespace Royal
             {
                 MessageBox.Show($"Error searching staff: {ex.Message}");
             }
+        }
+
+        private void kryptonButton6_Click(object sender, EventArgs e)
+        {
+            ManageStaffType s = new ManageStaffType();
+            s.Show();
         }
     }
 }

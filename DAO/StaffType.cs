@@ -22,7 +22,7 @@ namespace Royal.DAO
 
 
 
-        public FirebConfig config = new FirebConfig();
+        private readonly FirebConfig config = new FirebConfig();
         public IFirebaseClient Client { get; private set; } // Make client accessible only within the class
 
         public StaffType()
@@ -42,17 +42,17 @@ namespace Royal.DAO
             // Initialize client upon object creation
         }
 
-        public async void AddStaffType(StaffType s)
+        public async Task AddStaffType(StaffType s)
         {
             var stData = new
             {
-                s.stID, 
+                s.stID,
                 s.stName,
                 s.number,
-                s.stSalary 
-                
+                s.stSalary
             };
             FirebaseResponse response = await Client.SetAsync("StaffType/" + s.stID, stData);
+
             MessageBox.Show("Add staff success");
         }
 
@@ -91,7 +91,7 @@ namespace Royal.DAO
 
         }
 
-        public async void DeleteStaffType(string stID)
+        public async Task DeleteStaffType(string stID)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this staff type?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -111,7 +111,7 @@ namespace Royal.DAO
         }
 
 
-        public async void UpdateStaffType(string sID, string sName, int num, int salary)
+        public async Task UpdateStaffType(string sID, string sName, int num, int salary)
         {   
             // Get the updated bill information from the selected row
             StaffType s = new StaffType()
