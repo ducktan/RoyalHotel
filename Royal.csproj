@@ -210,6 +210,7 @@
     <Compile Include="DAO\Authen.cs" />
     <Compile Include="DAO\Bill.cs" />
     <Compile Include="DAO\BillDetail.cs" />
+    <Compile Include="DAO\Bookroom.cs" />
     <Compile Include="DAO\CheckPass.cs" />
     <Compile Include="DAO\Customer.cs" />
     <Compile Include="DAO\CustomerType.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="DAO\FirebConfig.cs" />
     <Compile Include="DAO\Parameter.cs" />
     <Compile Include="DAO\Permission.cs" />
+    <Compile Include="DAO\ReceiveRoom.cs" />
     <Compile Include="DAO\Report.cs" />
     <Compile Include="DAO\Room.cs" />
     <Compile Include="DAO\RoomType.cs" />

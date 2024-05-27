@@ -46,6 +46,12 @@ namespace Royal.DAO
                 User.Email = email;
                 Permission permission = new Permission();
                 User.Role = await permission.GetUserRoleByEmail(email);
+                StaffDAO staff = new StaffDAO();
+                StaffDAO kq = new StaffDAO();
+
+                kq = await staff.GetUserInforByEmail(email);
+
+                User.Id = kq.StaffID;
                 return result;
             }
             catch (FirebaseAuthException ex)

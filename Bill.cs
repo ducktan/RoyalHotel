@@ -50,7 +50,7 @@ namespace Royal
                 // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
                 foreach (var customer in customerList)
                 {
-                    string customerDisplayText = $"{customer.Object.MAKH} - {customer.Object.HOTEN}";
+                    string customerDisplayText = $"{customer.Object.MAKH}";
                     maKHBox.Items.Add(customerDisplayText);
                 }
             }
@@ -77,7 +77,7 @@ namespace Royal
                 foreach (var customer in customerList)
                 {
                     // Combine MAKH and TENKH for display
-                    string customerDisplayText = $"{customer.Object.StaffID} - {customer.Object.staffName}";
+                    string customerDisplayText = $"{customer.Object.StaffID}";
                     nhanvien.Items.Add(customerDisplayText);
                 }
             }

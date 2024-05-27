@@ -16,6 +16,7 @@ namespace Royal.DAO
         public static class User
     {
             private static Firebase.Database.FirebaseClient firebaseClient;
+        public static string Id { get; set; }
             public static string Email { get; set; }
         public static string Role { get; set; }
         public static string ProfilePictureBase64 { get; set; }
