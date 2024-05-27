@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.result_but = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.doanhthu_lv = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox3.SuspendLayout();
@@ -64,7 +63,7 @@
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(1120, 85);
-            this.groupBox3.TabIndex = 79;
+            this.groupBox3.TabIndex = 84;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "THỐNG KÊ";
             // 
@@ -80,6 +79,7 @@
             this.result_but.TabIndex = 207;
             this.result_but.UseWaitCursor = true;
             this.result_but.Values.Text = "XEM KẾT QUẢ";
+            this.result_but.Click += new System.EventHandler(this.result_but_Click);
             // 
             // label2
             // 
@@ -138,7 +138,8 @@
             "9",
             "10",
             "11",
-            "12"});
+            "12",
+            "Cả năm"});
             this.comboBoxMonth.Location = new System.Drawing.Point(89, 37);
             this.comboBoxMonth.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxMonth.Name = "comboBoxMonth";
@@ -177,7 +178,7 @@
             this.label1.Location = new System.Drawing.Point(13, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(275, 31);
-            this.label1.TabIndex = 78;
+            this.label1.TabIndex = 83;
             this.label1.Text = "THỐNG KÊ DOANH THU";
             // 
             // doanhthu_lv
@@ -185,14 +186,13 @@
             this.doanhthu_lv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.doanhthu_lv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
             this.Column3});
             this.doanhthu_lv.Location = new System.Drawing.Point(499, 203);
             this.doanhthu_lv.Name = "doanhthu_lv";
             this.doanhthu_lv.RowHeadersWidth = 51;
             this.doanhthu_lv.RowTemplate.Height = 24;
             this.doanhthu_lv.Size = new System.Drawing.Size(643, 429);
-            this.doanhthu_lv.TabIndex = 81;
+            this.doanhthu_lv.TabIndex = 86;
             // 
             // Column1
             // 
@@ -200,13 +200,6 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.Width = 250;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tỷ lệ";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 135;
             // 
             // Column3
             // 
@@ -217,18 +210,18 @@
             // 
             // resChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.resChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.resChart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.resChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.resChart.Legends.Add(legend2);
             this.resChart.Location = new System.Drawing.Point(22, 185);
             this.resChart.Name = "resChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.resChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.resChart.Series.Add(series2);
             this.resChart.Size = new System.Drawing.Size(440, 447);
-            this.resChart.TabIndex = 82;
+            this.resChart.TabIndex = 87;
             this.resChart.Text = "chart1";
             // 
             // Report
@@ -236,11 +229,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 656);
-            this.Controls.Add(this.resChart);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.kryptonBorderEdge1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.doanhthu_lv);
+            this.Controls.Add(this.resChart);
             this.Name = "Report";
             this.Text = "Report";
             this.groupBox3.ResumeLayout(false);
@@ -264,9 +257,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView doanhthu_lv;
-        private System.Windows.Forms.DataVisualization.Charting.Chart resChart;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart resChart;
     }
 }

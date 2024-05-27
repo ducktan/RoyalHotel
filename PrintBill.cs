@@ -175,7 +175,47 @@ namespace Royal
 
         private void kryptonButton5_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Parse the date from the TextBox
+                string dateFormat = "dddd, MMMM dd, yyyy";
+                if (!DateTime.TryParseExact(ngLap.Text, dateFormat, null, System.Globalization.DateTimeStyles.None, out DateTime selectedDate))
+                {
+                    MessageBox.Show("Invalid date format. Please use 'dddd, MMMM dd, yyyy'.");
+                    return;
+                }
 
+                int month = selectedDate.Month;
+                int year = selectedDate.Year;
+
+                string roomType = loaiPhong.Text;
+
+
+                if (!int.TryParse(thanhTien.Text, out int totalRevenue))
+                {
+                    MessageBox.Show("Invalid total revenue");
+                    return;
+                }
+
+                ReportDAO report = new ReportDAO
+                {
+                    Month = month,
+                    Year = year,
+                    RoomType = roomType,
+
+                    TotalRevenue = totalRevenue
+                };
+
+                // Create an instance of ReportDAO to access the AddReport method
+                ReportDAO reportDAO = new ReportDAO();
+
+                // Call the AddReport method
+                reportDAO.AddReport(report);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
         }
 
         private void kryptonButton6_Click(object sender, EventArgs e)
