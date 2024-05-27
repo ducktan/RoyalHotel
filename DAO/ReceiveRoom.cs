@@ -9,6 +9,7 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Firebase.Database;
+using iTextSharp.text;
 
 namespace Royal.DAO
 {
@@ -90,7 +91,6 @@ namespace Royal.DAO
                             room.ReceivedRoom,
                             room.HoTen,
                              room.CCCD_KH,
-                             
                              room.MAPHONG,
                             room.TRANGTHAI,
                             room.NGAYNHAN,
@@ -127,7 +127,7 @@ namespace Royal.DAO
                 }
             }
         }
-        public async Task<receiveroomDAO> SearchReceiveRoomByID(string idPhieuNhan)
+        public async Task<List<receiveroomDAO>> SearchReceiveRoomByID(string idPhieuNhan)
         {
             try
             {
@@ -135,20 +135,22 @@ namespace Royal.DAO
                     .Child("ReceiveRoom")
                     .OnceAsync<receiveroomDAO>();
 
+                var matchingReceiveRooms = new List<receiveroomDAO>();
+
                 foreach (var receiveRoomSnapshot in receiveRoomList)
                 {
                     var receiveRoom = receiveRoomSnapshot.Object;
 
                     // Check if ID_PHIEUNHAN of receive room matches the search criteria
-                    if (receiveRoom.ReceivedRoom == idPhieuNhan)
+                    if (receiveRoom.CCCD_KH == idPhieuNhan)
                     {
-                        // Return the matching receive room
-                        return receiveRoom;
+                        // Add the matching receive room to the list
+                        matchingReceiveRooms.Add(receiveRoom);
                     }
                 }
 
-                // Return null if no matching receive room is found
-                return null;
+                // Return the list of matching receive rooms
+                return matchingReceiveRooms;
             }
             catch (Exception ex)
             {
@@ -157,6 +159,41 @@ namespace Royal.DAO
                 return null; // Return null on error
             }
         }
+        public async Task<receiveroomDAO> SearchReceiveRoomByIDDP(string idPhieuNhan , string maphong, string ngaynhan, string ngaytra)
+        {
+            try
+            {
+                var receiveRoomList = await firebaseClient
+                    .Child("ReceiveRoom")
+                    .OnceAsync<receiveroomDAO>();
+
+                var matchingReceiveRooms = new List<receiveroomDAO>();
+
+                foreach (var receiveRoomSnapshot in receiveRoomList)
+                {
+                    var receiveRoom = receiveRoomSnapshot.Object;
+
+                    // Check if ID_PHIEUNHAN of receive room matches the search criteria
+                    if (receiveRoom.CCCD_KH == idPhieuNhan && (receiveRoom.MAPHONG == maphong) && (receiveRoom.NGAYNHAN == ngaynhan) && (receiveRoom.NGAYTRA == ngaytra))
+                    {
+                        return receiveRoom;
+                      
+                    }
+                }
+
+                return null;
+
+                // Return the list of matching receive rooms
+             
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                MessageBox.Show($"Error searching receive room: {ex.Message}");
+                return null; // Return null on error
+            }
+        }
+
         public async Task<string> FindMAKH(string cccd)
         {
             try
@@ -211,7 +248,6 @@ namespace Royal.DAO
 
                     // Tìm loại khách hàng theo ID_LOAIKH
                     var customerType = typeCustomerList.FirstOrDefault(t => t.Object.ID_LOAIKH == customerTypeId);
-                    MessageBox.Show(customerType.Object.ToString());
                     if (customerType != null)
                     {
                         // Trả về discount nếu tìm thấy loại khách hàng

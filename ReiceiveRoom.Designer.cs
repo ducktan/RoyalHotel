@@ -72,7 +72,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -345,6 +345,7 @@
             this.kryptonRichTextBox4.TabIndex = 133;
             this.kryptonRichTextBox4.Text = "";
             this.kryptonRichTextBox4.WordWrap = false;
+            this.kryptonRichTextBox4.TextChanged += new System.EventHandler(this.kryptonRichTextBox4_TextChanged);
             // 
             // label9
             // 
@@ -354,9 +355,9 @@
             this.label9.Location = new System.Drawing.Point(10, 48);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(205, 40);
+            this.label9.Size = new System.Drawing.Size(274, 40);
             this.label9.TabIndex = 28;
-            this.label9.Text = "Mã đặt phòng:";
+            this.label9.Text = "Căn Cước Công Dân";
             // 
             // groupBox1
             // 
@@ -428,7 +429,7 @@
             this.dataGridViewParameter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewParameter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.ten,
+            this.HoTen,
             this.CCCD,
             this.MaPhong,
             this.TrangThai,
@@ -584,12 +585,12 @@
             this.ID.Name = "ID";
             this.ID.Width = 200;
             // 
-            // ten
+            // HoTen
             // 
-            this.ten.HeaderText = "Họ tên";
-            this.ten.MinimumWidth = 6;
-            this.ten.Name = "ten";
-            this.ten.Width = 200;
+            this.HoTen.HeaderText = "Họ tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 200;
             // 
             // CCCD
             // 
@@ -707,7 +708,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox6;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox5;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
