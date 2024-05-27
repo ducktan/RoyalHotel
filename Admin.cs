@@ -25,6 +25,8 @@ namespace Royal
             checkPass = new CheckPass();
             label3.Visible = false;
             label5.Visible = false;
+            DAO.User.LoadUser(dataGridStaff);
+            dataGridStaff.CellClick += dataGridRoomType_CellClick;
         }
 
         private void IndexBut_Click(object sender, EventArgs e)
@@ -33,6 +35,21 @@ namespace Royal
             d.Show();
             this.Close();
         }
+
+        private void dataGridRoomType_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
+            {
+                DataGridViewRow selectedRow = dataGridStaff.Rows[e.RowIndex];
+
+                // Kiểm tra nếu hàng không rỗng
+                if (!selectedRow.IsNewRow)
+                {
+                    Username.Text = selectedRow.Cells[0].Value.ToString();
+                }
+            }
+        }
+
 
         private async void Create_But_Click(object sender, EventArgs e)
         {
@@ -48,12 +65,26 @@ namespace Royal
                     return;
                 }
 
+                
+                Permission permission = new Permission();
+                string role = await permission.GetUserRoleByEmail(email);
+
+                if(role== null)
+                {
+                    MessageBox.Show("Email không thuộc nhân viên trong công ty.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+                }
+
+                bool result = await DAO.User.CreateUser(email, role);
                 // Thực hiện đăng ký tài khoản mới
                 await authen.Signup(email, pass);
 
+                if (result) 
 
                 // Hiển thị thông báo khi tạo tài khoản thành công
                 MessageBox.Show("Tài khoản đã được tạo thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DAO.User.LoadUser(dataGridStaff);
             }
             catch (FirebaseAuthException ex)
             {
@@ -76,7 +107,7 @@ namespace Royal
             // Kiểm tra mật khẩu có đủ mạnh không
             if (!checkPass.IsStrongPassword(password))
             {
-                label5.Text = "Mật khẩu cần chứa ít nhất một ký tự \nin hoa, một ký tự thường, một số và\nmột ký tự đặc biệt.";
+                label5.Text = "Đặt lại mật khẩu an toàn hơn!.";
                 label5.Height = 30;
                 Create_But.Location = new Point(15, 205);
                 label5.Visible = true;
@@ -111,8 +142,17 @@ namespace Royal
 
         private void Parameter_button_Click(object sender, EventArgs e)
         {
-            Parameter p = new Parameter();
+            Authentication p = new Authentication();
             p.Show();
         }
+
+        private async void Del_But_Click(object sender, EventArgs e)
+        {
+            await authen.DeleteUserFromAuth(Username.Text, Password.Text);
+            await DAO.User.DeleteUser(Username.Text);
+            DAO.User.LoadUser(dataGridStaff);
+        }
+
+
     }
 }

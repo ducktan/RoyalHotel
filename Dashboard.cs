@@ -21,6 +21,7 @@ namespace Royal
             InitializeComponent();
             authen = new Authen();
             permission = new Permission();
+
         }
 
         private void panelRight_Paint(object sender, PaintEventArgs e)
@@ -217,6 +218,22 @@ namespace Royal
         {
             Authentication authentication = new Authentication();
             authentication.Show();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            if (User.Role == "Giám đốc")
+            {
+                btnAdmin.Visible = true;
+            }
+            else
+            btnAdmin.Visible = false;
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
         }
     }
 }

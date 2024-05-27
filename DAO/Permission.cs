@@ -38,24 +38,7 @@ namespace Royal.DAO
 
 
         }
-        /*
-         public static async Task<bool> HasPermission(string userId, string pageUrl, Role role)
-         {
-             var userPermissions = await firebaseClient.Child($"permissions/{userId}").GetAsync();
-             var permissions = userPermissions.ResultAs<Dictionary<string, bool>>();
 
-             if (permissions != null && permissions.ContainsKey(pageUrl))
-             {
-                 return permissions[pageUrl];
-             }
-
-             // Nếu không tìm thấy quyền riêng cho người dùng, kiểm tra quyền mặc định của vai trò
-             var rolePermissions = await firebaseClient.Child($"roles/{role.ToString().ToLower()}/permissions").GetAsync();
-             permissions = rolePermissions.ResultAs<Dictionary<string, bool>>();
-
-             return permissions != null && permissions.ContainsKey(pageUrl) && permissions[pageUrl];
-         }
-        */
 
         public async Task<string> GetUserRoleByEmail(string email)
         {

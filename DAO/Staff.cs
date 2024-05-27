@@ -281,6 +281,19 @@ namespace Royal.DAO
         }
 
 
+        public async Task<StaffDAO> GetUserInforByEmail(string email)
+        {
+            var staffRecord = await Client.GetAsync("Staff");
+            var allStaff = staffRecord.ResultAs<Dictionary<string, StaffDAO>>();
+
+            var staff = allStaff.Values.FirstOrDefault(s => s.staffEmail == email);
+            if (staff != null)
+            {
+                return staff;
+            }
+
+            return null; // hoặc trả về một giá trị mặc định nếu không tìm thấy
+        }
 
 
     }

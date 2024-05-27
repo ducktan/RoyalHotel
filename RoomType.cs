@@ -78,7 +78,7 @@ namespace Royal
 
         }
 
-        private void btnUpdateRoomType_Click(object sender, EventArgs e)
+        private async void btnUpdateRoomType_Click(object sender, EventArgs e)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace Royal
 
 
                 Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
-                roomType.UpdateRoomType(id, name, num, price);
+                await roomType.UpdateRoomType(id, name, num, price);
                 roomType.LoadRoomType(dataGridRoomType);
             }
             catch (Exception ex)

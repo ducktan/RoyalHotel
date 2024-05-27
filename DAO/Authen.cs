@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Firebase.Auth;
+using Firebase.Auth.Requests;
 
 using FireSharp.Config;
 using FireSharp.Interfaces;
@@ -12,6 +13,7 @@ using FireSharp.Response;
 using Firebase.Auth.Providers;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 
@@ -20,6 +22,7 @@ namespace Royal.DAO
     public class Authen
     {
         private FirebaseAuthClient client;
+        
         public Authen()
         {
             var config = new FirebaseAuthConfig
@@ -81,6 +84,7 @@ namespace Royal.DAO
             {
                 MessageBox.Show(ex.Message, "Sign Out Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         public async Task ForgotPass(string email)
@@ -116,6 +120,57 @@ namespace Royal.DAO
 
         }
 
+        public async Task ChangePassword(string email, string currentPassword, string newPassword)
+        {
+            try
+            {
+                // Reauthenticate the user
+                var reauthResult = await client.SignInWithEmailAndPasswordAsync(email, currentPassword);
+                
+                var user = reauthResult.User;
+
+                if (user == null)
+                {
+                    MessageBox.Show("Mật khẩu không đúng!");
+                    return;
+                }
+
+                
+                // Update the password
+                await user.ChangePasswordAsync(newPassword);
+                MessageBox.Show("Password changed successfully.", "Password Change", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (FirebaseAuthException ex)
+            {
+                MessageBox.Show(ex.Message, "Password Change Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public async Task DeleteUserFromAuth(string email, string password)
+        {
+            try
+            {
+                // Reauthenticate the user
+                var reauthResult = await client.SignInWithEmailAndPasswordAsync(email, password);
+
+                var user = reauthResult.User;
+
+                if (user == null)
+                {
+                    MessageBox.Show("Mật khẩu không đúng!");
+                    return;
+                }
+
+
+                // Update the password
+                await user.DeleteAsync();
+                MessageBox.Show("Delete user successfully.", "Detele!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (FirebaseAuthException ex)
+            {
+                MessageBox.Show(ex.Message, "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
 

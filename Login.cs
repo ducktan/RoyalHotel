@@ -74,7 +74,7 @@ namespace Royal
         {
             ForgotPass forgot = new ForgotPass(); 
             forgot.Show();
-            this.Close();
+            
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
