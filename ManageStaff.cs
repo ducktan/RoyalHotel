@@ -162,9 +162,9 @@ namespace Royal
             {
                 if(type=="Mã nhân viên")
                 {
-                    searchResults = await billFun.SearchStaffbyIDStaff(searchText1);
-
-                    // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+                    Royal.DAO.StaffDAO searchResult = await billFun.SearchStaffbyID(searchText1);
+                    searchResults.Add(searchResult);
+                                       
 
                 }
                 else if(type =="Loại nhân viên"){

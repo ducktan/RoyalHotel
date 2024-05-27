@@ -441,7 +441,7 @@
             this.btnUpdateRoom.Size = new System.Drawing.Size(212, 40);
             this.btnUpdateRoom.TabIndex = 46;
             this.btnUpdateRoom.Values.Text = "Sửa phòng";
-            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click_1);
+            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
             // 
             // groupBox3
             // 

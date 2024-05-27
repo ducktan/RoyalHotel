@@ -94,6 +94,8 @@ namespace Royal
             this.searchText = new System.Windows.Forms.TextBox();
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Chung = new System.Windows.Forms.TabControl();
+            this.ngdilam = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -263,6 +265,8 @@ namespace Royal
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ngdilam);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.Luong);
             this.groupBox2.Controls.Add(this.SoLanVP);
             this.groupBox2.Controls.Add(this.label11);
@@ -286,23 +290,23 @@ namespace Royal
             this.Luong.Location = new System.Drawing.Point(151, 106);
             this.Luong.Name = "Luong";
             this.Luong.ReadOnly = true;
-            this.Luong.Size = new System.Drawing.Size(304, 34);
+            this.Luong.Size = new System.Drawing.Size(202, 34);
             this.Luong.TabIndex = 5;
             // 
             // SoLanVP
             // 
             this.SoLanVP.BackColor = System.Drawing.Color.White;
-            this.SoLanVP.Location = new System.Drawing.Point(668, 106);
+            this.SoLanVP.Location = new System.Drawing.Point(584, 109);
             this.SoLanVP.Name = "SoLanVP";
             this.SoLanVP.ReadOnly = true;
-            this.SoLanVP.Size = new System.Drawing.Size(428, 34);
+            this.SoLanVP.Size = new System.Drawing.Size(169, 34);
             this.SoLanVP.TabIndex = 4;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(505, 112);
+            this.label11.Location = new System.Drawing.Point(398, 112);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(157, 28);
             this.label11.TabIndex = 4;
@@ -321,17 +325,17 @@ namespace Royal
             // tenNV
             // 
             this.tenNV.BackColor = System.Drawing.Color.White;
-            this.tenNV.Location = new System.Drawing.Point(667, 49);
+            this.tenNV.Location = new System.Drawing.Point(584, 57);
             this.tenNV.Name = "tenNV";
             this.tenNV.ReadOnly = true;
-            this.tenNV.Size = new System.Drawing.Size(428, 34);
+            this.tenNV.Size = new System.Drawing.Size(512, 34);
             this.tenNV.TabIndex = 3;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(505, 55);
+            this.label9.Location = new System.Drawing.Point(398, 57);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 28);
             this.label9.TabIndex = 2;
@@ -342,7 +346,7 @@ namespace Royal
             this.maNV.FormattingEnabled = true;
             this.maNV.Location = new System.Drawing.Point(151, 49);
             this.maNV.Name = "maNV";
-            this.maNV.Size = new System.Drawing.Size(304, 36);
+            this.maNV.Size = new System.Drawing.Size(202, 36);
             this.maNV.TabIndex = 1;
             this.maNV.SelectedIndexChanged += new System.EventHandler(this.maNV_SelectedIndexChanged);
             // 
@@ -800,6 +804,25 @@ namespace Royal
             this.Chung.TabIndex = 0;
             this.Chung.Tag = "";
             // 
+            // ngdilam
+            // 
+            this.ngdilam.BackColor = System.Drawing.Color.White;
+            this.ngdilam.Location = new System.Drawing.Point(962, 109);
+            this.ngdilam.Name = "ngdilam";
+            this.ngdilam.ReadOnly = true;
+            this.ngdilam.Size = new System.Drawing.Size(134, 34);
+            this.ngdilam.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(776, 112);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(153, 28);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Số ngày đi làm";
+            // 
             // Parameter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -892,5 +915,7 @@ namespace Royal
         private System.Windows.Forms.TextBox Va;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox ngdilam;
+        private System.Windows.Forms.Label label13;
     }
 }

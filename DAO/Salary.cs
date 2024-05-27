@@ -82,7 +82,8 @@ namespace Royal.DAO
                 {
                     // Update the bill in Firebase
                     await Client.SetAsync($"Salary/{id}", sa);
-                    // await Client.SetAsync($"Staff/{id}", sa);
+                    await Client.SetAsync($"Staff/{id}/luongNV", sa);
+                // await Client.SetAsync($"Staff/{id}", sa);
 
 
 

@@ -233,19 +233,18 @@ namespace Royal
             try
             {
                 // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
-                List<StaffDAO> billDetails = await new StaffDAO().SearchStaffbyIDStaff(maNV.Text);
+                StaffDAO billDetails = await new StaffDAO().SearchStaffbyID(maNV.Text);
 
 
                 // Kiểm tra xem có dữ liệu hay không
-                if (billDetails.Count > 0)
+                if (billDetails != null)
                 {
-                    // Thêm dữ liệu chi tiết hóa đơn vào DataGridView
-                    foreach (var item in billDetails)
-                    {
-                        Luong.Text = item.luongNV?.staffSalary.ToString() ?? "0";
-                        SoLanVP.Text = item.luongNV?.countVP.ToString() ?? "0";
-                        tenNV.Text = item.staffName.ToString();
-                    }
+                  
+                        Luong.Text = billDetails.luongNV?.staffSalary.ToString() ?? "0";
+                        SoLanVP.Text = billDetails.luongNV?.countVP.ToString() ?? "0";
+                        tenNV.Text = billDetails.staffName.ToString();
+                    ngdilam.Text = billDetails.luongNV?.workingDay.ToString() ?? "0";
+                    
                 }
                 else
                 {
@@ -276,59 +275,59 @@ namespace Royal
             LoadMaNVFromDatabase();
             ParameterDAO p = new ParameterDAO();
             p.LoadPara(dataGridView1);
+            ngdilam.Clear();
+            maNV.Text = ""; 
+            SoLanVP.Clear();
+            Luong.Clear();
+            tenNV.Clear();  
             MessageBox.Show("Refresh successfully!");
         }
 
+        private StaffDAO currentStaff;
         private async void addBut_Click(object sender, EventArgs e)
         {
-            int workday, countvp, salary;
-
+            string maLNV;
             try
             {
                 // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
-                List<StaffDAO> billDetails = await new StaffDAO().SearchStaffbyIDStaff(maNV.Text);
-              
+                currentStaff = await new StaffDAO().SearchStaffbyID(maNV.Text);
+                maLNV = currentStaff.staffType.ToString();
+
+                StaffType a = await new StaffType().SearchSTypeById(maLNV);
 
                 // Kiểm tra xem có dữ liệu hay không
                 int value;
                 if (int.TryParse(Va.Text, out value))
                 {
-                    foreach (StaffDAO item in billDetails)
+                    // Kiểm tra nếu currentStaff.luongNV là null thì khởi tạo
+                    if (currentStaff.luongNV == null)
                     {
-                       workday = item.luongNV.workingDay;
-                       MessageBox.Show(workday.ToString());
-                       countvp = item.luongNV.countVP;
-                       salary = item.luongNV.staffSalary;
-                        // Kiểm tra nếu item.luongNV là null thì khởi tạo
-                        if (item.luongNV == null)
-                        {
-                            
-                            item.luongNV = new Salary();
-                            await item.luongNV.InitSalary(item.StaffID);
-                        }
-                        if (value == 1)
-                        {
-                            workday++; 
-                            if (workday > 2)
-                            {
-                                salary = 10000;
-                                MessageBox.Show("Đủ lương rồi nè!");
-                            }
-                        }
-                        else
-                        {
-                            salary += value;
-                            if (value < 0)
-                            {
-                                countvp++;
-                            }
-                        }                       
-                        
-                        await item.luongNV.UpdateSalary(item.StaffID, salary,countvp, workday);
-                    
+                        currentStaff.luongNV = new Salary();
+                        await currentStaff.luongNV.InitSalary(currentStaff.StaffID);
                     }
+
+                    if (value == 1)
+                    {
+                        currentStaff.luongNV.workingDay++;
+                        if (currentStaff.luongNV.workingDay > 26)
+                        {
+                            currentStaff.luongNV.staffSalary += a.stSalary;
+                            MessageBox.Show("Đủ lương rồi nè!");
+                        }
+                    }
+                    else
+                    {
+                        currentStaff.luongNV.staffSalary += value;
+                        if (value < 0)
+                        {
+                            currentStaff.luongNV.countVP++;
+                        }
+                    }
+
+                    // Cập nhật dữ liệu
+                    await currentStaff.luongNV.UpdateSalary(currentStaff.StaffID, currentStaff.luongNV.staffSalary, currentStaff.luongNV.countVP, currentStaff.luongNV.workingDay);
                 }
-               
+                LoadInfoStaffFromID();
             }
             catch (Exception ex)
             {
