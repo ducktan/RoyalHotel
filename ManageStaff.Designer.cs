@@ -41,6 +41,8 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateIn = new MetroFramework.Controls.MetroDateTime();
+            this.dateBirth = new MetroFramework.Controls.MetroDateTime();
             this.comboBoxSex = new System.Windows.Forms.ComboBox();
             this.soDT = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.address = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
@@ -61,9 +63,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cboTypeSearch = new MetroFramework.Controls.MetroComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.searchText = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.kryptonButton6 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -86,8 +89,6 @@
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.dateBirth = new MetroFramework.Controls.MetroDateTime();
-            this.dateIn = new MetroFramework.Controls.MetroDateTime();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -120,9 +121,9 @@
             // kryptonButton4
             // 
             this.kryptonButton4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.kryptonButton4.Location = new System.Drawing.Point(282, 94);
+            this.kryptonButton4.Location = new System.Drawing.Point(515, 692);
             this.kryptonButton4.Name = "kryptonButton4";
-            this.kryptonButton4.Size = new System.Drawing.Size(207, 40);
+            this.kryptonButton4.Size = new System.Drawing.Size(227, 40);
             this.kryptonButton4.TabIndex = 47;
             this.kryptonButton4.Values.Text = "Danh sách nhân viên";
             this.kryptonButton4.Click += new System.EventHandler(this.kryptonButton4_Click);
@@ -187,7 +188,7 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox2.Location = new System.Drawing.Point(6, 130);
+            this.groupBox2.Location = new System.Drawing.Point(6, 181);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -195,6 +196,22 @@
             this.groupBox2.TabIndex = 123;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nhân viên";
+            // 
+            // dateIn
+            // 
+            this.dateIn.Location = new System.Drawing.Point(282, 341);
+            this.dateIn.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateIn.Name = "dateIn";
+            this.dateIn.Size = new System.Drawing.Size(207, 34);
+            this.dateIn.TabIndex = 135;
+            // 
+            // dateBirth
+            // 
+            this.dateBirth.Location = new System.Drawing.Point(282, 141);
+            this.dateBirth.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateBirth.Name = "dateBirth";
+            this.dateBirth.Size = new System.Drawing.Size(207, 34);
+            this.dateBirth.TabIndex = 134;
             // 
             // comboBoxSex
             // 
@@ -411,65 +428,82 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cboTypeSearch);
+            this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.kryptonButton5);
             this.groupBox3.Controls.Add(this.searchText);
-            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
             this.groupBox3.Location = new System.Drawing.Point(6, 6);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(499, 116);
+            this.groupBox3.Size = new System.Drawing.Size(499, 167);
             this.groupBox3.TabIndex = 125;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Quản lý nhân viên";
             // 
+            // cboTypeSearch
+            // 
+            this.cboTypeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboTypeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTypeSearch.FormattingEnabled = true;
+            this.cboTypeSearch.ItemHeight = 24;
+            this.cboTypeSearch.Items.AddRange(new object[] {
+            "Mã nhân viên",
+            "Loại nhân viên",
+            "Giới tính"});
+            this.cboTypeSearch.Location = new System.Drawing.Point(277, 49);
+            this.cboTypeSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTypeSearch.Name = "cboTypeSearch";
+            this.cboTypeSearch.Size = new System.Drawing.Size(201, 30);
+            this.cboTypeSearch.TabIndex = 138;
+            this.cboTypeSearch.UseSelectable = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.Location = new System.Drawing.Point(9, 49);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 25);
+            this.label2.TabIndex = 137;
+            this.label2.Text = "Tìm kiếm theo loại:";
+            // 
             // kryptonButton5
             // 
             this.kryptonButton5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton5.Location = new System.Drawing.Point(319, 56);
+            this.kryptonButton5.Location = new System.Drawing.Point(282, 109);
             this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.Size = new System.Drawing.Size(159, 40);
+            this.kryptonButton5.Size = new System.Drawing.Size(196, 40);
             this.kryptonButton5.TabIndex = 134;
             this.kryptonButton5.Values.Text = "Tìm nhân viên";
             this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
             // 
             // searchText
             // 
-            this.searchText.Location = new System.Drawing.Point(7, 59);
+            this.searchText.Location = new System.Drawing.Point(7, 112);
             this.searchText.Name = "searchText";
-            this.searchText.Size = new System.Drawing.Size(269, 37);
+            this.searchText.Size = new System.Drawing.Size(229, 37);
             this.searchText.TabIndex = 133;
             this.searchText.Text = "";
             this.searchText.WordWrap = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(7, 31);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 25);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Mã nhân viên:";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.kryptonButton6);
             this.groupBox1.Controls.Add(this.kryptonButton1);
-            this.groupBox1.Controls.Add(this.kryptonButton4);
             this.groupBox1.Controls.Add(this.kryptonButton3);
             this.groupBox1.Controls.Add(this.kryptonButton2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox1.Location = new System.Drawing.Point(6, 527);
+            this.groupBox1.Location = new System.Drawing.Point(6, 574);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(499, 189);
+            this.groupBox1.Size = new System.Drawing.Size(502, 156);
             this.groupBox1.TabIndex = 124;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -477,11 +511,12 @@
             // kryptonButton6
             // 
             this.kryptonButton6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton6.Location = new System.Drawing.Point(155, 142);
+            this.kryptonButton6.Location = new System.Drawing.Point(277, 94);
             this.kryptonButton6.Name = "kryptonButton6";
             this.kryptonButton6.Size = new System.Drawing.Size(212, 40);
             this.kryptonButton6.TabIndex = 136;
             this.kryptonButton6.Values.Text = "Quản lý loại nhân viên";
+            this.kryptonButton6.Click += new System.EventHandler(this.kryptonButton6_Click);
             // 
             // kryptonButton2
             // 
@@ -705,22 +740,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 43);
             // 
-            // dateBirth
-            // 
-            this.dateBirth.Location = new System.Drawing.Point(282, 141);
-            this.dateBirth.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dateBirth.Name = "dateBirth";
-            this.dateBirth.Size = new System.Drawing.Size(207, 34);
-            this.dateBirth.TabIndex = 134;
-            // 
-            // dateIn
-            // 
-            this.dateIn.Location = new System.Drawing.Point(282, 341);
-            this.dateIn.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dateIn.Name = "dateIn";
-            this.dateIn.Size = new System.Drawing.Size(207, 34);
-            this.dateIn.TabIndex = 135;
-            // 
             // ManageStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -728,6 +747,7 @@
             this.ClientSize = new System.Drawing.Size(1689, 756);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.kryptonButton4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Name = "ManageStaff";
@@ -778,7 +798,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox searchText;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
@@ -804,5 +823,7 @@
         private System.Windows.Forms.ComboBox comboBoxSex;
         private MetroFramework.Controls.MetroDateTime dateIn;
         private MetroFramework.Controls.MetroDateTime dateBirth;
+        private MetroFramework.Controls.MetroComboBox cboTypeSearch;
+        private System.Windows.Forms.Label label2;
     }
 }

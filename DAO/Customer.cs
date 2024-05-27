@@ -30,7 +30,7 @@ namespace Royal.DAO
 
 
         // Set up Firebase configuration
-        public FirebConfig config = new FirebConfig();
+        private readonly FirebConfig config = new FirebConfig();
 
         // Initialize Firebase client
         public IFirebaseClient Client { get; private set; } // Make client accessible only within the class
@@ -52,7 +52,7 @@ namespace Royal.DAO
 
 
         }
-        public async void AddCustomer(CustomerDAO customer)
+        public async Task AddCustomer(CustomerDAO customer)
         {
 
 
@@ -122,7 +122,7 @@ namespace Royal.DAO
 
         }
 
-        public async void DeleteCus(string cusId)
+        public async Task DeleteCus(string cusId)
         {
             // Confirmation prompt (optional)
             if (MessageBox.Show("Are you sure you want to delete this customer?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -144,7 +144,7 @@ namespace Royal.DAO
 
         }
 
-        public async void UpdateCustomer(string cusID, string hoten, string cccd, string ngsinh, string diachi, string loaikh, string gender, string sdt, string qt, string email)
+        public async Task UpdateCustomer(string cusID, string hoten, string cccd, string ngsinh, string diachi, string loaikh, string gender, string sdt, string qt, string email)
         {
 
 
@@ -220,7 +220,99 @@ namespace Royal.DAO
 
         }
 
+        public async Task<CustomerDAO> SearchRoomById(string id)
+        {
+            string queryPath = $"Customer/{id}";
 
+            try
+            {
+                FirebaseResponse response = await Client.GetAsync(queryPath);
+                return response.ResultAs<CustomerDAO>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching room by ID: {ex.Message}");
+                return null; // Return null on error
+            }
+        }
+
+
+        public async Task<List<CustomerDAO>> SearchRoomByType(string type)
+        {
+            try
+            {
+                // Retrieve all room data from "Room" node
+                var typeRoomList = await firebaseClient
+                    .Child("Customer")
+                    .OnceAsync<Royal.DAO.CustomerDAO>();
+
+                // Initialize an empty list to store matching rooms
+                List<CustomerDAO> matchingRooms = new List<CustomerDAO>();
+
+                // Iterate through retrieved room data
+                foreach (var Room in typeRoomList)
+                {
+                    // Extract room information
+                    CustomerDAO room = Room.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.ID_LOAIKH == type)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<CustomerDAO>(); // Return empty list on error
+            }
+        }
+
+
+
+
+        public async Task<List<CustomerDAO>> SearchCustomerByGender(string type)
+        {
+            try
+            {
+                // Retrieve all room data from "Room" node
+                var typeRoomList = await firebaseClient
+                    .Child("Customer")
+                    .OnceAsync<Royal.DAO.CustomerDAO>();
+
+                // Initialize an empty list to store matching rooms
+                List<CustomerDAO> matchingRooms = new List<CustomerDAO>();
+
+                // Iterate through retrieved room data
+                foreach (var Room in typeRoomList)
+                {
+                    // Extract room information
+                    CustomerDAO room = Room.Object;
+
+                    // Check if room capacity matches the search criteria
+                    if (room.GIOITINH == type)
+                    {
+                        // Add matching room to the list
+                        matchingRooms.Add(room);
+                    }
+                }
+
+                // Return the list of matching rooms
+                return matchingRooms;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (logging, throwing specific exceptions, etc.)
+                Console.WriteLine($"Error searching room by capacity: {ex.Message}");
+                return new List<CustomerDAO>(); // Return empty list on error
+            }
+        }
 
 
     }

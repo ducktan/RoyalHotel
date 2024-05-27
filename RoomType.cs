@@ -27,58 +27,78 @@ namespace Royal
             // Assuming dataGridRoomType is a DataGridView control on your form
             Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
             roomType.LoadRoomType(dataGridRoomType);
+            dataGridRoomType.CellClick += dataGridRoomType_CellClick;
         }
 
 
-        private void RoomType_Load(object sender, EventArgs e)
+        private async void RoomType_Load(object sender, EventArgs e)
         {
+
 
         }
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Bill" table
-            var bills = await firebaseClient
+            try
+            {
+                var roomTypes = await firebaseClient
                 .Child("RoomType")
-                .OnceAsync<object>();
-
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
-            {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
-
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"LPH{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                 .OnceAsync<DAO.RoomType>();
+                // Tìm mã phòng lớn nhất hiện có
+                int maxRoomNumber = 0;
+                foreach (var roomData in roomTypes)
                 {
-                    newNumber++;
+                    int roomNumber = int.Parse(roomData.Object.MALPH.Substring(3));
+                    if (roomNumber > maxRoomNumber)
+                    {
+                        maxRoomNumber = roomNumber;
+                    }
                 }
-            } while (!isUnique);
-            Royal.DAO.RoomType roomType = new Royal.DAO.RoomType()
+
+                string newRoomNumber = "LPH" + (maxRoomNumber + 1).ToString("D3");
+
+                Royal.DAO.RoomType roomType = new Royal.DAO.RoomType()
+                {
+                    MALPH = newRoomNumber,
+                    TENLPH = txtRoomTypeName.Text,
+                    SLNG = Int32.Parse(cboPeopleNum.Text),
+                    GIA = Int32.Parse(txtPrice.Text)
+
+                };
+
+                await roomType.AddRoomType(roomType);
+                roomType.LoadRoomType(dataGridRoomType);
+            }
+
+            catch (Exception ex)
             {
-                MALPH = maHoaDon,
-                TENLPH = txtRoomTypeName.Text,
-                SLNG = Int32.Parse(cboPeopleNum.Text),
-                GIA = Int32.Parse(txtPrice.Text)
+                MessageBox.Show(ex.Message);
+            }
 
-            };
 
-            roomType.AddRoomType(roomType);
         }
 
-        private void btnUpdateRoomType_Click(object sender, EventArgs e)
+        private async void btnUpdateRoomType_Click(object sender, EventArgs e)
         {
-            Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
-            
+            try
+            {
+                string id = txtRoomTypeId.Text;
+                string name = txtRoomTypeName.Text;
+                int num = Int32.Parse(cboPeopleNum.Text);
+                int price = Int32.Parse(txtPrice.Text);
+
+
+                Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
+                await roomType.UpdateRoomType(id, name, num, price);
+                roomType.LoadRoomType(dataGridRoomType);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
         }
 
         private void btnDisplayRoomType_Click(object sender, EventArgs e)
@@ -107,7 +127,7 @@ namespace Royal
             // Call the appropriate search function based on the selected type
             List<Royal.DAO.RoomType> searchResults = new List<Royal.DAO.RoomType>(); // Initialize empty list
 
-           
+
             try
             {
                 if (type == "Mã loại phòng") // Search by room type ID (MALPH)
@@ -187,10 +207,86 @@ namespace Royal
             }
         }
 
+        private void dataGridRoomType_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
+            {
+                DataGridViewRow selectedRow = dataGridRoomType.Rows[e.RowIndex];
 
+                // Kiểm tra nếu hàng không rỗng
+                if (!selectedRow.IsNewRow)
+                {
+                    txtRoomTypeId.Text = (string)selectedRow.Cells[0].Value;
+                    txtRoomTypeName.Text = (string)selectedRow.Cells[1].Value;
+                    txtPrice.Text = selectedRow.Cells[3].Value.ToString();
+                    cboPeopleNum.Text = selectedRow.Cells[2].Value.ToString();
+
+                }
+            }
+        }
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void btnDeleteRoomType_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = txtRoomTypeId.Text;
+                Royal.DAO.RoomType roomType = new Royal.DAO.RoomType(); // Assuming you have an instance
+                roomType.DeleteRoomType(id);
+                roomType.LoadRoomType(dataGridRoomType);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to export to Excel(yes) or PDF(no)?", "Export", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, 0, "Yes = Excel, No = PDF");
+
+            if (result == DialogResult.Yes || result == DialogResult.No)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                        saveFileDialog.DefaultExt = "xlsx";
+                        saveFileDialog.AddExtension = true;
+                        break;
+
+                    case DialogResult.No:
+                        saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+                        saveFileDialog.DefaultExt = "pdf";
+                        saveFileDialog.AddExtension = true;
+                        break;
+
+                    default:
+                        return;
+                }
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    switch (result)
+                    {
+                        case DialogResult.Yes:
+                            ExportToExcel.Export(dataGridRoomType, saveFileDialog.FileName);
+                            break;
+
+                        case DialogResult.No:
+                            ExportToPdf.Export(dataGridRoomType, saveFileDialog.FileName);
+                            break;
+                    }
+                }
+            }
         }
     }
 }

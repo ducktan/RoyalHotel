@@ -57,34 +57,26 @@ namespace Royal
             // Get the current row count for the "Bill" table
             var bills = await firebaseClient
                 .Child("Customer")
-                .OnceAsync<object>();
+                .OnceAsync<Royal.DAO.CustomerDAO>();
 
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
+            // Tìm mã phòng lớn nhất hiện có
+            int maxRoomNumber = 0;
+            foreach (var roomData in bills)
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
-
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"KH{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                int roomNumber = int.Parse(roomData.Object.MAKH.Substring(2));
+                if (roomNumber > maxRoomNumber)
                 {
-                    newNumber++;
+                    maxRoomNumber = roomNumber;
                 }
-            } while (!isUnique);
+            }
+
+            string newRoomNumber = "KH" + (maxRoomNumber + 1).ToString("D3");
+
 
             // Create a new CustomerDAO object with form control values
             CustomerDAO newCustomer = new CustomerDAO()
             {
-                MAKH = maHoaDon,
+                MAKH = newRoomNumber,
                 HOTEN = hoTen.Text,
                 CCCD = cccd.Text,
                 ID_LOAIKH = LoaiKH.Text,
@@ -103,9 +95,11 @@ namespace Royal
 
         private async void kryptonButton5_Click(object sender, EventArgs e)
         {
+            string type = cboTypeSearch.Text;
+
             string searchText1 = kryptonRichTextBox4.Text.Trim();
             // Get the search criteria from the UI controls
-            
+
 
             if (string.IsNullOrEmpty(searchText1))
             {
@@ -121,8 +115,24 @@ namespace Royal
 
             try
             {
+                if(type=="Mã khách hàng")
+                {
+                    Royal.DAO.CustomerDAO searchResult = await billFun.SearchRoomById(searchText1);
+                    searchResults.Add(searchResult);
+                }    
+                else if (type == "CCCD")
+                {
+                    searchResults = await billFun.SearchCusByCCCD(searchText1);
 
-                searchResults = await billFun.SearchCusByCCCD(searchText1);
+                }
+                else if( type == "Giới tính")
+                {
+                    searchResults = await billFun.SearchCustomerByGender(searchText1);
+                }    
+                else if(type=="Loại khách hàng")
+                {
+                    searchResults = await billFun.SearchRoomByType(searchText1);    
+                }    
                 
 
                 // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
@@ -160,6 +170,8 @@ namespace Royal
             {
                 MessageBox.Show($"Error searching customer: {ex.Message}");
             }
+
+
         }
 
         private void kryptonButton3_Click(object sender, EventArgs e)

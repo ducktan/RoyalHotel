@@ -457,6 +457,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(29, 40);
             this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // groupBox4
             // 
@@ -496,6 +497,7 @@
             this.btnDeleteRoomType.Size = new System.Drawing.Size(181, 40);
             this.btnDeleteRoomType.TabIndex = 136;
             this.btnDeleteRoomType.Values.Text = "Xóa loại phòng";
+            this.btnDeleteRoomType.Click += new System.EventHandler(this.btnDeleteRoomType_Click_1);
             // 
             // btnAddRoomType
             // 

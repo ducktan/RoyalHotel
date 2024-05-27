@@ -1,4 +1,6 @@
-﻿namespace Royal
+﻿using System.Drawing;
+
+namespace Royal
 {
     partial class PrintBill
     {
@@ -31,13 +33,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintBill));
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewUseService = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.kryptonBorderEdge3 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -51,7 +46,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.kryptonDateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,26 +57,24 @@
             this.kryptonBorderEdge1 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.kryptonRichTextBox13 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox14 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox15 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox16 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox17 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox18 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox12 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox11 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox10 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox9 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox8 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox7 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox5 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox6 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox3 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox4 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonRichTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.soNguoi = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.soDem = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.ngayDen = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.dongiaPhong = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.loaiPhong = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.tenPhong = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.quocTich = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.diaChi = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.LoaiKH = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.soDT = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.cmnd = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.thanhTien = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.tienDV = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.giamGia = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.phuThu = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.tongTiench = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.tienPhong = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.nvLap = new System.Windows.Forms.TextBox();
             this.kryptonButton6 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label31 = new System.Windows.Forms.Label();
@@ -92,7 +84,16 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.kryptonBorderEdge2 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
+            this.maHDBox = new System.Windows.Forms.ComboBox();
+            this.ngLap = new System.Windows.Forms.TextBox();
+            this.dataGridViewDV = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenKH = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDV)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -128,65 +129,13 @@
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "STT";
-            this.columnHeader1.Width = 40;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên dịch vụ / vật phẩm";
-            this.columnHeader2.Width = 330;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đơn vị";
-            this.columnHeader3.Width = 100;
-            // 
-            // listViewUseService
-            // 
-            this.listViewUseService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.listViewUseService.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listViewUseService.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listViewUseService.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.listViewUseService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.listViewUseService.FullRowSelect = true;
-            this.listViewUseService.GridLines = true;
-            this.listViewUseService.HideSelection = false;
-            this.listViewUseService.Location = new System.Drawing.Point(18, 611);
-            this.listViewUseService.Margin = new System.Windows.Forms.Padding(4);
-            this.listViewUseService.Name = "listViewUseService";
-            this.listViewUseService.Size = new System.Drawing.Size(1000, 53);
-            this.listViewUseService.TabIndex = 247;
-            this.listViewUseService.UseCompatibleStateImageBehavior = false;
-            this.listViewUseService.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Đơn giá";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Số lượng";
-            this.columnHeader5.Width = 100;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Thành tiền";
-            this.columnHeader6.Width = 365;
-            // 
             // kryptonBorderEdge3
             // 
             this.kryptonBorderEdge3.Location = new System.Drawing.Point(18, 600);
             this.kryptonBorderEdge3.Name = "kryptonBorderEdge3";
             this.kryptonBorderEdge3.Size = new System.Drawing.Size(1000, 4);
-            this.kryptonBorderEdge3.StateCommon.Color1 = System.Drawing.Color.SteelBlue;
+            this.kryptonBorderEdge3.StateCommon.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonBorderEdge3.StateCommon.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonBorderEdge3.StateCommon.Width = 4;
             this.kryptonBorderEdge3.Text = "kryptonBorderEdge3";
             // 
@@ -195,7 +144,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label21.Location = new System.Drawing.Point(24, 468);
+            this.label21.Location = new System.Drawing.Point(17, 468);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(157, 28);
@@ -334,20 +283,6 @@
             this.label7.TabIndex = 235;
             this.label7.Text = "Tên khách hàng:";
             // 
-            // kryptonDateTimePicker1
-            // 
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(741, 219);
-            this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
-            this.kryptonDateTimePicker1.Size = new System.Drawing.Size(302, 35);
-            this.kryptonDateTimePicker1.StateCommon.Back.Color1 = System.Drawing.Color.AliceBlue;
-            this.kryptonDateTimePicker1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDateTimePicker1.StateCommon.Border.Rounding = 20;
-            this.kryptonDateTimePicker1.StateCommon.Border.Width = 1;
-            this.kryptonDateTimePicker1.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonDateTimePicker1.TabIndex = 234;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -388,8 +323,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(12, 223);
+            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label5.Location = new System.Drawing.Point(23, 226);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(382, 31);
@@ -433,7 +368,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label2.Location = new System.Drawing.Point(203, 47);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -464,190 +399,174 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(12, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 35);
             this.label1.TabIndex = 224;
             this.label1.Text = "IN HOÁ ĐƠN";
             // 
-            // kryptonRichTextBox13
+            // soNguoi
             // 
-            this.kryptonRichTextBox13.Location = new System.Drawing.Point(628, 551);
-            this.kryptonRichTextBox13.Name = "kryptonRichTextBox13";
-            this.kryptonRichTextBox13.ReadOnly = true;
-            this.kryptonRichTextBox13.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox13.TabIndex = 277;
-            this.kryptonRichTextBox13.Text = "";
+            this.soNguoi.Location = new System.Drawing.Point(628, 551);
+            this.soNguoi.Name = "soNguoi";
+            this.soNguoi.ReadOnly = true;
+            this.soNguoi.Size = new System.Drawing.Size(239, 28);
+            this.soNguoi.TabIndex = 277;
+            this.soNguoi.Text = "";
             // 
-            // kryptonRichTextBox14
+            // soDem
             // 
-            this.kryptonRichTextBox14.Location = new System.Drawing.Point(628, 510);
-            this.kryptonRichTextBox14.Name = "kryptonRichTextBox14";
-            this.kryptonRichTextBox14.ReadOnly = true;
-            this.kryptonRichTextBox14.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox14.TabIndex = 276;
-            this.kryptonRichTextBox14.Text = "";
+            this.soDem.Location = new System.Drawing.Point(628, 510);
+            this.soDem.Name = "soDem";
+            this.soDem.ReadOnly = true;
+            this.soDem.Size = new System.Drawing.Size(239, 28);
+            this.soDem.TabIndex = 276;
+            this.soDem.Text = "";
             // 
-            // kryptonRichTextBox15
+            // ngayDen
             // 
-            this.kryptonRichTextBox15.Location = new System.Drawing.Point(628, 468);
-            this.kryptonRichTextBox15.Name = "kryptonRichTextBox15";
-            this.kryptonRichTextBox15.ReadOnly = true;
-            this.kryptonRichTextBox15.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox15.TabIndex = 275;
-            this.kryptonRichTextBox15.Text = "";
+            this.ngayDen.Location = new System.Drawing.Point(628, 468);
+            this.ngayDen.Name = "ngayDen";
+            this.ngayDen.ReadOnly = true;
+            this.ngayDen.Size = new System.Drawing.Size(239, 28);
+            this.ngayDen.TabIndex = 275;
+            this.ngayDen.Text = "";
             // 
-            // kryptonRichTextBox16
+            // dongiaPhong
             // 
-            this.kryptonRichTextBox16.Location = new System.Drawing.Point(628, 426);
-            this.kryptonRichTextBox16.Name = "kryptonRichTextBox16";
-            this.kryptonRichTextBox16.ReadOnly = true;
-            this.kryptonRichTextBox16.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox16.TabIndex = 274;
-            this.kryptonRichTextBox16.Text = "";
+            this.dongiaPhong.Location = new System.Drawing.Point(628, 426);
+            this.dongiaPhong.Name = "dongiaPhong";
+            this.dongiaPhong.ReadOnly = true;
+            this.dongiaPhong.Size = new System.Drawing.Size(239, 28);
+            this.dongiaPhong.TabIndex = 274;
+            this.dongiaPhong.Text = "";
             // 
-            // kryptonRichTextBox17
+            // loaiPhong
             // 
-            this.kryptonRichTextBox17.Location = new System.Drawing.Point(628, 383);
-            this.kryptonRichTextBox17.Name = "kryptonRichTextBox17";
-            this.kryptonRichTextBox17.ReadOnly = true;
-            this.kryptonRichTextBox17.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox17.TabIndex = 273;
-            this.kryptonRichTextBox17.Text = "";
+            this.loaiPhong.Location = new System.Drawing.Point(628, 383);
+            this.loaiPhong.Name = "loaiPhong";
+            this.loaiPhong.ReadOnly = true;
+            this.loaiPhong.Size = new System.Drawing.Size(239, 28);
+            this.loaiPhong.TabIndex = 273;
+            this.loaiPhong.Text = "";
             // 
-            // kryptonRichTextBox18
+            // tenPhong
             // 
-            this.kryptonRichTextBox18.Location = new System.Drawing.Point(628, 341);
-            this.kryptonRichTextBox18.Name = "kryptonRichTextBox18";
-            this.kryptonRichTextBox18.ReadOnly = true;
-            this.kryptonRichTextBox18.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox18.TabIndex = 272;
-            this.kryptonRichTextBox18.Text = "";
+            this.tenPhong.Location = new System.Drawing.Point(628, 341);
+            this.tenPhong.Name = "tenPhong";
+            this.tenPhong.ReadOnly = true;
+            this.tenPhong.Size = new System.Drawing.Size(239, 28);
+            this.tenPhong.TabIndex = 272;
+            this.tenPhong.Text = "";
             // 
-            // kryptonRichTextBox12
+            // quocTich
             // 
-            this.kryptonRichTextBox12.Location = new System.Drawing.Point(181, 551);
-            this.kryptonRichTextBox12.Name = "kryptonRichTextBox12";
-            this.kryptonRichTextBox12.ReadOnly = true;
-            this.kryptonRichTextBox12.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox12.TabIndex = 271;
-            this.kryptonRichTextBox12.Text = "";
+            this.quocTich.Location = new System.Drawing.Point(181, 551);
+            this.quocTich.Name = "quocTich";
+            this.quocTich.ReadOnly = true;
+            this.quocTich.Size = new System.Drawing.Size(239, 28);
+            this.quocTich.TabIndex = 271;
+            this.quocTich.Text = "";
             // 
-            // kryptonRichTextBox11
+            // diaChi
             // 
-            this.kryptonRichTextBox11.Location = new System.Drawing.Point(181, 510);
-            this.kryptonRichTextBox11.Name = "kryptonRichTextBox11";
-            this.kryptonRichTextBox11.ReadOnly = true;
-            this.kryptonRichTextBox11.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox11.TabIndex = 270;
-            this.kryptonRichTextBox11.Text = "";
+            this.diaChi.Location = new System.Drawing.Point(181, 510);
+            this.diaChi.Name = "diaChi";
+            this.diaChi.ReadOnly = true;
+            this.diaChi.Size = new System.Drawing.Size(239, 28);
+            this.diaChi.TabIndex = 270;
+            this.diaChi.Text = "";
             // 
-            // kryptonRichTextBox10
+            // LoaiKH
             // 
-            this.kryptonRichTextBox10.Location = new System.Drawing.Point(181, 468);
-            this.kryptonRichTextBox10.Name = "kryptonRichTextBox10";
-            this.kryptonRichTextBox10.ReadOnly = true;
-            this.kryptonRichTextBox10.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox10.TabIndex = 269;
-            this.kryptonRichTextBox10.Text = "";
+            this.LoaiKH.Location = new System.Drawing.Point(180, 468);
+            this.LoaiKH.Name = "LoaiKH";
+            this.LoaiKH.ReadOnly = true;
+            this.LoaiKH.Size = new System.Drawing.Size(239, 28);
+            this.LoaiKH.TabIndex = 269;
+            this.LoaiKH.Text = "";
             // 
-            // kryptonRichTextBox9
+            // soDT
             // 
-            this.kryptonRichTextBox9.Location = new System.Drawing.Point(181, 426);
-            this.kryptonRichTextBox9.Name = "kryptonRichTextBox9";
-            this.kryptonRichTextBox9.ReadOnly = true;
-            this.kryptonRichTextBox9.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox9.TabIndex = 268;
-            this.kryptonRichTextBox9.Text = "";
+            this.soDT.Location = new System.Drawing.Point(181, 426);
+            this.soDT.Name = "soDT";
+            this.soDT.ReadOnly = true;
+            this.soDT.Size = new System.Drawing.Size(239, 28);
+            this.soDT.TabIndex = 268;
+            this.soDT.Text = "";
             // 
-            // kryptonRichTextBox8
+            // cmnd
             // 
-            this.kryptonRichTextBox8.Location = new System.Drawing.Point(181, 383);
-            this.kryptonRichTextBox8.Name = "kryptonRichTextBox8";
-            this.kryptonRichTextBox8.ReadOnly = true;
-            this.kryptonRichTextBox8.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox8.TabIndex = 267;
-            this.kryptonRichTextBox8.Text = "";
+            this.cmnd.Location = new System.Drawing.Point(181, 383);
+            this.cmnd.Name = "cmnd";
+            this.cmnd.ReadOnly = true;
+            this.cmnd.Size = new System.Drawing.Size(239, 28);
+            this.cmnd.TabIndex = 267;
+            this.cmnd.Text = "";
             // 
-            // kryptonRichTextBox7
+            // thanhTien
             // 
-            this.kryptonRichTextBox7.Location = new System.Drawing.Point(181, 341);
-            this.kryptonRichTextBox7.Name = "kryptonRichTextBox7";
-            this.kryptonRichTextBox7.ReadOnly = true;
-            this.kryptonRichTextBox7.Size = new System.Drawing.Size(239, 28);
-            this.kryptonRichTextBox7.TabIndex = 266;
-            this.kryptonRichTextBox7.Text = "";
+            this.thanhTien.Location = new System.Drawing.Point(860, 662);
+            this.thanhTien.Name = "thanhTien";
+            this.thanhTien.ReadOnly = true;
+            this.thanhTien.Size = new System.Drawing.Size(181, 28);
+            this.thanhTien.TabIndex = 265;
+            this.thanhTien.Text = "";
             // 
-            // kryptonRichTextBox5
+            // tienDV
             // 
-            this.kryptonRichTextBox5.Location = new System.Drawing.Point(847, 720);
-            this.kryptonRichTextBox5.Name = "kryptonRichTextBox5";
-            this.kryptonRichTextBox5.ReadOnly = true;
-            this.kryptonRichTextBox5.Size = new System.Drawing.Size(181, 28);
-            this.kryptonRichTextBox5.TabIndex = 265;
-            this.kryptonRichTextBox5.Text = "";
+            this.tienDV.Location = new System.Drawing.Point(860, 623);
+            this.tienDV.Name = "tienDV";
+            this.tienDV.ReadOnly = true;
+            this.tienDV.Size = new System.Drawing.Size(181, 28);
+            this.tienDV.TabIndex = 264;
+            this.tienDV.Text = "";
             // 
-            // kryptonRichTextBox6
+            // giamGia
             // 
-            this.kryptonRichTextBox6.Location = new System.Drawing.Point(847, 681);
-            this.kryptonRichTextBox6.Name = "kryptonRichTextBox6";
-            this.kryptonRichTextBox6.ReadOnly = true;
-            this.kryptonRichTextBox6.Size = new System.Drawing.Size(181, 28);
-            this.kryptonRichTextBox6.TabIndex = 264;
-            this.kryptonRichTextBox6.Text = "";
+            this.giamGia.Location = new System.Drawing.Point(451, 662);
+            this.giamGia.Name = "giamGia";
+            this.giamGia.ReadOnly = true;
+            this.giamGia.Size = new System.Drawing.Size(181, 28);
+            this.giamGia.TabIndex = 263;
+            this.giamGia.Text = "";
             // 
-            // kryptonRichTextBox3
+            // phuThu
             // 
-            this.kryptonRichTextBox3.Location = new System.Drawing.Point(438, 720);
-            this.kryptonRichTextBox3.Name = "kryptonRichTextBox3";
-            this.kryptonRichTextBox3.ReadOnly = true;
-            this.kryptonRichTextBox3.Size = new System.Drawing.Size(181, 28);
-            this.kryptonRichTextBox3.TabIndex = 263;
-            this.kryptonRichTextBox3.Text = "";
+            this.phuThu.Location = new System.Drawing.Point(451, 623);
+            this.phuThu.Name = "phuThu";
+            this.phuThu.ReadOnly = true;
+            this.phuThu.Size = new System.Drawing.Size(181, 28);
+            this.phuThu.TabIndex = 262;
+            this.phuThu.Text = "";
             // 
-            // kryptonRichTextBox4
+            // tongTiench
             // 
-            this.kryptonRichTextBox4.Location = new System.Drawing.Point(438, 681);
-            this.kryptonRichTextBox4.Name = "kryptonRichTextBox4";
-            this.kryptonRichTextBox4.ReadOnly = true;
-            this.kryptonRichTextBox4.Size = new System.Drawing.Size(181, 28);
-            this.kryptonRichTextBox4.TabIndex = 262;
-            this.kryptonRichTextBox4.Text = "";
+            this.tongTiench.Location = new System.Drawing.Point(144, 662);
+            this.tongTiench.Name = "tongTiench";
+            this.tongTiench.ReadOnly = true;
+            this.tongTiench.Size = new System.Drawing.Size(181, 28);
+            this.tongTiench.TabIndex = 261;
+            this.tongTiench.Text = "";
             // 
-            // kryptonRichTextBox1
+            // tienPhong
             // 
-            this.kryptonRichTextBox1.Location = new System.Drawing.Point(131, 720);
-            this.kryptonRichTextBox1.Name = "kryptonRichTextBox1";
-            this.kryptonRichTextBox1.ReadOnly = true;
-            this.kryptonRichTextBox1.Size = new System.Drawing.Size(181, 28);
-            this.kryptonRichTextBox1.TabIndex = 261;
-            this.kryptonRichTextBox1.Text = "";
+            this.tienPhong.Location = new System.Drawing.Point(144, 623);
+            this.tienPhong.Name = "tienPhong";
+            this.tienPhong.ReadOnly = true;
+            this.tienPhong.Size = new System.Drawing.Size(181, 28);
+            this.tienPhong.TabIndex = 260;
+            this.tienPhong.Text = "";
             // 
-            // kryptonRichTextBox2
+            // nvLap
             // 
-            this.kryptonRichTextBox2.Location = new System.Drawing.Point(131, 681);
-            this.kryptonRichTextBox2.Name = "kryptonRichTextBox2";
-            this.kryptonRichTextBox2.ReadOnly = true;
-            this.kryptonRichTextBox2.Size = new System.Drawing.Size(181, 28);
-            this.kryptonRichTextBox2.TabIndex = 260;
-            this.kryptonRichTextBox2.Text = "";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(734, 273);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(302, 29);
-            this.textBox2.TabIndex = 259;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(181, 273);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(341, 31);
-            this.textBox1.TabIndex = 258;
+            this.nvLap.Location = new System.Drawing.Point(762, 273);
+            this.nvLap.Margin = new System.Windows.Forms.Padding(0);
+            this.nvLap.Multiline = true;
+            this.nvLap.Name = "nvLap";
+            this.nvLap.Size = new System.Drawing.Size(274, 29);
+            this.nvLap.TabIndex = 259;
             // 
             // kryptonButton6
             // 
@@ -658,9 +577,20 @@
             this.kryptonButton6.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton6.Size = new System.Drawing.Size(137, 36);
             this.kryptonButton6.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton6.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton6.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton6.StateNormal.Border.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton6.StateNormal.Border.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton6.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton6.StateNormal.Border.Width = 2;
+            this.kryptonButton6.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton6.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton6.TabIndex = 257;
             this.kryptonButton6.UseWaitCursor = true;
             this.kryptonButton6.Values.Text = "EXIT";
+            this.kryptonButton6.Click += new System.EventHandler(this.kryptonButton6_Click);
             // 
             // kryptonButton5
             // 
@@ -668,19 +598,31 @@
             this.kryptonButton5.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
             this.kryptonButton5.Location = new System.Drawing.Point(899, 60);
             this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton5.Size = new System.Drawing.Size(137, 36);
+            this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton5.StateNormal.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateNormal.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton5.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton5.StatePressed.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StatePressed.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton5.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButton5.TabIndex = 256;
             this.kryptonButton5.UseWaitCursor = true;
             this.kryptonButton5.Values.Text = "PRINT";
+            this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label31.Location = new System.Drawing.Point(702, 720);
+            this.label31.Location = new System.Drawing.Point(715, 662);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(107, 28);
@@ -692,7 +634,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label33.Location = new System.Drawing.Point(702, 679);
+            this.label33.Location = new System.Drawing.Point(715, 621);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(120, 28);
@@ -704,7 +646,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label27.Location = new System.Drawing.Point(347, 720);
+            this.label27.Location = new System.Drawing.Point(360, 662);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(94, 28);
@@ -716,7 +658,7 @@
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label29.Location = new System.Drawing.Point(347, 679);
+            this.label29.Location = new System.Drawing.Point(360, 621);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(83, 28);
@@ -728,7 +670,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label23.Location = new System.Drawing.Point(9, 720);
+            this.label23.Location = new System.Drawing.Point(22, 662);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(99, 28);
@@ -740,7 +682,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label25.Location = new System.Drawing.Point(9, 679);
+            this.label25.Location = new System.Drawing.Point(22, 621);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(115, 28);
@@ -752,16 +694,91 @@
             this.kryptonBorderEdge2.Location = new System.Drawing.Point(18, 320);
             this.kryptonBorderEdge2.Name = "kryptonBorderEdge2";
             this.kryptonBorderEdge2.Size = new System.Drawing.Size(1000, 4);
-            this.kryptonBorderEdge2.StateCommon.Color1 = System.Drawing.Color.SteelBlue;
+            this.kryptonBorderEdge2.StateCommon.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonBorderEdge2.StateCommon.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonBorderEdge2.StateCommon.Width = 4;
             this.kryptonBorderEdge2.Text = "kryptonBorderEdge2";
+            // 
+            // maHDBox
+            // 
+            this.maHDBox.FormattingEnabled = true;
+            this.maHDBox.Location = new System.Drawing.Point(181, 280);
+            this.maHDBox.Name = "maHDBox";
+            this.maHDBox.Size = new System.Drawing.Size(239, 24);
+            this.maHDBox.TabIndex = 279;
+            this.maHDBox.SelectedIndexChanged += new System.EventHandler(this.maHDBox_SelectedIndexChanged);
+            // 
+            // ngLap
+            // 
+            this.ngLap.Location = new System.Drawing.Point(762, 226);
+            this.ngLap.Multiline = true;
+            this.ngLap.Name = "ngLap";
+            this.ngLap.Size = new System.Drawing.Size(274, 29);
+            this.ngLap.TabIndex = 280;
+            // 
+            // dataGridViewDV
+            // 
+            this.dataGridViewDV.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dataGridViewDV.GridColor = System.Drawing.Color.White;
+            this.dataGridViewDV.Location = new System.Drawing.Point(1059, 41);
+            this.dataGridViewDV.Name = "dataGridViewDV";
+            this.dataGridViewDV.RowHeadersWidth = 51;
+            this.dataGridViewDV.RowTemplate.Height = 24;
+            this.dataGridViewDV.Size = new System.Drawing.Size(386, 649);
+            this.dataGridViewDV.TabIndex = 281;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã CTHĐ";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Dịch vụ";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Đơn giá";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Số lượng";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // tenKH
+            // 
+            this.tenKH.Location = new System.Drawing.Point(181, 341);
+            this.tenKH.Name = "tenKH";
+            this.tenKH.ReadOnly = true;
+            this.tenKH.Size = new System.Drawing.Size(239, 28);
+            this.tenKH.TabIndex = 266;
+            this.tenKH.Text = "";
             // 
             // PrintBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 762);
-            this.Controls.Add(this.listViewUseService);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1477, 721);
+            this.Controls.Add(this.dataGridViewDV);
+            this.Controls.Add(this.ngLap);
+            this.Controls.Add(this.maHDBox);
             this.Controls.Add(this.kryptonBorderEdge3);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -775,7 +792,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.kryptonDateTimePicker1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -787,26 +803,25 @@
             this.Controls.Add(this.kryptonBorderEdge1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.kryptonRichTextBox13);
-            this.Controls.Add(this.kryptonRichTextBox14);
-            this.Controls.Add(this.kryptonRichTextBox15);
-            this.Controls.Add(this.kryptonRichTextBox16);
-            this.Controls.Add(this.kryptonRichTextBox17);
-            this.Controls.Add(this.kryptonRichTextBox18);
-            this.Controls.Add(this.kryptonRichTextBox12);
-            this.Controls.Add(this.kryptonRichTextBox11);
-            this.Controls.Add(this.kryptonRichTextBox10);
-            this.Controls.Add(this.kryptonRichTextBox9);
-            this.Controls.Add(this.kryptonRichTextBox8);
-            this.Controls.Add(this.kryptonRichTextBox7);
-            this.Controls.Add(this.kryptonRichTextBox5);
-            this.Controls.Add(this.kryptonRichTextBox6);
-            this.Controls.Add(this.kryptonRichTextBox3);
-            this.Controls.Add(this.kryptonRichTextBox4);
-            this.Controls.Add(this.kryptonRichTextBox1);
-            this.Controls.Add(this.kryptonRichTextBox2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.soNguoi);
+            this.Controls.Add(this.soDem);
+            this.Controls.Add(this.ngayDen);
+            this.Controls.Add(this.dongiaPhong);
+            this.Controls.Add(this.loaiPhong);
+            this.Controls.Add(this.tenPhong);
+            this.Controls.Add(this.quocTich);
+            this.Controls.Add(this.diaChi);
+            this.Controls.Add(this.LoaiKH);
+            this.Controls.Add(this.soDT);
+            this.Controls.Add(this.cmnd);
+            this.Controls.Add(this.tenKH);
+            this.Controls.Add(this.thanhTien);
+            this.Controls.Add(this.tienDV);
+            this.Controls.Add(this.giamGia);
+            this.Controls.Add(this.phuThu);
+            this.Controls.Add(this.tongTiench);
+            this.Controls.Add(this.tienPhong);
+            this.Controls.Add(this.nvLap);
             this.Controls.Add(this.kryptonButton6);
             this.Controls.Add(this.kryptonButton5);
             this.Controls.Add(this.label31);
@@ -818,8 +833,8 @@
             this.Controls.Add(this.kryptonBorderEdge2);
             this.Name = "PrintBill";
             this.Text = "PrintBill";
-            this.Load += new System.EventHandler(this.PrintBill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -828,12 +843,6 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ListView listViewUseService;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private ComponentFactory.Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge3;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
@@ -847,7 +856,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
@@ -859,26 +867,24 @@
         private ComponentFactory.Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox13;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox14;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox15;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox16;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox17;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox18;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox12;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox11;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox10;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox9;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox8;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox7;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox5;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox6;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox3;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox4;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox kryptonRichTextBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox soNguoi;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox soDem;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox ngayDen;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox dongiaPhong;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox loaiPhong;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tenPhong;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox quocTich;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox diaChi;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox LoaiKH;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox soDT;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox cmnd;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox thanhTien;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tienDV;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox giamGia;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox phuThu;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tongTiench;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tienPhong;
+        private System.Windows.Forms.TextBox nvLap;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton6;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
         private System.Windows.Forms.Label label31;
@@ -888,6 +894,13 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label25;
         private ComponentFactory.Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge2;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ComboBox maHDBox;
+        private System.Windows.Forms.TextBox ngLap;
+        private System.Windows.Forms.DataGridView dataGridViewDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tenKH;
     }
 }

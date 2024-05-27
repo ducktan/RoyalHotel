@@ -17,15 +17,19 @@ using Royal.DAO;
 namespace Royal
 {
     public partial class ManageRoom : Form
-    { 
-       private Firebase.Database.FirebaseClient firebaseClient;
-    
+    {
+        private Firebase.Database.FirebaseClient firebaseClient;
+
         public ManageRoom()
         {
             InitializeComponent();
 
             firebaseClient = FirebaseManage.GetFirebaseClient();
             LoadRoomTypeNameFromDB();
+            Royal.DAO.Room room = new Royal.DAO.Room();
+            room.LoadRoom(dataGridRoom);
+            dataGridRoom.CellClick += dataGridRoom_CellClick;
+
         }
 
 
@@ -40,7 +44,7 @@ namespace Royal
 
                 foreach (var roomType in typeRoomList)
                 {
-                    cboRoomType .Items.Add(roomType.Object.TENLPH);
+                    cboRoomType.Items.Add(roomType.Object.MALPH);
                 }
             }
             catch (Exception ex)
@@ -59,41 +63,41 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            // Get the current row count for the "Bill" table
-            var bills = await firebaseClient
-                .Child("Room")
-                .OnceAsync<object>();
-
-            // Increment by 1 to get the new sequential number
-            int newNumber = bills.Count + 1;
-            string maHoaDon;
-            bool isUnique;
-
-            do
+            try
             {
-                // Format the number with leading zeros (001, 002, ...)
-                string formattedNumber = newNumber.ToString("D3");
+                var roomList = await firebaseClient
+                    .Child("Room")
+                    .OnceAsync<Royal.DAO.Room>();
 
-                // Create the MAHD with your preferred prefix (e.g., "HD")
-                maHoaDon = $"PH{formattedNumber}";
-
-                // Check if the ID is unique
-                isUnique = !bills.Any(b => (b.Object as dynamic).MAHD == maHoaDon);
-
-                if (!isUnique)
+                // Tìm mã phòng lớn nhất hiện có
+                int maxRoomNumber = 0;
+                foreach (var roomData in roomList)
                 {
-                    newNumber++;
+                    int roomNumber = int.Parse(roomData.Object.MAPH.Substring(2));
+                    if (roomNumber > maxRoomNumber)
+                    {
+                        maxRoomNumber = roomNumber;
+                    }
                 }
-            } while (!isUnique);
-            Royal.DAO.Room room = new Royal.DAO.Room()
-            {
-                MAPH = maHoaDon,
-                TenPhong = txtRoomName.Text,
-                LoaiPhong = cboRoomType.Text,
-                TrangThai = cboStatusRoom.Text
-            };
 
-            room.AddRoom(room);
+                string newRoomNumber = "PH" + (maxRoomNumber + 1).ToString("D3");
+
+
+                Royal.DAO.Room room = new Royal.DAO.Room()
+                {
+                    MAPH = newRoomNumber,
+                    TenPhong = txtRoomName.Text,
+                    LoaiPhong = cboRoomType.Text,
+                    TrangThai = cboStatusRoom.Text
+                };
+
+                room.AddRoom(room);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -104,8 +108,18 @@ namespace Royal
 
         private void btnDeleteRoom_Click(object sender, EventArgs e)
         {
-            Royal.DAO.Room room = new Royal.DAO.Room();
-            room.DeleteRoom(dataGridRoom);
+            try
+            {
+                string id = txtRoomID.Text;
+                Royal.DAO.Room room = new Royal.DAO.Room();
+                room.DeleteRoom(id);
+                room.LoadRoom(dataGridRoom);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private async void kryptonButton5_Click(object sender, EventArgs e)
@@ -127,10 +141,6 @@ namespace Royal
             // Call the appropriate search function based on the selected type
             List<Royal.DAO.Room> searchResults = new List<Royal.DAO.Room>(); // Initialize empty list
 
-//            Mã phòng
-//Loại phòng
-//Tên phòng
-//Trạng thái
 
             try
             {
@@ -162,8 +172,8 @@ namespace Royal
 
 
 
-        // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
-        List<string[]> uiResults = searchResults.Select(rooms => new string[] { rooms.MAPH, rooms.TenPhong, rooms.LoaiPhong, rooms.TrangThai }).ToList();
+                // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+                List<string[]> uiResults = searchResults.Select(rooms => new string[] { rooms.MAPH, rooms.TenPhong, rooms.LoaiPhong, rooms.TrangThai }).ToList();
 
                 // Update UI elements on the UI thread
                 if (this.InvokeRequired)
@@ -192,6 +202,49 @@ namespace Royal
                     string searchCriteria = $"Search by: {type}";
                     MessageBox.Show($"No room types found with {searchCriteria}");
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching room types: {ex.Message}");
+            }
+        }
+
+
+
+        private void dataGridRoom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem có hàng nào được chọn không
+            {
+                DataGridViewRow selectedRow = dataGridRoom.Rows[e.RowIndex];
+
+                // Kiểm tra nếu hàng không rỗng
+                if (!selectedRow.IsNewRow)
+                {
+                    txtRoomID.Text = (string)selectedRow.Cells[0].Value;
+                    txtRoomName.Text = (string)selectedRow.Cells[1].Value;
+                    cboRoomType.Text = (string)selectedRow.Cells[2].Value;
+                    cboStatusRoom.Text = (string)selectedRow.Cells[3].Value;
+
+                }
+            }
+        }
+
+        private void btnUpdateRoom_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnUpdateRoom_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = txtRoomID.Text;
+                string name = txtRoomName.Text;
+                string loaiphong = cboRoomType.Text;
+                string trangthai = cboStatusRoom.Text;
+
+                Royal.DAO.Room room = new Royal.DAO.Room();
+                room.UpdateRoom(id, name, loaiphong, trangthai);
             }
             catch (Exception ex)
             {
