@@ -195,13 +195,18 @@ namespace Royal
                     };
 
                     // Gọi phương thức cập nhật
-                    await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
+                     await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
+                    if (trangThai == "Đã Trả Phòng")
+                    {
+                        this.Hide();
+                    }
                     receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);
                 }
                 else
                 {
                     MessageBox.Show("Trạng thái phải là 'Đã Trả Phòng' mới có thể cập nhật.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
             }
             catch (Exception ex)
             {

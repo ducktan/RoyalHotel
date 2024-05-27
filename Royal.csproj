@@ -203,6 +203,7 @@
     <Compile Include="DAO\CheckPass.cs" />
     <Compile Include="DAO\Bookroom.cs" />
     <Compile Include="DAO\Customer.cs" />
+    <Compile Include="DAO\CustomerType.cs" />
     <Compile Include="DAO\FirebaseCounter.cs" />
     <Compile Include="DAO\FirebaseManage.cs" />
     <Compile Include="DAO\FirebConfig.cs" />

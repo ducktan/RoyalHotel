@@ -17,8 +17,7 @@ namespace Royal.DAO
         private Firebase.Database.FirebaseClient firebaseClient;
         public string ReceivedRoom { get; set; }
         public string CCCD_KH { get; set; }
-        public string ID_PHIEUNHAN { get; set; }
-        public string ID_LOAIPHONG { get; set; }
+
         public string MAPHONG { get; set; }
         public string TRANGTHAI { get; set; }
         public int SONGUOI { get; set; }
@@ -32,7 +31,6 @@ namespace Royal.DAO
 
         // Initialize Firebase client
         public IFirebaseClient Client { get; private set; }
-
         public receiveroomDAO()
         {
             try
@@ -45,7 +43,6 @@ namespace Royal.DAO
                 MessageBox.Show("Connection fail!");
             }
         }
-
         public async Task AddReceiveRoom(receiveroomDAO receiveRoom)
         {
       
@@ -62,6 +59,8 @@ namespace Royal.DAO
                 receiveRoom.SONGUOI,
                 receiveRoom.TIENCOC
             };
+            // Get the current row count for the "Bill" table
+           
 
             FirebaseResponse response = await Client.SetAsync("ReceiveRoom/" + receiveRoom.ReceivedRoom, receiveRoomData);
             MessageBox.Show("Added receive room");
@@ -158,14 +157,130 @@ namespace Royal.DAO
                 return null; // Return null on error
             }
         }
+        public async Task<string> FindMAKH(string cccd)
+        {
+            try
+            {
+                // Truy vấn Firebase Realtime Database để lấy danh sách khách hàng
+                var customerList = await firebaseClient
+                    .Child("Customer")
+                    .OnceAsync<CustomerDAO>();
+
+
+                // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
+                foreach (var customer in customerList)
+                {
+                    // Combine MAKH and TENKH for display
+                    string customerDisplayText = customer.Object.MAKH;
+                    string cccdCus = customer.Object.CCCD;
+                    if (cccd == cccdCus)
+                    {
+                        return customerDisplayText;
+                    }
+                }
+                return null;
+            }
+
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+                return "";
+            }
+        }
+        public async Task<int> FindCoupon(string cccd)
+        {
+            try
+            {
+                // Truy vấn Firebase Realtime Database để lấy danh sách khách hàng
+                var customerList = await firebaseClient
+                    .Child("Customer")
+                    .OnceAsync<CustomerDAO>();
+
+                // Truy vấn Firebase Realtime Database để lấy danh sách loại khách hàng
+                var typeCustomerList = await firebaseClient
+                    .Child("CustomerType")
+                    .OnceAsync<CustomerTypeDAO>();
+
+                // Tìm khách hàng có CCCD khớp
+                var customer = customerList.FirstOrDefault(c => c.Object.CCCD == cccd);
+                if (customer != null)
+                {
+                    // Lấy ID_LOAIKH từ khách hàng tìm được
+                    string customerTypeId = customer.Object.ID_LOAIKH;
+
+                    // Tìm loại khách hàng theo ID_LOAIKH
+                    var customerType = typeCustomerList.FirstOrDefault(t => t.Object.ID_LOAIKH == customerTypeId);
+                    MessageBox.Show(customerType.Object.ToString());
+                    if (customerType != null)
+                    {
+                        // Trả về discount nếu tìm thấy loại khách hàng
+                        return customerType.Object.DISCOUNT;
+                    }
+                }
+
+                // Trả về 0 nếu không tìm thấy khách hàng hoặc loại khách hàng phù hợp
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+                return 0;
+            }
+        }
         public async Task UpdateReceiveRoom(receiveroomDAO receiveRoom)
         {
             if (MessageBox.Show("Are you sure you want to update this receive room?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
-                    await Client.UpdateAsync($"ReceiveRoom/{receiveRoom.ReceivedRoom}", receiveRoom);
-                    MessageBox.Show("Receive room information updated successfully!");
+                    if (receiveRoom.TRANGTHAI == "Đã Nhận Phòng")
+                    {
+                        // Get the current row count for the "Bill" table
+                        int currentRowCount = await firebaseClient
+                            .Child("Bill")
+                            .OnceAsync<object>()
+                            .ContinueWith(task => task.Result.Count);
+
+                        // Increment by 1 to get the new sequential number
+                        int newNumber = currentRowCount + 1;
+
+                        // Format the number with leading zeros (001, 002, ...)
+                        string formattedNumber = newNumber.ToString("D3"); // Adjust "D3" for desired number of digits
+
+                        // Create the MAHD with your preferred prefix (e.g., "HD")
+                        string maHoaDon = $"HD{formattedNumber}";
+                        BillDAO bill = new BillDAO
+                        {
+                            MAHD = maHoaDon,
+                            MAPHONG = receiveRoom.MAPHONG,
+                            ID_NV = "",
+                            ID_KH = await FindMAKH(receiveRoom.CCCD_KH),
+                            NGLAP = DateTime.Now.ToString("yyyy-MM-dd"),
+                            TRANGTHAI = "Chưa Thanh Toán",
+                            THANHTIEN = ((receiveRoom.TIENCOC * 100) / 30),
+                            DISCOUNT = await FindCoupon(receiveRoom.CCCD_KH),
+                            SL_DICHVU = 0,
+                            DONGIA = ((receiveRoom.TIENCOC * 100) / 30)
+
+                        };
+                        await bill.AddBill(bill);
+
+
+                        await Client.UpdateAsync($"ReceiveRoom/{receiveRoom.ReceivedRoom}", receiveRoom);
+                        MessageBox.Show("Receive room information updated successfully!");
+                    }
+                    if(receiveRoom.TRANGTHAI == "Đã Trả Phòng")
+                    {
+                       
+                        Bill billForm = new Bill();
+               
+                        billForm.Show();
+
+
+                    }
+                   
                 }
                 catch (Exception ex)
                 {

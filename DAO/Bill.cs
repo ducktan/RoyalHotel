@@ -50,7 +50,7 @@ namespace Royal.DAO
 
         }
 
-        public async void AddBill(BillDAO bill)
+        public async Task AddBill(BillDAO bill)
         {
 
 
