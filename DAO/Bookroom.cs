@@ -235,6 +235,26 @@ namespace Royal.DAO
             }
         }
 
+        public async Task<bookingroomDAO> SearchBookRoombyIDPhong(string idphong)
+        {
+            try
+            {
+                var CusList = await firebaseClient
+                    .Child("ReservedRoom")
+                    .OnceAsync<bookingroomDAO>();
+
+                var matchingCus = CusList.Where(c => c.Object.MAPHONG == idphong)
+                                        .Select(c => c.Object)
+                                        .FirstOrDefault();
+
+                return matchingCus;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error searching: {ex.Message}");
+                return null; // Return null on error
+            }
+        }
 
     }
 }

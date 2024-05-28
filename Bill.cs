@@ -400,49 +400,7 @@ namespace Royal
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Tạo một đối tượng Document mới
-                Document document = new Document();
-
-                // Hiển thị hộp thoại SaveFileDialog để người dùng chọn vị trí và tên file
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
-                saveFileDialog.Title = "Save PDF File";
-                saveFileDialog.ShowDialog();
-
-                // Kiểm tra xem người dùng đã chọn vị trí và tên file chưa
-                if (!string.IsNullOrEmpty(saveFileDialog.FileName))
-                {
-                    // Tạo một đối tượng PdfWriter để ghi dữ liệu vào file PDF
-                    PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(saveFileDialog.FileName, FileMode.Create));
-
-                    // Mở tài liệu để bắt đầu viết dữ liệu
-                    document.Open();
-
-                   
-
-
-                    // Tạo các đoạn văn bản và thêm vào tài liệu
-                    Paragraph header = new Paragraph("ROYAL HOTEL - ALL INFORMATION ABOUT BILL");
-                    
-                    Paragraph content = new Paragraph(string.Format("1. Number of bill: {0}", dataGridBill.RowCount));
-                  
-                    document.Add(header);
-                    document.Add(content);
-
-                    // Đóng tài liệu
-                    document.Close();
-
-                    // Hiển thị thông báo thành công
-                    MessageBox.Show("PDF file exported successfully.");
-                }
-            }
-            catch (Exception ex)
-            {
-                // Xử lý các ngoại lệ (ghi log, ném các ngoại lệ cụ thể, v.v.)
-                MessageBox.Show($"Error exporting PDF file: {ex.Message}");
-            }
+            
         }
 
         private void maKHBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -453,6 +411,108 @@ namespace Royal
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private async void kryptonButton3_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                BillDetailDAO billDetailDAO = new BillDetailDAO();
+                List<BillDetailDAO> listBillDetail = await billDetailDAO.SearchBillDetailByMaHD(mahoadon.Text);
+                int sum = 0;
+                BillDAO a = await new BillDAO().SearchBillTypeById(mahoadon.Text);
+                if (listBillDetail.Count > 0)
+                {
+                    
+                    if (int.TryParse(giaDon.Text, out int dongiaPhong))
+                    {
+                        sum += dongiaPhong;
+                      
+                       foreach (var item in listBillDetail)
+                        {
+                            BillDetailDAO bill1 = new BillDetailDAO();
+                            bill1 = item;
+                            sum += Int32.Parse(bill1.THANHTIEN.ToString());
+                         
+                        }
+                       giaDon.Text = sum.ToString();
+                        await a.UpdateBill(a.MAHD, a.MAPHONG, a.TRANGTHAI, a.ID_KH, a.ID_NV, a.NGLAP, sum, a.DISCOUNT, a.THANHTIEN, listBillDetail.Count);
+                   
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid room price format.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No bill details found for the given bill ID.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DetailBut_Click(object sender, EventArgs e)
+        {
+            BillDetail b = new BillDetail();
+            b.Show();
+        }
+
+        private void kryptonButton4_Click_1(object sender, EventArgs e)
+        {
+            PrintBill b = new PrintBill();
+            b.Show();
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+           
+            
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+             
+                saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+                saveFileDialog.DefaultExt = "pdf";
+                saveFileDialog.AddExtension = true;
+                        
+                
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                   
+                       
+                    ExportToPdf.Export(dataGridBill, saveFileDialog.FileName);
+                       
+                    
+                }
+            
+        }
+
+        private void toolStripLabel3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            saveFileDialog.DefaultExt = "xlsx";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+
+                ExportToExcel.Export(dataGridBill, saveFileDialog.FileName);
+
+
+            }
+
+          
+            
         }
     }
 }

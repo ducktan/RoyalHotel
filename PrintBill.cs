@@ -1,15 +1,21 @@
 ﻿using Firebase.Database.Query;
 using FireSharp.Response;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using Royal.DAO;
+using Syncfusion.Pdf.Graphics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text; // Assuming iTextSharp library
+
 
 namespace Royal
 {
@@ -138,6 +144,78 @@ namespace Royal
             }
         }
 
+        public async void LoadInfoRoom(string id)
+        {
+            Room room = await new Room().SearchRoomById(id);           
+            tenPhong.Text = room.TenPhong;
+
+            RoomType roomType = await new RoomType().SearchRoomTypeById(room.LoaiPhong);
+            loaiPhong.Text = roomType.TENLPH;
+            dongiaPhong.Text = roomType.GIA.ToString();
+        }
+
+        public async void LoadBookInfoFromRoom(string id)
+        {
+            bookingroomDAO b = await new bookingroomDAO().SearchBookRoombyIDPhong(id);
+            ngayDen.Text = b.NGAYDAT;
+            soNguoi.Text = b.SONGUOI.ToString();
+
+            // Parse the check-in and check-out dates
+            DateTime checkIn = DateTime.Parse(b.NGAYDAT);
+            DateTime checkOut = DateTime.Parse(b.NGAYTRA);
+
+            // Calculate the number of nights
+            TimeSpan nights = checkOut - checkIn;
+            soDem.Text = nights.Days.ToString();
+            
+        }
+
+        public async void LoadFullData()
+        {
+            BillDetailDAO billDetailDAO = new BillDetailDAO();
+            List<BillDetailDAO> listBillDetail = await billDetailDAO.SearchBillDetailByMaHD(maHDBox.Text);
+            int sum = 0;
+            if (listBillDetail.Count > 0)
+            {
+
+                foreach (var item in listBillDetail)
+                {
+                    BillDetailDAO bill1 = new BillDetailDAO();
+                    bill1 = item;
+                    sum += Int32.Parse(bill1.THANHTIEN.ToString());
+
+                }
+
+            }
+            tienDV.Text = sum.ToString();
+            //-------------------------------------
+
+            int tienPhongTest = 1000;
+            tienPhong.Text = tienPhongTest.ToString();
+
+            int tt = tienPhongTest + sum;
+            thanhTien.Text = tt.ToString();
+            // ------ CODE LỖI ------------------
+            /* string sodem = soDem.Text.ToString().Trim();
+             string dongiaPhong1 = dongiaPhong.Text.ToString().Trim();
+             if (int.TryParse(sodem, out int sodemValue) && int.TryParse(dongiaPhong1, out int dongiaPhongValue))
+             {
+                 int tienPhongTest = Int32.Parse(sodem) + Int32.Parse(dongiaPhong1);
+                 tienPhong.Text = tienPhongTest.ToString();
+
+                 int tt = tienPhongTest + sum;
+                 thanhTien.Text = tt.ToString();
+             }
+             else
+             {
+                 MessageBox.Show("Error");
+             }
+            */
+
+
+
+
+        }
         private async void maHDBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -160,12 +238,27 @@ namespace Royal
 
                     ngLap.Text = billSnapshot.First().Object.NGLAP.ToString();
                     maKhachhang = billSnapshot.First().Object.ID_KH.ToString().Trim();
-                    maPhong= billSnapshot.First().Object.MAPHONG.ToString();
+                    maPhong = billSnapshot.First().Object.MAPHONG.ToString();
                 }
-               
+
                 LoadInfoFromMaKH(maKhachhang);
                 LoadCTHDFromBill(maHDBox.Text);
+
+                BillDAO test = await new BillDAO().SearchBillTypeById(maHDBox.Text);
+                LoadInfoRoom(test.MAPHONG);
+                LoadBookInfoFromRoom(test.MAPHONG);
+                giamGia.Text = test.DISCOUNT.ToString();
+                LoadFullData();
+
+                
+                
+
+
+
             }
+
+
+
             catch (Exception ex)
             {
                 // Xử lý ngoại lệ nếu có
@@ -177,6 +270,7 @@ namespace Royal
         {
             try
             {
+                /*
                 // Parse the date from the TextBox
                 string dateFormat = "dddd, MMMM dd, yyyy";
                 if (!DateTime.TryParseExact(ngLap.Text, dateFormat, null, System.Globalization.DateTimeStyles.None, out DateTime selectedDate))
@@ -210,7 +304,125 @@ namespace Royal
                 ReportDAO reportDAO = new ReportDAO();
 
                 // Call the AddReport method
-                reportDAO.AddReport(report);
+                reportDAO.AddReport(report);*/
+
+
+               
+
+                // ... (other code)
+
+                // Create a PDF document
+                Document document = new Document(PageSize.A5); // Adjust page size as needed
+
+                // Create a PdfWriter instance (specifies output file)
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream("HoaDon.pdf", FileMode.Create));
+
+                document.Open(); // Open the document
+
+                // Create a paragraph and add content
+                Paragraph paragraph = new Paragraph("THE 10 ROYAL HOTEL");
+                paragraph.Alignment = Element.ALIGN_CENTER; // Center align
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("▶ Address: Ben Nghe Ward, District 1, Ho Chi Minh City.");
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("▶ Information bill: ");
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("1. Bill ID: " + maHDBox.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+                paragraph = new Paragraph("2. Date to create: " + ngLap.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+                paragraph = new Paragraph("3. Staff: " + nvLap.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+                paragraph = new Paragraph("4. INFORMATION OF CUSTOMER:");
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+                paragraph = new Paragraph("- Name: " + tenKH.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+                paragraph = new Paragraph("- CCCD: " + cmnd.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("- Customer Type: " + LoaiKH.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("- Address: " + diaChi.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("- Nationality: " + quocTich.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("5. INFORMATION OF ROOM: ");
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("- Room name: " + tenPhong.Text);
+                paragraph.SpacingBefore = 10f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("- Room type: " + loaiPhong.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("- Prices: " + dongiaPhong.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("- Date to check in: " + ngayDen.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("- Nights: " + soDem.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("- Numbers of people: " + soNguoi.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("6. INFORMATION OF SERVICES: ");
+                paragraph.SpacingBefore = 20f; // Add spacing
+                document.Add(paragraph);
+                // fix sau
+
+                paragraph = new Paragraph("7. TOTAL: ");
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+                paragraph = new Paragraph("==> Room fee: " + tienPhong.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+                paragraph = new Paragraph("==> Services fee: " + tienDV.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+                paragraph = new Paragraph("==> Discount: " + giamGia.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+                paragraph = new Paragraph("==> All fees: " + thanhTien.Text);
+                paragraph.SpacingBefore = 5f; // Add spacing
+                document.Add(paragraph);
+
+
+
+
+
+
+
+                document.Close(); // Close the document
+
+                // Open the PDF using an external program (optional)
+                System.Diagnostics.Process.Start("HoaDon.pdf");
             }
             catch (Exception ex)
             {
@@ -223,6 +435,11 @@ namespace Royal
             this.Close();
             
            
+        }
+
+        private void tienDV_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

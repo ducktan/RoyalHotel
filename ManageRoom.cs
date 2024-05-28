@@ -57,7 +57,7 @@ namespace Royal
 
         private void kryptonButton6_Click(object sender, EventArgs e)
         {
-            RoomType room = new RoomType();
+            ManageRoomType room = new ManageRoomType();
             room.Show();
         }
 
@@ -250,6 +250,11 @@ namespace Royal
             {
                 MessageBox.Show($"Error searching room types: {ex.Message}");
             }
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

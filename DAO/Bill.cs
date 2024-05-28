@@ -184,6 +184,45 @@ namespace Royal.DAO
                 
             }
 
+        public async Task UpdateBill(string billID, string maphong, string trangthai, string idkh, string idnv, string nglap, int dongia, int giamgia, int tongtien, int sldv)
+        {
+
+
+
+            // Get the updated bill information from the selected row
+            BillDAO updatedBill = new BillDAO
+            {
+                MAHD = billID, // Assuming bill ID remains unchanged
+                MAPHONG = maphong,
+                TRANGTHAI = trangthai,
+                ID_KH = idkh,
+                ID_NV = idnv,
+
+                NGLAP = nglap, // Remove extra space
+
+                DONGIA = dongia,
+                DISCOUNT = giamgia,
+                THANHTIEN = tongtien,
+                SL_DICHVU = sldv
+            };
+
+
+          
+                try
+                {
+                    // Update the bill in Firebase
+                    await Client.SetAsync($"Bill/{billID}", updatedBill);
+
+                   
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating bill: {ex.Message}");
+                }
+            
+
+        }
+
 
 
         public async Task<BillDAO> SearchBillTypeById(string id)

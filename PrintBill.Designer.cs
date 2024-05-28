@@ -71,8 +71,6 @@ namespace Royal
             this.thanhTien = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.tienDV = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.giamGia = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.phuThu = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.tongTiench = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.tienPhong = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.nvLap = new System.Windows.Forms.TextBox();
             this.kryptonButton6 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -80,8 +78,6 @@ namespace Royal
             this.label31 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.kryptonBorderEdge2 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
             this.maHDBox = new System.Windows.Forms.ComboBox();
@@ -267,9 +263,9 @@ namespace Royal
             this.label10.Location = new System.Drawing.Point(24, 383);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 28);
+            this.label10.Size = new System.Drawing.Size(64, 28);
             this.label10.TabIndex = 236;
-            this.label10.Text = "CMND:";
+            this.label10.Text = "CCCD:";
             // 
             // label7
             // 
@@ -507,55 +503,38 @@ namespace Royal
             // 
             // thanhTien
             // 
-            this.thanhTien.Location = new System.Drawing.Point(860, 662);
+            this.thanhTien.Location = new System.Drawing.Point(628, 662);
             this.thanhTien.Name = "thanhTien";
             this.thanhTien.ReadOnly = true;
-            this.thanhTien.Size = new System.Drawing.Size(181, 28);
+            this.thanhTien.Size = new System.Drawing.Size(239, 28);
             this.thanhTien.TabIndex = 265;
             this.thanhTien.Text = "";
             // 
             // tienDV
             // 
-            this.tienDV.Location = new System.Drawing.Point(860, 623);
+            this.tienDV.Location = new System.Drawing.Point(181, 662);
             this.tienDV.Name = "tienDV";
             this.tienDV.ReadOnly = true;
-            this.tienDV.Size = new System.Drawing.Size(181, 28);
+            this.tienDV.Size = new System.Drawing.Size(238, 28);
             this.tienDV.TabIndex = 264;
             this.tienDV.Text = "";
+            this.tienDV.TextChanged += new System.EventHandler(this.tienDV_TextChanged);
             // 
             // giamGia
             // 
-            this.giamGia.Location = new System.Drawing.Point(451, 662);
+            this.giamGia.Location = new System.Drawing.Point(628, 621);
             this.giamGia.Name = "giamGia";
             this.giamGia.ReadOnly = true;
-            this.giamGia.Size = new System.Drawing.Size(181, 28);
+            this.giamGia.Size = new System.Drawing.Size(239, 28);
             this.giamGia.TabIndex = 263;
             this.giamGia.Text = "";
             // 
-            // phuThu
-            // 
-            this.phuThu.Location = new System.Drawing.Point(451, 623);
-            this.phuThu.Name = "phuThu";
-            this.phuThu.ReadOnly = true;
-            this.phuThu.Size = new System.Drawing.Size(181, 28);
-            this.phuThu.TabIndex = 262;
-            this.phuThu.Text = "";
-            // 
-            // tongTiench
-            // 
-            this.tongTiench.Location = new System.Drawing.Point(144, 662);
-            this.tongTiench.Name = "tongTiench";
-            this.tongTiench.ReadOnly = true;
-            this.tongTiench.Size = new System.Drawing.Size(181, 28);
-            this.tongTiench.TabIndex = 261;
-            this.tongTiench.Text = "";
-            // 
             // tienPhong
             // 
-            this.tienPhong.Location = new System.Drawing.Point(144, 623);
+            this.tienPhong.Location = new System.Drawing.Point(180, 621);
             this.tienPhong.Name = "tienPhong";
             this.tienPhong.ReadOnly = true;
-            this.tienPhong.Size = new System.Drawing.Size(181, 28);
+            this.tienPhong.Size = new System.Drawing.Size(239, 28);
             this.tienPhong.TabIndex = 260;
             this.tienPhong.Text = "";
             // 
@@ -622,7 +601,7 @@ namespace Royal
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label31.Location = new System.Drawing.Point(715, 662);
+            this.label31.Location = new System.Drawing.Point(494, 662);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(107, 28);
@@ -634,7 +613,7 @@ namespace Royal
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label33.Location = new System.Drawing.Point(715, 621);
+            this.label33.Location = new System.Drawing.Point(25, 660);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(120, 28);
@@ -646,36 +625,12 @@ namespace Royal
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label27.Location = new System.Drawing.Point(360, 662);
+            this.label27.Location = new System.Drawing.Point(494, 621);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(94, 28);
             this.label27.TabIndex = 253;
             this.label27.Text = "Giảm giá:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label29.Location = new System.Drawing.Point(360, 621);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(83, 28);
-            this.label29.TabIndex = 252;
-            this.label29.Text = "Phụ thu:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label23.Location = new System.Drawing.Point(22, 662);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(99, 28);
-            this.label23.TabIndex = 251;
-            this.label23.Text = "Tổng tiền:";
             // 
             // label25
             // 
@@ -818,8 +773,6 @@ namespace Royal
             this.Controls.Add(this.thanhTien);
             this.Controls.Add(this.tienDV);
             this.Controls.Add(this.giamGia);
-            this.Controls.Add(this.phuThu);
-            this.Controls.Add(this.tongTiench);
             this.Controls.Add(this.tienPhong);
             this.Controls.Add(this.nvLap);
             this.Controls.Add(this.kryptonButton6);
@@ -827,8 +780,6 @@ namespace Royal
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.label27);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.label23);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.kryptonBorderEdge2);
             this.Name = "PrintBill";
@@ -881,8 +832,6 @@ namespace Royal
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox thanhTien;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tienDV;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox giamGia;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox phuThu;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tongTiench;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tienPhong;
         private System.Windows.Forms.TextBox nvLap;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton6;
@@ -890,8 +839,6 @@ namespace Royal
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label25;
         private ComponentFactory.Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge2;
         private System.Windows.Forms.ComboBox maHDBox;

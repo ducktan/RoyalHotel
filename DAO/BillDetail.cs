@@ -62,6 +62,7 @@ namespace Royal.DAO
 
             // Set data to Firebase RTDB
             FirebaseResponse response = await Client.SetAsync("BillDetail/" + bill.MACTHD, billData);
+           
             MessageBox.Show("Add a bill detail");
         }
 

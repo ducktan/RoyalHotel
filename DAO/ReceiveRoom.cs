@@ -316,7 +316,7 @@ namespace Royal.DAO
                     }
                     if (receiveRoom.TRANGTHAI == "Đã Trả Phòng")
                     {
-                        MessageBox.Show(receiveRoom.CCCD_KH);
+                     
                         CustomerDAO customerDAO = await new CustomerDAO().SearchCusByCCCD(receiveRoom.CCCD_KH);
                         Bill billForm = new Bill(customerDAO.MAKH);
 
