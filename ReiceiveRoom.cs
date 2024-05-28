@@ -26,7 +26,7 @@ namespace Royal
             dataGridViewParameter.CellClick += dataGridBill_CellClick;
         }
 
-  
+
 
         private async void kryptonButton5_Click(object sender, EventArgs e)
         {
@@ -74,54 +74,108 @@ namespace Royal
             }
         }
 
-        private async  void kryptonButton1_Click(object sender, EventArgs e)
+        private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            try
+
+            if (MessageBox.Show("Are you sure you want to checkin?", "Checkin Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                receiveroomDAO receiveroomDAO = new receiveroomDAO();
-
-
-                string cccdKh = kryptonRichTextBox1.Text.Trim();
-                string hoTen = kryptonRichTextBox3.Text.Trim();
-                string maPhong = kryptonRichTextBox2.Text.Trim();
-                int soNguoi = Int32.Parse(kryptonRichTextBox5.Text.Trim());
-                string trangThai = comboBoxCustomerType.Text.Trim();
-                int tienCoc = Int32.Parse(kryptonRichTextBox6.Text.Trim());
-                string ngayNhan = kryptonDateTimePicker2.Value.ToString("yyyy-MM-dd");
-                string ngayTra = kryptonDateTimePicker1.Value.ToString("yyyy-MM-dd");
-
-                receiveroomDAO result = await receiveroomDAO.SearchReceiveRoomByIDDP(cccdKh, maPhong, ngayNhan, ngayTra);
-                string receivedRoom = result.ReceivedRoom.Trim();
-                if (trangThai == "Đã Nhận Phòng")
+                try
                 {
-                    // Tạo đối tượng receiveroomDAO với thông tin mới
-                    receiveroomDAO updatedReceiveRoom = new receiveroomDAO
+                    receiveroomDAO receiveroomDAO = new receiveroomDAO();
+
+
+                    string cccdKh = kryptonRichTextBox1.Text.Trim();
+                    string hoTen = kryptonRichTextBox3.Text.Trim();
+                    string maPhong = kryptonRichTextBox2.Text.Trim();
+                    int soNguoi = Int32.Parse(kryptonRichTextBox5.Text.Trim());
+                    string trangThai = comboBoxCustomerType.Text.Trim();
+                    int tienCoc = Int32.Parse(kryptonRichTextBox6.Text.Trim());
+                    string ngayNhan = kryptonDateTimePicker2.Value.ToString("yyyy-MM-dd");
+                    string ngayTra = kryptonDateTimePicker1.Value.ToString("yyyy-MM-dd");
+                    DateTime ngaydat = kryptonDateTimePicker2.Value;
+                    DateTime ngayDi = kryptonDateTimePicker1.Value;
+                    int numOfDay = (ngayDi - ngaydat).Days;
+
+
+                    receiveroomDAO result = await receiveroomDAO.SearchReceiveRoomByIDDP(cccdKh, maPhong, ngayNhan, ngayTra);
+                    string receivedRoom = result.ReceivedRoom.Trim();
+                    if (trangThai == "Đã Nhận Phòng")
+
+
                     {
-                        ReceivedRoom = receivedRoom,
-                        CCCD_KH = cccdKh,
-                        HoTen = hoTen,
-                        MAPHONG = maPhong,
-                        SONGUOI = soNguoi,
-                        TRANGTHAI = trangThai,
-                        TIENCOC = tienCoc,
-                        NGAYNHAN = ngayNhan,
-                        NGAYTRA = ngayTra
-                    };
-                    await receiveroomDAO.AddReceiveRoom(updatedReceiveRoom);
-                    // Gọi phương thức cập nhật
-                    await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
-                    receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);
-                }
-                else
-                {
-                    MessageBox.Show("Trạng thái phải là 'Đã nhận phòng' mới có thể cập nhật.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error updating receive room: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
+                        var roomTypes = await firebaseClient
+                            .Child("Bill")
+                            .OnceAsync<BillDAO>();
+                        // Tìm mã phòng lớn nhất hiện có
+                        int maxRoomNumber = 0;
+                        foreach (var roomData in roomTypes)
+                        {
+                            int roomNumber = int.Parse(roomData.Object.MAHD.Substring(2));
+                            if (roomNumber > maxRoomNumber)
+                            {
+                                maxRoomNumber = roomNumber;
+                            }
+                        }
+
+                        string newRoomNumber = "HD" + (maxRoomNumber + 1).ToString("D3");
+
+                        int discount = await result.FindCoupon(cccdKh);
+                        Room r = await new Room().SearchRoomById(maPhong);
+                        DAO.RoomType rt = await new DAO.RoomType().SearchRoomTypeById(r.LoaiPhong);
+                        int totalCost = numOfDay * rt.GIA;
+
+                        BillDAO bill = new BillDAO
+                        {
+                            MAHD = newRoomNumber,
+                            MAPHONG = maPhong,
+                            ID_NV = User.Id,
+                            ID_KH = await result.FindMAKH(cccdKh),
+                            NGLAP = DateTime.Now.ToString("yyyy-MM-dd"),
+                            TRANGTHAI = "Chưa Thanh Toán",
+                            THANHTIEN = (int)(totalCost - (totalCost * discount / 100)),
+                            DISCOUNT = discount,
+                            SL_DICHVU = 0,
+                            DONGIA = (int)(rt.GIA)
+
+                        };
+
+
+                        // Tạo đối tượng receiveroomDAO với thông tin mới
+                        receiveroomDAO updatedReceiveRoom = new receiveroomDAO
+                        {
+                            ReceivedRoom = receivedRoom,
+                            CCCD_KH = cccdKh,
+                            HoTen = hoTen,
+                            MAPHONG = maPhong,
+                            SONGUOI = soNguoi,
+                            TRANGTHAI = trangThai,
+                            TIENCOC = tienCoc,
+                            NGAYNHAN = ngayNhan,
+                            NGAYTRA = ngayTra,
+                            MAHD = newRoomNumber,
+                        };
+
+
+
+                        await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
+
+
+                        // Gọi phương thức cập nhật
+                        await bill.AddBill(bill);
+
+                        receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Trạng thái phải là 'Đã nhận phòng' mới có thể cập nhật.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating receive room: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void kryptonButton3_Click(object sender, EventArgs e)
@@ -144,6 +198,7 @@ namespace Royal
 
         private void dataGridBill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
                 if (e.RowIndex >= 0 && e.RowIndex < dataGridViewParameter.Rows.Count)
@@ -179,56 +234,88 @@ namespace Royal
 
         private async void kryptonButton2_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Are you sure you want to checkout?", "Checkout Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
-                // Lấy thông tin từ các ô nhập liệu
-                string cccdKh = kryptonRichTextBox1.Text.Trim();
-                string hoTen = kryptonRichTextBox3.Text.Trim();
-                string maPhong = kryptonRichTextBox2.Text.Trim();
-                int soNguoi = Int32.Parse(kryptonRichTextBox5.Text.Trim());
-                string trangThai = comboBoxCustomerType.Text.Trim();
-                int tienCoc = Int32.Parse(kryptonRichTextBox6.Text.Trim());
-                string ngayNhan = kryptonDateTimePicker2.Value.ToString("yyyy-MM-dd");
-                string ngayTra = kryptonDateTimePicker1.Value.ToString("yyyy-MM-dd");
-
-                receiveroomDAO receiveroomDAO = new receiveroomDAO();
-                receiveroomDAO result = await receiveroomDAO.SearchReceiveRoomByIDDP(cccdKh, maPhong, ngayNhan, ngayTra);
-                string receivedRoom = result.ReceivedRoom.Trim();
-
-                if (trangThai == "Đã Trả Phòng")
+                try
                 {
-                    // Tạo đối tượng receiveroomDAO với thông tin mới
-                    receiveroomDAO updatedReceiveRoom = new receiveroomDAO
+
+                    // Lấy thông tin từ các ô nhập liệu
+                    string cccdKh = kryptonRichTextBox1.Text.Trim();
+                    string hoTen = kryptonRichTextBox3.Text.Trim();
+                    string maPhong = kryptonRichTextBox2.Text.Trim();
+                    int soNguoi = Int32.Parse(kryptonRichTextBox5.Text.Trim());
+                    string trangThai = comboBoxCustomerType.Text.Trim();
+                    int tienCoc = Int32.Parse(kryptonRichTextBox6.Text.Trim());
+                    string ngayNhan = kryptonDateTimePicker2.Value.ToString("yyyy-MM-dd");
+                    string ngayTra = kryptonDateTimePicker1.Value.ToString("yyyy-MM-dd");
+
+                    receiveroomDAO receiveroomDAO = new receiveroomDAO();
+                    receiveroomDAO result = await receiveroomDAO.SearchReceiveRoomByIDDP(cccdKh, maPhong, ngayNhan, ngayTra);
+                    string receivedRoom = result.ReceivedRoom.Trim();
+
+                    if (trangThai == "Đã Trả Phòng")
                     {
-                        ReceivedRoom = receivedRoom,
-                        CCCD_KH = cccdKh,
-                        HoTen = hoTen,
-                        MAPHONG = maPhong,
-                        SONGUOI = soNguoi,
-                        TRANGTHAI = trangThai,
-                        TIENCOC = tienCoc,
-                        NGAYNHAN = ngayNhan,
-                        NGAYTRA = ngayTra
-                    };
-                    await receiveroomDAO.AddReceiveRoom(updatedReceiveRoom);
-                    // Gọi phương thức cập nhật
-                    await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
-                    receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);
+                        // Tạo đối tượng receiveroomDAO với thông tin mới
+                        receiveroomDAO updatedReceiveRoom = new receiveroomDAO
+                        {
+                            ReceivedRoom = receivedRoom,
+                            CCCD_KH = cccdKh,
+                            HoTen = hoTen,
+                            MAPHONG = maPhong,
+                            SONGUOI = soNguoi,
+                            TRANGTHAI = trangThai,
+                            TIENCOC = tienCoc,
+                            NGAYNHAN = ngayNhan,
+                            NGAYTRA = ngayTra,
+                            MAHD = result.MAHD
+
+                        };
+
+
+                        BillDetailDAO billDetailDAO = new BillDetailDAO();
+                        List<BillDetailDAO> listBillDetail = await billDetailDAO.SearchBillDetailByMaHD(result.MAHD);
+                        int sum = 0;
+                        int sldv = listBillDetail.Count;
+                        if (listBillDetail.Count > 0)
+                        {
+
+                            foreach (var item in listBillDetail)
+                            {
+                                BillDetailDAO bill1 = new BillDetailDAO();
+                                bill1 = item;
+                                sum += bill1.THANHTIEN;
+
+                            }
+
+                        }
+
+
+                        BillDAO bill = new BillDAO();
+                        BillDAO res = await bill.SearchBillTypeById(result.MAHD);
+
+                        int tienPhongTest = res.THANHTIEN + sum;
+
+                        await receiveroomDAO.AddReceiveRoom(updatedReceiveRoom);
+                        // Gọi phương thức cập nhật
+                        await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
+                        await bill.UpdateBill(res.MAHD, maPhong, "Đã thanh toán", res.ID_KH, res.ID_NV, res.NGLAP, res.DONGIA, res.DISCOUNT, tienPhongTest, sldv);
+
+                        receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Trạng thái phải là 'Đã trả phòng' mới có thể cập nhật.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Trạng thái phải là 'Đã nhận phòng' mới có thể cập nhật.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Error updating receive room: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error updating receive room: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
     }
 }

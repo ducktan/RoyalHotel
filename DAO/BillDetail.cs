@@ -18,10 +18,10 @@ namespace Royal.DAO
     public class BillDetailDAO
     {
         private Firebase.Database.FirebaseClient firebaseClient;
-        public string MACTHD {  get; set; }
+        public string MACTHD { get; set; }
         public string MAHD { get; set; }
         public string MADV { get; set; }
-        public int SLG_DV { get; set; } 
+        public int SLG_DV { get; set; }
         public int THANHTIEN { get; set; }
 
 
@@ -54,14 +54,15 @@ namespace Royal.DAO
             var billData = new
             {
                 bill.MACTHD,
-                bill.MAHD, 
-                bill.MADV, 
-                bill.SLG_DV, 
+                bill.MAHD,
+                bill.MADV,
+                bill.SLG_DV,
                 bill.THANHTIEN
             };
 
             // Set data to Firebase RTDB
             FirebaseResponse response = await Client.SetAsync("BillDetail/" + bill.MACTHD, billData);
+
             MessageBox.Show("Add a bill detail");
         }
 
@@ -132,7 +133,7 @@ namespace Royal.DAO
             BillDetailDAO updatedBill = new BillDetailDAO
             {
                 MACTHD = id,
-                MAHD = mahd, 
+                MAHD = mahd,
                 MADV = madv,
                 SLG_DV = sl,
                 THANHTIEN = thanhtien

@@ -206,7 +206,7 @@ namespace Royal
 
                 // Get the form values
                 string selectedRoomType = cbRoomType.SelectedItem != null ? cbRoomType.SelectedItem.ToString() : "";
-                string maphong = metroComboBox2.SelectedItem != null ? metroComboBox2.SelectedItem.ToString() : "";
+                string maphong = metroComboBox2.SelectedItem != null ? metroComboBox2.Text : "";
                 int maxCapacity = int.Parse(textBox9.Text);
 
                 // Parse the value from metroComboBox1 to get the number of guests

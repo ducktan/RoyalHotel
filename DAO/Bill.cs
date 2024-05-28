@@ -35,18 +35,19 @@ namespace Royal.DAO
 
 
         public BillDAO()
-        {   
+        {
             try
             {
                 Client = new FireSharp.FirebaseClient(config.Config);
                 firebaseClient = FirebaseManage.GetFirebaseClient();
 
             }
-            catch {
+            catch
+            {
                 MessageBox.Show("Connection fail!");
             }
             // Initialize client upon object creation
-           
+
 
         }
 
@@ -65,7 +66,7 @@ namespace Royal.DAO
                 bill.TRANGTHAI,
                 bill.THANHTIEN,
                 bill.DISCOUNT,
-                bill.SL_DICHVU, 
+                bill.SL_DICHVU,
                 bill.DONGIA
             };
 
@@ -76,9 +77,9 @@ namespace Royal.DAO
 
         public async void LoadBill(DataGridView v)
         {
-           
-                // Fetch data from Firebase
-                FirebaseResponse response = await Client.GetAsync("Bill/");
+
+            // Fetch data from Firebase
+            FirebaseResponse response = await Client.GetAsync("Bill/");
 
             // Check for successful response
 
@@ -111,78 +112,117 @@ namespace Royal.DAO
                         );
                     }
                 }
-                    
+
             }
-                
-                
-               
-            }
+
+
+
+        }
 
         public async Task DeleteBill(string billId)
-        {         
-                    // Confirmation prompt (optional)
-                    if (MessageBox.Show("Are you sure you want to delete this bill?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            // Delete the bill from Firebase
-                            await Client.DeleteAsync($"Bill/{billId}");                           
+        {
+            // Confirmation prompt (optional)
+            if (MessageBox.Show("Are you sure you want to delete this bill?", "Delete Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    // Delete the bill from Firebase
+                    await Client.DeleteAsync($"Bill/{billId}");
 
-                            MessageBox.Show("Bill deleted successfully!");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error deleting bill: {ex.Message}");
-                        }
-                    }
-                
-            
-           
+                    MessageBox.Show("Bill deleted successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting bill: {ex.Message}");
+                }
+            }
+
+
+
         }
 
 
         public async Task UpdateBill(string billID, string maphong, string trangthai, string idkh, string idnv, string nglap, int dongia, int giamgia, int tongtien)
         {
-            
-                
-
-                    // Get the updated bill information from the selected row
-                    BillDAO updatedBill = new BillDAO
-                    {
-                        MAHD = billID, // Assuming bill ID remains unchanged
-                        MAPHONG = maphong,
-                        TRANGTHAI = trangthai,
-                        ID_KH = idkh,
-                        ID_NV = idnv,
-
-                        NGLAP = nglap, // Remove extra space
-
-                        DONGIA = dongia,
-                        DISCOUNT = giamgia,
-                        THANHTIEN = tongtien,
-                    };
 
 
-                    // Confirmation prompt (modified)
-                    if (MessageBox.Show("Are you sure you want to update this bill?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            // Update the bill in Firebase
-                            await Client.SetAsync($"Bill/{billID}", updatedBill);
 
-                            // Refresh the DataGridView (optional)
-                            // v.Refresh(); // You might want to refresh only the updated row
+            // Get the updated bill information from the selected row
+            BillDAO updatedBill = new BillDAO
+            {
+                MAHD = billID, // Assuming bill ID remains unchanged
+                MAPHONG = maphong,
+                TRANGTHAI = trangthai,
+                ID_KH = idkh,
+                ID_NV = idnv,
 
-                            MessageBox.Show("Bill information updated successfully!");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error updating bill: {ex.Message}");
-                        }
-                    }
-                
+                NGLAP = nglap, // Remove extra space
+
+                DONGIA = dongia,
+                DISCOUNT = giamgia,
+                THANHTIEN = tongtien,
+            };
+
+
+            // Confirmation prompt (modified)
+            if (MessageBox.Show("Are you sure you want to update this bill?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    // Update the bill in Firebase
+                    await Client.SetAsync($"Bill/{billID}", updatedBill);
+
+                    // Refresh the DataGridView (optional)
+                    // v.Refresh(); // You might want to refresh only the updated row
+
+                    MessageBox.Show("Bill information updated successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating bill: {ex.Message}");
+                }
             }
+
+        }
+
+        public async Task UpdateBill(string billID, string maphong, string trangthai, string idkh, string idnv, string nglap, int dongia, int giamgia, int tongtien, int sldv)
+        {
+
+
+
+            // Get the updated bill information from the selected row
+            BillDAO updatedBill = new BillDAO
+            {
+                MAHD = billID, // Assuming bill ID remains unchanged
+                MAPHONG = maphong,
+                TRANGTHAI = trangthai,
+                ID_KH = idkh,
+                ID_NV = idnv,
+
+                NGLAP = nglap, // Remove extra space
+
+                DONGIA = dongia,
+                DISCOUNT = giamgia,
+                THANHTIEN = tongtien,
+                SL_DICHVU = sldv
+            };
+
+
+
+            try
+            {
+                // Update the bill in Firebase
+                await Client.SetAsync($"Bill/{billID}", updatedBill);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating bill: {ex.Message}");
+            }
+
+
+        }
 
 
 
@@ -347,7 +387,7 @@ namespace Royal.DAO
 
 
     }
-    
+
 
 
 

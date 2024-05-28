@@ -66,6 +66,7 @@
             this.updateBut = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.addBut = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.phong = new System.Windows.Forms.ComboBox();
             this.nhanvien = new System.Windows.Forms.ComboBox();
             this.maKHBox = new System.Windows.Forms.ComboBox();
             this.status = new System.Windows.Forms.ComboBox();
@@ -86,7 +87,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.phong = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
@@ -436,6 +436,7 @@
             this.DetailBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetailBut.TabIndex = 70;
             this.DetailBut.Values.Text = "Chi tiết";
+            this.DetailBut.Click += new System.EventHandler(this.DetailBut_Click);
             // 
             // delBut
             // 
@@ -510,6 +511,16 @@
             this.groupBox2.TabIndex = 126;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN HOÁ ĐƠN";
+            // 
+            // phong
+            // 
+            this.phong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phong.FormattingEnabled = true;
+            this.phong.IntegralHeight = false;
+            this.phong.Location = new System.Drawing.Point(10, 130);
+            this.phong.Name = "phong";
+            this.phong.Size = new System.Drawing.Size(208, 33);
+            this.phong.TabIndex = 73;
             // 
             // nhanvien
             // 
@@ -724,16 +735,6 @@
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // phong
-            // 
-            this.phong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phong.FormattingEnabled = true;
-            this.phong.IntegralHeight = false;
-            this.phong.Location = new System.Drawing.Point(10, 130);
-            this.phong.Name = "phong";
-            this.phong.Size = new System.Drawing.Size(208, 33);
-            this.phong.TabIndex = 73;
             // 
             // Bill
             // 

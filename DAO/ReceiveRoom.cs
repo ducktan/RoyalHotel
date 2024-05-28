@@ -27,8 +27,9 @@ namespace Royal.DAO
         public string HoTen { get; set; }
         public int TIENCOC { get; set; }
 
+        public string MAHD { get; set; }
         // Set up Firebase configuration
-        public FirebConfig config = new FirebConfig();
+        private readonly FirebConfig config = new FirebConfig();
 
         // Initialize Firebase client
         public IFirebaseClient Client { get; private set; }
@@ -56,9 +57,9 @@ namespace Royal.DAO
                 receiveRoom.TRANGTHAI,
                 receiveRoom.NGAYNHAN,
                 receiveRoom.NGAYTRA,
-
                 receiveRoom.SONGUOI,
-                receiveRoom.TIENCOC
+                receiveRoom.TIENCOC,
+                receiveRoom.MAHD
             };
             // Get the current row count for the "Bill" table
 
@@ -267,43 +268,11 @@ namespace Royal.DAO
         }
         public async Task UpdateReceiveRoom(receiveroomDAO receiveRoom)
         {
-            if (MessageBox.Show("Are you sure you want to update this receive room?", "Update Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
+
                 try
                 {
                     if (receiveRoom.TRANGTHAI == "Đã Nhận Phòng")
                     {
-                        var roomTypes = await firebaseClient
-                                            .Child("Bill")
-                                            .OnceAsync<BillDAO>();
-                        // Tìm mã phòng lớn nhất hiện có
-                        int maxRoomNumber = 0;
-                        foreach (var roomData in roomTypes)
-                        {
-                            int roomNumber = int.Parse(roomData.Object.MAHD.Substring(2));
-                            if (roomNumber > maxRoomNumber)
-                            {
-                                maxRoomNumber = roomNumber;
-                            }
-                        }
-
-                        string newRoomNumber = "HD" + (maxRoomNumber + 1).ToString("D3");
-                        BillDAO bill = new BillDAO
-                        {
-                            MAHD = newRoomNumber,
-                            MAPHONG = receiveRoom.MAPHONG,
-                            ID_NV = User.Id,
-                            ID_KH = await FindMAKH(receiveRoom.CCCD_KH),
-                            NGLAP = DateTime.Now.ToString("yyyy-MM-dd"),
-                            TRANGTHAI = "Chưa Thanh Toán",
-                            THANHTIEN = ((receiveRoom.TIENCOC * 100) / 30),
-                            DISCOUNT = await FindCoupon(receiveRoom.CCCD_KH),
-                            SL_DICHVU = 0,
-                            DONGIA = ((receiveRoom.TIENCOC * 100) / 30)
-
-                        };
-                        await bill.AddBill(bill);
-
 
                         await Client.UpdateAsync($"ReceiveRoom/{receiveRoom.ReceivedRoom}", receiveRoom);
                         MessageBox.Show("Receive room information updated successfully!");
@@ -311,7 +280,8 @@ namespace Royal.DAO
                     if (receiveRoom.TRANGTHAI == "Đã Trả Phòng")
                     {
 
-                        Bill billForm = new Bill();
+                        CustomerDAO customerDAO = await new CustomerDAO().SearchCusByCCCD(receiveRoom.CCCD_KH);
+                        Bill billForm = new Bill(customerDAO.MAKH);
 
                         billForm.Show();
 
@@ -323,7 +293,7 @@ namespace Royal.DAO
                 {
                     MessageBox.Show($"Error updating receive room: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
+            
         }
 
     }

@@ -122,12 +122,15 @@ namespace Royal
             int maxRoomNumber = 0;
             foreach (var roomData in roomTypes)
             {
-                int roomNumber = int.Parse(roomData.Object.MAHD.Substring(4));
+                int roomNumber = int.Parse(roomData.Object.MACTHD.Substring(4));
                 if (roomNumber > maxRoomNumber)
                 {
                     maxRoomNumber = roomNumber;
                 }
             }
+
+          
+
 
             string newRoomNumber = "CTHD" + (maxRoomNumber + 1).ToString("D3");
 

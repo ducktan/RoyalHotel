@@ -34,17 +34,68 @@ namespace Royal
             LoadMaNVFromDatabase();
             LoadMaPhongFromDatabase();
         }
+        public Bill(string id)
+        {
+            InitializeComponent();
+            // Khởi tạo FirebaseClient với chuỗi kết nối đến Firebase Realtime Database
+            firebaseClient = FirebaseManage.GetFirebaseClient();
+            BillDAO billDAO = new BillDAO();
+            billDAO.LoadBill(dataGridBill);
+            dataGridBill.CellClick += dataGridBill_CellClick;
+            LoadMaKHFromDatabase();
+            LoadMaNVFromDatabase();
+            LoadMaPhongFromDatabase();
+
+            maKHBox.Text = id;
+            LoadInfoBillFromMaKH(maKHBox.Text);
+
+        }
+
+        private async void LoadInfoBillFromMaKH(string makh)
+        {
+            // Call the appropriate search function based on the selected type
+            Royal.DAO.BillDAO billFun = new Royal.DAO.BillDAO(); // Assuming you have an instance
+
+            // Call the appropriate search function based on the selected type
+            List<Royal.DAO.BillDAO> searchResults = new List<Royal.DAO.BillDAO>(); // Initialize empty list
+            searchResults = await billFun.SearchBillByIDKH(makh);
+
+            // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+            List<string[]> uiResults = searchResults.Select(bill => new string[] { bill.MAHD, bill.MAPHONG, bill.TRANGTHAI, bill.ID_KH, bill.ID_NV, bill.NGLAP, bill.DONGIA.ToString(), bill.DISCOUNT.ToString(), bill.THANHTIEN.ToString() }).ToList();
+
+            // Update UI elements on the UI thread
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    dataGridBill.Rows.Clear();
+                    foreach (string[] rowData in uiResults)
+                    {
+                        dataGridBill.Rows.Add(rowData);
+                    }
+                }));
+            }
+            else
+            {
+                dataGridBill.Rows.Clear();
+                foreach (string[] rowData in uiResults)
+                {
+                    dataGridBill.Rows.Add(rowData);
+                }
+            }
+
+        }
 
         private async void LoadMaKHFromDatabase()
         {
-        try
-        {
-        // Truy vấn Firebase Realtime Database để lấy danh sách khách hàng
-        var customerList = await firebaseClient
-            .Child("Customer")
-            .OnceAsync<CustomerDAO>();
+            try
+            {
+                // Truy vấn Firebase Realtime Database để lấy danh sách khách hàng
+                var customerList = await firebaseClient
+                    .Child("Customer")
+                    .OnceAsync<CustomerDAO>();
 
-        // Xóa các mục hiện có trong ComboBox
+                // Xóa các mục hiện có trong ComboBox
                 maKHBox.Items.Clear();
 
                 // Thêm ID_KH từ các bản ghi khách hàng vào ComboBox
@@ -54,11 +105,11 @@ namespace Royal
                     maKHBox.Items.Add(customerDisplayText);
                 }
             }
-         catch (Exception ex)
-        {
-            // Xử lý ngoại lệ nếu có
-            MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
-        }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
+            }
         }
 
         private async void LoadMaNVFromDatabase()
@@ -158,7 +209,7 @@ namespace Royal
                 DONGIA = Int32.Parse(giaDon.Text),
             };
 
-           await newBill.AddBill(newBill);
+            await newBill.AddBill(newBill);
             newBill.LoadBill(dataGridBill);
         }
 
@@ -192,26 +243,26 @@ namespace Royal
         }
         private async void kryptonButton5_Click(object sender, EventArgs e)
         {
-                BillDAO billDAO = new BillDAO();
-            
-                string billID = mahoadon.Text;
-                await billDAO.DeleteBill(billID);
-                billDAO.LoadBill(dataGridBill);
-                
-              
+            BillDAO billDAO = new BillDAO();
 
-                // Đặt các giá trị thành rỗng
-                mahoadon.Text = "";
-                phong.Text = "";
-                nhanvien.Text = "";
-                date.Text = "";
-                status.Text = "";
-                giaDon.Text = "";
-                discount.Text = "";
-                total.Text = "";
-                
-            
-            
+            string billID = mahoadon.Text;
+            await billDAO.DeleteBill(billID);
+            billDAO.LoadBill(dataGridBill);
+
+
+
+            // Đặt các giá trị thành rỗng
+            mahoadon.Text = "";
+            phong.Text = "";
+            nhanvien.Text = "";
+            date.Text = "";
+            status.Text = "";
+            giaDon.Text = "";
+            discount.Text = "";
+            total.Text = "";
+
+
+
         }
 
         private async void kryptonButton4_Click(object sender, EventArgs e)
@@ -222,7 +273,7 @@ namespace Royal
             int totalValue = int.Parse(total.Text);
 
             await billDAO.UpdateBill(mahoadon.Text, phong.Text, status.Text, maKHBox.Text, nhanvien.Text, date.Text, giaDonValue, discountValue, totalValue);
-            billDAO.LoadBill(dataGridBill );
+            billDAO.LoadBill(dataGridBill);
         }
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
@@ -250,7 +301,7 @@ namespace Royal
 
                     Royal.DAO.BillDAO searchResult = await billFun.SearchBillTypeById(searchText1);
                     searchResults.Add(searchResult);
-                }  
+                }
                 else if (type == "Mã nhân viên") // Search by room type ID (MALPH)
                 {
 
@@ -349,52 +400,122 @@ namespace Royal
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void maKHBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void kryptonButton3_Click_1(object sender, EventArgs e)
+        {
             try
             {
-                // Tạo một đối tượng Document mới
-                Document document = new Document();
-
-                // Hiển thị hộp thoại SaveFileDialog để người dùng chọn vị trí và tên file
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
-                saveFileDialog.Title = "Save PDF File";
-                saveFileDialog.ShowDialog();
-
-                // Kiểm tra xem người dùng đã chọn vị trí và tên file chưa
-                if (!string.IsNullOrEmpty(saveFileDialog.FileName))
+                BillDetailDAO billDetailDAO = new BillDetailDAO();
+                List<BillDetailDAO> listBillDetail = await billDetailDAO.SearchBillDetailByMaHD(mahoadon.Text);
+                int sum = 0;
+                BillDAO a = await new BillDAO().SearchBillTypeById(mahoadon.Text);
+                if (listBillDetail.Count > 0)
                 {
-                    // Tạo một đối tượng PdfWriter để ghi dữ liệu vào file PDF
-                    PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(saveFileDialog.FileName, FileMode.Create));
 
-                    // Mở tài liệu để bắt đầu viết dữ liệu
-                    document.Open();
+                    if (int.TryParse(giaDon.Text, out int dongiaPhong))
+                    {
+                        sum += dongiaPhong;
 
-                   
+                        foreach (var item in listBillDetail)
+                        {
+                            BillDetailDAO bill1 = new BillDetailDAO();
+                            bill1 = item;
+                            sum += Int32.Parse(bill1.THANHTIEN.ToString());
 
+                        }
+                        giaDon.Text = sum.ToString();
+                        await a.UpdateBill(a.MAHD, a.MAPHONG, a.TRANGTHAI, a.ID_KH, a.ID_NV, a.NGLAP, sum, a.DISCOUNT, a.THANHTIEN, listBillDetail.Count);
 
-                    // Tạo các đoạn văn bản và thêm vào tài liệu
-                    Paragraph header = new Paragraph("ROYAL HOTEL - ALL INFORMATION ABOUT BILL");
-                    
-                    Paragraph content = new Paragraph(string.Format("1. Number of bill: {0}", dataGridBill.RowCount));
-                  
-                    document.Add(header);
-                    document.Add(content);
-
-                    // Đóng tài liệu
-                    document.Close();
-
-                    // Hiển thị thông báo thành công
-                    MessageBox.Show("PDF file exported successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid room price format.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No bill details found for the given bill ID.");
                 }
             }
             catch (Exception ex)
             {
-                // Xử lý các ngoại lệ (ghi log, ném các ngoại lệ cụ thể, v.v.)
-                MessageBox.Show($"Error exporting PDF file: {ex.Message}");
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void maKHBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void DetailBut_Click(object sender, EventArgs e)
+        {
+            BillDetail b = new BillDetail();
+            b.Show();
+        }
+
+        private void kryptonButton4_Click_1(object sender, EventArgs e)
+        {
+            PrintBill b = new PrintBill();
+            b.Show();
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.DefaultExt = "pdf";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+
+                ExportToPdf.Export(dataGridBill, saveFileDialog.FileName);
+
+
+            }
+
+        }
+
+        private void toolStripLabel3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            saveFileDialog.DefaultExt = "xlsx";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+
+                ExportToExcel.Export(dataGridBill, saveFileDialog.FileName);
+
+
+            }
+
+
+
+        }
+
+        private void Bill_Load(object sender, EventArgs e)
         {
 
         }
