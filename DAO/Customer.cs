@@ -186,38 +186,25 @@ namespace Royal.DAO
 
         }
 
-        public async Task<List<CustomerDAO>> SearchCusByCCCD(string state)
+        public async Task<CustomerDAO> SearchCusByCCCD(string cccd)
         {
             try
             {
-                var billList = await firebaseClient
-                .Child("Customer")
-                .OnceAsync<Royal.DAO.CustomerDAO>();
-                // Initialize an empty list to store matching rooms
-                List<CustomerDAO> matchingBill = new List<CustomerDAO>();
-                foreach (var bill in billList)
-                {
-                    // Extract room information
-                    CustomerDAO billA = bill.Object;
+                var CusList = await firebaseClient
+                    .Child("Customer")
+                    .OnceAsync<CustomerDAO>();
 
-                    // Check if room capacity matches the search criteria
-                    if (billA.CCCD == state)
-                    {
-                        // Add matching room to the list
-                        matchingBill.Add(billA);
-                    }
-                }
+                var matchingCus = CusList.Where(c => c.Object.CCCD == cccd)
+                                        .Select(c => c.Object)
+                                        .FirstOrDefault();
 
-                // Return the list of matching rooms
-                return matchingBill;
+                return matchingCus;
             }
             catch (Exception ex)
             {
-                // Handle exceptions (logging, throwing specific exceptions, etc.)
-                MessageBox.Show($"Error searching {ex.Message}");
-                return new List<CustomerDAO>(); // Return empty list on error
+                Console.WriteLine($"Error searching customer by CCCD: {ex.Message}");
+                return null; // Return null on error
             }
-
         }
 
         public async Task<CustomerDAO> SearchRoomById(string id)

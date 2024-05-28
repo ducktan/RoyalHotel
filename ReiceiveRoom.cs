@@ -218,7 +218,7 @@ namespace Royal
                 }
                 else
                 {
-                    MessageBox.Show("Trạng thái phải là 'Đã nhận phòng' mới có thể cập nhật.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Trạng thái phải là 'Đã trả phòng' mới có thể cập nhật.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
 

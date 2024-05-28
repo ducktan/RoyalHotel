@@ -288,6 +288,12 @@ namespace Royal.DAO
                         }
 
                         string newRoomNumber = "HD" + (maxRoomNumber + 1).ToString("D3");
+
+                        int discount = await FindCoupon(receiveRoom.CCCD_KH);
+                        Room r = await new Room().SearchRoomById(receiveRoom.MAPHONG);
+                        RoomType rt = await new RoomType().SearchRoomTypeById(r.LoaiPhong);
+
+                        
                         BillDAO bill = new BillDAO
                         {
                             MAHD = newRoomNumber,
@@ -296,10 +302,10 @@ namespace Royal.DAO
                             ID_KH = await FindMAKH(receiveRoom.CCCD_KH),
                             NGLAP = DateTime.Now.ToString("yyyy-MM-dd"),
                             TRANGTHAI = "Chưa Thanh Toán",
-                            THANHTIEN = ((receiveRoom.TIENCOC * 100) / 30),
-                            DISCOUNT = await FindCoupon(receiveRoom.CCCD_KH),
+                            THANHTIEN = (int)(rt.GIA - (rt.GIA * discount / 100)),
+                            DISCOUNT = 0,
                             SL_DICHVU = 0,
-                            DONGIA = ((receiveRoom.TIENCOC * 100) / 30)
+                            DONGIA = (int)(rt.GIA - (rt.GIA * discount / 100))
 
                         };
                         await bill.AddBill(bill);
@@ -310,8 +316,9 @@ namespace Royal.DAO
                     }
                     if (receiveRoom.TRANGTHAI == "Đã Trả Phòng")
                     {
-
-                        Bill billForm = new Bill();
+                        MessageBox.Show(receiveRoom.CCCD_KH);
+                        CustomerDAO customerDAO = await new CustomerDAO().SearchCusByCCCD(receiveRoom.CCCD_KH);
+                        Bill billForm = new Bill(customerDAO.MAKH);
 
                         billForm.Show();
 

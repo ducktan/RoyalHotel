@@ -21,7 +21,7 @@ namespace Royal
     public partial class Bill : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
-
+       
         public Bill()
         {
             InitializeComponent();
@@ -33,6 +33,57 @@ namespace Royal
             LoadMaKHFromDatabase();
             LoadMaNVFromDatabase();
             LoadMaPhongFromDatabase();
+        }
+        public Bill(string id)
+        {
+            InitializeComponent();
+            // Khởi tạo FirebaseClient với chuỗi kết nối đến Firebase Realtime Database
+            firebaseClient = FirebaseManage.GetFirebaseClient();
+            BillDAO billDAO = new BillDAO();
+            billDAO.LoadBill(dataGridBill);
+            dataGridBill.CellClick += dataGridBill_CellClick;
+            LoadMaKHFromDatabase();
+            LoadMaNVFromDatabase();
+            LoadMaPhongFromDatabase();
+
+            maKHBox.Text = id;
+            LoadInfoBillFromMaKH(maKHBox.Text);
+
+        }
+
+        private async void LoadInfoBillFromMaKH(string makh)
+        {
+            // Call the appropriate search function based on the selected type
+            Royal.DAO.BillDAO billFun = new Royal.DAO.BillDAO(); // Assuming you have an instance
+
+            // Call the appropriate search function based on the selected type
+            List<Royal.DAO.BillDAO> searchResults = new List<Royal.DAO.BillDAO>(); // Initialize empty list
+            searchResults = await billFun.SearchBillByIDKH(makh);
+
+            // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+            List<string[]> uiResults = searchResults.Select(bill => new string[] { bill.MAHD, bill.MAPHONG, bill.TRANGTHAI, bill.ID_KH, bill.ID_NV, bill.NGLAP, bill.DONGIA.ToString(), bill.DISCOUNT.ToString(), bill.THANHTIEN.ToString() }).ToList();
+
+            // Update UI elements on the UI thread
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    dataGridBill.Rows.Clear();
+                    foreach (string[] rowData in uiResults)
+                    {
+                        dataGridBill.Rows.Add(rowData);
+                    }
+                }));
+            }
+            else
+            {
+                dataGridBill.Rows.Clear();
+                foreach (string[] rowData in uiResults)
+                {
+                    dataGridBill.Rows.Add(rowData);
+                }
+            }
+
         }
 
         private async void LoadMaKHFromDatabase()
@@ -395,6 +446,11 @@ namespace Royal
         }
 
         private void maKHBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

@@ -122,7 +122,8 @@ namespace Royal
                 }    
                 else if (type == "CCCD")
                 {
-                    searchResults = await billFun.SearchCusByCCCD(searchText1);
+                    Royal.DAO.CustomerDAO searchResult = await billFun.SearchCusByCCCD(searchText1);
+                    searchResults.Add(searchResult);
 
                 }
                 else if( type == "Giới tính")
