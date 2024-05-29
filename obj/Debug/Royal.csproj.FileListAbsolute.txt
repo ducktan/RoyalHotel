@@ -1,0 +1,643 @@
+E:\LTMMM\Royal\bin\Debug\Royal.exe.config
+E:\LTMMM\Royal\bin\Debug\Royal.exe
+E:\LTMMM\Royal\bin\Debug\Royal.pdb
+E:\LTMMM\Royal\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+E:\LTMMM\Royal\bin\Debug\Firebase.Auth.dll
+E:\LTMMM\Royal\bin\Debug\FireSharp.dll
+E:\LTMMM\Royal\bin\Debug\MetroFramework.Design.dll
+E:\LTMMM\Royal\bin\Debug\MetroFramework.dll
+E:\LTMMM\Royal\bin\Debug\MetroFramework.Fonts.dll
+E:\LTMMM\Royal\bin\Debug\Microsoft.Threading.Tasks.dll
+E:\LTMMM\Royal\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\LTMMM\Royal\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+E:\LTMMM\Royal\bin\Debug\Newtonsoft.Json.dll
+E:\LTMMM\Royal\bin\Debug\System.Net.Http.Extensions.dll
+E:\LTMMM\Royal\bin\Debug\System.Net.Http.Primitives.dll
+E:\LTMMM\Royal\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+E:\LTMMM\Royal\bin\Debug\Firebase.Auth.xml
+E:\LTMMM\Royal\bin\Debug\Microsoft.Threading.Tasks.xml
+E:\LTMMM\Royal\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+E:\LTMMM\Royal\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\LTMMM\Royal\bin\Debug\Newtonsoft.Json.xml
+E:\LTMMM\Royal\bin\Debug\System.Net.Http.Extensions.xml
+E:\LTMMM\Royal\bin\Debug\System.Net.Http.Primitives.xml
+E:\LTMMM\Royal\obj\Debug\Royal.csproj.App.config
+E:\LTMMM\Royal\obj\Debug\Royal.csproj.AssemblyReference.cache
+E:\LTMMM\Royal\obj\Debug\Royal.AboutUs.resources
+E:\LTMMM\Royal\obj\Debug\Royal.Dashboard.resources
+E:\LTMMM\Royal\obj\Debug\Royal.Login.resources
+E:\LTMMM\Royal\obj\Debug\Royal.ManageStaff.resources
+E:\LTMMM\Royal\obj\Debug\Royal.Properties.Resources.resources
+E:\LTMMM\Royal\obj\Debug\Royal.csproj.GenerateResource.cache
+E:\LTMMM\Royal\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+E:\LTMMM\Royal\obj\Debug\Royal.csproj.Up2Date
+E:\LTMMM\Royal\obj\Debug\Royal.exe
+E:\LTMMM\Royal\obj\Debug\Royal.pdb
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Royal.exe.config
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Royal.exe
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Royal.pdb
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Firebase.Auth.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\FireSharp.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\MetroFramework.Design.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\MetroFramework.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Firebase.Auth.xml
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\tieul\Document\NT106DoAn\LTM\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.csproj.App.config
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.csproj.AssemblyReference.cache
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.AboutUs.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.Authentication.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.Bill.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.Dashboard.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.Login.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.ManageStaff.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.ManageStaffType.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.PrintBill.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.Properties.Resources.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.Report.resources
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.csproj.GenerateResource.cache
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.csproj.Up2Date
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.exe
+C:\Users\tieul\Document\NT106DoAn\LTM\obj\Debug\Royal.pdb
+E:\LTMMM\QuaMet\bin\Debug\Royal.exe.config
+E:\LTMMM\QuaMet\bin\Debug\Royal.exe
+E:\LTMMM\QuaMet\bin\Debug\Royal.pdb
+E:\LTMMM\QuaMet\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+E:\LTMMM\QuaMet\bin\Debug\Firebase.Auth.dll
+E:\LTMMM\QuaMet\bin\Debug\FireSharp.dll
+E:\LTMMM\QuaMet\bin\Debug\MetroFramework.Design.dll
+E:\LTMMM\QuaMet\bin\Debug\MetroFramework.dll
+E:\LTMMM\QuaMet\bin\Debug\MetroFramework.Fonts.dll
+E:\LTMMM\QuaMet\bin\Debug\Microsoft.Threading.Tasks.dll
+E:\LTMMM\QuaMet\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\LTMMM\QuaMet\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+E:\LTMMM\QuaMet\bin\Debug\Newtonsoft.Json.dll
+E:\LTMMM\QuaMet\bin\Debug\System.Net.Http.Extensions.dll
+E:\LTMMM\QuaMet\bin\Debug\System.Net.Http.Primitives.dll
+E:\LTMMM\QuaMet\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+E:\LTMMM\QuaMet\bin\Debug\Firebase.Auth.xml
+E:\LTMMM\QuaMet\bin\Debug\Microsoft.Threading.Tasks.xml
+E:\LTMMM\QuaMet\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+E:\LTMMM\QuaMet\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\LTMMM\QuaMet\bin\Debug\Newtonsoft.Json.xml
+E:\LTMMM\QuaMet\bin\Debug\System.Net.Http.Extensions.xml
+E:\LTMMM\QuaMet\bin\Debug\System.Net.Http.Primitives.xml
+E:\LTMMM\QuaMet\obj\Debug\Royal.csproj.App.config
+E:\LTMMM\QuaMet\obj\Debug\Royal.csproj.AssemblyReference.cache
+E:\LTMMM\QuaMet\obj\Debug\Royal.AboutUs.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Authentication.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Bill.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.BookRoom.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Chat.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Dashboard.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Login.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.ManageCustomer.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.ManageStaff.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.ManageStaffType.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Parameter.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.PrintBill.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Profile.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Properties.Resources.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.ReiceiveRoom.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Report.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.ManageRoom.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.RoomType.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.Service.resources
+E:\LTMMM\QuaMet\obj\Debug\Royal.csproj.GenerateResource.cache
+E:\LTMMM\QuaMet\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+E:\LTMMM\QuaMet\obj\Debug\Royal.csproj.Up2Date
+E:\LTMMM\QuaMet\obj\Debug\Royal.exe
+E:\LTMMM\QuaMet\obj\Debug\Royal.pdb
+E:\LTMMM\QuaMet\obj\Debug\Royal.CustomerType.resources
+E:\LTMMM\QuaMet\bin\Debug\FirebaseAdmin.dll
+E:\LTMMM\QuaMet\bin\Debug\Google.Api.Gax.dll
+E:\LTMMM\QuaMet\bin\Debug\Google.Api.Gax.Rest.dll
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.Auth.dll
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.Core.dll
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.dll
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.PlatformServices.dll
+E:\LTMMM\QuaMet\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\LTMMM\QuaMet\bin\Debug\System.Buffers.dll
+E:\LTMMM\QuaMet\bin\Debug\System.Collections.Immutable.dll
+E:\LTMMM\QuaMet\bin\Debug\System.Memory.dll
+E:\LTMMM\QuaMet\bin\Debug\System.Numerics.Vectors.dll
+E:\LTMMM\QuaMet\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\LTMMM\QuaMet\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\LTMMM\QuaMet\bin\Debug\FirebaseAdmin.xml
+E:\LTMMM\QuaMet\bin\Debug\Google.Api.Gax.pdb
+E:\LTMMM\QuaMet\bin\Debug\Google.Api.Gax.xml
+E:\LTMMM\QuaMet\bin\Debug\Google.Api.Gax.Rest.pdb
+E:\LTMMM\QuaMet\bin\Debug\Google.Api.Gax.Rest.xml
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.pdb
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.xml
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.Auth.pdb
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.Auth.xml
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.Core.pdb
+E:\LTMMM\QuaMet\bin\Debug\Google.Apis.Core.xml
+E:\LTMMM\QuaMet\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\LTMMM\QuaMet\bin\Debug\System.Buffers.xml
+E:\LTMMM\QuaMet\bin\Debug\System.Collections.Immutable.xml
+E:\LTMMM\QuaMet\bin\Debug\System.Memory.xml
+E:\LTMMM\QuaMet\bin\Debug\System.Numerics.Vectors.xml
+E:\LTMMM\QuaMet\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\LTMMM\QuaMet\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Royal.exe.config
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Royal.exe
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Royal.pdb
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Firebase.Auth.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\FirebaseAdmin.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\FireSharp.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Api.Gax.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.Auth.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.Core.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\MetroFramework.Design.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\MetroFramework.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\MetroFramework.Fonts.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Newtonsoft.Json.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Buffers.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Collections.Immutable.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Memory.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Net.Http.Extensions.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Net.Http.Primitives.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Numerics.Vectors.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Firebase.Auth.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\FirebaseAdmin.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Api.Gax.pdb
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Api.Gax.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.pdb
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.pdb
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.Auth.pdb
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.Auth.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.Core.pdb
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Google.Apis.Core.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Newtonsoft.Json.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Buffers.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Collections.Immutable.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Memory.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Net.Http.Extensions.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Net.Http.Primitives.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Numerics.Vectors.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.AssemblyReference.cache
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.AboutUs.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Authentication.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Bill.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.BookRoom.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Chat.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.CustomerType.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Dashboard.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.ForgotPass.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Login.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.ManageCustomer.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.ManageStaff.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.ManageStaffType.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Parameter.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.PrintBill.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Profile.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Properties.Resources.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.ReiceiveRoom.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Report.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.ManageRoom.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.RoomType.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Service.resources
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.GenerateResource.cache
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.exe
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.pdb
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.CodeDom.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.CodeDom.xml
+E:\LTMMMMMMMMMM\RoyalHotel\obj\Debug\Royal.Admin.resources
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Firebase.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\LiteDB.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Reactive.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.ValueTuple.dll
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Firebase.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\LiteDB.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.Reactive.xml
+E:\LTMMMMMMMMMM\RoyalHotel\bin\Debug\System.ValueTuple.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Royal.exe.config
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Royal.exe
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Royal.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Firebase.Auth.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Firebase.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\FirebaseAdmin.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\FireSharp.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Api.Gax.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.Auth.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.Core.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\itextsharp.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\LiteDB.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\MetroFramework.Design.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\MetroFramework.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Buffers.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.CodeDom.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Collections.Immutable.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Memory.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Reactive.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.ValueTuple.dll
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Firebase.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Firebase.Auth.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\FirebaseAdmin.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Api.Gax.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Api.Gax.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.Auth.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.Core.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Google.Apis.Core.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\itextsharp.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\LiteDB.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Buffers.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.CodeDom.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Collections.Immutable.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Memory.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Reactive.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\System.ValueTuple.xml
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.AssemblyReference.cache
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.AboutUs.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Admin.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Authentication.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Bill.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.BillDetail.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.BookRoom.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Chat.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.CustomerType.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Dashboard.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.ForgotPass.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Login.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.ManageCustomer.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.ManageStaff.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.ManageStaffType.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Parameter.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.PrintBill.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Profile.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Properties.Resources.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.ReiceiveRoom.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Report.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.ManageRoom.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.RoomType.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.Service.resources
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.GenerateResource.cache
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.exe
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\obj\Debug\Royal.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Royal.exe.config
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Royal.exe
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Royal.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Firebase.Auth.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Firebase.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\FirebaseAdmin.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\FireSharp.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Api.Gax.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Apis.Auth.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Apis.Core.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Apis.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\itextsharp.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\LiteDB.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\MetroFramework.Design.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\MetroFramework.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Buffers.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.CodeDom.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Collections.Immutable.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Memory.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Reactive.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.ValueTuple.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Firebase.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Firebase.Auth.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\FirebaseAdmin.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Api.Gax.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Api.Gax.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Apis.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Apis.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Apis.Auth.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Apis.Core.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Google.Apis.Core.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\itextsharp.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\LiteDB.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Buffers.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.CodeDom.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Collections.Immutable.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Memory.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Reactive.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\bin\Debug\System.ValueTuple.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.AboutUs.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Admin.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Authentication.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Bill.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.BillDetail.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.BookRoom.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Chat.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.CustomerType.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Dashboard.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.ForgotPass.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Login.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.ManageCustomer.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.ManageStaff.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.ManageStaffType.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Parameter.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.PrintBill.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Profile.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Properties.Resources.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.ReiceiveRoom.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Report.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.ManageRoom.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.RoomType.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.Service.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.csproj.GenerateResource.cache
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.exe
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\LTMFIXBUG\RoyalHotel\obj\Debug\Royal.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\ENV\arial.ttf
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Royal.exe.config
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Royal.exe
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Royal.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Firebase.Auth.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Firebase.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\FirebaseAdmin.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\FireSharp.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Api.Gax.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Apis.Auth.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Apis.Core.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Apis.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\itextsharp.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\LiteDB.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\MetroFramework.Design.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\MetroFramework.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Buffers.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.CodeDom.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Collections.Immutable.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Memory.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Reactive.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.ValueTuple.dll
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Firebase.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Firebase.Auth.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\FirebaseAdmin.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Api.Gax.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Api.Gax.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Apis.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Apis.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Apis.Auth.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Apis.Core.pdb
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Google.Apis.Core.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\itextsharp.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\LiteDB.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Buffers.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.CodeDom.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Collections.Immutable.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Memory.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Reactive.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\bin\Debug\System.ValueTuple.xml
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.AboutUs.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Admin.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Authentication.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Bill.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.BillDetail.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.BookRoom.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Chat.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.CustomerType.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Dashboard.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.ForgotPass.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Login.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.ManageCustomer.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.ManageStaff.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.ManageStaffType.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Parameter.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.PrintBill.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Profile.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Properties.Resources.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.ReiceiveRoom.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Report.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.ManageRoom.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.RoomType.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.Service.resources
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.csproj.GenerateResource.cache
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.exe
+C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.pdb
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\ENV\arial.ttf
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Royal.exe.config
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Royal.exe
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Royal.pdb
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Firebase.Auth.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Firebase.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\FirebaseAdmin.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\FireSharp.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Api.Gax.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Api.Gax.Rest.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Apis.Auth.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Apis.Core.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Apis.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\itextsharp.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\LiteDB.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\MetroFramework.Design.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\MetroFramework.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Buffers.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.CodeDom.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Collections.Immutable.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Memory.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Reactive.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.ValueTuple.dll
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Firebase.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Firebase.Auth.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\FirebaseAdmin.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Api.Gax.pdb
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Api.Gax.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Api.Gax.Rest.pdb
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Api.Gax.Rest.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Apis.pdb
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Apis.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Apis.Auth.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Apis.Core.pdb
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Google.Apis.Core.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\itextsharp.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\LiteDB.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Buffers.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.CodeDom.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Collections.Immutable.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Memory.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Reactive.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\bin\Debug\System.ValueTuple.xml
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.AboutUs.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Admin.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Authentication.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Bill.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.BillDetail.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.BookRoom.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Chat.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.CustomerType.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Dashboard.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.ForgotPass.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Login.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.ManageCustomer.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.ManageStaff.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.ManageStaffType.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Parameter.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.PrintBill.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Profile.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Properties.Resources.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.ReiceiveRoom.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Report.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.ManageRoom.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.RoomType.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.Service.resources
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.csproj.GenerateResource.cache
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.csproj.Up2Date
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.exe
+C:\Users\ADMIN\Downloads\RoyalHotel-main (2)\RoyalHotel-main\obj\Debug\Royal.pdb
