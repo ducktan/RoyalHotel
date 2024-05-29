@@ -14,7 +14,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTextSharp.text; // Assuming iTextSharp library
+using iTextSharp.text;
+using iTextSharp.text.pdf;// Assuming iTextSharp library
 
 
 namespace Royal
@@ -425,118 +426,7 @@ namespace Royal
 
                 // ... (other code)
 
-                // Create a PDF document
-                Document document = new Document(PageSize.A5); // Adjust page size as needed
-
-                // Create a PdfWriter instance (specifies output file)
-                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream("HoaDon.pdf", FileMode.Create));
-
-                document.Open(); // Open the document
-
-                // Create a paragraph and add content
-                Paragraph paragraph = new Paragraph("THE 10 ROYAL HOTEL");
-                paragraph.Alignment = Element.ALIGN_CENTER; // Center align
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("▶ Address: Ben Nghe Ward, District 1, Ho Chi Minh City.");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("▶ Information bill: ");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("1. Bill ID: " + maHDBox.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("2. Date to create: " + ngLap.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("3. Staff: " + nvLap.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("4. INFORMATION OF CUSTOMER:");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("- Name: " + tenKH.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("- CCCD: " + cmnd.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Customer Type: " + LoaiKH.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Address: " + diaChi.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Nationality: " + quocTich.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("5. INFORMATION OF ROOM: ");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Room name: " + tenPhong.Text);
-                paragraph.SpacingBefore = 10f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Room type: " + loaiPhong.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Prices: " + dongiaPhong.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Date to check in: " + ngayDen.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Nights: " + soDem.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Numbers of people: " + soNguoi.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("6. INFORMATION OF SERVICES: ");
-                paragraph.SpacingBefore = 20f; // Add spacing
-                document.Add(paragraph);
-                // fix sau
-
-                paragraph = new Paragraph("7. TOTAL: ");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("==> Room fee: " + tienPhong.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("==> Services fee: " + tienDV.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("==> Discount: " + giamGia.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("==> All fees: " + thanhTien.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-
-
-
-
-
-
-                document.Close(); // Close the document
-
-                // Open the PDF using an external program (optional)
-                System.Diagnostics.Process.Start("HoaDon.pdf");
+               
             }
             catch (Exception ex)
             {
@@ -590,122 +480,22 @@ namespace Royal
                 reportDAO.AddReport(report);*/
 
 
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
 
 
-                // ... (other code)
-
-                // Create a PDF document
-                Document document = new Document(PageSize.A5); // Adjust page size as needed
-
-                // Create a PdfWriter instance (specifies output file)
-                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream("HoaDon.pdf", FileMode.Create));
-
-                document.Open(); // Open the document
-
-                // Create a paragraph and add content
-                Paragraph paragraph = new Paragraph("THE 10 ROYAL HOTEL");
-                paragraph.Alignment = Element.ALIGN_CENTER; // Center align
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("▶ Address: Ben Nghe Ward, District 1, Ho Chi Minh City.");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("▶ Information bill: ");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("1. Bill ID: " + maHDBox.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("2. Date to create: " + ngLap.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("3. Staff: " + nvLap.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("4. INFORMATION OF CUSTOMER:");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("- Name: " + tenKH.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("- CCCD: " + cmnd.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Customer Type: " + LoaiKH.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Address: " + diaChi.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Nationality: " + quocTich.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("5. INFORMATION OF ROOM: ");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Room name: " + tenPhong.Text);
-                paragraph.SpacingBefore = 10f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Room type: " + loaiPhong.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Prices: " + dongiaPhong.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Date to check in: " + ngayDen.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Nights: " + soDem.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("- Numbers of people: " + soNguoi.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("6. INFORMATION OF SERVICES: ");
-                paragraph.SpacingBefore = 20f; // Add spacing
-                document.Add(paragraph);
-                // fix sau
-
-                paragraph = new Paragraph("7. TOTAL: ");
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-
-                paragraph = new Paragraph("==> Room fee: " + tienPhong.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("==> Services fee: " + tienDV.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("==> Discount: " + giamGia.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
-                paragraph = new Paragraph("==> All fees: " + thanhTien.Text);
-                paragraph.SpacingBefore = 5f; // Add spacing
-                document.Add(paragraph);
+                saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+                saveFileDialog.DefaultExt = "pdf";
+                saveFileDialog.AddExtension = true;
 
 
 
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ExportToPdf.ExportLine(dataGridViewDV, saveFileDialog.FileName, maHDBox.Text, ngLap.Text, nvLap.Text, tenKH.Text, cmnd.Text, LoaiKH.Text, diaChi.Text, quocTich.Text, tenPhong.Text, loaiPhong.Text, dongiaPhong.Text, ngayDen.Text, soDem.Text, soNguoi.Text, tienPhong.Text, tienDV.Text, giamGia.Text, thanhTien.Text);
+                }
 
 
 
-
-                document.Close(); // Close the document
-
-                // Open the PDF using an external program (optional)
-                System.Diagnostics.Process.Start("HoaDon.pdf");
             }
             catch (Exception ex)
             {

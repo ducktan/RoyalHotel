@@ -543,3 +543,4 @@ C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technolo
 C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
 C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.exe
 C:\Users\ASUS\OneDrive - Trường ĐH CNTT - University of Information Technology\Term4\ltm\RoyalHotel\obj\Debug\Royal.pdb
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\ENV\arial.ttf

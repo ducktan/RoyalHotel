@@ -68,38 +68,44 @@ namespace Royal.DAO
 
         public async void LoadBillDetail(DataGridView v)
         {
-
-            // Fetch data from Firebase
-            FirebaseResponse response = await Client.GetAsync("BillDetail/");
-
-            // Check for successful response
-
-            if (response != null && !string.IsNullOrEmpty(response.Body))
+            try
             {
-                // Cast response as Dictionary<string, Bill> (assuming 'Bill' class exists)
-                Dictionary<string, BillDetailDAO> getBill = response.ResultAs<Dictionary<string, BillDetailDAO>>();
+                // Fetch data from Firebase
+                FirebaseResponse response = await Client.GetAsync("BillDetail/");
 
-                // Clear the DataGridView before loading new data (optional)
-                v.Rows.Clear();
+                // Check for successful response
 
-                if (getBill != null)
+                if (response != null && !string.IsNullOrEmpty(response.Body))
                 {
-                    foreach (var item in getBill)
+                    // Cast response as Dictionary<string, Bill> (assuming 'Bill' class exists)
+                    Dictionary<string, BillDetailDAO> getBill = response.ResultAs<Dictionary<string, BillDetailDAO>>();
+
+                    // Clear the DataGridView before loading new data (optional)
+                    v.Rows.Clear();
+
+                    if (getBill != null)
                     {
-                        BillDetailDAO bill = item.Value; // Access the Bill object
+                        foreach (var item in getBill)
+                        {
+                            BillDetailDAO bill = item.Value; // Access the Bill object
 
-                        // Add a new row to the DataGridView
-                        v.Rows.Add(
-                            bill.MACTHD,
-                            bill.MAHD,
-                            bill.MADV,
-                            bill.SLG_DV,
-                            bill.THANHTIEN
-                        );
+                            // Add a new row to the DataGridView
+                            v.Rows.Add(
+                                bill.MACTHD,
+                                bill.MAHD,
+                                bill.MADV,
+                                bill.SLG_DV,
+                                bill.THANHTIEN
+                            );
+                        }
                     }
-                }
 
+                }
             }
+            catch( Exception ex ) {
+                MessageBox.Show("Error!");
+            }
+           
         }
 
         public async Task DeleteBillDetail(string id)

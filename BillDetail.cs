@@ -30,6 +30,24 @@ namespace Royal
            
         }
 
+        public BillDetail(string MAHD)
+        {
+            InitializeComponent();
+            // Khởi tạo FirebaseClient với chuỗi kết nối đến Firebase Realtime Database
+            firebaseClient = FirebaseManage.GetFirebaseClient();
+            BillDetailDAO a = new BillDetailDAO();
+            a.LoadBillDetail(dataGridViewBillDetail);
+            dataGridViewBillDetail.CellClick += dataGridBill_CellClick;
+            LoadMaHDFromDatabase();
+            LoadMaDVFromDatabase();
+            maHDBox.Text = MAHD;
+
+            Find("Mã hoá đơn", MAHD);
+
+
+
+        }
+
         // Load data from Firebase 
         public async void LoadMaHDFromDatabase()
         {
@@ -283,69 +301,77 @@ namespace Royal
                     MessageBox.Show("Please enter the search text.");
                     return;
                 }
-                // Call the appropriate search function based on the selected type
-                Royal.DAO.BillDetailDAO billFun = new Royal.DAO.BillDetailDAO(); // Assuming you have an instance
 
-                // Call the appropriate search function based on the selected type
-                List<Royal.DAO.BillDetailDAO> searchResults = new List<Royal.DAO.BillDetailDAO>(); // Initialize empty list
+                Find(type, searchText1);
 
 
-                try
+
+        }
+
+        private async void Find(string type, string searchText1)
+        {
+            // Call the appropriate search function based on the selected type
+            Royal.DAO.BillDetailDAO billFun = new Royal.DAO.BillDetailDAO(); // Assuming you have an instance
+
+            // Call the appropriate search function based on the selected type
+            List<Royal.DAO.BillDetailDAO> searchResults = new List<Royal.DAO.BillDetailDAO>(); // Initialize empty list
+
+
+            try
+            {
+                if (type == "Mã hoá đơn") // Search by room type ID (MALPH)
                 {
-                    if (type == "Mã hoá đơn") // Search by room type ID (MALPH)
-                    {
 
                     searchResults = await billFun.SearchBillDetailByMaHD(searchText1);
                 }
-                    else if (type == "Mã dịch vụ") // Search by room type ID (MALPH)
-                    {
+                else if (type == "Mã dịch vụ") // Search by room type ID (MALPH)
+                {
 
-                        searchResults = await billFun.SearchBillDetailByMaDV(searchText1);
-                    }
-                   
+                    searchResults = await billFun.SearchBillDetailByMaDV(searchText1);
+                }
 
-                    else
-                    {
-                        MessageBox.Show("Invalid search type selected.");
-                        return;
-                    }
 
-                    // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
-                    List<string[]> uiResults = searchResults.Select(bill => new string[] { bill.MACTHD, bill.MAHD, bill.MADV, bill.SLG_DV.ToString(), bill.THANHTIEN.ToString() }).ToList();
+                else
+                {
+                    MessageBox.Show("Invalid search type selected.");
+                    return;
+                }
 
-                    // Update UI elements on the UI thread
-                    if (this.InvokeRequired)
+                // Prepare UI results (assuming you want to display MALPH, TENLPH, SLNG, GIA)
+                List<string[]> uiResults = searchResults.Select(bill => new string[] { bill.MACTHD, bill.MAHD, bill.MADV, bill.SLG_DV.ToString(), bill.THANHTIEN.ToString() }).ToList();
+
+                // Update UI elements on the UI thread
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new Action(() =>
                     {
-                        this.Invoke(new Action(() =>
-                        {
-                            dataGridViewBillDetail.Rows.Clear();
-                            foreach (string[] rowData in uiResults)
-                            {
-                                dataGridViewBillDetail.Rows.Add(rowData);
-                            }
-                        }));
-                    }
-                    else
-                    {
-                    dataGridViewBillDetail.Rows.Clear();
+                        dataGridViewBillDetail.Rows.Clear();
                         foreach (string[] rowData in uiResults)
                         {
-                        dataGridViewBillDetail.Rows.Add(rowData);
+                            dataGridViewBillDetail.Rows.Add(rowData);
                         }
-                    }
-
-                    // Handle no search results (optional)
-                    if (searchResults.Count == 0)
-                    {
-                        string searchCriteria = $"Search by: {type}";
-                        MessageBox.Show($"No bill detail found with {searchCriteria}");
-                    }
+                    }));
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error searching bill detail: {ex.Message}");
+                    dataGridViewBillDetail.Rows.Clear();
+                    foreach (string[] rowData in uiResults)
+                    {
+                        dataGridViewBillDetail.Rows.Add(rowData);
+                    }
                 }
-            
+
+                // Handle no search results (optional)
+                if (searchResults.Count == 0)
+                {
+                    string searchCriteria = $"Search by: {type}";
+                    MessageBox.Show($"No bill detail found with {searchCriteria}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching bill detail: {ex.Message}");
+            }
         }
 
         private void print_Click(object sender, EventArgs e)

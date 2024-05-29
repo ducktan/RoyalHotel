@@ -96,6 +96,8 @@ namespace Royal
                     DateTime ngayDi = kryptonDateTimePicker1.Value;
                     int numOfDay = (ngayDi - ngaydat).Days;
 
+                  
+
 
                     receiveroomDAO result = await receiveroomDAO.SearchReceiveRoomByIDDP(cccdKh, maPhong, ngayNhan, ngayTra);
                     string receivedRoom = result.ReceivedRoom.Trim();
