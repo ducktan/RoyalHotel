@@ -33,6 +33,7 @@
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.btnAdmin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Đ = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.metroTile17 = new MetroFramework.Controls.MetroTile();
@@ -48,7 +49,6 @@
             this.titleBookRoom = new MetroFramework.Controls.MetroTile();
             this.panelRight = new System.Windows.Forms.Panel();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.btnAdmin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.panelRight.SuspendLayout();
@@ -78,6 +78,7 @@
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.kryptonButton1.Size = new System.Drawing.Size(275, 49);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.Azure;
             this.kryptonButton1.TabIndex = 0;
             this.kryptonButton1.Values.Text = "Thông tin cá nhân";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
@@ -96,12 +97,24 @@
             this.kryptonPanel1.TabIndex = 0;
             this.kryptonPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonPanel1_Paint);
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Location = new System.Drawing.Point(3, 421);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnAdmin.Size = new System.Drawing.Size(275, 49);
+            this.btnAdmin.StateCommon.Back.Color1 = System.Drawing.Color.Azure;
+            this.btnAdmin.TabIndex = 5;
+            this.btnAdmin.Values.Text = "Admin";
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // kryptonButton4
             // 
             this.kryptonButton4.Location = new System.Drawing.Point(7, 465);
             this.kryptonButton4.Name = "kryptonButton4";
             this.kryptonButton4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.kryptonButton4.Size = new System.Drawing.Size(275, 49);
+            this.kryptonButton4.StateCommon.Back.Color1 = System.Drawing.Color.Azure;
             this.kryptonButton4.TabIndex = 4;
             this.kryptonButton4.Values.Text = "Quyền hạn";
             this.kryptonButton4.Click += new System.EventHandler(this.kryptonButton4_Click);
@@ -372,22 +385,13 @@
             this.metroTile1.UseTileImage = true;
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Location = new System.Drawing.Point(3, 421);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.btnAdmin.Size = new System.Drawing.Size(275, 49);
-            this.btnAdmin.TabIndex = 5;
-            this.btnAdmin.Values.Text = "Admin";
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1464, 695);
             this.Controls.Add(this.panelRight);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);

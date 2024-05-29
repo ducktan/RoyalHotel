@@ -161,6 +161,7 @@
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Chat";
             this.Text = "Chat";
             this.groupBox1.ResumeLayout(false);

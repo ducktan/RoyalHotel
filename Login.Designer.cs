@@ -49,7 +49,7 @@
             this.txtPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.txtPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPassword.Location = new System.Drawing.Point(397, 255);
+            this.txtPassword.Location = new System.Drawing.Point(396, 275);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(382, 42);
@@ -71,16 +71,21 @@
             // 
             // kryptonButton2
             // 
-            this.kryptonButton2.Location = new System.Drawing.Point(397, 405);
+            this.kryptonButton2.Location = new System.Drawing.Point(602, 360);
             this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(383, 42);
+            this.kryptonButton2.Size = new System.Drawing.Size(176, 42);
+            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton2.TabIndex = 54;
             this.kryptonButton2.Values.Text = "Quên mật khẩu";
             this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(398, 151);
+            this.txtEmail.Location = new System.Drawing.Point(397, 171);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(383, 39);
             this.txtEmail.TabIndex = 53;
@@ -91,9 +96,14 @@
             // kryptonButton1
             // 
             this.kryptonButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.kryptonButton1.Location = new System.Drawing.Point(398, 340);
+            this.kryptonButton1.Location = new System.Drawing.Point(397, 360);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(383, 42);
+            this.kryptonButton1.Size = new System.Drawing.Size(175, 42);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton1.TabIndex = 52;
             this.kryptonButton1.Values.Text = "Đăng nhập";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
@@ -116,8 +126,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(393, 227);
+            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label4.Location = new System.Drawing.Point(392, 247);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 25);
@@ -129,8 +139,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(393, 116);
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(392, 136);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 25);
@@ -141,21 +151,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(389, 52);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label2.Location = new System.Drawing.Point(389, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 46);
+            this.label2.Size = new System.Drawing.Size(227, 46);
             this.label2.TabIndex = 48;
-            this.label2.Text = "Đăng Nhập";
+            this.label2.Text = "ĐĂNG NHẬP";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(403, 202);
+            this.label3.Location = new System.Drawing.Point(402, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(203, 16);
             this.label3.TabIndex = 57;
@@ -166,7 +176,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(403, 300);
+            this.label5.Location = new System.Drawing.Point(402, 320);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(222, 16);
             this.label5.TabIndex = 58;
@@ -177,6 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(820, 475);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -189,6 +200,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

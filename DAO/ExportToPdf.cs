@@ -61,7 +61,7 @@ namespace Royal.DAO
             try
             {
 
-                // Đường dẫn đến font Arial hoặc Tahoma trong thư mục dự án
+                // Đường dẫn đến font Arial Unicode MS trong thư mục dự án
                 string fontPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ENV", "arial.ttf");
                 BaseFont bfArialUnicode = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font font = new Font(bfArialUnicode, 12, Font.NORMAL);
@@ -144,6 +144,7 @@ namespace Royal.DAO
                 paragraph.SpacingBefore = 5f; // Add spacing
                 document.Add(paragraph);
 
+                
                 paragraph = new Paragraph("6. INFORMATION OF SERVICES: ");
                 paragraph.SpacingBefore = 20f; // Add spacing
                 document.Add(paragraph);
@@ -170,7 +171,7 @@ namespace Royal.DAO
 
                 document.Add(table);
 
-
+                
                 paragraph = new Paragraph("7. TOTAL: ");
                 paragraph.SpacingBefore = 5f; // Add spacing
                 document.Add(paragraph);
@@ -196,8 +197,7 @@ namespace Royal.DAO
 
                 document.Close(); // Close the document
 
-                // Open the PDF using an external program (optional)
-                System.Diagnostics.Process.Start("HoaDon.pdf");
+         
             }
             catch (Exception ex)
             {

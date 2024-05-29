@@ -40,6 +40,7 @@
             this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtName = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.cboDiscount = new MetroFramework.Controls.MetroComboBox();
             this.txtCusTypeId = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtName = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCusType)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,7 +92,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -146,6 +146,11 @@
             this.kryptonButton4.Location = new System.Drawing.Point(16, 103);
             this.kryptonButton4.Name = "kryptonButton4";
             this.kryptonButton4.Size = new System.Drawing.Size(181, 40);
+            this.kryptonButton4.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton4.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton4.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton4.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton4.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton4.TabIndex = 136;
             this.kryptonButton4.Values.Text = "Xóa";
             this.kryptonButton4.Click += new System.EventHandler(this.kryptonButton4_Click_1);
@@ -156,6 +161,11 @@
             this.kryptonButton1.Location = new System.Drawing.Point(16, 34);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(181, 40);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton1.TabIndex = 135;
             this.kryptonButton1.Values.Text = "Thêm ";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
@@ -170,7 +180,7 @@
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox2.Location = new System.Drawing.Point(22, 37);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -179,6 +189,15 @@
             this.groupBox2.TabIndex = 143;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin loại khách hàng";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(236, 84);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(178, 36);
+            this.txtName.TabIndex = 130;
+            this.txtName.Text = "";
+            this.txtName.WordWrap = false;
             // 
             // cboDiscount
             // 
@@ -213,7 +232,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(16, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -225,7 +244,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label20.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label20.Location = new System.Drawing.Point(16, 139);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
@@ -237,7 +256,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label16.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label16.Location = new System.Drawing.Point(231, 42);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
@@ -251,6 +270,11 @@
             this.kryptonButton3.Location = new System.Drawing.Point(236, 103);
             this.kryptonButton3.Name = "kryptonButton3";
             this.kryptonButton3.Size = new System.Drawing.Size(178, 40);
+            this.kryptonButton3.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton3.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton3.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton3.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton3.TabIndex = 46;
             this.kryptonButton3.Values.Text = "Hiển thị";
             this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click_1);
@@ -261,6 +285,11 @@
             this.kryptonButton2.Location = new System.Drawing.Point(236, 34);
             this.kryptonButton2.Name = "kryptonButton2";
             this.kryptonButton2.Size = new System.Drawing.Size(178, 40);
+            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton2.TabIndex = 45;
             this.kryptonButton2.Values.Text = "Cập nhật";
             this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click_1);
@@ -272,7 +301,7 @@
             this.groupBox1.Controls.Add(this.kryptonButton3);
             this.groupBox1.Controls.Add(this.kryptonButton2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox1.Location = new System.Drawing.Point(22, 257);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -406,7 +435,7 @@
             this.groupBox4.Controls.Add(this.dataGridCusType);
             this.groupBox4.Controls.Add(this.bindingStaff);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox4.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox4.Location = new System.Drawing.Point(507, 37);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(616, 389);
@@ -414,23 +443,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh Sách Loại Phòng";
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(236, 84);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(178, 36);
-            this.txtName.TabIndex = 130;
-            this.txtName.Text = "";
-            this.txtName.WordWrap = false;
-            // 
             // CustomerType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1156, 470);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "CustomerType";
             this.Text = "CustomerType";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCusType)).EndInit();
