@@ -156,7 +156,7 @@
             this.label2.Location = new System.Drawing.Point(389, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(227, 46);
+            this.label2.Size = new System.Drawing.Size(219, 45);
             this.label2.TabIndex = 48;
             this.label2.Text = "ĐĂNG NHẬP";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -165,7 +165,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(402, 222);
+            this.label3.Location = new System.Drawing.Point(394, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(203, 16);
             this.label3.TabIndex = 57;
@@ -176,7 +176,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(402, 320);
+            this.label5.Location = new System.Drawing.Point(393, 320);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(222, 16);
             this.label5.TabIndex = 58;

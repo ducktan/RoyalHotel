@@ -359,6 +359,7 @@
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(271, 34);
             this.txtConfirm.TabIndex = 83;
+            this.txtConfirm.TextChanged += new System.EventHandler(this.txtConfirm_TextChanged);
             // 
             // txtNewPass
             // 
@@ -366,6 +367,7 @@
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(271, 34);
             this.txtNewPass.TabIndex = 82;
+            this.txtNewPass.TextChanged += new System.EventHandler(this.txtNewPass_TextChanged);
             // 
             // txtPass
             // 
@@ -373,6 +375,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(271, 34);
             this.txtPass.TabIndex = 79;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // label14
             // 
