@@ -38,6 +38,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSendImg = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,7 +129,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(282, 408);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(767, 22);
+            this.textBox3.Size = new System.Drawing.Size(736, 22);
             this.textBox3.TabIndex = 281;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -158,11 +159,22 @@
             this.label2.Text = "VAI TRÒ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // btnSendImg
+            // 
+            this.btnSendImg.Location = new System.Drawing.Point(1024, 408);
+            this.btnSendImg.Name = "btnSendImg";
+            this.btnSendImg.Size = new System.Drawing.Size(26, 23);
+            this.btnSendImg.TabIndex = 284;
+            this.btnSendImg.Text = "|||";
+            this.btnSendImg.UseVisualStyleBackColor = true;
+            this.btnSendImg.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 505);
+            this.Controls.Add(this.btnSendImg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.RoleBox);
             this.Controls.Add(this.chatRTB);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSendImg;
     }
 }

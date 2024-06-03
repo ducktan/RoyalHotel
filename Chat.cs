@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,6 +107,42 @@ namespace Royal
             string displayText = $"{Royal.DAO.User.Role} ({Royal.DAO.User.Id})";
             await chatDAO.LoadChat(displayText, chatRTB,displayText);
 
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                byte[] iArray = File.ReadAllBytes(filePath);
+                string imageUrl = Convert.ToBase64String(iArray);
+                string receiverID = cbID.SelectedItem?.ToString();
+                string senderID = Royal.DAO.User.Id;
+                string dateTime = DateTime.Now.ToString("HH:mm:ss ddd,dd-MM-yyyy");
+
+                if (string.IsNullOrEmpty(receiverID))
+                {
+                    MessageBox.Show("Please select a receiver.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                ChatDAO chat = new ChatDAO
+                {
+                    SenderID = senderID,
+                    ReceiverID = receiverID,
+                    Content = "[Image]",
+                    DateTime = dateTime,
+                    ImageURL = imageUrl // Set ImageURL in chat
+                };
+
+                await chatDAO.AddChat(chat);
+                MessageBox.Show("Image sent successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string formattedMessage = $"{dateTime} - To {receiverID}: [Image]\n";
+                chatRTB.AppendText(formattedMessage);
+                chatDAO.LoadImageFromURL(imageUrl, chatRTB);
+            }
         }
     }
 }

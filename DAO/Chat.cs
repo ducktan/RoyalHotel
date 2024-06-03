@@ -2,12 +2,17 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using System;
+using System.IO;
 using System.Collections.Generic;
-using System.Linq;
+using System.Drawing;
+using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Firebase.Database;
-using Firebase.Database.Query;
+using ComponentFactory.Krypton.Toolkit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Linq;
+using iTextSharp.text.pdf.codec;
 
 namespace Royal.DAO
 {
@@ -18,6 +23,7 @@ namespace Royal.DAO
         public string ReceiverID { get; set; }
         public string Content { get; set; }
         public string DateTime { get; set; }
+        public string ImageURL { get; set; } // New property for image URL
         private readonly FirebConfig firebaseConfig = new FirebConfig();
         public IFirebaseClient Client { get; private set; }
 
@@ -41,7 +47,8 @@ namespace Royal.DAO
                 chat.SenderID,
                 chat.ReceiverID,
                 chat.Content,
-                chat.DateTime
+                chat.DateTime,
+                chat.ImageURL // Include ImageURL in the chat data
             };
 
             FirebaseResponse response = await Client.SetAsync("Chat/" + chat.ReceiverID + "/" + chat.SenderID + "/" + chat.DateTime, ChatData);
@@ -52,34 +59,43 @@ namespace Royal.DAO
             try
             {
                 FirebaseResponse response = await Client.GetAsync("Chat/" + receiverID + "/");
-                if (richTextBox.Text != null)
+                if (response.Body != "null")
                 {
-                    if (response.Body != "null")
-                    {
-                        var allSenderChats = response.ResultAs<Dictionary<string, Dictionary<string, ChatDAO>>>();
+                    var allSenderChats = response.ResultAs<Dictionary<string, Dictionary<string, ChatDAO>>>();
 
-                        foreach (var senderChats in allSenderChats)
+                    foreach (var senderChats in allSenderChats)
+                    {
+                        foreach (var chatEntry in senderChats.Value)
                         {
-                            foreach (var chatEntry in senderChats.Value)
+                            var chat = chatEntry.Value;
+                            string formattedMessage = $"{chat.DateTime} - {chat.SenderID}: {chat.Content}\n";
+                            richTextBox.AppendText(formattedMessage);
+                            if (!string.IsNullOrEmpty(chat.ImageURL))
                             {
-                                var chat = chatEntry.Value;
-                                string formattedMessage = $"{chat.DateTime} - {chat.SenderID}: {chat.Content}\n";
-                                richTextBox.AppendText(formattedMessage);
+                                // Display image from URL
+                                LoadImageFromURL(chat.ImageURL, richTextBox);
                             }
                         }
+                    }
 
-                        var allReceiverChats = response.ResultAs<Dictionary<string, Dictionary<string, Dictionary<string, ChatDAO>>>>();
+                    var allReceiverChats = response.ResultAs<Dictionary<string, Dictionary<string, Dictionary<string, ChatDAO>>>>();
 
-                        foreach (var receiverChats in allReceiverChats)
+                    foreach (var receiverChats in allReceiverChats)
+                    {
+                        if (receiverChats.Value.ContainsKey(senderID))
                         {
-                            if (receiverChats.Value.ContainsKey(senderID))
+                            var senderChats = receiverChats.Value[senderID];
+                            foreach (var chatEntry in senderChats)
                             {
-                                var senderChats = receiverChats.Value[senderID];
-                                foreach (var chatEntry in senderChats)
+                                
+                                var chat = chatEntry.Value;
+                           
+                                string formattedMessage = $"{chat.DateTime} - To {receiverChats.Key}: {chat.Content}\n";
+                                richTextBox.AppendText(formattedMessage);
+                                if (!string.IsNullOrEmpty(chat.ImageURL))
                                 {
-                                    var chat = chatEntry.Value;
-                                    string formattedMessage = $"{chat.DateTime} - To {receiverChats.Key}: {chat.Content}\n";
-                                    richTextBox.AppendText(formattedMessage);
+                                    // Display image from URL
+                                    LoadImageFromURL(chat.ImageURL, richTextBox);
                                 }
                             }
                         }
@@ -101,12 +117,9 @@ namespace Royal.DAO
             try
             {
                 FirebaseResponse response = await Client.GetAsync("Chat/");
-                if (richTextBox.Text != null)
+                if (response.Body != "null")
                 {
-                    if (response.Body != "null")
-                    {
-                        
-                    }
+                    // Implement the logic to load chat history for the sender
                 }
                 else
                 {
@@ -119,25 +132,24 @@ namespace Royal.DAO
             }
         }
 
-        public void SetupRealTimeListener(string userID, RichTextBox richTextBox)
+        public void LoadImageFromURL(string imageURL, RichTextBox richTextBox)
         {
-            firebaseClient
-                .Child("Chat")
-                .Child(userID)
-                .AsObservable<ChatDAO>()
-                .Subscribe(d =>
-                {
-                    if (d.Object != null)
+            try
+            {
+                    byte[] imageBytes = Convert.FromBase64String(imageURL);
+                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imageBytes))
                     {
-                        var chat = d.Object;
-                        string formattedMessage = $"{chat.DateTime} - {chat.SenderID}: {chat.Content}\n";
-                        richTextBox.Invoke(new Action(() =>
-                        {
-                            richTextBox.AppendText(formattedMessage);
-                        }));
+                        Image img = Image.FromStream(ms);
+                        Clipboard.SetImage(img);
+                        richTextBox.Paste();
                     }
-                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading the image: {ex.Message}", "Load Image Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+       
     }
 }
