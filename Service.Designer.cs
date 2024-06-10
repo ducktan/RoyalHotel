@@ -540,6 +540,7 @@
             this.ClientSize = new System.Drawing.Size(1272, 763);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Service";
             this.Text = "Service";
             this.tabControl1.ResumeLayout(false);

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookRoom));
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -119,10 +119,10 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(19, 117);
+            this.textBox8.Location = new System.Drawing.Point(19, 132);
             this.textBox8.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 34);
+            this.textBox8.Size = new System.Drawing.Size(200, 29);
             this.textBox8.TabIndex = 140;
             // 
             // groupBox2
@@ -150,27 +150,28 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox2.Location = new System.Drawing.Point(24, 397);
+            this.groupBox2.Location = new System.Drawing.Point(24, 420);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(453, 339);
+            this.groupBox2.Size = new System.Drawing.Size(785, 316);
             this.groupBox2.TabIndex = 275;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khách hàng";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 239);
+            this.textBox1.Location = new System.Drawing.Point(12, 211);
             this.textBox1.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 34);
+            this.textBox1.Size = new System.Drawing.Size(200, 29);
             this.textBox1.TabIndex = 145;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(247, 48);
+            this.textBox11.Location = new System.Drawing.Point(525, 51);
             this.textBox11.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(203, 34);
+            this.textBox11.Size = new System.Drawing.Size(203, 29);
             this.textBox11.TabIndex = 144;
             // 
             // textBox12
@@ -184,62 +185,63 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(248, 25);
+            this.label7.Location = new System.Drawing.Point(520, 18);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 25);
             this.label7.TabIndex = 141;
             this.label7.Text = "Email";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label22.Location = new System.Drawing.Point(15, 27);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(142, 25);
+            this.label22.Size = new System.Drawing.Size(143, 25);
             this.label22.TabIndex = 139;
             this.label22.Text = "Mã khách hàng";
             // 
             // kryptonDateTimePicker3
             // 
-            this.kryptonDateTimePicker3.Location = new System.Drawing.Point(240, 110);
+            this.kryptonDateTimePicker3.Location = new System.Drawing.Point(251, 136);
             this.kryptonDateTimePicker3.Name = "kryptonDateTimePicker3";
             this.kryptonDateTimePicker3.Size = new System.Drawing.Size(203, 25);
             this.kryptonDateTimePicker3.TabIndex = 135;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(237, 168);
+            this.textBox6.Location = new System.Drawing.Point(525, 132);
             this.textBox6.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(203, 34);
+            this.textBox6.Size = new System.Drawing.Size(203, 29);
             this.textBox6.TabIndex = 138;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(11, 301);
+            this.textBox5.Location = new System.Drawing.Point(525, 211);
             this.textBox5.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 34);
+            this.textBox5.Size = new System.Drawing.Size(200, 29);
             this.textBox5.TabIndex = 137;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(13, 168);
+            this.textBox4.Location = new System.Drawing.Point(15, 132);
             this.textBox4.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 34);
+            this.textBox4.Size = new System.Drawing.Size(200, 29);
             this.textBox4.TabIndex = 136;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(13, 110);
+            this.textBox3.Location = new System.Drawing.Point(254, 51);
             this.textBox3.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 34);
+            this.textBox3.Size = new System.Drawing.Size(200, 29);
             this.textBox3.TabIndex = 136;
             // 
             // cbNationality
@@ -266,7 +268,7 @@
             "Tây Ban Nha",
             "Ý",
             "Khác"});
-            this.cbNationality.Location = new System.Drawing.Point(240, 300);
+            this.cbNationality.Location = new System.Drawing.Point(12, 277);
             this.cbNationality.Name = "cbNationality";
             this.cbNationality.Size = new System.Drawing.Size(203, 30);
             this.cbNationality.Style = MetroFramework.MetroColorStyle.Green;
@@ -279,33 +281,34 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(238, 82);
+            this.label6.Location = new System.Drawing.Point(249, 108);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 25);
+            this.label6.Size = new System.Drawing.Size(102, 25);
             this.label6.TabIndex = 46;
             this.label6.Text = "Ngày sinh:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label20.Location = new System.Drawing.Point(9, 203);
+            this.label20.Location = new System.Drawing.Point(6, 175);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(154, 25);
+            this.label20.Size = new System.Drawing.Size(156, 25);
             this.label20.TabIndex = 41;
             this.label20.Text = "Loại khách hàng:";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(238, 138);
+            this.label11.Location = new System.Drawing.Point(526, 102);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 25);
+            this.label11.Size = new System.Drawing.Size(75, 25);
             this.label11.TabIndex = 35;
             this.label11.Text = "Địa chỉ:";
             // 
@@ -319,7 +322,7 @@
             "Nam",
             "Nữ",
             "Khác"});
-            this.cbSex.Location = new System.Drawing.Point(240, 239);
+            this.cbSex.Location = new System.Drawing.Point(247, 210);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(203, 30);
             this.cbSex.Style = MetroFramework.MetroColorStyle.Green;
@@ -332,55 +335,55 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label12.Location = new System.Drawing.Point(238, 273);
+            this.label12.Location = new System.Drawing.Point(10, 250);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 25);
+            this.label12.Size = new System.Drawing.Size(99, 25);
             this.label12.TabIndex = 29;
             this.label12.Text = "Quốc tịch:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label13.Location = new System.Drawing.Point(240, 211);
+            this.label13.Location = new System.Drawing.Point(247, 182);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 25);
+            this.label13.Size = new System.Drawing.Size(90, 25);
             this.label13.TabIndex = 28;
             this.label13.Text = "Giới tính:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label14.Location = new System.Drawing.Point(8, 273);
+            this.label14.Location = new System.Drawing.Point(522, 183);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(127, 25);
+            this.label14.Size = new System.Drawing.Size(129, 25);
             this.label14.TabIndex = 26;
             this.label14.Text = "Số điện thoại:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label15.Location = new System.Drawing.Point(8, 140);
+            this.label15.Location = new System.Drawing.Point(10, 104);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(195, 25);
+            this.label15.Size = new System.Drawing.Size(198, 25);
             this.label15.TabIndex = 24;
             this.label15.Text = "Thẻ căn cước/ CMND:";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label16.Location = new System.Drawing.Point(8, 80);
+            this.label16.Location = new System.Drawing.Point(249, 21);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(96, 25);
+            this.label16.Size = new System.Drawing.Size(100, 25);
             this.label16.TabIndex = 22;
             this.label16.Text = "Họ và tên:";
             // 
@@ -395,7 +398,7 @@
             this.groupBox4.Controls.Add(this.bindingSurcharge);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox4.Location = new System.Drawing.Point(841, 55);
+            this.groupBox4.Location = new System.Drawing.Point(839, 55);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(675, 544);
             this.groupBox4.TabIndex = 280;
@@ -409,14 +412,14 @@
             this.dataGridViewParameter.AllowUserToResizeRows = false;
             this.dataGridViewParameter.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewParameter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParameter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParameter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewParameter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewParameter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDP,
@@ -427,27 +430,27 @@
             this.NgayTra,
             this.SONGUOI,
             this.TIENCOC});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewParameter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewParameter.GridColor = System.Drawing.Color.White;
             this.dataGridViewParameter.Location = new System.Drawing.Point(3, 57);
             this.dataGridViewParameter.Name = "dataGridViewParameter";
             this.dataGridViewParameter.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParameter.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParameter.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewParameter.RowHeadersVisible = false;
             this.dataGridViewParameter.RowHeadersWidth = 51;
             this.dataGridViewParameter.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -640,23 +643,23 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(19, 60);
+            this.textBox7.Location = new System.Drawing.Point(19, 72);
             this.textBox7.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(200, 34);
+            this.textBox7.Size = new System.Drawing.Size(200, 29);
             this.textBox7.TabIndex = 139;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(19, 180);
+            this.textBox9.Location = new System.Drawing.Point(19, 218);
             this.textBox9.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(200, 34);
+            this.textBox9.Size = new System.Drawing.Size(200, 29);
             this.textBox9.TabIndex = 141;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(246, 56);
+            this.button1.Location = new System.Drawing.Point(233, 56);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 36);
             this.button1.TabIndex = 48;
@@ -702,7 +705,7 @@
             this.metroComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.metroComboBox2.FormattingEnabled = true;
             this.metroComboBox2.ItemHeight = 24;
-            this.metroComboBox2.Location = new System.Drawing.Point(8, 188);
+            this.metroComboBox2.Location = new System.Drawing.Point(8, 182);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.Size = new System.Drawing.Size(203, 30);
             this.metroComboBox2.Style = MetroFramework.MetroColorStyle.Green;
@@ -717,7 +720,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(3, 159);
+            this.label5.Location = new System.Drawing.Point(3, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 25);
             this.label5.TabIndex = 135;
@@ -736,7 +739,7 @@
             "4",
             "5",
             "6"});
-            this.metroComboBox1.Location = new System.Drawing.Point(9, 129);
+            this.metroComboBox1.Location = new System.Drawing.Point(9, 122);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(203, 30);
             this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Green;
@@ -778,17 +781,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(14, 32);
+            this.label3.Location = new System.Drawing.Point(14, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 25);
+            this.label3.Size = new System.Drawing.Size(140, 25);
             this.label3.TabIndex = 22;
             this.label3.Text = "Mã loại phòng:";
             // 
             // kryptonDateTimePicker1
             // 
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(248, 168);
+            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(246, 132);
             this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
             this.kryptonDateTimePicker1.Size = new System.Drawing.Size(198, 25);
             this.kryptonDateTimePicker1.TabIndex = 133;
@@ -796,7 +799,7 @@
             // 
             // kryptonDateTimePicker2
             // 
-            this.kryptonDateTimePicker2.Location = new System.Drawing.Point(252, 100);
+            this.kryptonDateTimePicker2.Location = new System.Drawing.Point(249, 64);
             this.kryptonDateTimePicker2.Name = "kryptonDateTimePicker2";
             this.kryptonDateTimePicker2.Size = new System.Drawing.Size(197, 25);
             this.kryptonDateTimePicker2.TabIndex = 132;
@@ -807,18 +810,19 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label23.Location = new System.Drawing.Point(241, 140);
+            this.label23.Location = new System.Drawing.Point(251, 104);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(88, 25);
             this.label23.TabIndex = 40;
             this.label23.Text = "Ngày trả:";
+            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label19.Location = new System.Drawing.Point(5, 91);
+            this.label19.Location = new System.Drawing.Point(4, 94);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(91, 25);
             this.label19.TabIndex = 38;
@@ -829,7 +833,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label21.Location = new System.Drawing.Point(249, 72);
+            this.label21.Location = new System.Drawing.Point(250, 35);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(108, 25);
             this.label21.TabIndex = 34;
@@ -838,33 +842,33 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label10.Location = new System.Drawing.Point(14, 212);
+            this.label10.Location = new System.Drawing.Point(14, 259);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 25);
+            this.label10.Size = new System.Drawing.Size(45, 25);
             this.label10.TabIndex = 36;
             this.label10.Text = "Giá:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label8.Location = new System.Drawing.Point(14, 152);
+            this.label8.Location = new System.Drawing.Point(14, 182);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(198, 25);
+            this.label8.Size = new System.Drawing.Size(202, 25);
             this.label8.TabIndex = 31;
             this.label8.Text = "Số lượng người tối đa:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(14, 89);
+            this.label4.Location = new System.Drawing.Point(14, 104);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 25);
+            this.label4.Size = new System.Drawing.Size(143, 25);
             this.label4.TabIndex = 24;
             this.label4.Text = "Tên loại phòng:";
             // 
@@ -899,9 +903,9 @@
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox5.Location = new System.Drawing.Point(530, 370);
+            this.groupBox5.Location = new System.Drawing.Point(842, 613);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(279, 294);
+            this.groupBox5.Size = new System.Drawing.Size(669, 123);
             this.groupBox5.TabIndex = 278;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chức năng";
@@ -909,7 +913,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(19, 52);
+            this.checkBox1.Location = new System.Drawing.Point(12, 47);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(18, 17);
             this.checkBox1.TabIndex = 139;
@@ -917,18 +921,18 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(16, 182);
+            this.button4.Location = new System.Drawing.Point(12, 78);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(232, 36);
+            this.button4.Size = new System.Drawing.Size(266, 36);
             this.button4.TabIndex = 138;
             this.button4.Text = "Đóng";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(16, 131);
+            this.button3.Location = new System.Drawing.Point(329, 80);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(232, 34);
+            this.button3.Size = new System.Drawing.Size(320, 34);
             this.button3.TabIndex = 137;
             this.button3.Text = "Hủy";
             this.button3.UseVisualStyleBackColor = true;
@@ -936,9 +940,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(16, 80);
+            this.button2.Location = new System.Drawing.Point(329, 32);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 36);
+            this.button2.Size = new System.Drawing.Size(320, 36);
             this.button2.TabIndex = 136;
             this.button2.Text = "Đặt phòng";
             this.button2.UseVisualStyleBackColor = true;
@@ -949,7 +953,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(43, 44);
+            this.label1.Location = new System.Drawing.Point(36, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(221, 25);
             this.label1.TabIndex = 47;
@@ -957,10 +961,10 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(19, 234);
+            this.textBox10.Location = new System.Drawing.Point(19, 292);
             this.textBox10.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(200, 34);
+            this.textBox10.Size = new System.Drawing.Size(203, 29);
             this.textBox10.TabIndex = 142;
             // 
             // groupBox1
@@ -978,7 +982,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox1.Location = new System.Drawing.Point(530, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 294);
+            this.groupBox1.Size = new System.Drawing.Size(279, 335);
             this.groupBox1.TabIndex = 274;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại phòng";
