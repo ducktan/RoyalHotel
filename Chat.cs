@@ -18,13 +18,17 @@ namespace Royal
     {
         private Firebase.Database.FirebaseClient firebaseClient;
         private ChatDAO chatDAO;
+        private Timer refreshTimer;
         public Chat()
         {
             InitializeComponent();
             firebaseClient = FirebaseManage.GetFirebaseClient();
             chatDAO = new ChatDAO();
-        }
 
+            refreshTimer = new Timer();
+            refreshTimer.Interval = 2000; // 5 seconds
+            refreshTimer.Tick += timer1_Tick;
+        }
         private void cbID_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -83,7 +87,8 @@ namespace Royal
                 SenderID = senderID,
                 ReceiverID = receiverID,
                 Content = content,
-                DateTime = dateTime
+                DateTime = dateTime,
+                ImageURL = "",
             };
 
             await chatDAO.AddChat(chat);
@@ -105,7 +110,7 @@ namespace Royal
             StaffDAO staff = new StaffDAO();
             await Royal.DAO.User.LoadUsersToComboBox(cbID);
             string displayText = $"{Royal.DAO.User.Role} ({Royal.DAO.User.Id})";
-            await chatDAO.LoadChat(displayText, chatRTB,displayText);
+            await chatDAO.LoadChat(displayText, chatRTB,Royal.DAO.User.Id);
 
         }
 
@@ -132,7 +137,7 @@ namespace Royal
                 {
                     SenderID = senderID,
                     ReceiverID = receiverID,
-                    Content = "[Image]",
+                    Content = "",
                     DateTime = dateTime,
                     ImageURL = imageUrl // Set ImageURL in chat
                 };
@@ -142,6 +147,20 @@ namespace Royal
                 string formattedMessage = $"{dateTime} - To {receiverID}: [Image]\n";
                 chatRTB.AppendText(formattedMessage);
                 chatDAO.LoadImageFromURL(imageUrl, chatRTB);
+            }
+        }
+
+        private async void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                string displayText = $"{Royal.DAO.User.Role} ({Royal.DAO.User.Id})";
+                await chatDAO.LoadChat(displayText, chatRTB, Royal.DAO.User.Id);
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception as needed
+                MessageBox.Show("An error occurred while refreshing the chat: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

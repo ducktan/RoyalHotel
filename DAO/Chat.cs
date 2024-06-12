@@ -48,7 +48,7 @@ namespace Royal.DAO
                 chat.ReceiverID,
                 chat.Content,
                 chat.DateTime,
-                chat.ImageURL // Include ImageURL in the chat data
+                chat.ImageURL
             };
 
             FirebaseResponse response = await Client.SetAsync("Chat/" + chat.ReceiverID + "/" + chat.SenderID + "/" + chat.DateTime, ChatData);
@@ -87,15 +87,16 @@ namespace Royal.DAO
                             var senderChats = receiverChats.Value[senderID];
                             foreach (var chatEntry in senderChats)
                             {
-                                
+
                                 var chat = chatEntry.Value;
-                           
+
                                 string formattedMessage = $"{chat.DateTime} - To {receiverChats.Key}: {chat.Content}\n";
                                 richTextBox.AppendText(formattedMessage);
                                 if (!string.IsNullOrEmpty(chat.ImageURL))
                                 {
                                     // Display image from URL
                                     LoadImageFromURL(chat.ImageURL, richTextBox);
+                                    richTextBox.AppendText("\n");
                                 }
                             }
                         }
@@ -108,29 +109,10 @@ namespace Royal.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while loading the chat: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
         }
 
-        public async Task LoadChatForSender(string senderID, RichTextBox richTextBox)
-        {
-            try
-            {
-                FirebaseResponse response = await Client.GetAsync("Chat/");
-                if (response.Body != "null")
-                {
-                    // Implement the logic to load chat history for the sender
-                }
-                else
-                {
-                    richTextBox.AppendText("No chat history found.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while loading the chat: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         public void LoadImageFromURL(string imageURL, RichTextBox richTextBox)
         {
