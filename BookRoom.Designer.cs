@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookRoom));
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -122,7 +122,7 @@
             this.textBox8.Location = new System.Drawing.Point(19, 132);
             this.textBox8.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 29);
+            this.textBox8.Size = new System.Drawing.Size(200, 34);
             this.textBox8.TabIndex = 140;
             // 
             // groupBox2
@@ -152,17 +152,17 @@
             this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox2.Location = new System.Drawing.Point(24, 420);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(785, 316);
+            this.groupBox2.Size = new System.Drawing.Size(785, 331);
             this.groupBox2.TabIndex = 275;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khách hàng";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 211);
+            this.textBox1.Location = new System.Drawing.Point(13, 214);
             this.textBox1.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 29);
+            this.textBox1.Size = new System.Drawing.Size(200, 34);
             this.textBox1.TabIndex = 145;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -171,7 +171,7 @@
             this.textBox11.Location = new System.Drawing.Point(525, 51);
             this.textBox11.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(203, 29);
+            this.textBox11.Size = new System.Drawing.Size(203, 34);
             this.textBox11.TabIndex = 144;
             // 
             // textBox12
@@ -217,7 +217,7 @@
             this.textBox6.Location = new System.Drawing.Point(525, 132);
             this.textBox6.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(203, 29);
+            this.textBox6.Size = new System.Drawing.Size(203, 34);
             this.textBox6.TabIndex = 138;
             // 
             // textBox5
@@ -225,7 +225,7 @@
             this.textBox5.Location = new System.Drawing.Point(525, 211);
             this.textBox5.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 29);
+            this.textBox5.Size = new System.Drawing.Size(200, 34);
             this.textBox5.TabIndex = 137;
             // 
             // textBox4
@@ -233,7 +233,7 @@
             this.textBox4.Location = new System.Drawing.Point(15, 132);
             this.textBox4.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 29);
+            this.textBox4.Size = new System.Drawing.Size(200, 34);
             this.textBox4.TabIndex = 136;
             // 
             // textBox3
@@ -241,7 +241,7 @@
             this.textBox3.Location = new System.Drawing.Point(254, 51);
             this.textBox3.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 29);
+            this.textBox3.Size = new System.Drawing.Size(200, 34);
             this.textBox3.TabIndex = 136;
             // 
             // cbNationality
@@ -268,7 +268,7 @@
             "Tây Ban Nha",
             "Ý",
             "Khác"});
-            this.cbNationality.Location = new System.Drawing.Point(12, 277);
+            this.cbNationality.Location = new System.Drawing.Point(12, 284);
             this.cbNationality.Name = "cbNationality";
             this.cbNationality.Size = new System.Drawing.Size(203, 30);
             this.cbNationality.Style = MetroFramework.MetroColorStyle.Green;
@@ -294,7 +294,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label20.Location = new System.Drawing.Point(6, 175);
+            this.label20.Location = new System.Drawing.Point(7, 186);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(156, 25);
             this.label20.TabIndex = 41;
@@ -322,7 +322,7 @@
             "Nam",
             "Nữ",
             "Khác"});
-            this.cbSex.Location = new System.Drawing.Point(247, 210);
+            this.cbSex.Location = new System.Drawing.Point(247, 215);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(203, 30);
             this.cbSex.Style = MetroFramework.MetroColorStyle.Green;
@@ -337,7 +337,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label12.Location = new System.Drawing.Point(10, 250);
+            this.label12.Location = new System.Drawing.Point(10, 257);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(99, 25);
             this.label12.TabIndex = 29;
@@ -348,7 +348,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label13.Location = new System.Drawing.Point(247, 182);
+            this.label13.Location = new System.Drawing.Point(247, 187);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 25);
             this.label13.TabIndex = 28;
@@ -412,14 +412,14 @@
             this.dataGridViewParameter.AllowUserToResizeRows = false;
             this.dataGridViewParameter.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewParameter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParameter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParameter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewParameter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewParameter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDP,
@@ -430,27 +430,27 @@
             this.NgayTra,
             this.SONGUOI,
             this.TIENCOC});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewParameter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewParameter.GridColor = System.Drawing.Color.White;
             this.dataGridViewParameter.Location = new System.Drawing.Point(3, 57);
             this.dataGridViewParameter.Name = "dataGridViewParameter";
             this.dataGridViewParameter.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParameter.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParameter.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewParameter.RowHeadersVisible = false;
             this.dataGridViewParameter.RowHeadersWidth = 51;
             this.dataGridViewParameter.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -643,7 +643,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(19, 72);
+            this.textBox7.Location = new System.Drawing.Point(19, 69);
             this.textBox7.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(200, 29);
@@ -654,7 +654,7 @@
             this.textBox9.Location = new System.Drawing.Point(19, 218);
             this.textBox9.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(200, 29);
+            this.textBox9.Size = new System.Drawing.Size(200, 34);
             this.textBox9.TabIndex = 141;
             // 
             // button1
@@ -681,7 +681,7 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox3.Location = new System.Drawing.Point(24, 284);
+            this.groupBox3.Location = new System.Drawing.Point(20, 293);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(454, 106);
             this.groupBox3.TabIndex = 279;
@@ -705,9 +705,9 @@
             this.metroComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.metroComboBox2.FormattingEnabled = true;
             this.metroComboBox2.ItemHeight = 24;
-            this.metroComboBox2.Location = new System.Drawing.Point(8, 182);
+            this.metroComboBox2.Location = new System.Drawing.Point(9, 182);
             this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(203, 30);
+            this.metroComboBox2.Size = new System.Drawing.Size(202, 30);
             this.metroComboBox2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroComboBox2.TabIndex = 136;
             this.metroComboBox2.UseCustomBackColor = true;
@@ -720,7 +720,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(3, 153);
+            this.label5.Location = new System.Drawing.Point(6, 157);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 25);
             this.label5.TabIndex = 135;
@@ -739,9 +739,9 @@
             "4",
             "5",
             "6"});
-            this.metroComboBox1.Location = new System.Drawing.Point(9, 122);
+            this.metroComboBox1.Location = new System.Drawing.Point(250, 59);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(203, 30);
+            this.metroComboBox1.Size = new System.Drawing.Size(141, 30);
             this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroComboBox1.TabIndex = 134;
             this.metroComboBox1.UseCustomBackColor = true;
@@ -791,17 +791,17 @@
             // 
             // kryptonDateTimePicker1
             // 
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(246, 132);
+            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(250, 129);
             this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
-            this.kryptonDateTimePicker1.Size = new System.Drawing.Size(198, 25);
+            this.kryptonDateTimePicker1.Size = new System.Drawing.Size(184, 25);
             this.kryptonDateTimePicker1.TabIndex = 133;
             this.kryptonDateTimePicker1.ValueChanged += new System.EventHandler(this.kryptonDateTimePicker1_ValueChanged_1);
             // 
             // kryptonDateTimePicker2
             // 
-            this.kryptonDateTimePicker2.Location = new System.Drawing.Point(249, 64);
+            this.kryptonDateTimePicker2.Location = new System.Drawing.Point(9, 125);
             this.kryptonDateTimePicker2.Name = "kryptonDateTimePicker2";
-            this.kryptonDateTimePicker2.Size = new System.Drawing.Size(197, 25);
+            this.kryptonDateTimePicker2.Size = new System.Drawing.Size(202, 25);
             this.kryptonDateTimePicker2.TabIndex = 132;
             this.kryptonDateTimePicker2.ValueChanged += new System.EventHandler(this.kryptonDateTimePicker2_ValueChanged_1);
             // 
@@ -810,7 +810,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label23.Location = new System.Drawing.Point(251, 104);
+            this.label23.Location = new System.Drawing.Point(252, 97);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(88, 25);
             this.label23.TabIndex = 40;
@@ -822,7 +822,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label19.Location = new System.Drawing.Point(4, 94);
+            this.label19.Location = new System.Drawing.Point(249, 31);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(91, 25);
             this.label19.TabIndex = 38;
@@ -833,7 +833,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label21.Location = new System.Drawing.Point(250, 35);
+            this.label21.Location = new System.Drawing.Point(7, 93);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(108, 25);
             this.label21.TabIndex = 34;
@@ -866,7 +866,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(14, 104);
+            this.label4.Location = new System.Drawing.Point(14, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(143, 25);
             this.label4.TabIndex = 24;
@@ -887,9 +887,9 @@
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox6.Location = new System.Drawing.Point(15, 55);
+            this.groupBox6.Location = new System.Drawing.Point(21, 55);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(454, 228);
+            this.groupBox6.Size = new System.Drawing.Size(454, 232);
             this.groupBox6.TabIndex = 277;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thông tin đăng kí";
@@ -927,6 +927,7 @@
             this.button4.TabIndex = 138;
             this.button4.Text = "Đóng";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -961,7 +962,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(19, 292);
+            this.textBox10.Location = new System.Drawing.Point(19, 288);
             this.textBox10.MaximumSize = new System.Drawing.Size(203, 29);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(203, 29);
@@ -992,7 +993,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1526, 739);
+            this.ClientSize = new System.Drawing.Size(1590, 788);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label2);
