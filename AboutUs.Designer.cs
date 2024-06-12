@@ -45,7 +45,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label9.Location = new System.Drawing.Point(28, 416);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
@@ -67,14 +67,14 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(24, 13);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label2.Location = new System.Drawing.Point(13, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 46);
+            this.label2.Size = new System.Drawing.Size(194, 45);
             this.label2.TabIndex = 112;
-            this.label2.Text = "Giới Thiệu";
+            this.label2.Text = "GIỚI THIỆU";
             // 
             // label8
             // 
@@ -152,7 +152,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label5.Location = new System.Drawing.Point(194, 78);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -165,14 +165,20 @@
             this.btnLogin.Location = new System.Drawing.Point(606, 400);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(120, 37);
+            this.btnLogin.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.btnLogin.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.btnLogin.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnLogin.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnLogin.TabIndex = 122;
-            this.btnLogin.Values.Text = "Login";
+            this.btnLogin.Values.Text = "LOGIN";
             this.btnLogin.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // AboutUs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(788, 464);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label9);
@@ -185,6 +191,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AboutUs";
             this.Text = "Form1";
             this.ResumeLayout(false);

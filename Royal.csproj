@@ -211,6 +211,7 @@
     <Compile Include="DAO\Bill.cs" />
     <Compile Include="DAO\BillDetail.cs" />
     <Compile Include="DAO\Bookroom.cs" />
+    <Compile Include="DAO\Chat.cs" />
     <Compile Include="DAO\CheckPass.cs" />
     <Compile Include="DAO\Customer.cs" />
     <Compile Include="DAO\CustomerType.cs" />
@@ -316,6 +317,9 @@
     <Compile Include="Service.Designer.cs">
       <DependentUpon>Service.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\8c7c22cecd9805c30d5fad08e0591483.jpg" />
+    <None Include="Resources\download1.jpg" />
+    <None Include="Resources\download.jpg" />
     <EmbeddedResource Include="AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +379,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReiceiveRoom.resx">
       <DependentUpon>ReiceiveRoom.cs</DependentUpon>

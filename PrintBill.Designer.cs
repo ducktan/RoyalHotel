@@ -781,6 +781,7 @@ namespace Royal
             this.Controls.Add(this.label25);
             this.Controls.Add(this.kryptonBorderEdge2);
             this.Controls.Add(this.kryptonButton6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "PrintBill";
             this.Text = "PrintBill";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDV)).EndInit();

@@ -13,12 +13,12 @@ namespace Royal.DAO
 {
 
 
-        public static class User
+    public static class User
     {
-            private static Firebase.Database.FirebaseClient firebaseClient;
+        private static Firebase.Database.FirebaseClient firebaseClient;
         public static string Id { get; set; }
-                public static UserId { get; set; }
-            public static string Email { get; set; }
+        public static string UserId { get; set; }
+        public static string Email { get; set; }
         public static string Role { get; set; }
         public static string ProfilePictureBase64 { get; set; }
 
@@ -28,8 +28,8 @@ namespace Royal.DAO
         {
             var config = new FirebConfig(); // Assuming you have this configuration class
             Client = new FireSharp.FirebaseClient(config.Config);
-                firebaseClient = FirebaseManage.GetFirebaseClient();
-            }
+            firebaseClient = FirebaseManage.GetFirebaseClient();
+        }
 
         public static async Task<bool> UploadProfilePicture(string filePath)
         {
@@ -134,6 +134,7 @@ namespace Royal.DAO
 
                 var newUser = new
                 {
+                    UserId = newUserId,
                     Email = email,
                     Role = role,
                     ProfilePictureBase64 = ""
@@ -218,6 +219,53 @@ namespace Royal.DAO
             }
         }
 
+        public static async Task LoadUsersToComboBox(ComboBox comboBox)
+        {
+            try
+            {
+                FirebaseResponse response = await Client.GetAsync("Users/");
+                var allUsers = response.ResultAs<Dictionary<string, dynamic>>();
 
+                comboBox.Items.Clear();
+                foreach (var user in allUsers)
+                {
+                    if (user.Value.UserID != User.Id)
+                    {
+                        string displayText = $"{user.Value.Role} ({user.Value.UserID})";
+                        comboBox.Items.Add(displayText);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading users: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static async Task<string> GetUserIdByEmail(string email)
+        {
+            try
+            {
+                var sanitizedEmail = email.Replace(".", "_").Replace("@", "_");
+                FirebaseResponse response = await Client.GetAsync("Users");
+                var allUsers = response.ResultAs<Dictionary<string, dynamic>>();
+                var userId = allUsers?.FirstOrDefault(u => u.Value.Email == email).Key;
+
+                if (userId != null)
+                {
+                    return userId;
+                }
+                else
+                {
+                    MessageBox.Show("User not found in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while retrieving the user ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
     }
 }

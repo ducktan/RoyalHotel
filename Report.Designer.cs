@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.result_but = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.groupBox3.Controls.Add(this.comboBoxMonth);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox3.Location = new System.Drawing.Point(22, 83);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
@@ -75,6 +75,10 @@
             this.result_but.Name = "result_but";
             this.result_but.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.result_but.Size = new System.Drawing.Size(312, 36);
+            this.result_but.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.result_but.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.result_but.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.result_but.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.result_but.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.result_but.TabIndex = 207;
             this.result_but.UseWaitCursor = true;
@@ -84,12 +88,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label2.Location = new System.Drawing.Point(11, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 25);
+            this.label2.Size = new System.Drawing.Size(71, 25);
             this.label2.TabIndex = 65;
             this.label2.Text = "Tháng:";
             // 
@@ -154,12 +158,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label3.Location = new System.Drawing.Point(377, 41);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 25);
+            this.label3.Size = new System.Drawing.Size(57, 25);
             this.label3.TabIndex = 66;
             this.label3.Text = "Năm:";
             // 
@@ -168,13 +172,15 @@
             this.kryptonBorderEdge1.Location = new System.Drawing.Point(22, 62);
             this.kryptonBorderEdge1.Name = "kryptonBorderEdge1";
             this.kryptonBorderEdge1.Size = new System.Drawing.Size(1123, 1);
+            this.kryptonBorderEdge1.StateCommon.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonBorderEdge1.StateCommon.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonBorderEdge1.Text = "kryptonBorderEdge1";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(13, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(275, 31);
@@ -210,16 +216,16 @@
             // 
             // resChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.resChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.resChart.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.resChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.resChart.Legends.Add(legend3);
             this.resChart.Location = new System.Drawing.Point(22, 185);
             this.resChart.Name = "resChart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.resChart.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.resChart.Series.Add(series3);
             this.resChart.Size = new System.Drawing.Size(440, 447);
             this.resChart.TabIndex = 87;
             this.resChart.Text = "chart1";
@@ -228,12 +234,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1158, 656);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.kryptonBorderEdge1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.doanhthu_lv);
             this.Controls.Add(this.resChart);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Report";
             this.Text = "Report";
             this.groupBox3.ResumeLayout(false);

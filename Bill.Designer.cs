@@ -87,6 +87,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
@@ -99,28 +101,36 @@
             // kryptonButton2
             // 
             this.kryptonButton2.Cursor = System.Windows.Forms.Cursors.No;
-            this.kryptonButton2.Location = new System.Drawing.Point(232, 96);
+            this.kryptonButton2.Location = new System.Drawing.Point(265, 85);
             this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(212, 43);
+            this.kryptonButton2.Size = new System.Drawing.Size(175, 43);
+            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton2.StateCommon.Border.Rounding = 20;
-            this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton2.StateCommon.Border.Rounding = 1;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton2.TabIndex = 47;
             this.kryptonButton2.Values.Text = "CANCEL";
             // 
             // kryptonButton1
             // 
             this.kryptonButton1.Cursor = System.Windows.Forms.Cursors.No;
-            this.kryptonButton1.Location = new System.Drawing.Point(232, 49);
+            this.kryptonButton1.Location = new System.Drawing.Point(265, 38);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(212, 41);
+            this.kryptonButton1.Size = new System.Drawing.Size(175, 41);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.Rounding = 20;
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton1.StateCommon.Border.Rounding = 1;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton1.TabIndex = 46;
             this.kryptonButton1.Values.Text = "SEARCH";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
@@ -154,7 +164,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -359,7 +369,9 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.toolStripLabel1,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripLabel2,
+            this.toolStripLabel3});
             this.bindingStaff.Location = new System.Drawing.Point(3, 30);
             this.bindingStaff.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingStaff.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -386,7 +398,7 @@
             this.groupBox4.Controls.Add(this.dataGridBill);
             this.groupBox4.Controls.Add(this.bindingStaff);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox4.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox4.Location = new System.Drawing.Point(519, 16);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1016, 680);
@@ -415,7 +427,7 @@
             this.groupBox3.Controls.Add(this.updateBut);
             this.groupBox3.Controls.Add(this.addBut);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox3.Location = new System.Drawing.Point(13, 574);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(477, 144);
@@ -426,14 +438,18 @@
             // DetailBut
             // 
             this.DetailBut.Cursor = System.Windows.Forms.Cursors.No;
-            this.DetailBut.Location = new System.Drawing.Point(235, 95);
+            this.DetailBut.Location = new System.Drawing.Point(258, 85);
             this.DetailBut.Name = "DetailBut";
             this.DetailBut.Size = new System.Drawing.Size(171, 43);
+            this.DetailBut.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.DetailBut.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.DetailBut.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.DetailBut.StateCommon.Border.Rounding = 20;
-            this.DetailBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetailBut.StateCommon.Border.Rounding = 1;
+            this.DetailBut.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.DetailBut.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.DetailBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetailBut.TabIndex = 70;
             this.DetailBut.Values.Text = "Chi tiết";
             this.DetailBut.Click += new System.EventHandler(this.DetailBut_Click);
@@ -441,14 +457,18 @@
             // delBut
             // 
             this.delBut.Cursor = System.Windows.Forms.Cursors.No;
-            this.delBut.Location = new System.Drawing.Point(34, 95);
+            this.delBut.Location = new System.Drawing.Point(34, 85);
             this.delBut.Name = "delBut";
             this.delBut.Size = new System.Drawing.Size(158, 43);
+            this.delBut.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.delBut.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.delBut.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.delBut.StateCommon.Border.Rounding = 20;
-            this.delBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delBut.StateCommon.Border.Rounding = 1;
+            this.delBut.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.delBut.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.delBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delBut.TabIndex = 69;
             this.delBut.Values.Text = "Xóa";
             this.delBut.Click += new System.EventHandler(this.kryptonButton5_Click);
@@ -456,14 +476,18 @@
             // updateBut
             // 
             this.updateBut.Cursor = System.Windows.Forms.Cursors.No;
-            this.updateBut.Location = new System.Drawing.Point(231, 36);
+            this.updateBut.Location = new System.Drawing.Point(258, 36);
             this.updateBut.Name = "updateBut";
-            this.updateBut.Size = new System.Drawing.Size(175, 43);
+            this.updateBut.Size = new System.Drawing.Size(171, 43);
+            this.updateBut.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.updateBut.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.updateBut.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.updateBut.StateCommon.Border.Rounding = 20;
-            this.updateBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBut.StateCommon.Border.Rounding = 1;
+            this.updateBut.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.updateBut.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.updateBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateBut.TabIndex = 68;
             this.updateBut.Values.Text = "Sửa";
             this.updateBut.Click += new System.EventHandler(this.kryptonButton4_Click);
@@ -474,11 +498,15 @@
             this.addBut.Location = new System.Drawing.Point(34, 36);
             this.addBut.Name = "addBut";
             this.addBut.Size = new System.Drawing.Size(158, 43);
+            this.addBut.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.addBut.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.addBut.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.addBut.StateCommon.Border.Rounding = 20;
-            this.addBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBut.StateCommon.Border.Rounding = 1;
+            this.addBut.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.addBut.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.addBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBut.TabIndex = 67;
             this.addBut.Values.Text = "Thêm";
             this.addBut.Click += new System.EventHandler(this.kryptonButton3_Click);
@@ -504,7 +532,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox2.Location = new System.Drawing.Point(16, 165);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(470, 391);
@@ -577,7 +605,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(15, 340);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 28);
@@ -597,7 +625,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label9.Location = new System.Drawing.Point(229, 250);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(115, 28);
@@ -608,7 +636,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label10.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label10.Location = new System.Drawing.Point(7, 250);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 28);
@@ -628,7 +656,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label7.Location = new System.Drawing.Point(229, 172);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 28);
@@ -639,7 +667,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label8.Location = new System.Drawing.Point(7, 172);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 28);
@@ -659,7 +687,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label5.Location = new System.Drawing.Point(229, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 28);
@@ -670,7 +698,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label6.Location = new System.Drawing.Point(11, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 28);
@@ -681,7 +709,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label4.Location = new System.Drawing.Point(229, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 28);
@@ -692,7 +720,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label3.Location = new System.Drawing.Point(7, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 28);
@@ -703,7 +731,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label2.Location = new System.Drawing.Point(5, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 28);
@@ -718,7 +746,7 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox1.Location = new System.Drawing.Point(16, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(474, 148);
@@ -736,16 +764,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(35, 40);
+            this.toolStripLabel2.Text = "PDF";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click_1);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(43, 40);
+            this.toolStripLabel3.Text = "Excel";
+            this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click_1);
+            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1558, 745);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Bill";
             this.Text = "Bill";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBill)).EndInit();
@@ -818,5 +862,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
         private System.Windows.Forms.ComboBox nhanvien;
         private System.Windows.Forms.ComboBox phong;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
     }
 }

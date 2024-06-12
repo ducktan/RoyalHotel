@@ -153,6 +153,21 @@ namespace Royal
             DAO.User.LoadUser(dataGridStaff);
         }
 
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
 
+
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.DefaultExt = "pdf";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportToPdf.Export(dataGridStaff, saveFileDialog.FileName);
+            }
+        }
     }
 }

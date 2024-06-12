@@ -267,13 +267,21 @@ namespace Royal
 
         private async void kryptonButton4_Click(object sender, EventArgs e)
         {
-            BillDAO billDAO = new BillDAO();
-            int giaDonValue = int.Parse(giaDon.Text);
-            int discountValue = int.Parse(discount.Text);
-            int totalValue = int.Parse(total.Text);
+            try
+            {
+                BillDAO billDAO = new BillDAO();
+                int giaDonValue = int.Parse(giaDon.Text);
+                int discountValue = int.Parse(discount.Text);
+                int totalValue = int.Parse(total.Text);
 
-            await billDAO.UpdateBill(mahoadon.Text, phong.Text, status.Text, maKHBox.Text, nhanvien.Text, date.Text, giaDonValue, discountValue, totalValue);
-            billDAO.LoadBill(dataGridBill);
+                await billDAO.UpdateBill(mahoadon.Text, phong.Text, status.Text, maKHBox.Text, nhanvien.Text, date.Text, giaDonValue, discountValue, totalValue);
+                billDAO.LoadBill(dataGridBill);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
@@ -457,8 +465,18 @@ namespace Royal
 
         private void DetailBut_Click(object sender, EventArgs e)
         {
-            BillDetail b = new BillDetail();
-            b.Show();
+            if (mahoadon.Text == " ")
+            {
+                BillDetail b = new BillDetail();
+                b.Show();
+            }
+            else
+            {
+                BillDetail b = new BillDetail(mahoadon.Text);
+                b.Show();
+            }
+            
+            
         }
 
         private void kryptonButton4_Click_1(object sender, EventArgs e)
@@ -517,6 +535,42 @@ namespace Royal
 
         private void Bill_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void toolStripLabel2_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.DefaultExt = "pdf";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportToPdf.Export(dataGridBill, saveFileDialog.FileName);
+            }
+        }
+
+        private void toolStripLabel3_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            saveFileDialog.DefaultExt = "xlsx";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                ExportToExcel.Export(dataGridBill, saveFileDialog.FileName);
+            }
 
         }
     }

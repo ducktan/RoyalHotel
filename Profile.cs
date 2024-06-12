@@ -180,5 +180,21 @@ namespace Royal
                 MessageBox.Show("No profile picture found.");
             }
         }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            txtPass.PasswordChar = '*';
+           
+        }
+
+        private void txtNewPass_TextChanged(object sender, EventArgs e)
+        {
+            txtNewPass.PasswordChar = '*';
+        }
+
+        private void txtConfirm_TextChanged(object sender, EventArgs e)
+        {
+            txtConfirm.PasswordChar = '*';
+        }
     }
 }

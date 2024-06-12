@@ -220,5 +220,22 @@ namespace Royal
             CustomerDAO cus = new CustomerDAO();
             cus.DeleteCus(idkh);
         }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.DefaultExt = "pdf";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportToPdf.Export(dataGridStaff, saveFileDialog.FileName);
+            }
+        }
     }
 }

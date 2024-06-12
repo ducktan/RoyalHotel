@@ -96,6 +96,8 @@ namespace Royal
                     DateTime ngayDi = kryptonDateTimePicker1.Value;
                     int numOfDay = (ngayDi - ngaydat).Days;
 
+                  
+
 
                     receiveroomDAO result = await receiveroomDAO.SearchReceiveRoomByIDDP(cccdKh, maPhong, ngayNhan, ngayTra);
                     string receivedRoom = result.ReceivedRoom.Trim();
@@ -315,6 +317,23 @@ namespace Royal
                     MessageBox.Show($"Error updating receive room: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.DefaultExt = "pdf";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportToPdf.Export(dataGridViewParameter, saveFileDialog.FileName);
             }
         }
     }

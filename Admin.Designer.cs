@@ -45,6 +45,8 @@
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridStaff = new System.Windows.Forms.DataGridView();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingStaff = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -59,8 +61,6 @@
             this.Create_But = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Parameter_button = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).BeginInit();
             this.bindingStaff.SuspendLayout();
@@ -76,6 +76,10 @@
             this.Del_But.Name = "Del_But";
             this.Del_But.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.Del_But.Size = new System.Drawing.Size(302, 36);
+            this.Del_But.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.Del_But.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.Del_But.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.Del_But.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.Del_But.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Del_But.TabIndex = 273;
             this.Del_But.UseWaitCursor = true;
@@ -96,6 +100,7 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(39, 40);
             this.toolStripLabel1.Text = "Xuất";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -184,7 +189,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -209,6 +214,20 @@
             this.dataGridStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridStaff.Size = new System.Drawing.Size(566, 392);
             this.dataGridStaff.TabIndex = 28;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Width = 170;
+            // 
+            // role
+            // 
+            this.role.HeaderText = "Chức vụ";
+            this.role.MinimumWidth = 6;
+            this.role.Name = "role";
+            this.role.Width = 230;
             // 
             // bindingStaff
             // 
@@ -253,7 +272,7 @@
             this.groupBox4.Controls.Add(this.dataGridStaff);
             this.groupBox4.Controls.Add(this.bindingStaff);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox4.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox4.Location = new System.Drawing.Point(379, 33);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(572, 468);
@@ -269,6 +288,10 @@
             this.IndexBut.Name = "IndexBut";
             this.IndexBut.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.IndexBut.Size = new System.Drawing.Size(302, 36);
+            this.IndexBut.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.IndexBut.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.IndexBut.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.IndexBut.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.IndexBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IndexBut.TabIndex = 271;
             this.IndexBut.UseWaitCursor = true;
@@ -277,7 +300,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBox1.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -286,7 +309,7 @@
             this.groupBox1.Controls.Add(this.Username);
             this.groupBox1.Controls.Add(this.Create_But);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox1.Location = new System.Drawing.Point(26, 72);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(306, 294);
@@ -362,8 +385,12 @@
             this.Create_But.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
             this.Create_But.Location = new System.Drawing.Point(15, 219);
             this.Create_But.Name = "Create_But";
-            this.Create_But.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            this.Create_But.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.Create_But.Size = new System.Drawing.Size(269, 36);
+            this.Create_But.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.Create_But.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.Create_But.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.Create_But.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.Create_But.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Create_But.TabIndex = 258;
             this.Create_But.UseWaitCursor = true;
@@ -378,6 +405,10 @@
             this.Parameter_button.Name = "Parameter_button";
             this.Parameter_button.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.Parameter_button.Size = new System.Drawing.Size(302, 36);
+            this.Parameter_button.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.Parameter_button.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.Parameter_button.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.Parameter_button.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.Parameter_button.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Parameter_button.TabIndex = 269;
             this.Parameter_button.UseWaitCursor = true;
@@ -389,31 +420,18 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(25, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 38);
             this.label1.TabIndex = 268;
             this.label1.Text = "ADMIN";
             // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.Width = 170;
-            // 
-            // role
-            // 
-            this.role.HeaderText = "Chức vụ";
-            this.role.MinimumWidth = 6;
-            this.role.Name = "role";
-            this.role.Width = 230;
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(963, 562);
             this.Controls.Add(this.Del_But);
             this.Controls.Add(this.groupBox4);
@@ -421,6 +439,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Parameter_button);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Admin";
             this.Text = "Admin";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStaff)).EndInit();

@@ -392,5 +392,47 @@ namespace Royal
         {
 
         }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.DefaultExt = "pdf";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportToPdf.Export(dataGridViewParameter, saveFileDialog.FileName);
+            }
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

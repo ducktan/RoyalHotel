@@ -82,7 +82,7 @@
             // 
             this.nameBox.Location = new System.Drawing.Point(342, 70);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(269, 37);
+            this.nameBox.Size = new System.Drawing.Size(246, 37);
             this.nameBox.TabIndex = 126;
             this.nameBox.Text = "";
             this.nameBox.WordWrap = false;
@@ -109,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label3.Location = new System.Drawing.Point(346, 42);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -141,7 +141,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -205,7 +205,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(37, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -317,6 +317,7 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(39, 40);
             this.toolStripLabel1.Text = "Xuất";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // toolStripButton1
             // 
@@ -332,7 +333,7 @@
             this.groupBox4.Controls.Add(this.dataGridStaffType);
             this.groupBox4.Controls.Add(this.bindingStaff);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox4.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox4.Location = new System.Drawing.Point(639, 36);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(753, 519);
@@ -344,7 +345,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label6.Location = new System.Drawing.Point(339, 110);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
@@ -364,7 +365,7 @@
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox2.Location = new System.Drawing.Point(1, 129);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -378,7 +379,7 @@
             // 
             this.salaryBox.Location = new System.Drawing.Point(342, 138);
             this.salaryBox.Name = "salaryBox";
-            this.salaryBox.Size = new System.Drawing.Size(269, 37);
+            this.salaryBox.Size = new System.Drawing.Size(246, 37);
             this.salaryBox.TabIndex = 127;
             this.salaryBox.Text = "";
             this.salaryBox.WordWrap = false;
@@ -387,7 +388,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label16.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label16.Location = new System.Drawing.Point(33, 110);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
@@ -401,6 +402,11 @@
             this.kryptonButton1.Location = new System.Drawing.Point(37, 34);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(269, 40);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton1.TabIndex = 135;
             this.kryptonButton1.Values.Text = "Thêm loại nhân viên";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
@@ -410,7 +416,12 @@
             this.kryptonButton4.Cursor = System.Windows.Forms.Cursors.Default;
             this.kryptonButton4.Location = new System.Drawing.Point(340, 94);
             this.kryptonButton4.Name = "kryptonButton4";
-            this.kryptonButton4.Size = new System.Drawing.Size(271, 40);
+            this.kryptonButton4.Size = new System.Drawing.Size(248, 40);
+            this.kryptonButton4.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton4.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton4.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton4.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton4.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton4.TabIndex = 47;
             this.kryptonButton4.Values.Text = "Danh sách loại nhân viên";
             this.kryptonButton4.Click += new System.EventHandler(this.kryptonButton4_Click);
@@ -421,6 +432,11 @@
             this.kryptonButton3.Location = new System.Drawing.Point(37, 94);
             this.kryptonButton3.Name = "kryptonButton3";
             this.kryptonButton3.Size = new System.Drawing.Size(269, 40);
+            this.kryptonButton3.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton3.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton3.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton3.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton3.TabIndex = 46;
             this.kryptonButton3.Values.Text = "Sửa loại nhân viên";
             this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
@@ -431,7 +447,7 @@
             this.groupBox3.Controls.Add(this.search);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox3.Location = new System.Drawing.Point(1, 5);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
@@ -444,9 +460,14 @@
             // kryptonButton5
             // 
             this.kryptonButton5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton5.Location = new System.Drawing.Point(340, 56);
+            this.kryptonButton5.Location = new System.Drawing.Point(344, 56);
             this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.Size = new System.Drawing.Size(269, 40);
+            this.kryptonButton5.Size = new System.Drawing.Size(244, 40);
+            this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton5.TabIndex = 134;
             this.kryptonButton5.Values.Text = "Tìm loại nhân viên";
             this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
@@ -464,7 +485,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label9.Location = new System.Drawing.Point(28, 31);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
@@ -479,7 +500,7 @@
             this.groupBox1.Controls.Add(this.kryptonButton3);
             this.groupBox1.Controls.Add(this.kryptonButton2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox1.Location = new System.Drawing.Point(1, 386);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -494,7 +515,12 @@
             this.kryptonButton2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.kryptonButton2.Location = new System.Drawing.Point(340, 34);
             this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(271, 39);
+            this.kryptonButton2.Size = new System.Drawing.Size(248, 39);
+            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton2.TabIndex = 45;
             this.kryptonButton2.Values.Text = "Xóa loại nhân viên";
             this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
@@ -503,11 +529,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1405, 578);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ManageStaffType";
             this.Text = "ManageStaffType";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStaffType)).EndInit();

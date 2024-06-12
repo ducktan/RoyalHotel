@@ -31,9 +31,9 @@ namespace Royal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parameter));
             this.kryptonBorderEdge1 = new ComponentFactory.Krypton.Toolkit.KryptonBorderEdge();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,6 +50,8 @@ namespace Royal
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ngdilam = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.Luong = new System.Windows.Forms.TextBox();
             this.SoLanVP = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -94,8 +96,6 @@ namespace Royal
             this.searchText = new System.Windows.Forms.TextBox();
             this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Chung = new System.Windows.Forms.TabControl();
-            this.ngdilam = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -113,14 +113,15 @@ namespace Royal
             this.kryptonBorderEdge1.Location = new System.Drawing.Point(34, 56);
             this.kryptonBorderEdge1.Name = "kryptonBorderEdge1";
             this.kryptonBorderEdge1.Size = new System.Drawing.Size(955, 1);
-            this.kryptonBorderEdge1.StateCommon.Color1 = System.Drawing.Color.SteelBlue;
+            this.kryptonBorderEdge1.StateCommon.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonBorderEdge1.StateCommon.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonBorderEdge1.Text = "kryptonBorderEdge1";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(23, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 35);
@@ -284,6 +285,25 @@ namespace Royal
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nhân viên";
             // 
+            // ngdilam
+            // 
+            this.ngdilam.BackColor = System.Drawing.Color.White;
+            this.ngdilam.Location = new System.Drawing.Point(962, 109);
+            this.ngdilam.Name = "ngdilam";
+            this.ngdilam.ReadOnly = true;
+            this.ngdilam.Size = new System.Drawing.Size(134, 34);
+            this.ngdilam.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(776, 112);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(153, 28);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Số ngày đi làm";
+            // 
             // Luong
             // 
             this.Luong.BackColor = System.Drawing.Color.White;
@@ -431,6 +451,10 @@ namespace Royal
             this.kryptonButton4.Name = "kryptonButton4";
             this.kryptonButton4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton4.Size = new System.Drawing.Size(179, 36);
+            this.kryptonButton4.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton4.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton4.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton4.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButton4.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton4.TabIndex = 282;
             this.kryptonButton4.UseWaitCursor = true;
@@ -465,6 +489,10 @@ namespace Royal
             this.kryptonButton3.Name = "kryptonButton3";
             this.kryptonButton3.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton3.Size = new System.Drawing.Size(179, 36);
+            this.kryptonButton3.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton3.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton3.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton3.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton3.TabIndex = 281;
             this.kryptonButton3.UseWaitCursor = true;
@@ -476,7 +504,7 @@ namespace Royal
             this.groupBox3.Controls.Add(this.dataGridViewParameter);
             this.groupBox3.Controls.Add(this.bindingSurcharge);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox3.Location = new System.Drawing.Point(23, 229);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1142, 374);
@@ -491,41 +519,41 @@ namespace Royal
             this.dataGridViewParameter.AllowUserToResizeRows = false;
             this.dataGridViewParameter.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewParameter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParameter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParameter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewParameter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewParameter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
             this.Ten,
             this.colValue,
             this.colDescribe});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewParameter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewParameter.GridColor = System.Drawing.Color.White;
             this.dataGridViewParameter.Location = new System.Drawing.Point(3, 55);
             this.dataGridViewParameter.Name = "dataGridViewParameter";
             this.dataGridViewParameter.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParameter.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParameter.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewParameter.RowHeadersVisible = false;
             this.dataGridViewParameter.RowHeadersWidth = 51;
             this.dataGridViewParameter.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -683,6 +711,7 @@ namespace Royal
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(40, 22);
             this.toolStripLabel1.Text = "Xuất";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // label2
             // 
@@ -704,6 +733,10 @@ namespace Royal
             this.kryptonButton2.Name = "kryptonButton2";
             this.kryptonButton2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton2.Size = new System.Drawing.Size(179, 36);
+            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton2.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton2.TabIndex = 279;
             this.kryptonButton2.UseWaitCursor = true;
@@ -738,6 +771,10 @@ namespace Royal
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton1.Size = new System.Drawing.Size(179, 36);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton1.TabIndex = 278;
             this.kryptonButton1.UseWaitCursor = true;
@@ -786,6 +823,10 @@ namespace Royal
             this.kryptonButton5.Name = "kryptonButton5";
             this.kryptonButton5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonButton5.Size = new System.Drawing.Size(179, 36);
+            this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton5.TabIndex = 260;
             this.kryptonButton5.UseWaitCursor = true;
@@ -804,25 +845,6 @@ namespace Royal
             this.Chung.TabIndex = 0;
             this.Chung.Tag = "";
             // 
-            // ngdilam
-            // 
-            this.ngdilam.BackColor = System.Drawing.Color.White;
-            this.ngdilam.Location = new System.Drawing.Point(962, 109);
-            this.ngdilam.Name = "ngdilam";
-            this.ngdilam.ReadOnly = true;
-            this.ngdilam.Size = new System.Drawing.Size(134, 34);
-            this.ngdilam.TabIndex = 6;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(776, 112);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(153, 28);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Số ngày đi làm";
-            // 
             // Parameter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -832,6 +854,7 @@ namespace Royal
             this.Controls.Add(this.kryptonBorderEdge1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Chung);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Parameter";
             this.Text = "Parameter";
             this.tabPage2.ResumeLayout(false);

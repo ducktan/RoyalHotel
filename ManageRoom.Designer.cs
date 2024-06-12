@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageRoom));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtRoomName = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.txtRoomID = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -102,7 +102,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label3.Location = new System.Drawing.Point(286, 42);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -119,7 +119,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(16, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -231,6 +231,7 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(39, 40);
             this.toolStripLabel1.Text = "Xuất";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // toolStripButton1
             // 
@@ -247,7 +248,7 @@
             this.groupBox4.Controls.Add(this.dataGridRoom);
             this.groupBox4.Controls.Add(this.bindingStaff);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox4.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox4.Location = new System.Drawing.Point(513, 24);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(699, 635);
@@ -257,7 +258,7 @@
             // 
             // btnDisplay
             // 
-            this.btnDisplay.Location = new System.Drawing.Point(443, 33);
+            this.btnDisplay.Location = new System.Drawing.Point(430, 33);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(113, 34);
             this.btnDisplay.TabIndex = 72;
@@ -270,14 +271,14 @@
             this.dataGridRoom.AllowUserToResizeRows = false;
             this.dataGridRoom.BackgroundColor = System.Drawing.Color.White;
             this.dataGridRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridRoom.ColumnHeadersHeight = 40;
             this.dataGridRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -285,26 +286,26 @@
             this.Column2,
             this.Column3,
             this.Column6});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridRoom.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridRoom.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridRoom.GridColor = System.Drawing.Color.White;
             this.dataGridRoom.Location = new System.Drawing.Point(3, 73);
             this.dataGridRoom.Name = "dataGridRoom";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridRoom.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridRoom.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridRoom.RowHeadersVisible = false;
             this.dataGridRoom.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridRoom.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -364,7 +365,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label20.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label20.Location = new System.Drawing.Point(273, 138);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
@@ -383,8 +384,8 @@
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox2.Location = new System.Drawing.Point(13, 197);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -415,7 +416,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label16.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label16.Location = new System.Drawing.Point(16, 138);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
@@ -426,9 +427,14 @@
             // btnAddRoom
             // 
             this.btnAddRoom.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnAddRoom.Location = new System.Drawing.Point(7, 51);
+            this.btnAddRoom.Location = new System.Drawing.Point(16, 51);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(212, 40);
+            this.btnAddRoom.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.btnAddRoom.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.btnAddRoom.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnAddRoom.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnAddRoom.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddRoom.TabIndex = 135;
             this.btnAddRoom.Values.Text = "Thêm phòng";
             this.btnAddRoom.Click += new System.EventHandler(this.kryptonButton1_Click);
@@ -436,9 +442,14 @@
             // btnUpdateRoom
             // 
             this.btnUpdateRoom.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnUpdateRoom.Location = new System.Drawing.Point(7, 111);
+            this.btnUpdateRoom.Location = new System.Drawing.Point(16, 97);
             this.btnUpdateRoom.Name = "btnUpdateRoom";
             this.btnUpdateRoom.Size = new System.Drawing.Size(212, 40);
+            this.btnUpdateRoom.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.btnUpdateRoom.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.btnUpdateRoom.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnUpdateRoom.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnUpdateRoom.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateRoom.TabIndex = 46;
             this.btnUpdateRoom.Values.Text = "Sửa phòng";
             this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
@@ -449,8 +460,8 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.kryptonButton5);
             this.groupBox3.Controls.Add(this.txtSearch);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox3.Location = new System.Drawing.Point(14, 22);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
@@ -482,7 +493,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label2.Location = new System.Drawing.Point(10, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -496,6 +507,11 @@
             this.kryptonButton5.Location = new System.Drawing.Point(261, 94);
             this.kryptonButton5.Name = "kryptonButton5";
             this.kryptonButton5.Size = new System.Drawing.Size(219, 40);
+            this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton5.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton5.TabIndex = 134;
             this.kryptonButton5.Values.Text = "Tìm phòng";
             this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
@@ -515,13 +531,13 @@
             this.btnManageTypeRoom.Controls.Add(this.btnAddRoom);
             this.btnManageTypeRoom.Controls.Add(this.btnUpdateRoom);
             this.btnManageTypeRoom.Controls.Add(this.btnDeleteRoom);
-            this.btnManageTypeRoom.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnManageTypeRoom.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnManageTypeRoom.Location = new System.Drawing.Point(7, 483);
+            this.btnManageTypeRoom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageTypeRoom.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnManageTypeRoom.Location = new System.Drawing.Point(10, 486);
             this.btnManageTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnManageTypeRoom.Name = "btnManageTypeRoom";
             this.btnManageTypeRoom.Padding = new System.Windows.Forms.Padding(4);
-            this.btnManageTypeRoom.Size = new System.Drawing.Size(493, 176);
+            this.btnManageTypeRoom.Size = new System.Drawing.Size(493, 173);
             this.btnManageTypeRoom.TabIndex = 128;
             this.btnManageTypeRoom.TabStop = false;
             this.btnManageTypeRoom.Text = "Chức năng";
@@ -529,9 +545,14 @@
             // kryptonButton6
             // 
             this.kryptonButton6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton6.Location = new System.Drawing.Point(273, 111);
+            this.kryptonButton6.Location = new System.Drawing.Point(247, 97);
             this.kryptonButton6.Name = "kryptonButton6";
             this.kryptonButton6.Size = new System.Drawing.Size(207, 40);
+            this.kryptonButton6.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton6.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton6.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton6.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton6.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton6.TabIndex = 136;
             this.kryptonButton6.Values.Text = "Quản lý loại phòng";
             this.kryptonButton6.Click += new System.EventHandler(this.kryptonButton6_Click);
@@ -539,9 +560,14 @@
             // btnDeleteRoom
             // 
             this.btnDeleteRoom.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnDeleteRoom.Location = new System.Drawing.Point(273, 51);
+            this.btnDeleteRoom.Location = new System.Drawing.Point(247, 51);
             this.btnDeleteRoom.Name = "btnDeleteRoom";
             this.btnDeleteRoom.Size = new System.Drawing.Size(207, 40);
+            this.btnDeleteRoom.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.btnDeleteRoom.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.btnDeleteRoom.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnDeleteRoom.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnDeleteRoom.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteRoom.TabIndex = 45;
             this.btnDeleteRoom.Values.Text = "Xóa phòng";
             this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
@@ -550,14 +576,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1244, 682);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnManageTypeRoom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManageRoom";
-            this.Text = "room";
+            this.Text = "Manage Room";
             ((System.ComponentModel.ISupportInitialize)(this.bindingStaff)).EndInit();
             this.bindingStaff.ResumeLayout(false);
             this.bindingStaff.PerformLayout();
