@@ -51,6 +51,21 @@ namespace Royal.DAO
 
         }
 
+        public DateTime NGLAPDateTime
+        {
+            get
+            {
+                DateTime date;
+                if (DateTime.TryParse(NGLAP, out date))
+                {
+                    return date;
+                }
+                else
+                {
+                    throw new Exception("Invalid date format in NGLAP");
+                }
+            }
+        }
         public async Task AddBill(BillDAO bill)
         {
 

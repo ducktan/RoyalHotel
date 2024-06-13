@@ -17,6 +17,7 @@ namespace Royal
     public partial class BillDetail : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
+        private Permission permission;
         public BillDetail()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace Royal
             dataGridViewBillDetail.CellClick += dataGridBill_CellClick;
             LoadMaHDFromDatabase();
             LoadMaDVFromDatabase();
+            permission = new Permission();
            
         }
 
@@ -44,7 +46,7 @@ namespace Royal
 
             Find("Mã hoá đơn", MAHD);
 
-
+            permission = new Permission();
 
         }
 
@@ -271,25 +273,59 @@ namespace Royal
 
         private async void delBut_Click(object sender, EventArgs e)
         {
-            BillDetailDAO a = new BillDetailDAO();
-            await a.DeleteBillDetail(cthd.Text);
-            a.LoadBillDetail(dataGridViewBillDetail);
+
+            if (permission.HasAccess(User.Role, "Giám đốc"))
+            {
+                try
+                {
+
+                    BillDetailDAO a = new BillDetailDAO();
+                    await a.DeleteBillDetail(cthd.Text);
+                    a.LoadBillDetail(dataGridViewBillDetail);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
         }
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            string id = cthd.Text;
-            string mahd = maHDBox.Text;
-            string madv = maDV.Text;
-            int sl = Int32.Parse(SLG_DV.Text);
-            int thanhtien1 = Int32.Parse(thanhtien.Text);
+            if (permission.HasAccess(User.Role, "Giám đốc"))
+            {
+                try
+                {
 
-            BillDetailDAO a = new BillDetailDAO(); 
-            await a.UpdateBill(id, mahd, madv, sl, thanhtien1 );
-            a.LoadBillDetail(dataGridViewBillDetail);
+                    string id = cthd.Text;
+                    string mahd = maHDBox.Text;
+                    string madv = maDV.Text;
+                    int sl = Int32.Parse(SLG_DV.Text);
+                    int thanhtien1 = Int32.Parse(thanhtien.Text);
+
+                    BillDetailDAO a = new BillDetailDAO();
+                    await a.UpdateBill(id, mahd, madv, sl, thanhtien1);
+                    a.LoadBillDetail(dataGridViewBillDetail);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
+
         }
 
-        private async void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
            
                 // Get the search criteria from the UI controls

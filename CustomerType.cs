@@ -20,6 +20,7 @@ namespace Royal
     public partial class CustomerType : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
+        Permission permission;
 
         public CustomerType()
         {
@@ -30,6 +31,7 @@ namespace Royal
        
             customerType.LoadCustomerType(dataGridCusType);
             dataGridCusType.CellClick += dataGridCustomer_CellClick;
+            permission = new Permission();
         }
 
 
@@ -84,17 +86,26 @@ namespace Royal
 
         private async void kryptonButton4_Click_1(object sender, EventArgs e)
         {
-            try
+            if(permission.HasAccess(User.Role, ""))
             {
-                string id = txtCusTypeId.Text;
-                Royal.DAO.CustomerType CustomerType = new Royal.DAO.CustomerType(); // Assuming you have an instance
-               await CustomerType.DeleteCustomerType(id);
-                CustomerType.LoadCustomerType(dataGridCusType);
+                try
+                {
+                    string id = txtCusTypeId.Text;
+                    Royal.DAO.CustomerType CustomerType = new Royal.DAO.CustomerType(); // Assuming you have an instance
+                    await CustomerType.DeleteCustomerType(id);
+                    CustomerType.LoadCustomerType(dataGridCusType);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này");
             }
+
         }
 
         private void dataGridCustomerType_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -115,10 +126,11 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-   
+            if(permission.HasAccess(User.Role, ""))
+            {
                 var CustomerTypes = await firebaseClient
-    .Child("CustomerType")
-    .OnceAsync<DAO.CustomerType>();
+.Child("CustomerType")
+.OnceAsync<DAO.CustomerType>();
 
                 int maxCustomerNumber = 0;
                 foreach (var CustomerData in CustomerTypes)
@@ -143,6 +155,13 @@ namespace Royal
 
                 await CustomerType.AddCustomerType(CustomerType);
                 CustomerType.LoadCustomerType(dataGridCusType);
+            }
+
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này");
+            }
+
 
         }
 
@@ -150,19 +169,29 @@ namespace Royal
 
         private async void kryptonButton2_Click_1(object sender, EventArgs e)
         {
-            try
+            if(permission.HasAccess(User.Role, ""))
             {
-                string id = txtCusTypeId.Text;
-                string name = txtName.Text;
-                int discount = Int32.Parse(cboDiscount.Text);
-                DAO.CustomerType a = new DAO.CustomerType();
-                await a.UpdateCustomerType(id, name, discount);
-                a.LoadCustomerType(dataGridCusType);
+                try
+                {
+                    string id = txtCusTypeId.Text;
+                    string name = txtName.Text;
+                    int discount = Int32.Parse(cboDiscount.Text);
+                    DAO.CustomerType a = new DAO.CustomerType();
+                    await a.UpdateCustomerType(id, name, discount);
+                    a.LoadCustomerType(dataGridCusType);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này");
             }
+
+
         }
     }
 }

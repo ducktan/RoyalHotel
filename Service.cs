@@ -16,6 +16,7 @@ namespace Royal
     public partial class Service : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
+        Permission permission;
         public Service()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace Royal
             ServiceDAO newCus = new ServiceDAO();
             newCus.LoadService(dataGridViewService);
             dataGridViewService.CellClick += dataGridBill_CellClick;
+            permission = new Permission();
 
         }
 
@@ -57,65 +59,93 @@ namespace Royal
             s.LoadService(dataGridViewService);
         }
 
-        private void kryptonButton4_Click_1(object sender, EventArgs e)
+        private async void kryptonButton4_Click_1(object sender, EventArgs e)
         {
-            string id = maDVBox.Text.Trim();
-            string name = tenDVbox.Text;
-            int pri = Int32.Parse(giaDVBox.Text);
-            string de = motaBox.Text;
+            if(permission.HasAccess(User.Role, ""))
+            {
+                string id = maDVBox.Text.Trim();
+                string name = tenDVbox.Text;
+                int pri = Int32.Parse(giaDVBox.Text);
+                string de = motaBox.Text;
 
-            ServiceDAO s = new ServiceDAO();
-            s.UpdateService(id, name, pri, de);
+                ServiceDAO s = new ServiceDAO();
+                await s.UpdateService(id, name, pri, de);
+                s.LoadService(dataGridViewService);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này");
+            }
+
         }
 
         private async void kryptonButton2_Click_1(object sender, EventArgs e)
         {
-            try
+            if(permission.HasAccess(User.Role, ""))
             {
-                var bills = await firebaseClient
-                .Child("Service")
-                .OnceAsync<Royal.DAO.ServiceDAO>();
-
-                // Increment by 1 to get the new sequential number
-                // Tìm mã phòng lớn nhất hiện có
-                int maxRoomNumber = 0;
-                foreach (var roomData in bills)
+                try
                 {
-                    int roomNumber = int.Parse(roomData.Object.seID.Substring(2));
-                    if (roomNumber > maxRoomNumber)
+                    var bills = await firebaseClient
+                    .Child("Service")
+                    .OnceAsync<Royal.DAO.ServiceDAO>();
+
+                    // Increment by 1 to get the new sequential number
+                    // Tìm mã phòng lớn nhất hiện có
+                    int maxRoomNumber = 0;
+                    foreach (var roomData in bills)
                     {
-                        maxRoomNumber = roomNumber;
+                        int roomNumber = int.Parse(roomData.Object.seID.Substring(2));
+                        if (roomNumber > maxRoomNumber)
+                        {
+                            maxRoomNumber = roomNumber;
+                        }
                     }
+
+                    string newRoomNumber = "DV" + (maxRoomNumber + 1).ToString("D3");
+
+
+                    // Create a new CustomerDAO object with form control values
+                    ServiceDAO service = new ServiceDAO()
+                    {
+                        seID = newRoomNumber,
+                        seName = tenDVbox.Text,
+                        sePrice = Int32.Parse(giaDVBox.Text),
+                        seDetail = motaBox.Text
+                    };
+
+                    // Call the AddCustomer method to store the customer object in the Firebase database
+                   await service.AddService(service);
+                    service.LoadService(dataGridViewService);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
 
-                string newRoomNumber = "DV" + (maxRoomNumber + 1).ToString("D3");
 
-
-                // Create a new CustomerDAO object with form control values
-                ServiceDAO service = new ServiceDAO()
-                {
-                    seID = newRoomNumber,
-                    seName = tenDVbox.Text,
-                    sePrice = Int32.Parse(giaDVBox.Text),
-                    seDetail = motaBox.Text
-                };
-
-                // Call the AddCustomer method to store the customer object in the Firebase database
-                service.AddService(service);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
             // Get the current row count for the "Bill" table
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này");
+            }
 
         }
 
-        private void kryptonButton3_Click_1(object sender, EventArgs e)
+        private async void kryptonButton3_Click_1(object sender, EventArgs e)
         {
-            string id = maDVBox.Text;
-            ServiceDAO s = new ServiceDAO();
-            s.DeleteSeervice(id);
+            if(permission.HasAccess(User.Role,""))
+            {
+                string id = maDVBox.Text;
+                ServiceDAO s = new ServiceDAO();
+                await s.DeleteSeervice(id);
+                s.LoadService(dataGridViewService);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này");
+
+            }
         }
 
         private async void kryptonButton1_Click_1(object sender, EventArgs e)

@@ -22,9 +22,13 @@ namespace Royal
     public partial class Parameter : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
+        private Authen authen;
+        private Permission permission;
         public Parameter()
         {
             InitializeComponent();
+            authen = new Authen();
+            permission = new Permission();
             // Khởi tạo FirebaseClient với chuỗi kết nối đến Firebase Realtime Database
             firebaseClient = FirebaseManage.GetFirebaseClient();
             ParameterDAO demo = new ParameterDAO();
@@ -39,42 +43,51 @@ namespace Royal
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
 
-            try
+            if (permission.HasAccess(User.Role, "Giám Đốc") || permission.HasAccess(User.Role, "Quản lý"))
             {
-                // Get the current row count for the "Bill" table
-                var bills = await firebaseClient
-                    .Child("Parameters")
-                    .OnceAsync<Royal.DAO.ParameterDAO>();
-
-                // Tìm mã phòng lớn nhất hiện có
-                int maxRoomNumber = 0;
-                foreach (var roomData in bills)
+                try
                 {
-                    int roomNumber = int.Parse(roomData.Object.pID.Substring(2));
-                    if (roomNumber > maxRoomNumber)
+                    // Get the current row count for the "Bill" table
+                    var bills = await firebaseClient
+                        .Child("Parameters")
+                        .OnceAsync<Royal.DAO.ParameterDAO>();
+
+                    // Tìm mã phòng lớn nhất hiện có
+                    int maxRoomNumber = 0;
+                    foreach (var roomData in bills)
                     {
-                        maxRoomNumber = roomNumber;
+                        int roomNumber = int.Parse(roomData.Object.pID.Substring(2));
+                        if (roomNumber > maxRoomNumber)
+                        {
+                            maxRoomNumber = roomNumber;
+                        }
                     }
+
+                    string newRoomNumber = "NQ" + (maxRoomNumber + 1).ToString("D3");
+                    ParameterDAO p1 = new ParameterDAO()
+                    {
+                        pID = newRoomNumber,
+                        pName = tenP.Text,
+                        pContent = content.Text,
+                        pValue = Int32.Parse(value.Text)
+                    };
+
+                    // Thực hiện các thao tác với đối tượng p1 (ví dụ: lưu vào Firebase Realtime Database)
+                    // firebaseClient.Child("Parameters").PostAsync(p1);
+
+                    await p1.AddPara(p1);
+                    p1.LoadPara(dataGridViewParameter);
                 }
-
-                string newRoomNumber = "NQ" + (maxRoomNumber + 1).ToString("D3");
-                ParameterDAO p1 = new ParameterDAO()
+                catch (Exception ex)
                 {
-                    pID = newRoomNumber,
-                    pName = tenP.Text,
-                    pContent = content.Text,
-                    pValue = Int32.Parse(value.Text)
-                };
-
-                // Thực hiện các thao tác với đối tượng p1 (ví dụ: lưu vào Firebase Realtime Database)
-                // firebaseClient.Child("Parameters").PostAsync(p1);
-
-                p1.AddPara(p1);
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
             }
+
         }
 
         private void dataGridViewParameter_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -124,22 +137,39 @@ namespace Royal
             p.LoadPara(dataGridViewParameter);
         }
 
-        private void kryptonButton2_Click(object sender, EventArgs e)
+        private async void kryptonButton2_Click(object sender, EventArgs e)
         {
-            string pIDD = maP.Text;
-            ParameterDAO p2 = new ParameterDAO();
-            p2.DeletePara(pIDD);
-        }
+            if (permission.HasAccess(User.Role, "Giám Đốc") || permission.HasAccess(User.Role, "Quản lý"))
+            {
+                string pIDD = maP.Text;
+                ParameterDAO p2 = new ParameterDAO();
+                await p2.DeletePara(pIDD);
+                p2.LoadPara(dataGridViewParameter);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
 
-        private void kryptonButton3_Click(object sender, EventArgs e)
+            }
+
+            private async void kryptonButton3_Click(object sender, EventArgs e)
         {
-            string pIDD = maP.Text; 
+            if (permission.HasAccess(User.Role, "Giám Đốc") || permission.HasAccess(User.Role, "Quản lý"))
+            {
+                string pIDD = maP.Text; 
             string tenPP = tenP.Text;
             int valueP = Int32.Parse(value.Text);
             string motaP = content.Text;
 
             ParameterDAO p = new ParameterDAO();
-            p.UpdateParameter(pIDD, tenPP, valueP, motaP);
+            await p.UpdateParameter(pIDD, tenPP, valueP, motaP);
+                p.LoadPara(dataGridViewParameter);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
         }
 
         private async void kryptonButton5_Click(object sender, EventArgs e)
@@ -265,8 +295,16 @@ namespace Royal
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ManageStaff s = new ManageStaff();
-            s.Show();
+            if (permission.HasAccess(User.Role, "Giám Đốc") || permission.HasAccess(User.Role, "Quản lý"))
+            {
+                ManageStaff s = new ManageStaff();
+                s.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -286,52 +324,60 @@ namespace Royal
         private StaffDAO currentStaff;
         private async void addBut_Click(object sender, EventArgs e)
         {
-            string maLNV;
-            try
+            if (permission.HasAccess(User.Role, "Giám Đốc") || permission.HasAccess(User.Role, "Quản lý"))
             {
-                // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
-                currentStaff = await new StaffDAO().SearchStaffbyID(maNV.Text);
-                maLNV = currentStaff.staffType.ToString();
-
-                StaffType a = await new StaffType().SearchSTypeById(maLNV);
-
-                // Kiểm tra xem có dữ liệu hay không
-                int value;
-                if (int.TryParse(Va.Text, out value))
+                string maLNV;
+                try
                 {
-                    // Kiểm tra nếu currentStaff.luongNV là null thì khởi tạo
-                    if (currentStaff.luongNV == null)
-                    {
-                        currentStaff.luongNV = new Salary();
-                        await currentStaff.luongNV.InitSalary(currentStaff.StaffID);
-                    }
+                    // Lấy danh sách chi tiết hóa đơn từ Firebase Realtime Database
+                    currentStaff = await new StaffDAO().SearchStaffbyID(maNV.Text);
+                    maLNV = currentStaff.staffType.ToString();
 
-                    if (value == 1)
-                    {
-                        currentStaff.luongNV.workingDay++;
-                        if (currentStaff.luongNV.workingDay > 26)
-                        {
-                            currentStaff.luongNV.staffSalary += a.stSalary;
-                            MessageBox.Show("Đủ lương rồi nè!");
-                        }
-                    }
-                    else
-                    {
-                        currentStaff.luongNV.staffSalary += value;
-                        if (value < 0)
-                        {
-                            currentStaff.luongNV.countVP++;
-                        }
-                    }
+                    StaffType a = await new StaffType().SearchSTypeById(maLNV);
 
-                    // Cập nhật dữ liệu
-                    await currentStaff.luongNV.UpdateSalary(currentStaff.StaffID, currentStaff.luongNV.staffSalary, currentStaff.luongNV.countVP, currentStaff.luongNV.workingDay);
+                    // Kiểm tra xem có dữ liệu hay không
+                    int value;
+                    if (int.TryParse(Va.Text, out value))
+                    {
+                        // Kiểm tra nếu currentStaff.luongNV là null thì khởi tạo
+                        if (currentStaff.luongNV == null)
+                        {
+                            currentStaff.luongNV = new Salary();
+                            await currentStaff.luongNV.InitSalary(currentStaff.StaffID);
+                        }
+
+                        if (value == 1)
+                        {
+                            currentStaff.luongNV.workingDay++;
+                            if (currentStaff.luongNV.workingDay > 26)
+                            {
+                                currentStaff.luongNV.staffSalary += a.stSalary;
+                                MessageBox.Show("Đủ lương rồi nè!");
+                            }
+                        }
+                        else
+                        {
+                            currentStaff.luongNV.staffSalary += value;
+                            if (value < 0)
+                            {
+                                currentStaff.luongNV.countVP++;
+                            }
+                        }
+
+                        // Cập nhật dữ liệu
+                        await currentStaff.luongNV.UpdateSalary(currentStaff.StaffID, currentStaff.luongNV.staffSalary, currentStaff.luongNV.countVP, currentStaff.luongNV.workingDay);
+                    }
+                    LoadInfoStaffFromID();
+
                 }
-                LoadInfoStaffFromID();
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi cập nhật dữ liệu: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Lỗi khi cập nhật dữ liệu: " + ex.Message);
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
             }
         }
 
@@ -350,6 +396,18 @@ namespace Royal
             {
                 ExportToPdf.Export(dataGridViewParameter, saveFileDialog.FileName);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dashboard d = new Dashboard();
+            d.Show();
+            this.Hide();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

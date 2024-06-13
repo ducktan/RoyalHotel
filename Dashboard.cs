@@ -124,7 +124,7 @@ namespace Royal
         private void metroTile2_Click(object sender, EventArgs e)
         {
 
-            if (permission.HasAccess(User.Role, ""))
+            if (permission.HasAccess(User.Role, "Lễ tân"))
             {
                 Service service = new Service();
                 service.Show();
@@ -205,7 +205,8 @@ namespace Royal
 
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
-
+            AboutUs about = new AboutUs();
+            about.Show();
         }
 
         private void metroTile1_Click(object sender, EventArgs e)

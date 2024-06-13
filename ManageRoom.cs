@@ -19,6 +19,7 @@ namespace Royal
     public partial class ManageRoom : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
+        Permission permission;
 
         public ManageRoom()
         {
@@ -29,6 +30,7 @@ namespace Royal
             Royal.DAO.Room room = new Royal.DAO.Room();
             room.LoadRoom(dataGridRoom);
             dataGridRoom.CellClick += dataGridRoom_CellClick;
+            permission = new Permission();
 
         }
 
@@ -63,39 +65,47 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var roomList = await firebaseClient
-                    .Child("Room")
-                    .OnceAsync<Royal.DAO.Room>();
-
-                // Tìm mã phòng lớn nhất hiện có
-                int maxRoomNumber = 0;
-                foreach (var roomData in roomList)
+           if (permission.HasAccess(User.Role, "")){
+                try
                 {
-                    int roomNumber = int.Parse(roomData.Object.MAPH.Substring(2));
-                    if (roomNumber > maxRoomNumber)
+                    var roomList = await firebaseClient
+                        .Child("Room")
+                        .OnceAsync<Royal.DAO.Room>();
+
+                    // Tìm mã phòng lớn nhất hiện có
+                    int maxRoomNumber = 0;
+                    foreach (var roomData in roomList)
                     {
-                        maxRoomNumber = roomNumber;
+                        int roomNumber = int.Parse(roomData.Object.MAPH.Substring(2));
+                        if (roomNumber > maxRoomNumber)
+                        {
+                            maxRoomNumber = roomNumber;
+                        }
                     }
+
+                    string newRoomNumber = "PH" + (maxRoomNumber + 1).ToString("D3");
+
+
+                    Royal.DAO.Room room = new Royal.DAO.Room()
+                    {
+                        MAPH = newRoomNumber,
+                        TenPhong = txtRoomName.Text,
+                        LoaiPhong = cboRoomType.Text,
+                        TrangThai = cboStatusRoom.Text
+                    };
+
+                    await room.AddRoom(room);
+                    room.LoadRoom(dataGridRoom);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
 
-                string newRoomNumber = "PH" + (maxRoomNumber + 1).ToString("D3");
-
-
-                Royal.DAO.Room room = new Royal.DAO.Room()
-                {
-                    MAPH = newRoomNumber,
-                    TenPhong = txtRoomName.Text,
-                    LoaiPhong = cboRoomType.Text,
-                    TrangThai = cboStatusRoom.Text
-                };
-
-                room.AddRoom(room);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
             }
 
         }
@@ -106,18 +116,27 @@ namespace Royal
             room.LoadRoom(dataGridRoom);
         }
 
-        private void btnDeleteRoom_Click(object sender, EventArgs e)
+        private async void btnDeleteRoom_Click(object sender, EventArgs e)
         {
-            try
+            if (permission.HasAccess(User.Role, ""))
             {
-                string id = txtRoomID.Text;
-                Royal.DAO.Room room = new Royal.DAO.Room();
-                room.DeleteRoom(id);
-                room.LoadRoom(dataGridRoom);
+
+                try
+                {
+                    string id = txtRoomID.Text;
+                    Royal.DAO.Room room = new Royal.DAO.Room();
+                    await room.DeleteRoom(id);
+                    room.LoadRoom(dataGridRoom);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+
             }
 
         }
@@ -234,23 +253,33 @@ namespace Royal
             
         }
 
-        private void btnUpdateRoom_Click(object sender, EventArgs e)
+        private async void btnUpdateRoom_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string id = txtRoomID.Text;
-                string name = txtRoomName.Text;
-                string loaiphong = cboRoomType.Text;
-                string trangthai = cboStatusRoom.Text;
+            if (permission.HasAccess(User.Role, ""))
 
-                Royal.DAO.Room room = new Royal.DAO.Room();
-                room.UpdateRoom(id, name, loaiphong, trangthai);
-            }
-            catch (Exception ex)
+                try
+                {
+                    string id = txtRoomID.Text;
+                    string name = txtRoomName.Text;
+                    string loaiphong = cboRoomType.Text;
+                    string trangthai = cboStatusRoom.Text;
+
+                    Royal.DAO.Room room = new Royal.DAO.Room();
+                    await room.UpdateRoom(id, name, loaiphong, trangthai);
+                    room.LoadRoom(dataGridRoom);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error searching room types: {ex.Message}");
+                }
+            else
             {
-                MessageBox.Show($"Error searching room types: {ex.Message}");
+                MessageBox.Show("Bạn không có quyền truy cập mục này!");
             }
         }
+  
+        
+        
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {

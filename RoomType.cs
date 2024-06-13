@@ -20,6 +20,7 @@ namespace Royal
     public partial class RoomType : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
+        Permission permission;
         public RoomType()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace Royal
             Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
             roomType.LoadRoomType(dataGridRoomType);
             dataGridRoomType.CellClick += dataGridRoomType_CellClick;
+            permission = new Permission();
         }
 
 
@@ -39,40 +41,48 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            try
+            if(permission.HasAccess(User.Role, ""))
             {
-                var roomTypes = await firebaseClient
-                .Child("RoomType")
-                 .OnceAsync<DAO.RoomType>();
-                // Tìm mã phòng lớn nhất hiện có
-                int maxRoomNumber = 0;
-                foreach (var roomData in roomTypes)
+                try
                 {
-                    int roomNumber = int.Parse(roomData.Object.MALPH.Substring(3));
-                    if (roomNumber > maxRoomNumber)
+                    var roomTypes = await firebaseClient
+                    .Child("RoomType")
+                     .OnceAsync<DAO.RoomType>();
+                    // Tìm mã phòng lớn nhất hiện có
+                    int maxRoomNumber = 0;
+                    foreach (var roomData in roomTypes)
                     {
-                        maxRoomNumber = roomNumber;
+                        int roomNumber = int.Parse(roomData.Object.MALPH.Substring(3));
+                        if (roomNumber > maxRoomNumber)
+                        {
+                            maxRoomNumber = roomNumber;
+                        }
                     }
+
+                    string newRoomNumber = "LPH" + (maxRoomNumber + 1).ToString("D3");
+
+                    Royal.DAO.RoomType roomType = new Royal.DAO.RoomType()
+                    {
+                        MALPH = newRoomNumber,
+                        TENLPH = txtRoomTypeName.Text,
+                        SLNG = Int32.Parse(cboPeopleNum.Text),
+                        GIA = Int32.Parse(txtPrice.Text)
+
+                    };
+
+                    await roomType.AddRoomType(roomType);
+                    roomType.LoadRoomType(dataGridRoomType);
                 }
 
-                string newRoomNumber = "LPH" + (maxRoomNumber + 1).ToString("D3");
-
-                Royal.DAO.RoomType roomType = new Royal.DAO.RoomType()
+                catch (Exception ex)
                 {
-                    MALPH = newRoomNumber,
-                    TENLPH = txtRoomTypeName.Text,
-                    SLNG = Int32.Parse(cboPeopleNum.Text),
-                    GIA = Int32.Parse(txtPrice.Text)
+                    MessageBox.Show(ex.Message);
+                }
 
-                };
-
-                await roomType.AddRoomType(roomType);
-                roomType.LoadRoomType(dataGridRoomType);
             }
-
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này");
             }
 
 
@@ -80,23 +90,30 @@ namespace Royal
 
         private async void btnUpdateRoomType_Click(object sender, EventArgs e)
         {
-            try
+            if(permission.HasAccess(User.Role, ""))
             {
-                string id = txtRoomTypeId.Text;
-                string name = txtRoomTypeName.Text;
-                int num = Int32.Parse(cboPeopleNum.Text);
-                int price = Int32.Parse(txtPrice.Text);
+                try
+                {
+                    string id = txtRoomTypeId.Text;
+                    string name = txtRoomTypeName.Text;
+                    int num = Int32.Parse(cboPeopleNum.Text);
+                    int price = Int32.Parse(txtPrice.Text);
 
 
-                Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
-                await roomType.UpdateRoomType(id, name, num, price);
-                roomType.LoadRoomType(dataGridRoomType);
+                    Royal.DAO.RoomType roomType = new Royal.DAO.RoomType();
+                    await roomType.UpdateRoomType(id, name, num, price);
+                    roomType.LoadRoomType(dataGridRoomType);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này");
             }
-
 
 
         }
@@ -231,19 +248,24 @@ namespace Royal
 
 
 
-        private void btnDeleteRoomType_Click_1(object sender, EventArgs e)
+        private async void btnDeleteRoomType_Click_1(object sender, EventArgs e)
         {
-            try
+            if(permission.HasAccess(User.Role, ""))
             {
-                string id = txtRoomTypeId.Text;
-                Royal.DAO.RoomType roomType = new Royal.DAO.RoomType(); // Assuming you have an instance
-                roomType.DeleteRoomType(id);
-                roomType.LoadRoomType(dataGridRoomType);
+                try
+                {
+                    string id = txtRoomTypeId.Text;
+                    Royal.DAO.RoomType roomType = new Royal.DAO.RoomType(); // Assuming you have an instance
+                    await roomType.DeleteRoomType(id);
+                    roomType.LoadRoomType(dataGridRoomType);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            MessageBox.Show("Bạn không có quyền truy cập vào mục này");
+
 
         }
 

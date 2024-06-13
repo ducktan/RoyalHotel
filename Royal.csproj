@@ -287,6 +287,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ReiceiveRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,7 +323,6 @@
       <DependentUpon>Service.cs</DependentUpon>
     </Compile>
     <None Include="Resources\8c7c22cecd9805c30d5fad08e0591483.jpg" />
-    <None Include="Resources\download1.jpg" />
     <None Include="Resources\download.jpg" />
     <EmbeddedResource Include="AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
@@ -373,14 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="ReiceiveRoom.resx">
       <DependentUpon>ReiceiveRoom.cs</DependentUpon>
     </EmbeddedResource>

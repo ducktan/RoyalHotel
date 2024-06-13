@@ -115,8 +115,6 @@ namespace Royal
             try
             {
 
-
-
                 CustomerDAO result = new CustomerDAO();
                 CustomerDAO customer = await result.SearchRoomById(makh);
 
@@ -198,12 +196,14 @@ namespace Royal
 
             }
             tienDV.Text = sum.ToString();
+           
             //-------------------------------------
 
             BillDAO bill = new BillDAO();
             BillDAO res = await bill.SearchBillTypeById(maHDBox.Text);
+            int tongtien = res.THANHTIEN + sum;
             tienPhong.Text = res.DONGIA.ToString();
-            thanhTien.Text = res.THANHTIEN.ToString();
+            thanhTien.Text = tongtien.ToString();
 
 
 

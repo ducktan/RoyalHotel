@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.result_but = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -118,7 +118,7 @@
             this.numericYear.Size = new System.Drawing.Size(267, 34);
             this.numericYear.TabIndex = 67;
             this.numericYear.Value = new decimal(new int[] {
-            2018,
+            2024,
             0,
             0,
             0});
@@ -148,7 +148,7 @@
             this.comboBoxMonth.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxMonth.Name = "comboBoxMonth";
             this.comboBoxMonth.Size = new System.Drawing.Size(232, 30);
-            this.comboBoxMonth.Style = MetroFramework.MetroColorStyle.Green;
+            this.comboBoxMonth.Style = MetroFramework.MetroColorStyle.Blue;
             this.comboBoxMonth.TabIndex = 63;
             this.comboBoxMonth.UseCustomBackColor = true;
             this.comboBoxMonth.UseCustomForeColor = true;
@@ -216,16 +216,16 @@
             // 
             // resChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.resChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.resChart.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.resChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.resChart.Legends.Add(legend1);
             this.resChart.Location = new System.Drawing.Point(22, 185);
             this.resChart.Name = "resChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.resChart.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.resChart.Series.Add(series1);
             this.resChart.Size = new System.Drawing.Size(440, 447);
             this.resChart.TabIndex = 87;
             this.resChart.Text = "chart1";

@@ -15,6 +15,7 @@ namespace Royal
     public partial class ManageStaffType : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
+        
         public ManageStaffType()
         {
             InitializeComponent();

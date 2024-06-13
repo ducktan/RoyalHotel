@@ -21,7 +21,8 @@ namespace Royal
     public partial class Bill : Form
     {
         private Firebase.Database.FirebaseClient firebaseClient;
-
+        private Authen authen;
+        private Permission permission;
         public Bill()
         {
             InitializeComponent();
@@ -33,6 +34,8 @@ namespace Royal
             LoadMaKHFromDatabase();
             LoadMaNVFromDatabase();
             LoadMaPhongFromDatabase();
+            authen = new Authen();
+            permission = new Permission();
         }
         public Bill(string id)
         {
@@ -48,6 +51,8 @@ namespace Royal
 
             maKHBox.Text = id;
             LoadInfoBillFromMaKH(maKHBox.Text);
+            authen = new Authen();
+            permission = new Permission();
 
         }
 
@@ -243,23 +248,40 @@ namespace Royal
         }
         private async void kryptonButton5_Click(object sender, EventArgs e)
         {
-            BillDAO billDAO = new BillDAO();
 
-            string billID = mahoadon.Text;
-            await billDAO.DeleteBill(billID);
-            billDAO.LoadBill(dataGridBill);
+            if (permission.HasAccess(User.Role, "Giám đốc"))
+            {
+                try
+                {
+
+                    BillDAO billDAO = new BillDAO();
+
+                    string billID = mahoadon.Text;
+                    await billDAO.DeleteBill(billID);
+                    billDAO.LoadBill(dataGridBill);
 
 
 
-            // Đặt các giá trị thành rỗng
-            mahoadon.Text = "";
-            phong.Text = "";
-            nhanvien.Text = "";
-            date.Text = "";
-            status.Text = "";
-            giaDon.Text = "";
-            discount.Text = "";
-            total.Text = "";
+                    // Đặt các giá trị thành rỗng
+                    mahoadon.Text = "";
+                    phong.Text = "";
+                    nhanvien.Text = "";
+                    date.Text = "";
+                    status.Text = "";
+                    giaDon.Text = "";
+                    discount.Text = "";
+                    total.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
 
 
 
@@ -267,20 +289,30 @@ namespace Royal
 
         private async void kryptonButton4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                BillDAO billDAO = new BillDAO();
-                int giaDonValue = int.Parse(giaDon.Text);
-                int discountValue = int.Parse(discount.Text);
-                int totalValue = int.Parse(total.Text);
 
-                await billDAO.UpdateBill(mahoadon.Text, phong.Text, status.Text, maKHBox.Text, nhanvien.Text, date.Text, giaDonValue, discountValue, totalValue);
-                billDAO.LoadBill(dataGridBill);
-            }
-            catch(Exception ex)
+
+            if (permission.HasAccess(User.Role, "Giám đốc"))
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    BillDAO billDAO = new BillDAO();
+                    int giaDonValue = int.Parse(giaDon.Text);
+                    int discountValue = int.Parse(discount.Text);
+                    int totalValue = int.Parse(total.Text);
+
+                    await billDAO.UpdateBill(mahoadon.Text, phong.Text, status.Text, maKHBox.Text, nhanvien.Text, date.Text, giaDonValue, discountValue, totalValue);
+                    billDAO.LoadBill(dataGridBill);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào mục này!");
+            }
+
             
         }
 

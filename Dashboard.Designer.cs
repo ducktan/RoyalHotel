@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btnAdmin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -56,25 +55,16 @@
             // 
             // kryptonButton3
             // 
-            this.kryptonButton3.Location = new System.Drawing.Point(0, 653);
+            this.kryptonButton3.Location = new System.Drawing.Point(7, 646);
             this.kryptonButton3.Name = "kryptonButton3";
             this.kryptonButton3.Size = new System.Drawing.Size(275, 49);
             this.kryptonButton3.TabIndex = 3;
             this.kryptonButton3.Values.Text = "Giới thiệu";
             this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
             // 
-            // kryptonButton2
-            // 
-            this.kryptonButton2.Location = new System.Drawing.Point(0, 605);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(275, 49);
-            this.kryptonButton2.TabIndex = 2;
-            this.kryptonButton2.Values.Text = "Trợ giúp";
-            this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
-            // 
             // kryptonButton1
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(0, 509);
+            this.kryptonButton1.Location = new System.Drawing.Point(0, 555);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.kryptonButton1.Size = new System.Drawing.Size(275, 49);
@@ -88,7 +78,6 @@
             this.kryptonPanel1.Controls.Add(this.btnAdmin);
             this.kryptonPanel1.Controls.Add(this.kryptonButton4);
             this.kryptonPanel1.Controls.Add(this.kryptonButton3);
-            this.kryptonPanel1.Controls.Add(this.kryptonButton2);
             this.kryptonPanel1.Controls.Add(this.Đ);
             this.kryptonPanel1.Controls.Add(this.kryptonButton1);
             this.kryptonPanel1.Location = new System.Drawing.Point(-10, 0);
@@ -99,7 +88,7 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(3, 421);
+            this.btnAdmin.Location = new System.Drawing.Point(3, 467);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnAdmin.Size = new System.Drawing.Size(275, 49);
@@ -110,7 +99,7 @@
             // 
             // kryptonButton4
             // 
-            this.kryptonButton4.Location = new System.Drawing.Point(7, 465);
+            this.kryptonButton4.Location = new System.Drawing.Point(7, 511);
             this.kryptonButton4.Name = "kryptonButton4";
             this.kryptonButton4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.kryptonButton4.Size = new System.Drawing.Size(275, 49);
@@ -121,7 +110,7 @@
             // 
             // Đ
             // 
-            this.Đ.Location = new System.Drawing.Point(0, 557);
+            this.Đ.Location = new System.Drawing.Point(0, 603);
             this.Đ.Name = "Đ";
             this.Đ.Size = new System.Drawing.Size(275, 49);
             this.Đ.TabIndex = 1;
@@ -406,7 +395,6 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton Đ;

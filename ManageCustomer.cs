@@ -90,7 +90,8 @@ namespace Royal
             };
 
             // Call the AddCustomer method to store the customer object in the Firebase database
-            newCustomer.AddCustomer(newCustomer);
+            await newCustomer.AddCustomer(newCustomer);
+            newCustomer.LoadCustomer(dataGridStaff);
         }
 
         private async void kryptonButton5_Click(object sender, EventArgs e)
@@ -181,12 +182,13 @@ namespace Royal
             newCus.LoadCustomer(dataGridStaff);
         }
 
-        private void kryptonButton2_Click(object sender, EventArgs e)
+        private async void kryptonButton2_Click(object sender, EventArgs e)
         {
             CustomerDAO p = new CustomerDAO();
             // Convert the selected date to a string in the desired format
             string ngSinh = Ngsinh.Value.ToString("yyyy-MM-dd"); // Adjust the format as per your requirements
-            p.UpdateCustomer(makh.Text, hoTen.Text, cccd.Text, ngSinh, diaChi.Text,LoaiKH.Text,GT.Text, sdt.Text, QuocTich.Text, Email.Text); 
+            await p.UpdateCustomer(makh.Text, hoTen.Text, cccd.Text, ngSinh, diaChi.Text,LoaiKH.Text,GT.Text, sdt.Text, QuocTich.Text, Email.Text);
+            p.LoadCustomer(dataGridStaff);
 
         }
         private void dataGridBill_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -214,11 +216,12 @@ namespace Royal
             }
         }
 
-        private void kryptonButton4_Click(object sender, EventArgs e)
+        private async void kryptonButton4_Click(object sender, EventArgs e)
         {
             string idkh = makh.Text;
             CustomerDAO cus = new CustomerDAO();
-            cus.DeleteCus(idkh);
+            await cus.DeleteCus(idkh);
+            cus.LoadCustomer(dataGridStaff);
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
