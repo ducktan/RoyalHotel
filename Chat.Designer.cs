@@ -28,71 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbID = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.kryptonButton5 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chat));
             this.chatRTB = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSendImg = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox1.SuspendLayout();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ConnectBTN = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cbID);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.kryptonButton5);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox1.Location = new System.Drawing.Point(16, 80);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(223, 193);
-            this.groupBox1.TabIndex = 279;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "TÌM KIẾM";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // cbID
-            // 
-            this.cbID.DropDownWidth = 270;
-            this.cbID.FormattingEnabled = true;
-            this.cbID.Location = new System.Drawing.Point(18, 77);
-            this.cbID.Name = "cbID";
-            this.cbID.Size = new System.Drawing.Size(179, 33);
-            this.cbID.TabIndex = 261;
-            this.cbID.SelectedIndexChanged += new System.EventHandler(this.cbID_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(13, 35);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 28);
-            this.label6.TabIndex = 259;
-            this.label6.Text = "▶ Mã nhân viên";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // kryptonButton5
-            // 
-            this.kryptonButton5.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
-            this.kryptonButton5.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
-            this.kryptonButton5.Location = new System.Drawing.Point(18, 126);
-            this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
-            this.kryptonButton5.Size = new System.Drawing.Size(179, 36);
-            this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton5.TabIndex = 260;
-            this.kryptonButton5.UseWaitCursor = true;
-            this.kryptonButton5.Values.Text = "SEARCH";
-            this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
             // 
             // chatRTB
             // 
@@ -108,7 +53,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(10, 32);
+            this.label1.Location = new System.Drawing.Point(47, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 31);
             this.label1.TabIndex = 277;
@@ -147,17 +92,40 @@
             this.btnSendImg.UseVisualStyleBackColor = true;
             this.btnSendImg.Click += new System.EventHandler(this.button1_Click);
             // 
-            // timer1
+            // pictureBox2
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.pictureBox2.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(13, 70);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(230, 192);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 285;
+            this.pictureBox2.TabStop = false;
+            // 
+            // ConnectBTN
+            // 
+            this.ConnectBTN.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.ConnectBTN.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
+            this.ConnectBTN.Location = new System.Drawing.Point(36, 278);
+            this.ConnectBTN.Name = "ConnectBTN";
+            this.ConnectBTN.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            this.ConnectBTN.Size = new System.Drawing.Size(179, 36);
+            this.ConnectBTN.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConnectBTN.TabIndex = 286;
+            this.ConnectBTN.UseWaitCursor = true;
+            this.ConnectBTN.Values.Text = "Connect to chat";
+            this.ConnectBTN.Click += new System.EventHandler(this.ConnectBTN_Click);
             // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 505);
+            this.Controls.Add(this.ConnectBTN);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnSendImg);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chatRTB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
@@ -165,24 +133,19 @@
             this.Name = "Chat";
             this.Text = "Chat";
             this.Load += new System.EventHandler(this.Chat_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbID;
-        private System.Windows.Forms.Label label6;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton5;
         private System.Windows.Forms.RichTextBox chatRTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private System.Windows.Forms.Button btnSendImg;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton ConnectBTN;
     }
 }

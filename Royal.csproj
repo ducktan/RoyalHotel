@@ -211,7 +211,6 @@
     <Compile Include="DAO\Bill.cs" />
     <Compile Include="DAO\BillDetail.cs" />
     <Compile Include="DAO\Bookroom.cs" />
-    <Compile Include="DAO\Chat.cs" />
     <Compile Include="DAO\CheckPass.cs" />
     <Compile Include="DAO\Customer.cs" />
     <Compile Include="DAO\CustomerType.cs" />

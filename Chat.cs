@@ -8,7 +8,9 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,42 +18,128 @@ namespace Royal
 {
     public partial class Chat : Form
     {
-        private Firebase.Database.FirebaseClient firebaseClient;
-        private ChatDAO chatDAO;
-        private Timer refreshTimer;
+        TcpClient client = null;
+        NetworkStream stream = null;
+        Thread clientThread = null;
         public Chat()
         {
             InitializeComponent();
-            firebaseClient = FirebaseManage.GetFirebaseClient();
-            chatDAO = new ChatDAO();
-
-            refreshTimer = new Timer();
-            refreshTimer.Interval = 2000; // 5 seconds
-            refreshTimer.Tick += timer1_Tick;
-        }
-        private void cbID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void ConnectToServer()
         {
+            try
+            {
+                string UserName = $"{Royal.DAO.User.Id} {Royal.DAO.User.Role}";
+                client = new TcpClient("127.0.0.1", 8080);
+                stream = client.GetStream();
+                byte[] usernameBuffer = Encoding.ASCII.GetBytes(UserName);
+                stream.Write(usernameBuffer, 0, usernameBuffer.Length);
 
+                while (true)
+                {
+                    byte[] buffer = new byte[client.ReceiveBufferSize];
+                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                    string header = Encoding.UTF8.GetString(buffer, 0, 4);
+
+                    if (header == "TEXT")
+                    {
+                        string message = Encoding.UTF8.GetString(buffer, 4, bytesRead - 4);
+                        DisplayMessage(message);
+                    }
+                    else if (header == "IMAG")
+                    {
+                        using (MemoryStream ms = new MemoryStream(buffer, 4, bytesRead - 4))
+                        {
+                            Image image = Image.FromStream(ms);
+                            DisplayIMG(image);
+                        }
+                    }
+                }
+            }
+            catch (SocketException ex)
+            {
+                DisplayMessage("SocketException: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                DisplayMessage("Exception: " + ex.Message);
+            }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void DisplayMessage(string message)
         {
-
+            if (chatRTB.InvokeRequired)
+            {
+                chatRTB.Invoke(new Action<string>(DisplayMessage), new object[] { message });
+            }
+            else
+            {
+                chatRTB.AppendText(message + Environment.NewLine);
+            }
         }
 
-        private void kryptonButton5_Click(object sender, EventArgs e)
+        private void DisplayIMG(Image img)
         {
-
+            if(InvokeRequired)
+            {
+                this.Invoke(new Action<Image>(DisplayIMG), new object[] { img });
+                return;
+            }
+            InsertImage(img);
         }
 
-        private void RoleBox_TextChanged(object sender, EventArgs e)
+        private void SendMessage(string message)
         {
+            if (stream != null)
+            {
+                string fullMessage = $"{Royal.DAO.User.Id}: {textBox3.Text}";
+                byte[] messageBytes = Encoding.UTF8.GetBytes(message);
+                byte[] buffer = new byte[messageBytes.Length + 4];
+                Buffer.BlockCopy(Encoding.ASCII.GetBytes("TEXT"), 0, buffer, 0, 4);
+                Buffer.BlockCopy(messageBytes, 0, buffer, 4,messageBytes.Length);
 
+                stream.Write(buffer, 0, buffer.Length);
+                DisplayMessage("You: " + fullMessage + message);
+            }
+        }
+
+        private void SendIMG(string filePath)
+        {
+            if (stream != null)
+            {
+                try
+                {
+                    byte[] imageBytes = File.ReadAllBytes(filePath);
+                    string fullMessage = $"{Royal.DAO.User.Id} sent an image";
+                    byte[] messageBytes = Encoding.ASCII.GetBytes(fullMessage);
+                    byte[] buffer = new byte[4 + messageBytes.Length + imageBytes.Length];
+
+                    Buffer.BlockCopy(Encoding.ASCII.GetBytes("IMAG"), 0, buffer, 0, 4);
+                    Buffer.BlockCopy(messageBytes, 0, buffer, 4, messageBytes.Length);
+                    Buffer.BlockCopy(imageBytes, 0, buffer, 4 + messageBytes.Length, imageBytes.Length);
+
+                    stream.Write(buffer, 0, buffer.Length);
+                    DisplayMessage(fullMessage);
+                    InsertImage(Image.FromFile(filePath));
+                }
+                catch (Exception ex)
+                {
+                    DisplayMessage("Error sending image: " + ex.Message);
+                }
+            }
+        }
+
+        private void InsertImage(Image image)
+        {
+            Clipboard.SetImage(image);
+            chatRTB.ReadOnly = false;
+            int start = chatRTB.TextLength;
+            chatRTB.Paste();
+            chatRTB.Select(start, chatRTB.TextLength - start);
+            chatRTB.SelectionAlignment = HorizontalAlignment.Left;
+            chatRTB.AppendText(Environment.NewLine);
+            chatRTB.ReadOnly = true;
         }
 
         private void chatRTB_TextChanged(object sender, EventArgs e)
@@ -71,97 +159,43 @@ namespace Royal
 
         private async void kryptonButton1_Click(object sender, EventArgs e)
         {
-            string content = textBox3.Text;
-            string receiverID = cbID.SelectedItem?.ToString();
-            string senderID = Royal.DAO.User.Id;
-            string dateTime = DateTime.Now.ToString("HH:mm:ss ddd,dd-MM-yyyy");
-
-            if (string.IsNullOrEmpty(receiverID))
+            string message = textBox3.Text;
+            if(!string.IsNullOrEmpty(message))
             {
-                MessageBox.Show("Please select a receiver.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                SendMessage(message);
+                textBox3.Clear();
             }
-
-            ChatDAO chat = new ChatDAO
-            {
-                SenderID = senderID,
-                ReceiverID = receiverID,
-                Content = content,
-                DateTime = dateTime,
-                ImageURL = "",
-            };
-
-            await chatDAO.AddChat(chat);
-            MessageBox.Show("Message sent successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            string formattedMessage = $"{dateTime} - To {receiverID}: {content}\n";
-            chatRTB.AppendText(formattedMessage);
-
-            // Clear the input textbox after sending the message
-            textBox3.Clear();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private async void Chat_Load(object sender, EventArgs e)
         {
-            StaffDAO staff = new StaffDAO();
-            await Royal.DAO.User.LoadUsersToComboBox(cbID);
-            string displayText = $"{Royal.DAO.User.Role} ({Royal.DAO.User.Id})";
-            await chatDAO.LoadChat(displayText, chatRTB,Royal.DAO.User.Id);
+            
 
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if(ofd.ShowDialog() == DialogResult.OK)
             {
-                string filePath = openFileDialog.FileName;
-                byte[] iArray = File.ReadAllBytes(filePath);
-                string imageUrl = Convert.ToBase64String(iArray);
-                string receiverID = cbID.SelectedItem?.ToString();
-                string senderID = Royal.DAO.User.Id;
-                string dateTime = DateTime.Now.ToString("HH:mm:ss ddd,dd-MM-yyyy");
-
-                if (string.IsNullOrEmpty(receiverID))
-                {
-                    MessageBox.Show("Please select a receiver.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                ChatDAO chat = new ChatDAO
-                {
-                    SenderID = senderID,
-                    ReceiverID = receiverID,
-                    Content = "",
-                    DateTime = dateTime,
-                    ImageURL = imageUrl // Set ImageURL in chat
-                };
-
-                await chatDAO.AddChat(chat);
-                MessageBox.Show("Image sent successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                string formattedMessage = $"{dateTime} - To {receiverID}: [Image]\n";
-                chatRTB.AppendText(formattedMessage);
-                chatDAO.LoadImageFromURL(imageUrl, chatRTB);
+                SendIMG(ofd.FileName);
             }
+
         }
 
-        private async void timer1_Tick(object sender, EventArgs e)
+        private void ConnectBTN_Click(object sender, EventArgs e)
         {
-            try
+            string username = $"{Royal.DAO.User.Id} {Royal.DAO.User.Role}";
+            if(string.IsNullOrEmpty(username) )
             {
-                string displayText = $"{Royal.DAO.User.Role} ({Royal.DAO.User.Id})";
-                await chatDAO.LoadChat(displayText, chatRTB, Royal.DAO.User.Id);
+                MessageBox.Show("name is invalid");
+                return;
             }
-            catch (Exception ex)
-            {
-                // Log or handle the exception as needed
-                MessageBox.Show("An error occurred while refreshing the chat: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+          clientThread = new Thread(new ThreadStart(ConnectToServer));
+            clientThread.Start();
         }
     }
 }
