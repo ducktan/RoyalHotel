@@ -305,8 +305,8 @@ namespace Royal
 
                         receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);
                         CustomerDAO customerDAO = await new CustomerDAO().SearchCusByCCCD(cccdKh);
-                        Bill b = new Bill(customerDAO.MAKH);
-                        b.Show();
+                        PrintBill conslog = new PrintBill(result.MAHD);
+                        conslog.Show();
 
                     }
                     else

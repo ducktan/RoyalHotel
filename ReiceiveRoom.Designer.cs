@@ -92,7 +92,7 @@
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // dataGridViewParameter
             // 
@@ -129,7 +129,8 @@
             this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewParameter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewParameter.GridColor = System.Drawing.Color.White;
-            this.dataGridViewParameter.Location = new System.Drawing.Point(3, 57);
+            this.dataGridViewParameter.Location = new System.Drawing.Point(4, 87);
+            this.dataGridViewParameter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridViewParameter.Name = "dataGridViewParameter";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -145,7 +146,7 @@
             this.dataGridViewParameter.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewParameter.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridViewParameter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewParameter.Size = new System.Drawing.Size(1109, 587);
+            this.dataGridViewParameter.Size = new System.Drawing.Size(1664, 919);
             this.dataGridViewParameter.TabIndex = 30;
             // 
             // ID
@@ -229,15 +230,15 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.toolStripLabel1});
-            this.bindingSurcharge.Location = new System.Drawing.Point(3, 30);
+            this.bindingSurcharge.Location = new System.Drawing.Point(4, 48);
             this.bindingSurcharge.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingSurcharge.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingSurcharge.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingSurcharge.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingSurcharge.Name = "bindingSurcharge";
-            this.bindingSurcharge.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.bindingSurcharge.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.bindingSurcharge.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingSurcharge.Size = new System.Drawing.Size(1109, 27);
+            this.bindingSurcharge.Size = new System.Drawing.Size(1664, 39);
             this.bindingSurcharge.TabIndex = 29;
             this.bindingSurcharge.Text = "bindingNavigator1";
             // 
@@ -272,7 +273,7 @@
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 39);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -280,14 +281,14 @@
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(40, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(58, 39);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -323,9 +324,11 @@
             this.groupBox4.Controls.Add(this.bindingSurcharge);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox4.Location = new System.Drawing.Point(532, 33);
+            this.groupBox4.Location = new System.Drawing.Point(798, 52);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1115, 647);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox4.Size = new System.Drawing.Size(1672, 1011);
             this.groupBox4.TabIndex = 277;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách nhận phòng";
@@ -333,9 +336,10 @@
             // kryptonButton3
             // 
             this.kryptonButton3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton3.Location = new System.Drawing.Point(20, 100);
+            this.kryptonButton3.Location = new System.Drawing.Point(30, 156);
+            this.kryptonButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonButton3.Name = "kryptonButton3";
-            this.kryptonButton3.Size = new System.Drawing.Size(436, 40);
+            this.kryptonButton3.Size = new System.Drawing.Size(654, 62);
             this.kryptonButton3.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton3.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton3.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
@@ -348,9 +352,10 @@
             // kryptonButton1
             // 
             this.kryptonButton1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton1.Location = new System.Drawing.Point(16, 42);
+            this.kryptonButton1.Location = new System.Drawing.Point(24, 66);
+            this.kryptonButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(212, 40);
+            this.kryptonButton1.Size = new System.Drawing.Size(318, 62);
             this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.White;
@@ -386,45 +391,49 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox2.Location = new System.Drawing.Point(8, 147);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(12, 230);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(499, 360);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Size = new System.Drawing.Size(748, 562);
             this.groupBox2.TabIndex = 274;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nhận phòng";
             // 
             // kryptonRichTextBox6
             // 
-            this.kryptonRichTextBox6.Location = new System.Drawing.Point(277, 297);
+            this.kryptonRichTextBox6.Location = new System.Drawing.Point(416, 464);
+            this.kryptonRichTextBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonRichTextBox6.Name = "kryptonRichTextBox6";
-            this.kryptonRichTextBox6.Size = new System.Drawing.Size(215, 34);
+            this.kryptonRichTextBox6.Size = new System.Drawing.Size(322, 53);
             this.kryptonRichTextBox6.TabIndex = 137;
             this.kryptonRichTextBox6.Text = "";
             this.kryptonRichTextBox6.WordWrap = false;
             // 
             // kryptonRichTextBox5
             // 
-            this.kryptonRichTextBox5.Location = new System.Drawing.Point(280, 221);
+            this.kryptonRichTextBox5.Location = new System.Drawing.Point(420, 345);
+            this.kryptonRichTextBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonRichTextBox5.Name = "kryptonRichTextBox5";
-            this.kryptonRichTextBox5.Size = new System.Drawing.Size(212, 37);
+            this.kryptonRichTextBox5.Size = new System.Drawing.Size(318, 58);
             this.kryptonRichTextBox5.TabIndex = 136;
             this.kryptonRichTextBox5.Text = "";
             this.kryptonRichTextBox5.WordWrap = false;
             // 
             // kryptonDateTimePicker1
             // 
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(282, 149);
+            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(423, 233);
+            this.kryptonDateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
-            this.kryptonDateTimePicker1.Size = new System.Drawing.Size(207, 25);
+            this.kryptonDateTimePicker1.Size = new System.Drawing.Size(310, 37);
             this.kryptonDateTimePicker1.TabIndex = 135;
             // 
             // kryptonRichTextBox3
             // 
-            this.kryptonRichTextBox3.Location = new System.Drawing.Point(13, 71);
+            this.kryptonRichTextBox3.Location = new System.Drawing.Point(20, 111);
+            this.kryptonRichTextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonRichTextBox3.Name = "kryptonRichTextBox3";
-            this.kryptonRichTextBox3.Size = new System.Drawing.Size(212, 37);
+            this.kryptonRichTextBox3.Size = new System.Drawing.Size(318, 58);
             this.kryptonRichTextBox3.TabIndex = 134;
             this.kryptonRichTextBox3.Text = "";
             this.kryptonRichTextBox3.WordWrap = false;
@@ -434,34 +443,37 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(15, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(22, 66);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.Size = new System.Drawing.Size(145, 41);
             this.label1.TabIndex = 133;
             this.label1.Text = "Họ và tên";
             // 
             // kryptonDateTimePicker2
             // 
-            this.kryptonDateTimePicker2.Location = new System.Drawing.Point(282, 75);
+            this.kryptonDateTimePicker2.Location = new System.Drawing.Point(423, 117);
+            this.kryptonDateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonDateTimePicker2.Name = "kryptonDateTimePicker2";
-            this.kryptonDateTimePicker2.Size = new System.Drawing.Size(207, 25);
+            this.kryptonDateTimePicker2.Size = new System.Drawing.Size(310, 37);
             this.kryptonDateTimePicker2.TabIndex = 131;
             // 
             // kryptonRichTextBox2
             // 
-            this.kryptonRichTextBox2.Location = new System.Drawing.Point(13, 227);
+            this.kryptonRichTextBox2.Location = new System.Drawing.Point(20, 355);
+            this.kryptonRichTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonRichTextBox2.Name = "kryptonRichTextBox2";
-            this.kryptonRichTextBox2.Size = new System.Drawing.Size(212, 37);
+            this.kryptonRichTextBox2.Size = new System.Drawing.Size(318, 58);
             this.kryptonRichTextBox2.TabIndex = 125;
             this.kryptonRichTextBox2.Text = "";
             this.kryptonRichTextBox2.WordWrap = false;
             // 
             // kryptonRichTextBox1
             // 
-            this.kryptonRichTextBox1.Location = new System.Drawing.Point(13, 149);
+            this.kryptonRichTextBox1.Location = new System.Drawing.Point(20, 233);
+            this.kryptonRichTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonRichTextBox1.Name = "kryptonRichTextBox1";
-            this.kryptonRichTextBox1.Size = new System.Drawing.Size(212, 37);
+            this.kryptonRichTextBox1.Size = new System.Drawing.Size(318, 58);
             this.kryptonRichTextBox1.TabIndex = 124;
             this.kryptonRichTextBox1.Text = "";
             this.kryptonRichTextBox1.WordWrap = false;
@@ -471,10 +483,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(284, 42);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(426, 66);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 25);
+            this.label6.Size = new System.Drawing.Size(162, 41);
             this.label6.TabIndex = 46;
             this.label6.Text = "Ngày nhận";
             // 
@@ -483,15 +495,15 @@
             this.comboBoxCustomerType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.comboBoxCustomerType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCustomerType.FormattingEnabled = true;
-            this.comboBoxCustomerType.ItemHeight = 24;
+            this.comboBoxCustomerType.ItemHeight = 23;
             this.comboBoxCustomerType.Items.AddRange(new object[] {
             "Chưa Nhận Phòng",
             "Đã Nhận Phòng",
             "Đã Trả Phòng"});
-            this.comboBoxCustomerType.Location = new System.Drawing.Point(12, 297);
-            this.comboBoxCustomerType.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxCustomerType.Location = new System.Drawing.Point(18, 464);
+            this.comboBoxCustomerType.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxCustomerType.Name = "comboBoxCustomerType";
-            this.comboBoxCustomerType.Size = new System.Drawing.Size(212, 30);
+            this.comboBoxCustomerType.Size = new System.Drawing.Size(316, 29);
             this.comboBoxCustomerType.TabIndex = 2;
             this.comboBoxCustomerType.UseSelectable = true;
             // 
@@ -500,10 +512,10 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label20.Location = new System.Drawing.Point(15, 267);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(22, 417);
+            this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(96, 25);
+            this.label20.Size = new System.Drawing.Size(148, 41);
             this.label20.TabIndex = 41;
             this.label20.Text = "Trạng thái";
             // 
@@ -512,10 +524,10 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(287, 112);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(430, 175);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 25);
+            this.label11.Size = new System.Drawing.Size(131, 41);
             this.label11.TabIndex = 35;
             this.label11.Text = "Ngày trả";
             // 
@@ -524,10 +536,10 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label12.Location = new System.Drawing.Point(285, 261);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(428, 408);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 25);
+            this.label12.Size = new System.Drawing.Size(128, 41);
             this.label12.TabIndex = 29;
             this.label12.Text = "Tiền cọc";
             // 
@@ -536,10 +548,10 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label13.Location = new System.Drawing.Point(285, 184);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(428, 288);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 25);
+            this.label13.Size = new System.Drawing.Size(146, 41);
             this.label13.TabIndex = 28;
             this.label13.Text = "Số người ";
             // 
@@ -548,10 +560,10 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label15.Location = new System.Drawing.Point(12, 190);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(18, 297);
+            this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 25);
+            this.label15.Size = new System.Drawing.Size(156, 41);
             this.label15.TabIndex = 24;
             this.label15.Text = "Mã phòng";
             // 
@@ -560,10 +572,10 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label16.Location = new System.Drawing.Point(12, 112);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(18, 175);
+            this.label16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(59, 25);
+            this.label16.Size = new System.Drawing.Size(94, 41);
             this.label16.TabIndex = 22;
             this.label16.Text = "CCCD";
             // 
@@ -574,11 +586,11 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox3.Location = new System.Drawing.Point(8, 22);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Location = new System.Drawing.Point(12, 34);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(499, 117);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox3.Size = new System.Drawing.Size(748, 183);
             this.groupBox3.TabIndex = 276;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Nhận phòng";
@@ -586,9 +598,10 @@
             // kryptonButton5
             // 
             this.kryptonButton5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton5.Location = new System.Drawing.Point(272, 56);
+            this.kryptonButton5.Location = new System.Drawing.Point(408, 88);
+            this.kryptonButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.Size = new System.Drawing.Size(217, 40);
+            this.kryptonButton5.Size = new System.Drawing.Size(326, 62);
             this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton5.StateCommon.Border.Color1 = System.Drawing.Color.White;
@@ -605,9 +618,10 @@
             // 
             // kryptonRichTextBox4
             // 
-            this.kryptonRichTextBox4.Location = new System.Drawing.Point(7, 59);
+            this.kryptonRichTextBox4.Location = new System.Drawing.Point(10, 92);
+            this.kryptonRichTextBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonRichTextBox4.Name = "kryptonRichTextBox4";
-            this.kryptonRichTextBox4.Size = new System.Drawing.Size(221, 37);
+            this.kryptonRichTextBox4.Size = new System.Drawing.Size(332, 58);
             this.kryptonRichTextBox4.TabIndex = 133;
             this.kryptonRichTextBox4.Text = "";
             this.kryptonRichTextBox4.WordWrap = false;
@@ -617,19 +631,20 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label9.Location = new System.Drawing.Point(7, 31);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(10, 48);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(173, 25);
+            this.label9.Size = new System.Drawing.Size(274, 40);
             this.label9.TabIndex = 28;
             this.label9.Text = "Căn Cước Công Dân";
             // 
             // kryptonButton2
             // 
             this.kryptonButton2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.kryptonButton2.Location = new System.Drawing.Point(249, 42);
+            this.kryptonButton2.Location = new System.Drawing.Point(374, 66);
+            this.kryptonButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(207, 40);
+            this.kryptonButton2.Size = new System.Drawing.Size(310, 62);
             this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.kryptonButton2.StateCommon.Border.Color1 = System.Drawing.Color.White;
@@ -651,27 +666,26 @@
             this.groupBox1.Controls.Add(this.kryptonButton2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox1.Location = new System.Drawing.Point(8, 518);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 809);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(499, 162);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Size = new System.Drawing.Size(748, 253);
             this.groupBox1.TabIndex = 275;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
             // 
             // ReiceiveRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1655, 703);
+            this.ClientSize = new System.Drawing.Size(2482, 1098);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReiceiveRoom";
             this.Text = "ReiceiveRoom";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParameter)).EndInit();

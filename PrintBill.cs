@@ -37,6 +37,15 @@ namespace Royal
 
 
         }
+        public PrintBill(string billID)
+        {
+            InitializeComponent();
+            // Initialize FirebaseClient with the connection string to Firebase Realtime Database
+            firebaseClient = FirebaseManage.GetFirebaseClient();
+            LoadMaHDFromDatabase();
+            LoadBillInfo(billID);
+            
+        }
 
 
 
@@ -509,7 +518,6 @@ namespace Royal
             {
                 // Lấy mã hóa đơn đã chọn
                 string selectedMaHD = maHDBox.SelectedItem.ToString();
-
                 // Truy vấn Firebase Realtime Database để lấy thông tin hóa đơn tương ứng
                 var billSnapshot = await firebaseClient
                     .Child("Bill")
@@ -522,7 +530,6 @@ namespace Royal
                 {
                     string maNV1 = billSnapshot.First().Object.ID_NV;
                     nvLap.Text = maNV1;
-
                     ngLap.Text = billSnapshot.First().Object.NGLAP.ToString();
                     maKhachhang = billSnapshot.First().Object.ID_KH.ToString().Trim();
                     maPhong = billSnapshot.First().Object.MAPHONG.ToString();
@@ -552,6 +559,61 @@ namespace Royal
                 MessageBox.Show("Lỗi khi tải dữ liệu từ Firebase Realtime Database: " + ex.Message);
             }
 
+        }
+        public async void LoadBillInfo(string billID)
+        {
+            try
+            {
+                maHDBox.Text = billID;
+
+                // Ensure the bill ID is not null or empty
+                if (string.IsNullOrWhiteSpace(billID))
+                {
+                    MessageBox.Show("Bill ID cannot be null or empty.");
+                    return;
+                }
+
+                // Trim the bill ID
+                string selectedMaHD = billID.Trim();
+
+                // Query Firebase Realtime Database to get the corresponding bill information
+                var billSnapshot = await firebaseClient
+                    .Child("Bill")
+                    .OrderByKey()
+                    .EqualTo(selectedMaHD)
+                    .OnceAsync<BillDAO>();
+
+                // Check if the bill exists
+                if (billSnapshot.Any())
+                {
+                    var bill = billSnapshot.First().Object;
+
+                    // Set the fields with the retrieved data
+                    nvLap.Text = bill.ID_NV ?? "N/A";
+                    ngLap.Text = bill.NGLAP?.ToString() ?? "N/A";
+                    maKhachhang = bill.ID_KH?.ToString().Trim() ?? string.Empty;
+                    maPhong = bill.MAPHONG?.ToString() ?? string.Empty;
+
+                    // Load additional information based on retrieved data
+                    LoadInfoFromMaKH(maKhachhang);
+                    LoadCTHDFromBill(selectedMaHD);
+
+                    BillDAO test = await new BillDAO().SearchBillTypeById(selectedMaHD);
+                    LoadInfoRoom(test.MAPHONG);
+                    LoadBookInfoFromRoom(test.MAPHONG);
+                    giamGia.Text = test.DISCOUNT.ToString();
+                    LoadFullData();
+                }
+                else
+                {
+                    MessageBox.Show("Bill not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
+                MessageBox.Show("Error loading data from Firebase Realtime Database: " + ex.Message);
+            }
         }
     }
 }
