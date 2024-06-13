@@ -31,7 +31,7 @@ namespace Royal
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -47,8 +47,6 @@ namespace Royal
             this.label5 = new System.Windows.Forms.Label();
             this.maDV = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.maKH = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.maHDBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewBillDetail = new System.Windows.Forms.DataGridView();
@@ -65,6 +63,8 @@ namespace Royal
             this.button8 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.print = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.maKH = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBillDetail)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -243,24 +243,6 @@ namespace Royal
             this.label4.TabIndex = 4;
             this.label4.Text = "Mã dịch vụ:";
             // 
-            // maKH
-            // 
-            this.maKH.BackColor = System.Drawing.Color.White;
-            this.maKH.Location = new System.Drawing.Point(186, 106);
-            this.maKH.Name = "maKH";
-            this.maKH.ReadOnly = true;
-            this.maKH.Size = new System.Drawing.Size(196, 34);
-            this.maKH.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 28);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Mã khách hàng";
-            // 
             // maHDBox
             // 
             this.maHDBox.FormattingEnabled = true;
@@ -289,14 +271,14 @@ namespace Royal
             this.Column2,
             this.Column3,
             this.Column6});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewBillDetail.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewBillDetail.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewBillDetail.GridColor = System.Drawing.SystemColors.WindowText;
             this.dataGridViewBillDetail.Location = new System.Drawing.Point(38, 434);
             this.dataGridViewBillDetail.Name = "dataGridViewBillDetail";
@@ -449,6 +431,24 @@ namespace Royal
             this.print.Values.Text = "» In hoá đơn";
             this.print.Click += new System.EventHandler(this.print_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 28);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Mã khách hàng";
+            // 
+            // maKH
+            // 
+            this.maKH.BackColor = System.Drawing.Color.White;
+            this.maKH.Location = new System.Drawing.Point(186, 106);
+            this.maKH.Name = "maKH";
+            this.maKH.ReadOnly = true;
+            this.maKH.Size = new System.Drawing.Size(196, 34);
+            this.maKH.TabIndex = 3;
+            // 
             // BillDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -482,8 +482,6 @@ namespace Royal
         private System.Windows.Forms.ComboBox maHDBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox maKH;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox SLG_DV;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox dongiaDV;
@@ -510,5 +508,7 @@ namespace Royal
         private TextBox searchText;
         private Label label9;
         private ComponentFactory.Krypton.Toolkit.KryptonButton print;
+        private TextBox maKH;
+        private Label label3;
     }
 }

@@ -210,7 +210,7 @@ namespace Royal
                 int maxCapacity = int.Parse(textBox9.Text);
 
                 // Parse the value from metroComboBox1 to get the number of guests
-                int numberOfGuests = 0;
+                int numberOfGuests = 1;
                 int.TryParse(metroComboBox1.SelectedItem != null ? metroComboBox1.SelectedItem.ToString() : "", out numberOfGuests);
 
                 // Check if the number of guests exceeds the maximum capacity

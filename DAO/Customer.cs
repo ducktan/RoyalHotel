@@ -10,6 +10,7 @@ using FireSharp.Response;
 using System.Windows.Forms;
 using FireSharp;
 using Firebase.Database;
+using Firebase.Database.Query;
 
 
 namespace Royal.DAO
@@ -42,7 +43,6 @@ namespace Royal.DAO
             {
                 Client = new FireSharp.FirebaseClient(config.Config);
                 firebaseClient = FirebaseManage.GetFirebaseClient();
-
             }
             catch
             {
@@ -301,8 +301,78 @@ namespace Royal.DAO
             }
         }
 
+        public async Task UpdateCustomerTypeByBillAmount()
+        {
+            try
+            {
+                var customers = await firebaseClient
+                    .Child("Customer")
+                    .OnceAsync<CustomerDAO>();
 
-    }
+                foreach (var customer in customers)
+                {
+                    var customerObj = customer.Object;
+                    // Giả sử bạn có phương thức GetTotalBillAmount trong CustomerDAO để lấy tổng số tiền hóa đơn hàng tháng
+                    decimal totalBillAmount = await GetTotalBillAmount(customerObj.MAKH);
+
+                    if (totalBillAmount > 100000000)
+                    {
+                        customerObj.ID_LOAIKH = "LKH01";
+                    }
+                    else if (totalBillAmount > 10000000)
+                    {
+                        customerObj.ID_LOAIKH = "LKH02";
+                    }
+                    else if(totalBillAmount>10000000)
+                    {
+                        customerObj.ID_LOAIKH = "LKH03";
+                    }
+                    else if (totalBillAmount > 5000000)
+                    {
+                        customerObj.ID_LOAIKH = "LKH04";
+                    }
+                    else
+                    {
+                        customerObj.ID_LOAIKH = "LKH05";
+
+                    }
+
+                    await Client.SetAsync($"Customer/{customerObj.MAKH}", customerObj);
+                }
+                MessageBox.Show("Customer types updated successfully based on bill amount!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating customer types: {ex.Message}");
+            }
+        }
+
+        private async Task<decimal> GetTotalBillAmount(string customerId)
+        {
+            // Phương thức giả định để lấy tổng số tiền hóa đơn hàng tháng của khách hàng
+            // Bạn cần thực hiện việc này dựa trên cách bạn lưu trữ và tính toán tổng số tiền hóa đơn
+            decimal totalBillAmount = 0;
+            try
+            {
+                var bills = await firebaseClient
+                    .Child("Bill")
+                    .OrderBy("ID_KH")
+                    .EqualTo(customerId)
+                    .OnceAsync<BillDAO>(); // Giả sử bạn có lớp Bill để lưu trữ thông tin hóa đơn
+
+                totalBillAmount = bills.Sum(b => b.Object.THANHTIEN); // Giả định Amount là thuộc tính lưu số tiền của hóa đơn
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting total bill amount for customer {customerId}: {ex.Message}");
+            }
+
+            return totalBillAmount;
+        }
+    
+
+
+}
 
 
 

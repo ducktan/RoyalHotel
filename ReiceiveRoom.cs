@@ -167,6 +167,9 @@ namespace Royal
                         await bill.AddBill(bill);
 
                         receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);
+                        CustomerDAO customerDAO = await new CustomerDAO().SearchCusByCCCD(cccdKh);
+                        Bill b = new Bill(customerDAO.MAKH);
+                        b.Show();
                     }
                     else
                     {
@@ -296,13 +299,15 @@ namespace Royal
                         BillDAO res = await bill.SearchBillTypeById(result.MAHD);
 
                         int tienPhongTest = res.THANHTIEN + sum;
-
-                        await receiveroomDAO.AddReceiveRoom(updatedReceiveRoom);
                         // Gọi phương thức cập nhật
                         await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
                         await bill.UpdateBill(res.MAHD, maPhong, "Đã thanh toán", res.ID_KH, res.ID_NV, res.NGLAP, res.DONGIA, res.DISCOUNT, tienPhongTest, sldv);
 
                         receiveroomDAO.LoadReceiveRooms(dataGridViewParameter);
+                        CustomerDAO customerDAO = await new CustomerDAO().SearchCusByCCCD(cccdKh);
+                        Bill b = new Bill(customerDAO.MAKH);
+                        b.Show();
+
                     }
                     else
                     {

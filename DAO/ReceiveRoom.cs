@@ -271,22 +271,12 @@ namespace Royal.DAO
 
                 try
                 {
-                    if (receiveRoom.TRANGTHAI == "Đã Nhận Phòng")
-                    {
+          
 
                         await Client.UpdateAsync($"ReceiveRoom/{receiveRoom.ReceivedRoom}", receiveRoom);
                         MessageBox.Show("Receive room information updated successfully!");
-                    }
-                    if (receiveRoom.TRANGTHAI == "Đã Trả Phòng")
-                    {
-
-                        CustomerDAO customerDAO = await new CustomerDAO().SearchCusByCCCD(receiveRoom.CCCD_KH);
-                        Bill billForm = new Bill(customerDAO.MAKH);
-
-                        billForm.Show();
-
-
-                    }
+                   
+                    
 
                 }
                 catch (Exception ex)

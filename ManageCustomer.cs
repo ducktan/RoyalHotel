@@ -24,6 +24,7 @@ namespace Royal
             CustomerDAO newCus = new CustomerDAO();
             newCus.LoadCustomer(dataGridStaff);
             dataGridStaff.CellClick += dataGridBill_CellClick;
+
         }
 
         private void comboBoxCustomerType_SelectedIndexChanged(object sender, EventArgs e)

@@ -708,7 +708,7 @@
             this.metroComboBox2.Location = new System.Drawing.Point(9, 182);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.Size = new System.Drawing.Size(202, 30);
-            this.metroComboBox2.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroComboBox2.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroComboBox2.TabIndex = 136;
             this.metroComboBox2.UseCustomBackColor = true;
             this.metroComboBox2.UseCustomForeColor = true;
@@ -742,7 +742,7 @@
             this.metroComboBox1.Location = new System.Drawing.Point(250, 59);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(141, 30);
-            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroComboBox1.TabIndex = 134;
             this.metroComboBox1.UseCustomBackColor = true;
             this.metroComboBox1.UseCustomForeColor = true;
@@ -759,7 +759,7 @@
             this.cbRoomType.Location = new System.Drawing.Point(8, 59);
             this.cbRoomType.Name = "cbRoomType";
             this.cbRoomType.Size = new System.Drawing.Size(203, 30);
-            this.cbRoomType.Style = MetroFramework.MetroColorStyle.Green;
+            this.cbRoomType.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbRoomType.TabIndex = 33;
             this.cbRoomType.UseCustomBackColor = true;
             this.cbRoomType.UseCustomForeColor = true;

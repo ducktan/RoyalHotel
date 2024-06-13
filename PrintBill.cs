@@ -201,9 +201,9 @@ namespace Royal
 
             BillDAO bill = new BillDAO();
             BillDAO res = await bill.SearchBillTypeById(maHDBox.Text);
-            int tongtien = res.THANHTIEN + sum;
+      
             tienPhong.Text = res.DONGIA.ToString();
-            thanhTien.Text = tongtien.ToString();
+            thanhTien.Text =res.THANHTIEN.ToString();
 
 
 
