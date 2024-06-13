@@ -642,3 +642,4 @@ E:\LTMDA\RoyalHotel\bin\Debug\System.ValueTuple.xml
 E:\LTMDA\RoyalHotel\obj\Debug\Royal.Properties.Resources.resources
 E:\LTMDA\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileInputs.cache
 E:\LTMDA\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
+C:\Users\tieul\Document\NT106DoAn\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb

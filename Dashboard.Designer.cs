@@ -300,14 +300,14 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(270, 38);
+            this.label2.Location = new System.Drawing.Point(272, 40);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(297, 46);
+            this.label2.Size = new System.Drawing.Size(374, 46);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Quản Lí Khách Sạn";
+            this.label2.Text = "QUẢN LÝ KHÁCH SẠN";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // titleBookRoom
