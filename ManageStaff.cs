@@ -240,5 +240,38 @@ namespace Royal
                 ExportToPdf.Export(dataGridStaff, saveFileDialog.FileName);
             }
         }
+
+        private void toolStripLabel3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.DefaultExt = "pdf";
+            saveFileDialog.AddExtension = true;
+
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportToPdf.Export(dataGridStaff, saveFileDialog.FileName);
+            }
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            saveFileDialog.DefaultExt = "xlsx";
+            saveFileDialog.AddExtension = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                ExportToExcel.Export(dataGridStaff, saveFileDialog.FileName);
+            }
+        }
     }
 }
