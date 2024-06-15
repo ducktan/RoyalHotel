@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Firebase.Auth;
 using Royal.DAO;
+using Lab3_Bai6;
 
 namespace Royal
 {
@@ -42,6 +43,11 @@ namespace Royal
                     Dashboard db = new Dashboard();
                     db.Show();
                     Hide();
+                    Lab3_Bai6.Server server = new Server();
+                    //server.Show();
+                    server.ServerListen();
+                    server.Show();
+
                 }
                 else
                 {

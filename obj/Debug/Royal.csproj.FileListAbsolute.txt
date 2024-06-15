@@ -741,3 +741,203 @@ E:\Manage-Hotel-main\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileInputs.cache
 E:\Manage-Hotel-main\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
 E:\Manage-Hotel-main\RoyalHotel\obj\Debug\Royal.exe
 E:\Manage-Hotel-main\RoyalHotel\obj\Debug\Royal.pdb
+E:\DALTM\RoyalHotel\bin\Debug\ENV\arial.ttf
+E:\DALTM\RoyalHotel\bin\Debug\Royal.exe.config
+E:\DALTM\RoyalHotel\bin\Debug\Royal.exe
+E:\DALTM\RoyalHotel\bin\Debug\Royal.pdb
+E:\DALTM\RoyalHotel\bin\Debug\BouncyCastle.Crypto.dll
+E:\DALTM\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+E:\DALTM\RoyalHotel\bin\Debug\Firebase.Auth.dll
+E:\DALTM\RoyalHotel\bin\Debug\Firebase.dll
+E:\DALTM\RoyalHotel\bin\Debug\FirebaseAdmin.dll
+E:\DALTM\RoyalHotel\bin\Debug\FireSharp.dll
+E:\DALTM\RoyalHotel\bin\Debug\Google.Api.Gax.dll
+E:\DALTM\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.dll
+E:\DALTM\RoyalHotel\bin\Debug\Google.Apis.Auth.dll
+E:\DALTM\RoyalHotel\bin\Debug\Google.Apis.Core.dll
+E:\DALTM\RoyalHotel\bin\Debug\Google.Apis.dll
+E:\DALTM\RoyalHotel\bin\Debug\itextsharp.dll
+E:\DALTM\RoyalHotel\bin\Debug\LiteDB.dll
+E:\DALTM\RoyalHotel\bin\Debug\MetroFramework.Design.dll
+E:\DALTM\RoyalHotel\bin\Debug\MetroFramework.dll
+E:\DALTM\RoyalHotel\bin\Debug\MetroFramework.Fonts.dll
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.dll
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+E:\DALTM\RoyalHotel\bin\Debug\Newtonsoft.Json.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.Buffers.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.CodeDom.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.Collections.Immutable.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.Memory.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.Net.Http.Extensions.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.Net.Http.Primitives.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.Numerics.Vectors.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.Reactive.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\DALTM\RoyalHotel\bin\Debug\System.ValueTuple.dll
+E:\DALTM\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+E:\DALTM\RoyalHotel\bin\Debug\Firebase.xml
+E:\DALTM\RoyalHotel\bin\Debug\Firebase.Auth.xml
+E:\DALTM\RoyalHotel\bin\Debug\FirebaseAdmin.xml
+E:\DALTM\RoyalHotel\bin\Debug\Google.Api.Gax.pdb
+E:\DALTM\RoyalHotel\bin\Debug\Google.Api.Gax.xml
+E:\DALTM\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.pdb
+E:\DALTM\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.xml
+E:\DALTM\RoyalHotel\bin\Debug\Google.Apis.pdb
+E:\DALTM\RoyalHotel\bin\Debug\Google.Apis.xml
+E:\DALTM\RoyalHotel\bin\Debug\Google.Apis.Auth.pdb
+E:\DALTM\RoyalHotel\bin\Debug\Google.Apis.Auth.xml
+E:\DALTM\RoyalHotel\bin\Debug\Google.Apis.Core.pdb
+E:\DALTM\RoyalHotel\bin\Debug\Google.Apis.Core.xml
+E:\DALTM\RoyalHotel\bin\Debug\itextsharp.xml
+E:\DALTM\RoyalHotel\bin\Debug\LiteDB.xml
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.xml
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+E:\DALTM\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\DALTM\RoyalHotel\bin\Debug\Newtonsoft.Json.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.Buffers.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.CodeDom.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.Collections.Immutable.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.Memory.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.Net.Http.Extensions.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.Net.Http.Primitives.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.Numerics.Vectors.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.Reactive.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\DALTM\RoyalHotel\bin\Debug\System.ValueTuple.xml
+E:\DALTM\RoyalHotel\obj\Debug\Royal.csproj.AssemblyReference.cache
+E:\DALTM\RoyalHotel\obj\Debug\Royal.AboutUs.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Admin.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Authentication.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Bill.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.BillDetail.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.BookRoom.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Chat.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.CustomerType.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Dashboard.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.ForgotPass.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Login.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.ManageCustomer.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.ManageStaff.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.ManageStaffType.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Parameter.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.PrintBill.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Profile.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Properties.Resources.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.ReiceiveRoom.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Report.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.ManageRoom.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.RoomType.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.Service.resources
+E:\DALTM\RoyalHotel\obj\Debug\Royal.csproj.GenerateResource.cache
+E:\DALTM\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+E:\DALTM\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
+E:\DALTM\RoyalHotel\obj\Debug\Royal.exe
+E:\DALTM\RoyalHotel\obj\Debug\Royal.pdb
+E:\DALTM - Copy\RoyalHotel\bin\Debug\ENV\arial.ttf
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Royal.exe.config
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Royal.exe
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Royal.pdb
+E:\DALTM - Copy\RoyalHotel\bin\Debug\BouncyCastle.Crypto.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Firebase.Auth.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Firebase.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\FirebaseAdmin.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\FireSharp.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Api.Gax.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Apis.Auth.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Apis.Core.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Apis.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\itextsharp.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\LiteDB.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\MetroFramework.Design.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\MetroFramework.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\MetroFramework.Fonts.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Newtonsoft.Json.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Buffers.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.CodeDom.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Collections.Immutable.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Memory.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Net.Http.Extensions.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Net.Http.Primitives.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Numerics.Vectors.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Reactive.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.ValueTuple.dll
+E:\DALTM - Copy\RoyalHotel\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Firebase.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Firebase.Auth.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\FirebaseAdmin.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Api.Gax.pdb
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Api.Gax.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.pdb
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Api.Gax.Rest.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Apis.pdb
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Apis.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Apis.Auth.pdb
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Apis.Auth.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Apis.Core.pdb
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Google.Apis.Core.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\itextsharp.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\LiteDB.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\Newtonsoft.Json.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Buffers.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.CodeDom.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Collections.Immutable.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Memory.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Net.Http.Extensions.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Net.Http.Primitives.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Numerics.Vectors.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Reactive.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\DALTM - Copy\RoyalHotel\bin\Debug\System.ValueTuple.xml
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.csproj.AssemblyReference.cache
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.AboutUs.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Admin.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Authentication.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Bill.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.BillDetail.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.BookRoom.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Chat.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Lab3_Bai6.Client.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.CustomerType.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Dashboard.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.ForgotPass.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Login.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.ManageCustomer.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.ManageStaff.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.ManageStaffType.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Parameter.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.PrintBill.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Profile.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Properties.Resources.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.ReiceiveRoom.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Report.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.ManageRoom.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.RoomType.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.Service.resources
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.csproj.GenerateResource.cache
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.csproj.CoreCompileInputs.cache
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.csproj.Up2Date
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.exe
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Royal.pdb
+E:\DALTM - Copy\RoyalHotel\obj\Debug\Lab3_Bai6.Server.resources

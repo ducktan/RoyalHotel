@@ -201,6 +201,12 @@
     <Compile Include="Chat.Designer.cs">
       <DependentUpon>Chat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client.Designer.cs">
+      <DependentUpon>Client.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +322,12 @@
     <Compile Include="RoomType.Designer.cs">
       <DependentUpon>RoomType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Server.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Server.Designer.cs">
+      <DependentUpon>Server.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chat.resx">
       <DependentUpon>Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerType.resx">
       <DependentUpon>CustomerType.cs</DependentUpon>
@@ -389,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomType.resx">
       <DependentUpon>RoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Server.resx">
+      <DependentUpon>Server.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Service.resx">
       <DependentUpon>Service.cs</DependentUpon>

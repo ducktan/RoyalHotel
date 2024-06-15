@@ -1,4 +1,5 @@
-﻿using Royal.DAO;
+﻿using Lab3_Bai6;
+using Royal.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Royal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new AboutUs());
+            Application.Run(new Login());
         }
     }
 }

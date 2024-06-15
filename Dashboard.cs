@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Lab3_Bai6;
 
 namespace Royal
 {
@@ -211,7 +212,7 @@ namespace Royal
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            Chat chat = new Chat();
+            Client chat = new Client();
             chat.Show();
         }
 
