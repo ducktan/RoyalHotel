@@ -67,6 +67,7 @@
             this.textBox3.Size = new System.Drawing.Size(736, 22);
             this.textBox3.TabIndex = 281;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
             // 
             // kryptonButton1
             // 
