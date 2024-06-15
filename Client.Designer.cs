@@ -156,7 +156,7 @@
             this.Controls.Add(this.rtbChatBox);
             this.Controls.Add(this.grbMessage);
             this.Controls.Add(this.btnConnect);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Client";
             this.Text = "TCP Client";

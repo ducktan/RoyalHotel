@@ -63,10 +63,11 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabPage1.Size = new System.Drawing.Size(886, 643);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Phân quyền";
+            this.tabPage1.Text = "Quyền hạn";
             // 
             // groupBox3
             // 
@@ -129,7 +130,7 @@
             this.cbbStaffType.FormattingEnabled = true;
             this.cbbStaffType.ItemHeight = 24;
             this.cbbStaffType.Location = new System.Drawing.Point(14, 34);
-            this.cbbStaffType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbStaffType.Margin = new System.Windows.Forms.Padding(4);
             this.cbbStaffType.Name = "cbbStaffType";
             this.cbbStaffType.Size = new System.Drawing.Size(364, 30);
             this.cbbStaffType.Style = MetroFramework.MetroColorStyle.Blue;
@@ -170,7 +171,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Authentication";
-            this.Text = "Phân quyền";
+            this.Text = "Quyền hạn";
             tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

@@ -66,7 +66,6 @@
             this.DetailBut = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.delBut = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.updateBut = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.addBut = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.phong = new System.Windows.Forms.ComboBox();
             this.nhanvien = new System.Windows.Forms.ComboBox();
@@ -436,15 +435,15 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.DetailBut);
             this.groupBox3.Controls.Add(this.delBut);
             this.groupBox3.Controls.Add(this.updateBut);
-            this.groupBox3.Controls.Add(this.addBut);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox3.Location = new System.Drawing.Point(13, 574);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(477, 144);
+            this.groupBox3.Size = new System.Drawing.Size(477, 159);
             this.groupBox3.TabIndex = 127;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "CHỨC NĂNG";
@@ -452,7 +451,7 @@
             // DetailBut
             // 
             this.DetailBut.Cursor = System.Windows.Forms.Cursors.No;
-            this.DetailBut.Location = new System.Drawing.Point(258, 85);
+            this.DetailBut.Location = new System.Drawing.Point(32, 95);
             this.DetailBut.Name = "DetailBut";
             this.DetailBut.Size = new System.Drawing.Size(171, 43);
             this.DetailBut.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
@@ -471,9 +470,9 @@
             // delBut
             // 
             this.delBut.Cursor = System.Windows.Forms.Cursors.No;
-            this.delBut.Location = new System.Drawing.Point(34, 85);
+            this.delBut.Location = new System.Drawing.Point(32, 36);
             this.delBut.Name = "delBut";
-            this.delBut.Size = new System.Drawing.Size(158, 43);
+            this.delBut.Size = new System.Drawing.Size(171, 43);
             this.delBut.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
             this.delBut.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
             this.delBut.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -505,25 +504,6 @@
             this.updateBut.TabIndex = 68;
             this.updateBut.Values.Text = "Sửa";
             this.updateBut.Click += new System.EventHandler(this.kryptonButton4_Click);
-            // 
-            // addBut
-            // 
-            this.addBut.Cursor = System.Windows.Forms.Cursors.No;
-            this.addBut.Location = new System.Drawing.Point(34, 36);
-            this.addBut.Name = "addBut";
-            this.addBut.Size = new System.Drawing.Size(158, 43);
-            this.addBut.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
-            this.addBut.StateCommon.Back.Color2 = System.Drawing.Color.DodgerBlue;
-            this.addBut.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.addBut.StateCommon.Border.Rounding = 1;
-            this.addBut.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.addBut.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.addBut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBut.TabIndex = 67;
-            this.addBut.Values.Text = "Thêm";
-            this.addBut.Click += new System.EventHandler(this.kryptonButton3_Click);
             // 
             // groupBox2
             // 
@@ -770,12 +750,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(519, 702);
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.button1.Location = new System.Drawing.Point(258, 95);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 34);
+            this.button1.Size = new System.Drawing.Size(171, 49);
             this.button1.TabIndex = 71;
             this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Bill
@@ -784,7 +766,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1558, 745);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -828,7 +809,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton updateBut;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton addBut;
         private System.Windows.Forms.GroupBox groupBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox total;
         private System.Windows.Forms.Label label9;

@@ -172,51 +172,6 @@ namespace Royal
 
 
 
-        private async void kryptonButton3_Click(object sender, EventArgs e)
-        {
-            var roomTypes = await firebaseClient
-                                .Child("Bill")
-                                .OnceAsync<BillDAO>();
-            // Tìm mã phòng lớn nhất hiện có
-            int maxRoomNumber = 0;
-            foreach (var roomData in roomTypes)
-            {
-                int roomNumber = int.Parse(roomData.Object.MAHD.Substring(2));
-                if (roomNumber > maxRoomNumber)
-                {
-                    maxRoomNumber = roomNumber;
-                }
-            }
-
-            string newRoomNumber = "HD" + (maxRoomNumber + 1).ToString("D3");
-
-            // Get the ID_NV from the combobox
-            string nhanVienText = nhanvien.Text;
-            string[] nhanVienParts = nhanVienText.Split('-');
-            string id_nv = nhanVienParts[0];
-
-            // Get the ID_KH from the combobox
-            string khachHangText = maKHBox.Text;
-            string[] khachHangParts = khachHangText.Split('-');
-            string id_kh = khachHangParts[0];
-
-            // Create a new Bill object with form control values
-            BillDAO newBill = new BillDAO()
-            {
-                MAHD = newRoomNumber,
-                ID_NV = id_nv,
-                MAPHONG = phong.Text,
-                NGLAP = date.Text,
-                ID_KH = id_kh,
-                THANHTIEN = Int32.Parse(total.Text),
-                DISCOUNT = Int32.Parse(discount.Text),
-                TRANGTHAI = status.Text,
-                DONGIA = Int32.Parse(giaDon.Text),
-            };
-
-            await newBill.AddBill(newBill);
-            newBill.LoadBill(dataGridBill);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
