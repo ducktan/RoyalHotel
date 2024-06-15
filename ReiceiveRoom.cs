@@ -158,7 +158,9 @@ namespace Royal
                             MAHD = newRoomNumber,
                         };
 
+                        Royal.DAO.Room room = new Royal.DAO.Room();
 
+                        await room.UpdateRoomStatus(maPhong, "Đã đặt");
 
                         await receiveroomDAO.UpdateReceiveRoom(updatedReceiveRoom);
 
@@ -293,6 +295,10 @@ namespace Royal
                             }
 
                         }
+
+                        Royal.DAO.Room room = new Royal.DAO.Room();
+
+                        await room.UpdateRoomStatus(maPhong, "Còn phòng");
 
 
                         BillDAO bill = new BillDAO();

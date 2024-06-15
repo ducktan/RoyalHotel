@@ -109,6 +109,35 @@ namespace Royal.DAO
             }
         }
 
+        public async Task UpdateRoomStatus(string sId, string TrangThai)
+        {
+ 
+                try
+                {
+                    // Lấy thông tin phòng hiện tại từ Firebase
+                    FirebaseResponse response = await Client.GetAsync($"Room/{sId}");
+                    Room existingRoom = response.ResultAs<Room>();
+
+                    if (existingRoom != null)
+                    {
+                        // Cập nhật trạng thái phòng
+                        existingRoom.TrangThai = TrangThai;
+
+                        // Cập nhật thông tin phòng lên Firebase
+                        await Client.SetAsync($"Room/{sId}", existingRoom);
+                        MessageBox.Show("Room's status updated successfully!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Room not found!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating room status: {ex.Message}");
+                }
+            
+        }
         public async Task AddRoom(Room room)
         {
             try

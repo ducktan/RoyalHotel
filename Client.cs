@@ -143,7 +143,7 @@ namespace Lab3_Bai6
                                 this.Invoke((MethodInvoker)delegate
                                 {
                                     Image image = Image.FromStream(ms);
-                                    AddImageToChat("Admin", image);
+                                    AddImageToChat(Royal.DAO.User.Role, image);
                                 });
                             }
                         }
@@ -209,6 +209,8 @@ namespace Lab3_Bai6
             if (btnConnect.Text == "Connect")
             {
                 ConnectServer();
+                btnSend.Enabled = true;
+                btnSendFile.Enabled = true;
                 btnConnect.Text = "Exit";
             }
             else if(btnConnect.Text == "Exit")
@@ -456,5 +458,11 @@ namespace Lab3_Bai6
             }
         }
         #endregion
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+            btnSend.Enabled = false;
+            btnSendFile.Enabled = false;
+        }
     }
 }

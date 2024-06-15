@@ -251,6 +251,8 @@ namespace Royal
                     // Call the AddBookingRoom method to store the booking room object in the Firebase database
                     await bookingroom.AddBookingRoom(bookingroom);
 
+
+                    
                     // Refresh the DataGridView with the latest data
                     bookingroom.LoadBookingRooms(dataGridViewParameter);
                     ClearInputFields();

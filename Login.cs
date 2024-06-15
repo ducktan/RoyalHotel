@@ -7,6 +7,8 @@ using Firebase.Auth;
 using Royal.DAO;
 using Lab3_Bai6;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 
 namespace Royal
 {
@@ -46,7 +48,7 @@ namespace Royal
                     Dashboard db = new Dashboard();
                     db.Show();
                     Hide();
-                    Lab3_Bai6.Server server = new Server();
+                    
                     //server.Show();
                         if(!IsPortInUse(8080))
                     {
@@ -100,7 +102,18 @@ namespace Royal
 
         private void StartConsoleApp()
         {
-            string exePath = @"C:\Users\ADMIN\Downloads\RoyalHotel-main\RoyalHotel-main\ChatServer.exe";
+            //string exePath = @"E:\DoAN\RoyalHotel\ChatServer.exe";
+            // Lấy thư mục hiện tại của ứng dụng (nơi đặt file thực thi)
+            string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            // Đường dẫn tương đối tới ChatServer.exe từ thư mục hiện tại
+            string relativePath = @"..\..\ChatServer.exe";
+
+            // Kết hợp thư mục hiện tại với đường dẫn tương đối để có đường dẫn đầy đủ
+            string exePath = Path.GetFullPath(Path.Combine(currentDirectory, relativePath));
+            //string currentDirectory = Directory.GetCurrentDirectory();
+            //MessageBox.Show(currentDirectory);
+
 
             ProcessStartInfo processStartInfo = new ProcessStartInfo
             {

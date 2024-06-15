@@ -106,7 +106,7 @@
             this.rtbChatBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtbChatBox.Font = new System.Drawing.Font("Yu Gothic UI", 11F);
             this.rtbChatBox.Location = new System.Drawing.Point(252, 16);
-            this.rtbChatBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbChatBox.Margin = new System.Windows.Forms.Padding(4);
             this.rtbChatBox.Name = "rtbChatBox";
             this.rtbChatBox.ReadOnly = true;
             this.rtbChatBox.Size = new System.Drawing.Size(644, 403);
@@ -117,7 +117,7 @@
             // 
             this.flpFile.AutoScroll = true;
             this.flpFile.Location = new System.Drawing.Point(10, 23);
-            this.flpFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flpFile.Margin = new System.Windows.Forms.Padding(4);
             this.flpFile.Name = "flpFile";
             this.flpFile.Size = new System.Drawing.Size(213, 108);
             this.flpFile.TabIndex = 17;
@@ -126,9 +126,9 @@
             // 
             this.groupBox2.Controls.Add(this.flpFile);
             this.groupBox2.Location = new System.Drawing.Point(13, 264);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(231, 139);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
@@ -160,6 +160,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Client";
             this.Text = "TCP Client";
+            this.Load += new System.EventHandler(this.Client_Load);
             this.grbMessage.ResumeLayout(false);
             this.grbMessage.PerformLayout();
             this.groupBox2.ResumeLayout(false);
