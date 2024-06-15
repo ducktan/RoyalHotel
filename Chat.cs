@@ -166,7 +166,7 @@ namespace Royal
                                 this.Invoke((MethodInvoker)delegate
                                 {
                                     Image image = Image.FromStream(ms);
-                                    AddImageToChat("Admin", image);
+                                    AddImageToChat($"{DAO.User.Role} - {DAO.User.Id}", image);
                                 });
                             }
                         }

@@ -239,36 +239,6 @@ namespace Royal
             Admin admin = new Admin();
             admin.Show();
         }
-        private void StartConsoleApp()
-        {
-            string exePath = @"C:\Users\ADMIN\Downloads\RoyalHotel-main\RoyalHotel-main\ChatServer.exe";
-
-            ProcessStartInfo processStartInfo = new ProcessStartInfo
-            {
-                FileName = exePath,
-                UseShellExecute = true,
-                RedirectStandardOutput = false,
-                RedirectStandardError = false,
-                CreateNoWindow = false // Hiển thị cửa sổ console
-            };
-
-            try
-            {
-                Process consoleProcess = new Process
-                {
-                    StartInfo = processStartInfo
-                };
-
-                consoleProcess.Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error starting console app: {ex.Message}");
-            }
-        }
-        private void kryptonButton2_Click_1(object sender, EventArgs e)
-        {
-            StartConsoleApp();
-        }
+       
     }
 }
