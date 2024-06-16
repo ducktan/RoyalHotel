@@ -1,5 +1,6 @@
 ﻿using Royal.DAO;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lab3_Bai6;
+using System.Diagnostics;
 
 namespace Royal
 {
@@ -237,5 +239,6 @@ namespace Royal
             Admin admin = new Admin();
             admin.Show();
         }
+       
     }
 }

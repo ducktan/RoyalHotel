@@ -58,14 +58,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridViewParameter = new System.Windows.Forms.DataGridView();
-            this.MaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SONGUOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIENCOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSurcharge = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -109,6 +101,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.MaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SONGUOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIENCOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParameter)).BeginInit();
@@ -393,7 +393,7 @@
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // groupBox4
             // 
@@ -443,7 +443,7 @@
             this.dataGridViewParameter.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewParameter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewParameter.GridColor = System.Drawing.Color.White;
-            this.dataGridViewParameter.Location = new System.Drawing.Point(3, 61);
+            this.dataGridViewParameter.Location = new System.Drawing.Point(3, 57);
             this.dataGridViewParameter.Name = "dataGridViewParameter";
             this.dataGridViewParameter.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -460,72 +460,8 @@
             this.dataGridViewParameter.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewParameter.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridViewParameter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewParameter.Size = new System.Drawing.Size(669, 480);
+            this.dataGridViewParameter.Size = new System.Drawing.Size(669, 484);
             this.dataGridViewParameter.TabIndex = 28;
-            // 
-            // MaDP
-            // 
-            this.MaDP.HeaderText = "Mã đặt";
-            this.MaDP.MinimumWidth = 6;
-            this.MaDP.Name = "MaDP";
-            this.MaDP.ReadOnly = true;
-            this.MaDP.Width = 125;
-            // 
-            // CCCD
-            // 
-            this.CCCD.HeaderText = "CCCD";
-            this.CCCD.MinimumWidth = 6;
-            this.CCCD.Name = "CCCD";
-            this.CCCD.ReadOnly = true;
-            this.CCCD.Width = 150;
-            // 
-            // MAPHONG
-            // 
-            this.MAPHONG.HeaderText = "Mã Phòng";
-            this.MAPHONG.MinimumWidth = 10;
-            this.MAPHONG.Name = "MAPHONG";
-            this.MAPHONG.ReadOnly = true;
-            this.MAPHONG.Width = 200;
-            // 
-            // TimeDP
-            // 
-            this.TimeDP.HeaderText = "Loại Phòng";
-            this.TimeDP.MinimumWidth = 6;
-            this.TimeDP.Name = "TimeDP";
-            this.TimeDP.ReadOnly = true;
-            this.TimeDP.Width = 125;
-            // 
-            // NgayDP
-            // 
-            this.NgayDP.HeaderText = "Ngày Đặt";
-            this.NgayDP.MinimumWidth = 6;
-            this.NgayDP.Name = "NgayDP";
-            this.NgayDP.ReadOnly = true;
-            this.NgayDP.Width = 125;
-            // 
-            // NgayTra
-            // 
-            this.NgayTra.HeaderText = "Ngày trả";
-            this.NgayTra.MinimumWidth = 6;
-            this.NgayTra.Name = "NgayTra";
-            this.NgayTra.ReadOnly = true;
-            this.NgayTra.Width = 125;
-            // 
-            // SONGUOI
-            // 
-            this.SONGUOI.HeaderText = "Số Người";
-            this.SONGUOI.MinimumWidth = 10;
-            this.SONGUOI.Name = "SONGUOI";
-            this.SONGUOI.ReadOnly = true;
-            this.SONGUOI.Width = 200;
-            // 
-            // TIENCOC
-            // 
-            this.TIENCOC.HeaderText = "Tiền Cọc";
-            this.TIENCOC.MinimumWidth = 10;
-            this.TIENCOC.Name = "TIENCOC";
-            this.TIENCOC.ReadOnly = true;
-            this.TIENCOC.Width = 200;
             // 
             // bindingSurcharge
             // 
@@ -556,7 +492,7 @@
             this.bindingSurcharge.Name = "bindingSurcharge";
             this.bindingSurcharge.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bindingSurcharge.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingSurcharge.Size = new System.Drawing.Size(669, 31);
+            this.bindingSurcharge.Size = new System.Drawing.Size(669, 27);
             this.bindingSurcharge.TabIndex = 29;
             this.bindingSurcharge.Text = "bindingNavigator1";
             // 
@@ -591,7 +527,7 @@
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -606,7 +542,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -642,7 +578,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripLabel3
@@ -735,10 +671,10 @@
             this.metroComboBox2.BackColor = System.Drawing.Color.White;
             this.metroComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.ItemHeight = 24;
             this.metroComboBox2.Location = new System.Drawing.Point(9, 182);
             this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(202, 29);
+            this.metroComboBox2.Size = new System.Drawing.Size(202, 30);
             this.metroComboBox2.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroComboBox2.TabIndex = 136;
             this.metroComboBox2.UseCustomBackColor = true;
@@ -762,7 +698,7 @@
             this.metroComboBox1.BackColor = System.Drawing.Color.White;
             this.metroComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.ItemHeight = 24;
             this.metroComboBox1.Items.AddRange(new object[] {
             "1",
             "2",
@@ -772,7 +708,7 @@
             "6"});
             this.metroComboBox1.Location = new System.Drawing.Point(250, 59);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(141, 29);
+            this.metroComboBox1.Size = new System.Drawing.Size(141, 30);
             this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroComboBox1.TabIndex = 134;
             this.metroComboBox1.UseCustomBackColor = true;
@@ -786,10 +722,10 @@
             this.cbRoomType.BackColor = System.Drawing.Color.White;
             this.cbRoomType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbRoomType.FormattingEnabled = true;
-            this.cbRoomType.ItemHeight = 23;
+            this.cbRoomType.ItemHeight = 24;
             this.cbRoomType.Location = new System.Drawing.Point(8, 59);
             this.cbRoomType.Name = "cbRoomType";
-            this.cbRoomType.Size = new System.Drawing.Size(203, 29);
+            this.cbRoomType.Size = new System.Drawing.Size(203, 30);
             this.cbRoomType.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbRoomType.TabIndex = 33;
             this.cbRoomType.UseCustomBackColor = true;
@@ -1019,12 +955,75 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại phòng";
             // 
+            // MaDP
+            // 
+            this.MaDP.HeaderText = "Mã đặt";
+            this.MaDP.MinimumWidth = 6;
+            this.MaDP.Name = "MaDP";
+            this.MaDP.ReadOnly = true;
+            // 
+            // CCCD
+            // 
+            this.CCCD.HeaderText = "CCCD";
+            this.CCCD.MinimumWidth = 6;
+            this.CCCD.Name = "CCCD";
+            this.CCCD.ReadOnly = true;
+            this.CCCD.Width = 150;
+            // 
+            // MAPHONG
+            // 
+            this.MAPHONG.HeaderText = "Mã Phòng";
+            this.MAPHONG.MinimumWidth = 10;
+            this.MAPHONG.Name = "MAPHONG";
+            this.MAPHONG.ReadOnly = true;
+            this.MAPHONG.Width = 130;
+            // 
+            // TimeDP
+            // 
+            this.TimeDP.HeaderText = "Loại Phòng";
+            this.TimeDP.MinimumWidth = 6;
+            this.TimeDP.Name = "TimeDP";
+            this.TimeDP.ReadOnly = true;
+            this.TimeDP.Width = 125;
+            // 
+            // NgayDP
+            // 
+            this.NgayDP.HeaderText = "Ngày Đặt";
+            this.NgayDP.MinimumWidth = 6;
+            this.NgayDP.Name = "NgayDP";
+            this.NgayDP.ReadOnly = true;
+            this.NgayDP.Width = 125;
+            // 
+            // NgayTra
+            // 
+            this.NgayTra.HeaderText = "Ngày trả";
+            this.NgayTra.MinimumWidth = 6;
+            this.NgayTra.Name = "NgayTra";
+            this.NgayTra.ReadOnly = true;
+            this.NgayTra.Width = 125;
+            // 
+            // SONGUOI
+            // 
+            this.SONGUOI.HeaderText = "Số Người";
+            this.SONGUOI.MinimumWidth = 10;
+            this.SONGUOI.Name = "SONGUOI";
+            this.SONGUOI.ReadOnly = true;
+            this.SONGUOI.Width = 200;
+            // 
+            // TIENCOC
+            // 
+            this.TIENCOC.HeaderText = "Tiền Cọc";
+            this.TIENCOC.MinimumWidth = 10;
+            this.TIENCOC.Name = "TIENCOC";
+            this.TIENCOC.ReadOnly = true;
+            this.TIENCOC.Width = 200;
+            // 
             // BookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1283, 675);
+            this.ClientSize = new System.Drawing.Size(1548, 756);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label2);
@@ -1083,14 +1082,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dataGridViewParameter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAPHONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeDP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayDP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SONGUOI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TIENCOC;
         private System.Windows.Forms.BindingNavigator bindingSurcharge;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -1134,5 +1125,13 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAPHONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeDP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayDP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayTra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SONGUOI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TIENCOC;
     }
 }

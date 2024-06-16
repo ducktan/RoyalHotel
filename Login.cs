@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Net.NetworkInformation;
+using System.Net;
 using System.Windows.Forms;
 using Firebase.Auth;
 using Royal.DAO;
 using Lab3_Bai6;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 
 namespace Royal
 {
@@ -43,10 +48,12 @@ namespace Royal
                     Dashboard db = new Dashboard();
                     db.Show();
                     Hide();
-                    Lab3_Bai6.Server server = new Server();
+                    
                     //server.Show();
-                    server.ServerListen();
-                    server.Show();
+                        if(!IsPortInUse(8080))
+                    {
+                        StartConsoleApp();
+                    }
 
                 }
                 else
@@ -59,7 +66,78 @@ namespace Royal
                 MessageBox.Show(ex.Message, "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public static bool IsPortInUse(int port)
+        {
+            bool isAvailable = true;
 
+            // Đánh giá các kết nối TCP hiện tại trong hệ thống
+            IPGlobalProperties ipGlobalProperties = IPGlobalProperties.GetIPGlobalProperties();
+            TcpConnectionInformation[] tcpConnInfoArray = ipGlobalProperties.GetActiveTcpConnections();
+
+            foreach (TcpConnectionInformation tcpi in tcpConnInfoArray)
+            {
+                if (tcpi.LocalEndPoint.Port == port)
+                {
+                    isAvailable = false;
+                    break;
+                }
+            }
+
+            if (isAvailable)
+            {
+                // Kiểm tra các listener TCP hiện tại trong hệ thống
+                IPEndPoint[] listeners = ipGlobalProperties.GetActiveTcpListeners();
+                foreach (IPEndPoint listener in listeners)
+                {
+                    if (listener.Port == port)
+                    {
+                        isAvailable = false;
+                        break;
+                    }
+                }
+            }
+
+            return !isAvailable;
+        }
+
+        private void StartConsoleApp()
+        {
+            //string exePath = @"E:\DoAN\RoyalHotel\ChatServer.exe";
+            // Lấy thư mục hiện tại của ứng dụng (nơi đặt file thực thi)
+            string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            // Đường dẫn tương đối tới ChatServer.exe từ thư mục hiện tại
+            string relativePath = @"..\..\ChatServer.exe";
+
+            // Kết hợp thư mục hiện tại với đường dẫn tương đối để có đường dẫn đầy đủ
+            string exePath = Path.GetFullPath(Path.Combine(currentDirectory, relativePath));
+            //string currentDirectory = Directory.GetCurrentDirectory();
+            //MessageBox.Show(currentDirectory);
+
+
+            ProcessStartInfo processStartInfo = new ProcessStartInfo
+            {
+                FileName = exePath,
+                UseShellExecute = true,
+                RedirectStandardOutput = false,
+                RedirectStandardError = false,
+                CreateNoWindow = false // Hiển thị cửa sổ console
+            };
+
+            try
+            {
+                Process consoleProcess = new Process
+                {
+                    StartInfo = processStartInfo
+                };
+
+                consoleProcess.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error starting console app: {ex.Message}");
+            }
+        }
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             txtPassword.PasswordChar = '*';
